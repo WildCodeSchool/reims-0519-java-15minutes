@@ -1,0 +1,61 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/login.css}" href="../static/login.css">
+    <title>Bootstrap 4 Login/Register Form</title>
+</head>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-4">
+            <div class="account-box">
+                <div class="logo ">
+                    <img src="../static/img/logo15.png" alt=""/>
+                </div>
+                <form class="form-signin" action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email" required autofocus />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" required />
+                </div>
+                <label class="checkbox">
+                    <input type="checkbox" value="remember-me" />
+                    Keep me signed in
+                </label>
+                <button class="btn btn-lg btn-block purple-bg" type="submit">
+                    Sign in</button>
+                </form>
+                <a class="forgotLnk" href="http://www.jquery2dotnet.com">I can't access my account</a>
+                <div class="or-box">
+                    <span class="or">OR</span>
+                    <div class="row">
+                        <div class="col-md-6 row-block">
+                            <a href="http://www.jquery2dotnet.com" class="btn btn-facebook btn-block">Facebook</a>
+                        </div>
+                        <div class="col-md-6 row-block">
+                            <a href="http://www.jquery2dotnet.com" class="btn btn-google btn-block">Google</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="or-box row-block">
+                    <div class="row">
+                        <div class="col-md-12 row-block">
+                            <a href="http://www.jquery2dotnet.com" class="btn btn-primary btn-block">Create New Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
