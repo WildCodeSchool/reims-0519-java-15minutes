@@ -1,3 +1,28 @@
+body 
+{
+background-image: url("img/background.png");
+background-repeat: no-repeat;
+background-position-x: 50%;
+background-position-y: -50%;
+position: fixed
+}
+
+.intro
+{
+
+    color: #4b01e1;
+    margin-top: 90%;
+    font-size: 20px;
+    margin-left: 9%;
+    margin-right: 9%;
+}
+
+.bouton
+{
+margin-top: 10%;
+margin-left: 29%;
+}
+
 .account-box
 {
     border: 2px solid rgba(153, 153, 153, 0.75);
