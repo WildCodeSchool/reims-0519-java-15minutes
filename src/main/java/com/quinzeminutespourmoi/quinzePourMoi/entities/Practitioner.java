@@ -1,3 +1,9 @@
+package com.quinzeminutespourmoi.quinzePourMoi.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Practitioner{
@@ -26,11 +32,6 @@ public class Practitioner{
     private String adr_street;
     private String adr_postal;
     private String town;
-
-    @Override
-    public String toString(){
-        
-    }
 
     public Long getId() {
         return id;

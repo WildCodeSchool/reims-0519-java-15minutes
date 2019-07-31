@@ -1,11 +1,18 @@
+package com.quinzeminutespourmoi.quinzePourMoi.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 @Entity
 public class Profil{
     public Profil(){
     }
 
     public Profil(String firstname, String lastname){
-        this.setFirstname = firstname;
-        this.setLastname = lastname;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
 
     @Id

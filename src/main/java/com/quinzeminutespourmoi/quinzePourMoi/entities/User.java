@@ -1,3 +1,9 @@
+package com.quinzeminutespourmoi.quinzePourMoi.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class User {
@@ -6,14 +12,14 @@ public class User {
     }
 
     public User(String username, String password, String mail, String role){
-        this.setUsername = username;
-        this.setPassword = password;
-        this.setMail = mail;
-        this.setRole = role;
+        this.username = username;
+        this.password = password;
+        this.mail = mail;
+        this.role = role;
     }
 
     @Id
-    @GeneratedValue(strategy = GeneratedType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
     private String password;
