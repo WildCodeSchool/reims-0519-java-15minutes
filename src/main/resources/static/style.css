@@ -1,0 +1,26 @@
+body 
+{
+background-image: url("img/background.png");
+background-repeat: no-repeat;
+background-size: contain;
+height: 100vh;
+}
+
+.intro
+{
+    color: #4b01e1;
+    font-size: 20px;
+}
+
+.btn-primary{
+    color:white;
+    background-color:#8c56b8;
+    background-image:none;
+    border-color:#d16ae6;
+}
+
+.btn-primary:hover{
+    color:white;
+    background-color:#9a009a;
+    border-color:#e66ad1;
+}
