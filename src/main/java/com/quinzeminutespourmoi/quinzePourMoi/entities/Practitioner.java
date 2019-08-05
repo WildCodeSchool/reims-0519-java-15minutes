@@ -13,7 +13,6 @@ public class Practitioner{
     public Practitioner(String speciality, String phone, String mail,
     String adr_num, String adr_street, String adr_postal, String town){
 
-        this.speciality = speciality;
         this.phone = phone;
         this.mail = mail;
         this.adr_num = adr_num;
@@ -25,7 +24,6 @@ public class Practitioner{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String speciality;
     private String phone;
     private String mail;
     private String adr_num;
@@ -35,14 +33,6 @@ public class Practitioner{
 
     public Long getId() {
         return id;
-    }
-
-    public String getSpeciality() {
-        return speciality;
-    }
-
-    public void setSpeciality(String speciality) {
-        this.speciality = speciality;
     }
 
     public String getPhone() {
