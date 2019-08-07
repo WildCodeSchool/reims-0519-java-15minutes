@@ -1,4 +1,7 @@
-
+.logo
+{
+    height: 3rem;
+}
 .indexBg 
 {
 background-image: url("img/background.png");
