@@ -8,10 +8,11 @@ height: 100vh;
 }
 .collapse
 {
-    background-color: #f6caffc7;
-    opacity: 0.9;
+    background-color: #9025a5;
+    opacity: 1;
     border-color: black;
     box-shadow: 0px 8px 10px 0px;
+    border-radius: 3%;
 }
 
 .navbar-toggler
