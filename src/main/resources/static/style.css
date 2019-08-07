@@ -1,7 +1,10 @@
-
+.logo
+{
+    height: 3rem;
+}
 .indexBg 
 {
-background-image: url("img/background.png");
+background-image: url("img/backgroundIndex.png");
 background-repeat: no-repeat;
 background-size: contain;
 height: 100vh;
