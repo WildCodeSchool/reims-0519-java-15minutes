@@ -7,6 +7,7 @@
 background-image: url("img/backgroundIndex.png");
 background-repeat: no-repeat;
 background-size: contain;
+background-position: center;
 height: 100vh;
 }
 .collapse
@@ -22,9 +23,54 @@ height: 100vh;
 {
     background-color: #9933CC;
 }
-.btn-primary{
+.btn-continue{
     color:white;
     background-color:#8c56b8;
     background-image:none;
     border-color:#d16ae6;
+}
+
+.btn{
+    border: solid 1px black;
+    color: white;
+}
+.btn-secondary
+{
+background-color: yellowgreen;
+
+}
+
+.btn-tertiary
+{
+background-color: red;
+}
+
+.btn-quaternary
+{
+background-color: gray;
+}
+
+.btn-quinary
+{
+background-color: blueviolet;
+}
+
+.btn-senary
+{
+background-color: green;
+}
+
+.btn-septenary
+{
+background-color: gold;
+}
+
+h4{
+    color: #9933CC;
+}
+
+.subtitle 
+{
+    color: #9933CC;
+    opacity: 0.8;
 }
