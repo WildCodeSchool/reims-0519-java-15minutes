@@ -1,40 +1,47 @@
-
-body 
+.logo
 {
-background-image: url("img/background.png");
+    height: 3rem;
+}
+.indexBg 
+{
+background-image: url("img/backgroundIndex.png");
 background-repeat: no-repeat;
 background-size: contain;
 height: 100vh;
 }
 .collapse
 {
-    background-color: white;
-    opacity: 0.9;
-    border-width: 3px;
+    background-color: #9025a5;
+    opacity: 1;
     border-color: black;
-    box-shadow: 0px 10px 10px 0px;
-    MARGIN-left: -7px;
-    padding-left: 5px;
-    padding-bottom: 5px;
+    box-shadow: 0px 8px 10px 0px;
+    border-radius: 3%;
 }
-.navbar
-{
-    padding: 0;
-}
+
 .navbar-toggler
 {
     background-color: #9933CC;
 }
 
 /* extra div pour la bordure video  */
-.embed-border {
+.embed-border
+{
     border: 5px solid ;
     box-sizing: border-box;
 }
 
-.embed-responsive {
+.embed-responsive
+{
     position: relative;
     overflow: hidden;
     height: 0;
     padding-bottom: 56.25%;
+}
+
+.btn-primary
+{
+    color:white;
+    background-color:#8c56b8;
+    background-image:none;
+    border-color:#d16ae6;
 }
