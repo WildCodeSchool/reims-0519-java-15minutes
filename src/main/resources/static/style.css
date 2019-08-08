@@ -31,7 +31,9 @@
 {
     background-color: #9933CC;
 }
-.btn-continue{
+
+.btn-continue
+{
     color:white;
     background-color:#8c56b8;
     background-image:none;
@@ -81,4 +83,18 @@ h4{
 {
     color: #9933CC;
     opacity: 0.8;
+}
+/* extra div pour la bordure video  */
+.embed-border
+{
+    border: 5px solid #8c56b8;
+    box-sizing: border-box;
+}
+
+.embed-responsive
+{
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: 56.25%;
 }
