@@ -22,7 +22,24 @@ height: 100vh;
 {
     background-color: #9933CC;
 }
-.btn-primary{
+
+/* extra div pour la bordure video  */
+.embed-border
+{
+    border: 5px solid ;
+    box-sizing: border-box;
+}
+
+.embed-responsive
+{
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.btn-continue
+{
     color:white;
     background-color:#8c56b8;
     background-image:none;
