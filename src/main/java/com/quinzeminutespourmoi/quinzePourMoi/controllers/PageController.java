@@ -12,4 +12,24 @@ class PageController {
         return "index";
     }
 
+    @GetMapping("/prepaQuest")
+    public String prepaQuest(Model model) {
+        return "prepaQuest";
+    }
+
+    @GetMapping("/pageAnnonce")
+    public String pageAnnonce(Model model) {
+        return "pageAnnonce";
+    }
+
+    @GetMapping("/pageVideo")
+    public String pageVideo(Model model) {
+        return "pageVideo";
+    }
+
+    @GetMapping("/resultQuest")
+    public String resultQuest(Model model) {
+        return "resultQuest";
+    }
+
 }
