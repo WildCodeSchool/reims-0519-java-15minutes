@@ -17,9 +17,9 @@ class PageController {
         return "prepaQuest";
     }
 
-    @GetMapping("/pageAnnonce")
-    public String pageAnnonce(Model model) {
-        return "pageAnnonce";
+    @GetMapping("/choix")
+    public String choix(Model model) {
+        return "choix";
     }
 
     @GetMapping("/pageVideo")
