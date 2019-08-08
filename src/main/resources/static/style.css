@@ -18,6 +18,15 @@
     background-position: center;
     height: 100vh;
 }
+.prepaQuestBg
+{
+    background-image: url("img/backgroundPrepaQuest.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100vh;
+}
+
 .collapse
 {
     background-color: #9025a5;
