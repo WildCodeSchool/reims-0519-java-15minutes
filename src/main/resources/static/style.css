@@ -28,3 +28,18 @@ height: 100vh;
     background-image:none;
     border-color:#d16ae6;
 }
+
+/* extra div pour la bordure video  */
+.embed-border
+{
+    border: 5px solid #8c56b8;
+    box-sizing: border-box;
+}
+
+.embed-responsive
+{
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: 56.25%;
+}
