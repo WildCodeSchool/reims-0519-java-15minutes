@@ -4,15 +4,23 @@
 }
 .indexBg 
 {
-background-image: url("img/backgroundIndex.png");
-background-repeat: no-repeat;
-background-size: contain;
-height: 100vh;
+    background-image: url("img/backgroundIndex.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100vh;
+}
+.resultQuestBg
+{
+    background-image: url("img/backgroundResultQuest.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100vh;
 }
 .collapse
 {
     background-color: #9025a5;
-    opacity: 1;
     border-color: black;
     box-shadow: 0px 8px 10px 0px;
     border-radius: 3%;
