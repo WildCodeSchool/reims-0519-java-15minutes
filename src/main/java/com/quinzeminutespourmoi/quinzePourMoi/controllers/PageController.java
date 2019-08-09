@@ -12,24 +12,34 @@ class PageController {
         return "index";
     }
 
-    @GetMapping("/prepaQuest")
-    public String prepaQuest(Model model) {
-        return "prepaQuest";
+    @GetMapping("/about-us")
+    public String aboutUs(Model model) {
+        return "about-us";
     }
 
-    @GetMapping("/choix")
-    public String choix(Model model) {
-        return "choix";
+    @GetMapping("/questions")
+    public String prepaQuest(@RequestParam Integer page, Model model) {
+        if(page) { // sous-entendu page != null
+            if(page.equals(1)) {
+                return "choices";
+            }
+            if(page.equals(2)) {
+                return "beforeQuest";
+            }
+            if(page.equals(3)) {
+                return "information";
+            }
+            if(page.equals(4)) {
+                return "intro";
+            }
+            // les pages 2, 3... seront à rajouter ici
+            if(page.equals(100)) {
+                return "result";
+            }
+            if(page.equals(101)) {
+                return "resultQuest";
+            }
+        }
+        return "prepaQuest"
     }
-
-    @GetMapping("/pageVideo")
-    public String pageVideo(Model model) {
-        return "pageVideo";
-    }
-
-    @GetMapping("/resultQuest")
-    public String resultQuest(Model model) {
-        return "resultQuest";
-    }
-
 }
