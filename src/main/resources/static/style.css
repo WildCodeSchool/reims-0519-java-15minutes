@@ -4,18 +4,27 @@
 }
 .indexBg 
 {
-background-image: url("img/backgroundIndex.png");
-background-repeat: no-repeat;
-background-size: contain;
-height: 100vh;
+    background-image: url("img/backgroundIndex.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100vh;
 }
-.collapse
+.resultQuestBg
 {
-    background-color: #9025a5;
-    opacity: 1;
-    border-color: black;
-    box-shadow: 0px 8px 10px 0px;
-    border-radius: 3%;
+    background-image: url("img/backgroundResultQuest.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100vh;
+}
+.prepaQuestBg
+{
+    background-image: url("img/backgroundPrepaQuest.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100vh;
 }
 
 .navbar-toggler
@@ -31,6 +40,50 @@ height: 100vh;
     border-color:#d16ae6;
 }
 
+.btn{
+    border: solid 1px black;
+    color: white;
+}
+.btn-secondary
+{
+background-color: yellowgreen;
+
+}
+
+.btn-tertiary
+{
+background-color: red;
+}
+
+.btn-quaternary
+{
+background-color: gray;
+}
+
+.btn-quinary
+{
+background-color: blueviolet;
+}
+
+.btn-senary
+{
+background-color: green;
+}
+
+.btn-septenary
+{
+background-color: gold;
+}
+
+h4{
+    color: #9933CC;
+}
+
+.subtitle 
+{
+    color: #9933CC;
+    opacity: 0.8;
+}
 /* extra div pour la bordure video  */
 .embed-border
 {
