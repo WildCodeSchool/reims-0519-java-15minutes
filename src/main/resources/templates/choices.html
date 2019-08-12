@@ -20,7 +20,8 @@
   <body class="container-fluid d-flex flex-column justify-content-between p-3">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href=""><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href=""><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>     
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
@@ -39,7 +40,7 @@
                   <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#">Hypnothérapeutes</a>
+                  <a class="nav-link" th:href="@{/list}">Hypnothérapeutes</a>
               </li>
           </ul>
       </div>
@@ -50,13 +51,13 @@
     <p class="subtitle">Comment rendre votre quotidien meilleur ?</p>
     <!--buttons test-->
       <div class="containerButtons">
-        <button href="#" type="button" class="btn btn-primary btn-lg btn-block mb-3">En finir avec ma phobie</button>
-        <button href="#" type="button" class="btn btn-secondary btn-lg btn-block mb-3">Dire stop à la cigarette</button>
-        <button href="#" type="button" class="btn btn-tertiary btn-lg btn-block mb-3">Retrouver un poids normal</button>
-        <button href="#" type="button" class="btn btn-quaternary btn-lg btn-block mb-3">Stop à mes troubles du sommeil</button>
-        <button href="#" type="button" class="btn btn-quinary btn-lg btn-block mb-3">Me relaxer</button>
-        <button href="#" type="button" class="btn btn-senary btn-lg btn-block mb-3">Apaiser angoisses/stress/anxiété</button>
-        <button href="#" type="button" class="btn btn-septenary btn-lg btn-block mb-3">Regagner confiance en moi</button>
+        <a class="btn btn-primary btn-block mb-3" th:href="@{/list}" role="button">En finir avec ma phobie</a>
+        <a class="btn btn-secondary btn-block mb-3" href="" role="button">stop à la cigarette</button>
+        <a class="btn btn-tertiary btn-block mb-3" href="" role="button">Retrouver un poids normal</button>
+        <a class="btn btn-quaternary btn-block mb-3" href="" role="button">troubles du sommeil</button>
+        <a class="btn btn-quinary btn-block mb-3" href="" role="button">Me relaxer</button>
+        <a class="btn btn-senary btn-block mb-3" href="" role="button">angoisses/stress/anxiété</button>
+        <a class="btn btn-septenary btn-block mb-3" href="" role="button">Regagner confiance en moi</button>
       </div>
 
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

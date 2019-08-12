@@ -34,6 +34,11 @@ class PageController {
         return "resultSurvey";
     }
 
+    @GetMapping("/list")
+    public String list(Model model) {
+        return "list";
+    }
+
     /* 
     model.addAttribute("preSurvey", "preSurvey");
     @GetMapping("/questions")
