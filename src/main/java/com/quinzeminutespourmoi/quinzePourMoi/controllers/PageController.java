@@ -3,32 +3,37 @@ package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class PageController {
 
     @GetMapping("/")
     public String intro(Model model) {
+        model.addAttribute("index", "index");
         return "intro";
     }
 
     @GetMapping("/preSurvey")
     public String preSurvey(Model model) {
+        model.addAttribute("preSurvey", "preSurvey");
         return "preSurvey";
     }
 
     @GetMapping("/choices")
     public String choices(Model model) {
+        model.addAttribute("choices", "choices");
         return "choices";
     }
 
 
     @GetMapping("/about-us")
     public String aboutUs(Model model) {
+        model.addAttribute("about-us", "about us");
         return "about-us";
     }
 
-    @GetMapping("/questions")
+    /*@GetMapping("/questions")
     public String prepaQuest(@RequestParam Integer page, Model model) {
         if(page) { // sous-entendu page != null
             if(page.equals(1)) {
@@ -51,6 +56,6 @@ class PageController {
                 return "";
             }
         }
-        return "resultSurvey"
-    }
+        return "resultSurvey";
+    }*/
 }
