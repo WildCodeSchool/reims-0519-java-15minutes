@@ -27,23 +27,23 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">15' c'est quoi ?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Mon suivi</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Un autre besoin</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Hypnothérapeutes</a>
-            </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" th:text=${about-us} href="about-us.html">15' c'est quoi ?</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Mon suivi</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" th:text=${choices} href="choices.html">Un autre besoin</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Hypnothérapeutes</a>
+              </li>
           </ul>
-        </div>
+      </div>
       </nav>
     </header>
     
@@ -51,7 +51,7 @@
     <p class="subtitle">Comment rendre votre quotidien meilleur ?</p>
     <!--buttons test-->
       <div class="containerButtons">
-        <button href="#" type="button" class="btn btn-primary btn-lg btn-block mb-3">En finir avec ma phobie</button>
+        <button type="button" href=".../templates/resultSurvey.html" class="btn btn-primary btn-lg btn-block mb-3">En finir avec ma phobie</button>
         <button href="#" type="button" class="btn btn-secondary btn-lg btn-block mb-3">Dire stop à la cigarette</button>
         <button href="#" type="button" class="btn btn-tertiary btn-lg btn-block mb-3">Retrouver un poids normal</button>
         <button href="#" type="button" class="btn btn-quaternary btn-lg btn-block mb-3">Stop à mes troubles du sommeil</button>
