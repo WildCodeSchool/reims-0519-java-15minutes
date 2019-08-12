@@ -20,8 +20,7 @@
   <body class="container-fluid d-flex flex-column justify-content-between p-3">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img class="ml-auto logo" src="../static/img/logo15.png" class="mx-auto img-responsive " alt="Responsive image"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href=""><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
@@ -31,13 +30,13 @@
                   <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" th:text=${about-us} href="about-us.html">15' c'est quoi ?</a>
+                <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="#">Mon suivi</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" th:text=${choices} href="choices.html">Un autre besoin</a>
+                  <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="#">Hypnothérapeutes</a>
@@ -51,7 +50,7 @@
     <p class="subtitle">Comment rendre votre quotidien meilleur ?</p>
     <!--buttons test-->
       <div class="containerButtons">
-        <button type="button" href=".../templates/resultSurvey.html" class="btn btn-primary btn-lg btn-block mb-3">En finir avec ma phobie</button>
+        <button href="#" type="button" class="btn btn-primary btn-lg btn-block mb-3">En finir avec ma phobie</button>
         <button href="#" type="button" class="btn btn-secondary btn-lg btn-block mb-3">Dire stop à la cigarette</button>
         <button href="#" type="button" class="btn btn-tertiary btn-lg btn-block mb-3">Retrouver un poids normal</button>
         <button href="#" type="button" class="btn btn-quaternary btn-lg btn-block mb-3">Stop à mes troubles du sommeil</button>

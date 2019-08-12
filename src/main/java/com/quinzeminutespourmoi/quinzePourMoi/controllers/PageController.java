@@ -15,23 +15,27 @@ class PageController {
 
     @GetMapping("/preSurvey")
     public String preSurvey(Model model) {
-        model.addAttribute("preSurvey", "preSurvey");
         return "preSurvey";
     }
 
     @GetMapping("/choices")
     public String choices(Model model) {
-        model.addAttribute("choices", "choices");
         return "choices";
     }
 
 
     @GetMapping("/about-us")
     public String aboutUs(Model model) {
-        model.addAttribute("aboutUs", "about us");
         return "about-us";
     }
 
+    @GetMapping("/resultSurvey")
+    public String resultSurvey(Model model) {
+        return "resultSurvey";
+    }
+
+    /* 
+    model.addAttribute("preSurvey", "preSurvey");
     @GetMapping("/questions")
     public String prepaQuest(@RequestParam Integer page, Model model) {
         if(page) { // sous-entendu page != null
@@ -56,5 +60,5 @@ class PageController {
             }
         }
         return "resultSurvey";
-    }
+    } */
 }
