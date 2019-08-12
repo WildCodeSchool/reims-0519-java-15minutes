@@ -96,5 +96,72 @@ h4{
     position: relative;
     overflow: hidden;
     height: 0;
-    padding-bottom: 56.25%;
+}
+
+
+/* list praticiens */
+
+.list-group-item{
+    padding: 10px;
+}
+
+.list-group-item:hover{
+    background: #f1f1f1;
+}
+
+.user-img img{
+    height: 70px;
+    width: 70px;
+}
+
+.card-header ul{
+    list-style: none;
+}
+
+.card-header ul li a{
+    font-size: 25px;
+    outline: none;
+}
+
+.search-div{
+    display: none;
+}
+.user-detail{
+    font-size: 14px;
+}
+
+
+/* Si elle porte en plus la classe '.gold', elle sera en jaune. */
+.fa-star.gold {
+	color: #ffdc0f;
+}
+
+/* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
+.rating {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Le groupe '.stars' positionne les étoiles
+        les unes à côté des autres sans espacements. */
+.stars {
+    display: inline-flex;
+    justify-content: center;
+}
+
+/**
+    * Et là opère la magie du ':hover' !
+    */
+
+/* A l'état :hover sur le parent '.rating',
+        on force TOUTES les étoiles à passer en jaune. */
+.stars:hover .fa-star {
+    color: #ffdc0f;
+}
+/* Et si la souris survole une étoile en particulier,
+        on sélectionne toutes les étoiles qui sont APRÈS celle-ci
+        grâce à l'opérateur '~' et on les force en GRIS */
+.stars .fa-star:hover ~ .fa-star {
+    color: gray;
 }
