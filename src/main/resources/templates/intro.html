@@ -17,6 +17,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#"><img class="ml-auto logo mx-auto img-fluid " th:src="@{/img/logo15.png}" alt="Responsive image"></a>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,13 +28,13 @@
                         <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">15' c'est quoi ?</a>
+                        <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Mon suivi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Un autre besoin</a>
+                        <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Hypnothérapeutes</a>
@@ -51,6 +52,7 @@
         <input id="status" name="status" type="hidden" value="xm234jq">
         <input id="map-link" name="map-link" type="hidden" value="xm234jq">
     </div>
+
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
