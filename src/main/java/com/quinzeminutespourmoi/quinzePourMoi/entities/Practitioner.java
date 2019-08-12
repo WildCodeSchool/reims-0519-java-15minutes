@@ -10,9 +10,10 @@ public class Practitioner{
     public Practitioner(){
     }
 
-    public Practitioner(String speciality, String phone, String mail,
+    public Practitioner(String description, String phone, String mail,
     String adr_num, String adr_street, String adr_postal, String town){
 
+        this.description = description;
         this.phone = phone;
         this.mail = mail;
         this.adr_num = adr_num;
@@ -24,6 +25,7 @@ public class Practitioner{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String description;
     private String phone;
     private String mail;
     private String adr_num;
@@ -81,5 +83,13 @@ public class Practitioner{
 
     public void setTown(String town) {
         this.town = town;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
