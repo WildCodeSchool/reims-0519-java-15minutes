@@ -165,3 +165,85 @@ h4{
 .stars .fa-star:hover ~ .fa-star {
     color: gray;
 }
+
+.fa-star.gold {
+	color: #ffdc0f;
+}
+
+.rating {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.stars {
+	display: inline-flex;
+	justify-content: center;
+}
+
+.stars:hover .fa-star {
+	color: #ffdc0f;
+}
+
+.stars .fa-star:hover ~ .fa-star {
+	color: gray;
+}
+
+html { 
+    margin-top: 2em; 
+    text-align: center; 
+    font-family: 'Droid Sans', sans-serif; 
+    font-size: 1.4rem; 
+}
+a { 
+    color: crimson; 
+    font-weight: 600; 
+    transition: all 0.8s cubic-bezier(.14,1.36,.5,.88); 
+    display: inline-block; 
+}
+
+.xavier{
+    max-width: 50%;
+    height: auto;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #8c56b8;
+    border-radius: 50%;
+}
+
+.fa-map-marker-alt{
+    color: #8c56b8;
+}
+
+.fa-phone-alt{
+    color: #8c56b8;
+}
+
+.fa-at{
+    color: #8c56b8;
+}
+
+.fa-quote-right{
+    color: #8c56b8;
+}
+
+.fa-comment-alt{
+    color: #8c56b8;
+}
+
+.close{
+    color: #8c56b8;
+}
+
+.btn-infos{
+    background-color: #8c56b8;
+    border-style: none;
+    border-radius: 50%;
+}
+
+.btn-info{
+    background-color: #8c56b8;
+    border-style: none;
+}
+
+
