@@ -10,7 +10,6 @@ class PageController {
 
     @GetMapping("/")
     public String intro(Model model) {
-        model.addAttribute("index", "index");
         return "intro";
     }
 
@@ -29,11 +28,11 @@ class PageController {
 
     @GetMapping("/about-us")
     public String aboutUs(Model model) {
-        model.addAttribute("about-us", "about us");
+        model.addAttribute("aboutUs", "about us");
         return "about-us";
     }
 
-    /*@GetMapping("/questions")
+    @GetMapping("/questions")
     public String prepaQuest(@RequestParam Integer page, Model model) {
         if(page) { // sous-entendu page != null
             if(page.equals(1)) {
@@ -57,5 +56,5 @@ class PageController {
             }
         }
         return "resultSurvey";
-    }*/
+    }
 }
