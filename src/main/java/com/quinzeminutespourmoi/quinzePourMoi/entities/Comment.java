@@ -10,10 +10,9 @@ public class Comment{
     public Comment(){
     }
 
-    public Comment(String title, String content, String visit){
+    public Comment(String title, String content){
         this.title = title;
         this.content = content;
-        this.visit = visit;
     }
 
     @Id
@@ -21,7 +20,6 @@ public class Comment{
     private Long id;
     private String title;
     private String content;
-    private String visit;
 
     public Long getId() {
         return id;
@@ -41,13 +39,5 @@ public class Comment{
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public String getVisit() {
-        return visit;
-    }
-
-    public void setVisit(String visit) {
-        this.visit = visit;
     }
 }
