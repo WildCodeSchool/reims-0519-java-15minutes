@@ -39,6 +39,13 @@ class PageController {
         return "list";
     }
 
+    @GetMapping("/infos")
+    public String infos(Model model) {
+        return "infos";
+    }
+
+
+
     /* 
     model.addAttribute("preSurvey", "preSurvey");
     @GetMapping("/questions")
