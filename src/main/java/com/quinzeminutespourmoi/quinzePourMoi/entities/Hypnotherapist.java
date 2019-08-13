@@ -6,11 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Practitioner{
-    public Practitioner(){
+public class Hypnotherapist{
+    public Hypnotherapist(){
     }
 
-    public Practitioner(String description, String phone, String mail,
+    public Hypnotherapist(String description, String phone, String mail,
     String adr_num, String adr_street, String adr_postal, String town){
 
         this.description = description;
