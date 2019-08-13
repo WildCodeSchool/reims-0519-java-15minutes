@@ -41,38 +41,42 @@
 }
 
 .btn{
-    border: solid 1px black;
     color: white;
+    border-radius: 0;
 }
+.btn-primar{
+    background-image: linear-gradient(135deg, rgba(76, 76, 76, 0.04) 0%, rgba(76, 76, 76, 0.04) 10%,rgba(149, 149, 149, 0.04) 10%, rgba(149, 149, 149, 0.04) 100%),linear-gradient(90deg, rgba(196, 196, 196, 0.04) 0%, rgba(196, 196, 196, 0.04) 59%,rgba(68, 68, 68, 0.04) 59%, rgba(68, 68, 68, 0.04) 100%),linear-gradient(45deg, rgba(39, 39, 39, 0.01) 0%, rgba(39, 39, 39, 0.01) 9%,rgba(218, 218, 218, 0.01) 9%, rgba(218, 218, 218, 0.01) 100%),linear-gradient(0deg, rgba(26, 26, 26, 0.04) 0%, rgba(26, 26, 26, 0.04) 33%,rgba(90, 90, 90, 0.04) 33%, rgba(90, 90, 90, 0.04) 100%),linear-gradient(135deg, rgba(37, 37, 37, 0.07) 0%, rgba(37, 37, 37, 0.07) 46%,rgba(50, 50, 50, 0.07) 46%, rgba(50, 50, 50, 0.07) 100%),linear-gradient(90deg, rgb(8, 28, 65),rgb(16, 173, 226));
+}
+
 .btn-secondary
 {
-background-color: yellowgreen;
+background-image: linear-gradient(45deg, rgb(40, 23, 76),rgb(232, 90, 94));
 
 }
 
 .btn-tertiary
 {
-background-color: red;
+background-image: linear-gradient(45deg, rgb(56, 120, 78),rgb(175, 255, 102));
 }
 
 .btn-quaternary
 {
-background-color: gray;
+background-image: linear-gradient(45deg, rgb(217, 134, 15),rgb(225, 99, 66));
 }
 
 .btn-quinary
 {
-background-color: blueviolet;
+background-image: linear-gradient(90deg, rgb(111, 34, 83),rgb(253, 64, 149));
 }
 
 .btn-senary
 {
-background-color: green;
+background-image: linear-gradient(90deg, rgb(43, 33, 93),rgb(81, 240, 237));
 }
 
 .btn-septenary
 {
-background-color: gold;
+background-image: linear-gradient(90deg, rgb(171, 118, 76),rgb(235, 193, 30));
 }
 
 h4{
@@ -122,12 +126,6 @@ h4{
 	color: gray;
 }
 
-html { 
-    margin-top: 2em; 
-    text-align: center; 
-    font-family: 'Droid Sans', sans-serif; 
-    font-size: 1.4rem; 
-}
 a { 
     color: crimson; 
     font-weight: 600; 
