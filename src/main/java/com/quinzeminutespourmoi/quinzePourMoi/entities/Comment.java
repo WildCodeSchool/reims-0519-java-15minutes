@@ -10,9 +10,11 @@ public class Comment{
     public Comment(){
     }
 
-    public Comment(String title, String content){
+    public Comment(String title, String content, int hypnotherapist_id, int user_id){
         this.title = title;
         this.content = content;
+        this.hypnotherapist_id = hypnotherapist_id;
+        this.user_id = user_id;
     }
 
     @Id
@@ -20,6 +22,8 @@ public class Comment{
     private Long id;
     private String title;
     private String content;
+    private int hypnotherapist_id;
+    private int user_id;
 
     public Long getId() {
         return id;
@@ -39,5 +43,25 @@ public class Comment{
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public int getHypnotherapist_id() {
+        return hypnotherapist_id;
+    }
+
+    public void setHypnotherapist_id(int hypnotherapist_id) {
+        this.hypnotherapist_id = hypnotherapist_id;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 }
