@@ -1,5 +1,7 @@
 package com.quinzeminutespourmoi.quinzePourMoi.entities;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,11 +12,12 @@ public class Comment{
     public Comment(){
     }
 
-    public Comment(String title, String content, Long hypnotherapist_id, Long user_id){
+    public Comment(String title, String content, Long hypnotherapist_id, Long user_id, Date date){
         this.title = title;
         this.content = content;
         this.hypnotherapist_id = hypnotherapist_id;
         this.user_id = user_id;
+        this.date = date;
     }
 
     @Id
@@ -24,6 +27,7 @@ public class Comment{
     private String content;
     private Long hypnotherapist_id;
     private Long user_id;
+    private Date date;
 
     public Long getId() {
         return id;
@@ -63,5 +67,13 @@ public class Comment{
 
     public void setUser_id(Long user_id) {
         this.user_id = user_id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
