@@ -6,13 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Comment{
-    public Comment(){
+public class Notification{
+
+    public Notification() {
     }
 
-    public Comment(String title, String content, Long hypnotherapist_id, Long user_id){
-        this.title = title;
-        this.content = content;
+    public Notification(Long hypnotherapist_id, Long user_id) {
         this.hypnotherapist_id = hypnotherapist_id;
         this.user_id = user_id;
     }
@@ -20,29 +19,11 @@ public class Comment{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String content;
     private Long hypnotherapist_id;
     private Long user_id;
 
     public Long getId() {
         return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 
     public void setId(Long id) {
