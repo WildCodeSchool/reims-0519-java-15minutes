@@ -34,7 +34,7 @@ class PageController {
         return "resultSurvey";
     }
 
-    /* 
+    /*
     model.addAttribute("preSurvey", "preSurvey");
     @GetMapping("/questions")
     public String prepaQuest(@RequestParam Integer page, Model model) {
