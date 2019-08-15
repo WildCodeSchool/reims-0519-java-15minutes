@@ -18,9 +18,10 @@
   <body class="container-fluid d-flex flex-column justify-content-between prepaQuestBg p-3">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+                </button>
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -49,9 +50,11 @@
             <p class="intro mb-3 text-left">
                 Notre objectif est de comprendre au mieux ce que nous pouvons faire pour vous aider.
                 <br>
-                <br>En effet nous voulons vous proposer une solution personnalisée.
                 <br>
-                <br>Pour ceci, complétez ce rapide questionnaire.
+                En effet nous voulons vous proposer une solution personnalisée.
+                <br>
+                <br>
+                Pour ceci, complétez ce rapide questionnaire.
             </p>
             <a th:href="@{/choices}" class="btn btn-primary btn-continue mb-3 btn-block btn-lg">Continuer</a>
         </div>
