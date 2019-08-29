@@ -16,8 +16,8 @@
 <body class="container-fluid d-flex flex-column justify-content-between indexBg p-3">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"><img class="ml-auto logo mx-auto img-fluid " th:src="@{/img/logo15.png}" alt="Responsive image"></a>
-
+            <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
+                th:src="@{/img/logo15.png}" src="../static/img/logo15.png" alt="Responsive image" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" th:href="@{/subscribe}">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
