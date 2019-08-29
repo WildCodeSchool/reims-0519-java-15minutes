@@ -10,10 +10,10 @@ public class Hypnotherapist{
     public Hypnotherapist(){
     }
 
-    public Hypnotherapist(Long user_id, String description, String phone,
+    public Hypnotherapist(Long userId, String description, String phone,
     String adr_num, String adr_street, String adr_postal, String town){
 
-        this.user_id = user_id;
+        this.user_id = userId;
         this.description = description;
         this.phone = phone;
         this.adr_num = adr_num;
@@ -25,7 +25,7 @@ public class Hypnotherapist{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long user_id;
+    private Long userId;
     private String description;
     private String phone;
     private String adr_num;
@@ -85,8 +85,8 @@ public class Hypnotherapist{
         this.description = description;
     }
 
-    public Long getUser_id() {
-        return user_id;
+    public Long getUserId() {
+        return userId;
     }
 
     public void setUser_id(Long user_id) {
