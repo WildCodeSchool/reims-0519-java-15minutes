@@ -13,7 +13,7 @@ public class Hypnotherapist{
     public Hypnotherapist(Long userId, String description, String phone,
     String adr_num, String adr_street, String adr_postal, String town){
 
-        this.user_id = userId;
+        this.userId = userId;
         this.description = description;
         this.phone = phone;
         this.adr_num = adr_num;
@@ -89,7 +89,7 @@ public class Hypnotherapist{
         return userId;
     }
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }
