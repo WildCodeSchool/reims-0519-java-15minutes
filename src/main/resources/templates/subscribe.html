@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15' Pour Moi</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
+
+</head>
+
+<body class="container-fluid d-flex flex-column justify-content-between  p-3">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
+                    th:src="@{/img/logo15.png}" src="../static/img/logo15.png" alt="Responsive image" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">S'inscrire / Se connecter <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mon suivi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hypnothérapeutes</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Page Content  -->
+
+    <!-- Default form register -->
+    <form class="text-center border border-light p-5" action="#!">
+
+        <p class="h4 mb-4">Inscription</p>
+
+        <div class="form-row mb-4">
+            <div class="col">
+                <!-- First name -->
+                <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Prénom">
+            </div>
+            <div class="col">
+                <!-- Last name -->
+                <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Nom">
+            </div>
+        </div>
+
+        <!-- E-mail -->
+        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+        <!-- Password -->
+        <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Mot de passe"
+            aria-describedby="defaultRegisterFormPasswordHelpBlock">
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        </small>
+
+        <!-- Sign up button -->
+        <button class="btn btn-info my-4 btn-block" type="submit">S'inscrire</button>
+
+        <hr>
+
+        <!-- Terms of service -->
+        <p>En vous inscrivant vous acceptez la
+            <a href="" target="_blank">politique de confidentialité</a>
+    </form>
+    <!-- Default form register -->
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="../static/geoFindme.js"></script>
+    <script src="../static/webStorage.js"></script>
+    <script src="../static/all.js"></script>
+
+</body>
+
+</html>
