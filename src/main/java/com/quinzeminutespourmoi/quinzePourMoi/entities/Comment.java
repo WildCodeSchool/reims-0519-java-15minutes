@@ -12,12 +12,12 @@ public class Comment{
     public Comment(){
     }
 
-    public Comment(String title, String content, Long hypnotherapistId, Long userId, Date date){
+    public Comment(String title, String content, Long hypnotherapistId, Long userId, CreationDate date){
         this.title = title;
         this.content = content;
         this.hypnotherapistId = hypnotherapistId;
         this.userId = userId;
-        this.date = date;
+        this.creationDate = creationDate;
     }
 
     @Id
@@ -27,7 +27,7 @@ public class Comment{
     private String content;
     private Long hypnotherapistId;
     private Long userId;
-    private Date date;
+    private Date creationDate;
 
     public Long getId() {
         return id;
@@ -69,11 +69,11 @@ public class Comment{
         this.userId = userId;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getCreationDate() {
+        return creationDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setCreationDate(Date date) {
+        this.CreationDate = creationDate;
     }
 }
