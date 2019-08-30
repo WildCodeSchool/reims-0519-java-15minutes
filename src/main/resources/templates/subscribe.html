@@ -53,9 +53,10 @@
             <input type="password" placeholder="Mot de passe" th:field="*{password}">
             <input type="text" placeholder="Prénom" th:field="*{firstname}">
             <input type="text" placeholder="Nom" th:field="*{lastname}">
+            <input type="hidden" name="role" value="user">
         <br/>
         <div class="d-flex justify-content-center mr-5">
-                <button type="button" class="btn btn-primary btn-lg" th:href="@{/login}">Valider</button>
+                <button type="submit" class="btn btn-primary btn-lg">Valider</button>
         </div>
     </form>
 

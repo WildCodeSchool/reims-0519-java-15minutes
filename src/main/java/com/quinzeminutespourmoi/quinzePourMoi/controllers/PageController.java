@@ -1,9 +1,10 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
+import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class PageController {
@@ -36,6 +37,7 @@ class PageController {
 
     @GetMapping("/subscribe")
     public String subscribe(Model model) {
+        model.addAttribute("user", new User());
         return "subscribe";
     }
 
