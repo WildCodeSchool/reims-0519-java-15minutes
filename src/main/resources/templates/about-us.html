@@ -2,75 +2,89 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>15' Pour Moi</title>
+  <title>15' Pour Moi</title>
 
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
 
 </head>
 
-  <body class="container-fluid d-flex flex-column justify-content-between ">
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
-          th:src="@{/img/logo15.png}" src="../static/img/logo15.png" alt="Responsive image" /></a>              <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Mon suivi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Hypnothérapeutes</a>
-                </li>
-            </ul>
-        </div>
-      </nav>
-    </header>
+<body class="container-fluid d-flex flex-column justify-content-between ">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}"
+          src="../static/img/logo15.png" alt="Responsive image" /></a> <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <!-- Page Video  -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Mon suivi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hypnothérapeutes</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-        <div class="embe            <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
-          th:src="@{/img/logo15.png}" src="../static/img/logo15.png" alt="Responsive image" /></a>d-border">
-          <div class="embed-responsive">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Sw-jhxzb76Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
+  <!-- Page Video  -->
 
-        <!-- Page Content  -->
-    
-        <div class="text-right">
-            <p class="intro mb-3 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
-            <a href="#" class="btn btn-primary btn-continue mb-3 btn-block btn-lg">Continuer</a>
-        </div>
-        
-        
+  <div class="embe            <a class=" navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
+      th:src="@{/img/logo15.png}" src="../static/img/logo15.png" alt="Responsive image" /></a>d-border">
+    <div class="embed-responsive">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Sw-jhxzb76Q?rel=0" frameborder="0"
+        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
 
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <!-- jQuery Custom Scroller CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+  <!-- Page Content  -->
+
+  <div class="text-right">
+    <p class="intro mb-3 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+      dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+      deserunt mollit anim id est laborum..</p>
+    <a href="#" class="btn btn-primary btn-continue mb-3 btn-block btn-lg">Continuer</a>
+  </div>
 
 
-  </body>
+
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+  <!-- jQuery Custom Scroller CDN -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+</body>
+
 </html>
