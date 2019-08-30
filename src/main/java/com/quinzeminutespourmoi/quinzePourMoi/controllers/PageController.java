@@ -33,32 +33,4 @@ class PageController {
     public String resultSurvey(Model model) {
         return "resultSurvey";
     }
-
-    /* 
-    model.addAttribute("preSurvey", "preSurvey");
-    @GetMapping("/questions")
-    public String prepaQuest(@RequestParam Integer page, Model model) {
-        if(page) { // sous-entendu page != null
-            if(page.equals(1)) {
-                return "";
-            }
-            if(page.equals(2)) {
-                return "";
-            }
-            if(page.equals(3)) {
-                return "";
-            }
-            if(page.equals(4)) {
-                return "";
-            }
-            // les pages 2, 3... seront à rajouter ici
-            if(page.equals(100)) {
-                return "";
-            }
-            if(page.equals(101)) {
-                return "";
-            }
-        }
-        return "resultSurvey";
-    } */
 }
