@@ -48,60 +48,35 @@
         </nav>
     </header>
 
-    <form action="#" th:action="@{/subscribe}" th:object="${user}" method="POST">
-            <input type="email" placeholder="E-mail" th:field="*{mail}">
-            <input type="password" placeholder="Mot de passe" th:field="*{password}">
-            <input type="text" placeholder="Prénom" th:field="*{firstname}">
-            <input type="text" placeholder="Nom" th:field="*{lastname}">
-            <input type="hidden" name="role" value="user">
-        <br/>
-        <div class="d-flex justify-content-center mr-5">
-                <button type="submit" class="btn btn-primary btn-lg">Valider</button>
-        </div>
-    </form>
-
-
-
-
-    <!-- Page Content  -->
-
-    <!-- Formulaire inscription -->
-<!--     <form action="#" class="text-center border border-light p-5" th:action="@{/subscription}" th:object="${user}"
-        method="post">
-
+    <form action="#" class="text-center border border-light p-5" th:action="@{/subscribe}" th:object="${user}"
+        method="POST">
         <p class="h4 mb-4">Inscription</p>
-
         <div class="form-row mb-4">
             <div class="col">
-
-                <input type="text" th:field="*{firstname}" class="form-control" placeholder="Prénom">
+                <input class="form-control" type="text" placeholder="Prénom" th:field="*{firstname}">
             </div>
             <div class="col">
-
-                <input type="text" th:field="*{lastname}" class="form-control" placeholder="Nom">
+                <input class="form-control" type="text" placeholder="Nom" th:field="*{lastname}">
             </div>
         </div>
-
-
-        <input type="email" th:field="*{mail}" class="form-control mb-4" placeholder="E-mail">
-
-
-        <input type="password" th:field="*{password}" class="form-control" placeholder="Mot de passe"
-            aria-describedby="defaultRegisterFormPasswordHelpBlock">
+        <input class="form-control mb-4" type="email" placeholder="E-mail" th:field="*{mail}">
+        <input class="form-control" type="password" placeholder="Mot de passe" th:field="*{password}">
         <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
         </small>
+        <input type="hidden" name="role" value="user">
 
 
-        <button class="btn btn-info my-4 btn-block" th:text="#{subscription}" type="submit">S'inscrire</button>
+        <br />
+        <div class="d-flex justify-content-center mr-5">
+            <button type="submit" class="btn btn-info my-4 btn-block">Valider</button>
+        </div>
 
         <hr>
 
 
         <p>En vous inscrivant vous acceptez la
             <a href="" target="_blank">politique de confidentialité</a>
-    </form> --> 
-    <!-- Default form register -->
-
+    </form> 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
