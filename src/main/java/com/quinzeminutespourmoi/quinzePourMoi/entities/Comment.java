@@ -12,7 +12,7 @@ public class Comment{
     public Comment(){
     }
 
-    public Comment(String title, String content, Long hypnotherapistId, Long userId, CreationDate date){
+    public Comment(String title, String content, Long hypnotherapistId, Long userId, Date creationDate){
         this.title = title;
         this.content = content;
         this.hypnotherapistId = hypnotherapistId;
@@ -73,7 +73,7 @@ public class Comment{
         return creationDate;
     }
 
-    public void setCreationDate(Date date) {
-        this.CreationDate = creationDate;
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 }
