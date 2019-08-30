@@ -48,14 +48,15 @@
         </nav>
     </header>
 
-    <form action="#" class="text-center border border-light p-5" th:action="@{/subscribe}" th:object="${user}"
+
+    <form action="#" class="text-center border border-light " th:action="@{/subscribe}" th:object="${user}"
         method="POST">
         <p class="h4 mb-4">Inscription</p>
         <div class="form-row mb-4">
-            <div class="col">
+            <div class="col-6">
                 <input class="form-control" type="text" placeholder="Prénom" th:field="*{firstname}">
             </div>
-            <div class="col">
+            <div class="col-6">
                 <input class="form-control" type="text" placeholder="Nom" th:field="*{lastname}">
             </div>
         </div>
@@ -66,17 +67,12 @@
         <input type="hidden" name="role" value="user">
 
 
-        <br />
-        <div class="d-flex justify-content-center mr-5">
+        <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-info my-4 btn-block">Valider</button>
         </div>
-
-        <hr>
-
-
-        <p>En vous inscrivant vous acceptez la
+        <p class="politique">En vous inscrivant vous acceptez la
             <a href="" target="_blank">politique de confidentialité</a>
-    </form> 
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
