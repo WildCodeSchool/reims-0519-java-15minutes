@@ -45,39 +45,36 @@
     color: white;
     border-radius: 0;
  }
- .btn-primar{
-    background-image: linear-gradient(135deg, rgba(76, 76, 76, 0.04) 0%, rgba(76, 76, 76, 0.04) 10%,rgba(149, 149, 149, 0.04) 10%, rgba(149, 149, 149, 0.04) 100%),linear-gradient(90deg, rgba(196, 196, 196, 0.04) 0%, rgba(196, 196, 196, 0.04) 59%,rgba(68, 68, 68, 0.04) 59%, rgba(68, 68, 68, 0.04) 100%),linear-gradient(45deg, rgba(39, 39, 39, 0.01) 0%, rgba(39, 39, 39, 0.01) 9%,rgba(218, 218, 218, 0.01) 9%, rgba(218, 218, 218, 0.01) 100%),linear-gradient(0deg, rgba(26, 26, 26, 0.04) 0%, rgba(26, 26, 26, 0.04) 33%,rgba(90, 90, 90, 0.04) 33%, rgba(90, 90, 90, 0.04) 100%),linear-gradient(135deg, rgba(37, 37, 37, 0.07) 0%, rgba(37, 37, 37, 0.07) 46%,rgba(50, 50, 50, 0.07) 46%, rgba(50, 50, 50, 0.07) 100%),linear-gradient(90deg, rgb(8, 28, 65),rgb(16, 173, 226));
- }
- 
- .btn-secondary
- {
- background-image: linear-gradient(45deg, rgb(40, 23, 76),rgb(232, 90, 94));}
- 
- .btn-tertiary
- {
- background-image: linear-gradient(45deg, rgb(56, 120, 78),rgb(175, 255, 102));
- }
- .btn-quaternary
- {
- background-image: linear-gradient(45deg, rgb(217, 134, 15),rgb(225, 99, 66));
+
+.btn-primar {
+background-color: rgb(208, 152, 236);
  }
 
- .btn-quinary
- {
- background-image: linear-gradient(90deg, rgb(111, 34, 83),rgb(253, 64, 149));
+.btn-secondary {
+ background-color: rgb(198, 126, 235);
  }
 
- .btn-senary
- {
- background-image: linear-gradient(90deg, rgb(43, 33, 93),rgb(81, 240, 237));
- }
- 
- .btn-septenary
- {
- background-image: linear-gradient(90deg, rgb(171, 118, 76),rgb(235, 193, 30));
+.btn-tertiary {
+ background-color:rgb(188, 105, 230);
  }
 
-h4{
+ .btn-quaternary {
+ background-color: rgb(178, 70, 211);
+ }
+
+ .btn-quinary {
+ background-color:rgb(158, 16, 214);
+ }
+
+.btn-senary {
+ background-color: rgb(148, 16, 214);
+ }
+
+ .btn-septenary {
+ background-color:rgb(138, 20, 197);
+ }
+
+h4 {
     color: #9933CC;
 }
 
@@ -135,7 +132,7 @@ h4{
 
 /* Si elle porte en plus la classe '.gold', elle sera en jaune. */
 .fa-star.gold {
-	color: #ffdc0f;
+	color: #9933CC;
 }
 
 /* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
@@ -159,7 +156,7 @@ h4{
 /* A l'état :hover sur le parent '.rating',
         on force TOUTES les étoiles à passer en jaune. */
 .stars:hover .fa-star {
-    color: #ffdc0f;
+    color: #9933CC;
 }
 /* Et si la souris survole une étoile en particulier,
         on sélectionne toutes les étoiles qui sont APRÈS celle-ci
@@ -169,7 +166,7 @@ h4{
 }
 
 .fa-star.gold {
-	color: #ffdc0f;
+	color: #9933CC;
 }
 
 .rating {
@@ -184,7 +181,7 @@ h4{
 }
 
 .stars:hover .fa-star {
-	color: #ffdc0f;
+	color: #9933CC;
 }
 
 .stars .fa-star:hover ~ .fa-star {
@@ -241,5 +238,3 @@ a {
     background-color: #8c56b8;
     border-style: none;
 }
-
-
