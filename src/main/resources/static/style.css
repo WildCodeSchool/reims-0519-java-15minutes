@@ -251,11 +251,15 @@ a {
     color: #8c56b8;
 }
 
-.fa-bell{
+.fa-portrait{
     color: #8c56b8;
 }
 
-.fa-star{
-    color: #8c56b8;
+.avis{
+    background-color: #8c56b8;
+}
+
+.notification{
+    background-color: #73568f;
 }
 
