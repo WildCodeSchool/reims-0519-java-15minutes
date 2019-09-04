@@ -31,5 +31,5 @@ class PageController {
     public String resultSurvey(Model model) {
         return "resultSurvey";
     }
-}
 
+}
