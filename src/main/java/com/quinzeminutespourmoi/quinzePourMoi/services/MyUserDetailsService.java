@@ -17,13 +17,11 @@ public class MyUserDetailsService implements UserDetailsService {
    @Autowired
    private UserRepository userRepository;
 
+   @Autowired
+   PasswordEncoder passwordEncoder;
+
    @Override
-   public UserDetails loadUserByUsername(String mail) {
-       PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-       if(userRepository.count() == 0) {
-           User user = new User("firstname", "lastname", "mail", encoder.encode("password"),"role");
-           userRepository.save(user);
-       }
+   public UserDetails loadUserByUsername(String mail) {       
        User user = userRepository.findByMail(mail);
        if (user == null) {
            throw new UsernameNotFoundException(mail);

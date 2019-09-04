@@ -82,16 +82,10 @@ public class User implements UserDetails {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
-    }
-
-    /* @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		return null;
-    } */
-    
+    }    
 
     @Override
-   public Collection<? extends GrantedAuthority> getAuthorities() {
+    public Collection<? extends GrantedAuthority> getAuthorities() {
        final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
        if(getMail().equals(mail)) {
            authorities.add(new SimpleGrantedAuthority("ADMIN"));
