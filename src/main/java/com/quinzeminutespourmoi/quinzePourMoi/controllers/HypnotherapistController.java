@@ -11,4 +11,8 @@ class HypnotherapistController {
     public String hypnotherapists(Model model){
         return "hypnotherapists";
     }
+    @GetMapping("/infos")
+    public String infos(Model model) {
+        return "infos";
+    }
 }

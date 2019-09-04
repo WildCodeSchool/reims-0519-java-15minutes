@@ -31,9 +31,4 @@ class PageController {
     public String resultSurvey(Model model) {
         return "resultSurvey";
     }
-
-    @GetMapping("/infos")
-    public String infos(Model model) {
-        return "infos";
-    }
 }
