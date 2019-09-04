@@ -6,4 +6,6 @@ import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
+
+	public User findByMail(String mail);
 }

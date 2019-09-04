@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <title>Bienvenue sur Ezycom</title>
+   <link rel="icon" type="image/png" href="../static/logo.png" th:href="@{/logo.png}">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="../static/login.css" th:href="@{/login.css}">
+</head>
+<body class="container-fluid text-center">
+   <header><img src="../static/logo-ezyperf.png" th:src="@{/images/logo-ezyperf.png}" class="pt-3 mb-3 img-fluid"></header>
+   <form th:action="@{/login}" method="post" th:object="${user}" class="d-inline-block shadow-sm p-3 text-left rounded">
+       <p class="form-row mb-3 text-center alert alert-warning">Email ou mot de passe incorrect.</p>
+       <div class="form-group mb-3" >
+           <label for="mail"  class="mb-2">Email</label>
+           <input class="form-control" type="text"  name="username" id="mail" placeholder="exemple@mail.com" required="required">
+       </div>
+       <div class="form-group mb-3" >
+           <label for="password"  class="mb-2" >Mot de passe</label>
+           <input class="form-control" type="password"  name="password" id="password" placeholder="••••••••••" required="required">
+       </div>
+       <div class="mb-3 text-right">
+           <button type="submit" value="Login" class="btn btn-primary">Se connecter</button>
+       </div>
+   </form>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
