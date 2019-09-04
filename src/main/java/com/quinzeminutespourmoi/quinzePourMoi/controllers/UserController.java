@@ -4,6 +4,7 @@ import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,8 @@ class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     @GetMapping("/subscribe")
     public String subscribe(Model model) {
@@ -26,9 +29,7 @@ class UserController {
     @PostMapping("/subscribe")
     public User subscribe(@RequestParam String firstname, @RequestParam String lastname, @RequestParam String mail,
             @RequestParam String password, @RequestParam String role) {
-        return userRepository.save(new User(firstname, lastname, password, mail, role));
-        
-        
+        return userRepository.save(new User(firstname, lastname, passwordEncoder.encode(password), mail, role));
     }
 
 }
