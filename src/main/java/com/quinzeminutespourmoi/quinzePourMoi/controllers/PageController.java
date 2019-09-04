@@ -1,7 +1,5 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
-import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,5 +31,5 @@ class PageController {
     public String resultSurvey(Model model) {
         return "resultSurvey";
     }
-}
 
+}
