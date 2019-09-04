@@ -15,32 +15,34 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="#"><img class="ml-auto logo" src="../static/img/logo15.png" class="mx-auto img-responsive " alt="Responsive image"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>     
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-    
+            </button>
+        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">15' c'est quoi ?</a>
+                    <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Mon suivi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Un autre besoin</a>
+                    <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Hypnothérapeutes</a>
+                    <a class="nav-link" th:href="@{/hypnotherapists}">Hypnothérapeutes</a>
                 </li>
             </ul>
         </div>
-    </nav>
+        </nav>
+    </header>
 
 
     <div class="container ">
@@ -52,7 +54,7 @@
                     </div>
                     
                     <ul class="list-group" id="user-list">
-                        <a href="../templates/infos.html" class="list-group-item list-group-item-action">
+                        <a th:href="@{/infos}" class="list-group-item list-group-item-action">
                             <div class="row">
                                 <div class="col-12 ">
                                     <div class="row align-items-center">
@@ -76,7 +78,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="../templates/infos.html" class="list-group-item list-group-item-action">
+                        <a th:href="@{/infos}" class="list-group-item list-group-item-action">
                             <div class="row">
                                 <div class="col-12 ">
                                     <div class="row align-items-center">
@@ -87,13 +89,13 @@
                                             <h5 class="font-weight-bold">Glenda Favier</h5>
                                             <div class="user-detail">
                                                 <p><i class="fas fa-map-marker-alt mr-1 "></i>6 km</p>
-                                                        <div class="stars justify-content-start">
-                                                            <i class="fas fa-star gold"></i>
-                                                            <i class="fas fa-star gold"></i>
-                                                            <i class="fas fa-star gold"></i>
-                                                            <i class="fas fa-star gold"></i>
-                                                            <i class="fas fa-star gold"></i>
-                                                        </div>
+                                                    <div class="stars justify-content-start">
+                                                        <i class="fas fa-star gold"></i>
+                                                        <i class="fas fa-star gold"></i>
+                                                        <i class="fas fa-star gold"></i>
+                                                        <i class="fas fa-star gold"></i>
+                                                        <i class="fas fa-star gold"></i>
+                                                    </div>
                                                 <span class="fas fa-heart right float-right"></span>      
                                             </div>
                                         </div>
@@ -101,7 +103,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="../templates/infos.html" class="list-group-item list-group-item-action">
+                        <a th:href="@{/infos}" class="list-group-item list-group-item-action">
                             <div class="row">
                                 <div class="col-12 ">
                                     <div class="row align-items-center">
@@ -125,7 +127,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="../templates/infos.html" class="list-group-item list-group-item-action">
+                        <a th:href="@{/infos}" class="list-group-item list-group-item-action">
                             <div class="row">
                                 <div class="col-12 ">
                                     <div class="row align-items-center">
@@ -149,7 +151,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="../templates/infos.html" class="list-group-item list-group-item-action">
+                        <a th:href="@{/infos}" class="list-group-item list-group-item-action">
                             <div class="row">
                                 <div class="col-12 ">
                                     <div class="row align-items-center">

@@ -17,10 +17,11 @@
 
   <body class="container-fluid d-flex flex-column justify-content-between ">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href=""><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a> 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-          </button>
+            </button>
       
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -37,10 +38,10 @@
                     <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Hypnothérapeutes</a>
+                    <a class="nav-link" th:href="@{/hypnotherapists}">Hypnothérapeutes</a>
                 </li>
             </ul>
-        </div>
+          </div>
       </nav>
     </header>
 
@@ -55,8 +56,8 @@
         <!-- Page Content  -->
     
         <div class="text-right">
-            <p class="intro mb-3 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
-            <a href="#" class="btn btn-primary btn-continue mb-3 btn-block btn-lg">Continuer</a>
+            <p class="intro mb-3 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+               ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
         </div>
         
         
