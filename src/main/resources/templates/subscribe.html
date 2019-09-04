@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>15' Pour Moi</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- Custom CSS -->
+    <!-- Our Custom CSS -->
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
     <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
 
 </head>
 
-<body>
+<body class="container-fluid d-flex flex-column justify-content-between  p-3">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
-                    th:src="@{/img/logo15.png}" alt="Responsive image" /></a>
+                    th:src="@{/img/logo15.png}" src="../static/img/logo15.png" alt="Responsive image" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -42,7 +41,7 @@
                         <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/hypnotherapists}">Hypnothérapeutes</a>
+                        <a class="nav-link" href="#">Hypnothérapeutes</a>
                     </li>
                 </ul>
             </div>
@@ -50,49 +49,30 @@
     </header>
 
 
-    <div class="container ">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Résultats</h4>
-                    </div>
-
-                    <ul th:each="hypnotherapist : ${hypnotherapists}" class="list-group" id="user-list">
-                        <a th:href="@{/infos}" class="list-group-item list-group-item-action">
-                            <div class="row">
-                                <div class="col-12 ">
-                                    <div class="row align-items-center">
-                                        <div class="col-3 user-img">
-                                            <img src="http://nicesnippets.com/demo/cs-image6.jpg" alt="Glenda Favier"
-                                                class="img-responsive img-circle rounded-circle" />
-                                        </div>
-                                        <div class="col-9">
-                                            <h5 class="font-weight-bold"
-                                                th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname} ">
-                                            </h5>
-                                            <div class="user-detail">
-                                                <p><span id="dist" class="fas fa-map-marker-alt mr-1 "></span></i>km</p>
-                                                <div class="stars justify-content-start">
-                                                    <i class="fas fa-star gold"></i>
-                                                    <i class="fas fa-star gold"></i>
-                                                    <i class="fas fa-star gold"></i>
-                                                    <i class="fas fa-star gold"></i>
-                                                    <i class="fas fa-star gold"></i>
-                                                </div>
-                                                <span class="fas fa-heart right float-right"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </ul>
-                </div>
+    <form action="#" class="text-center border border-light " th:action="@{/subscribe}" th:object="${user}"
+        method="POST">
+        <p class="h4 mb-4">Inscription</p>
+        <div class="form-row mb-4">
+            <div class="col-6">
+                <input class="form-control" type="text" placeholder="Prénom" th:field="*{firstname}">
+            </div>
+            <div class="col-6">
+                <input class="form-control" type="text" placeholder="Nom" th:field="*{lastname}">
             </div>
         </div>
-    </div>
+        <input class="form-control mb-4" type="email" placeholder="E-mail" th:field="*{mail}">
+        <input class="form-control" type="password" placeholder="Mot de passe" th:field="*{password}">
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        </small>
+        <input type="hidden" name="role" value="user">
 
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-info my-4 btn-block">Valider</button>
+        </div>
+        <p class="politique">En vous inscrivant vous acceptez la
+            <a href="" target="_blank">politique de confidentialité</a>
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
