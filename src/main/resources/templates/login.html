@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-   <title>Bienvenue sur Ezycom</title>
-   <link rel="icon" type="image/png" href="../static/logo.png" th:href="@{/logo.png}">
+   <title>15' pour moi</title>
+   <link rel="icon" type="image/png" href="../static/img/logo15.png" th:href="@{/img/logo15.png}">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="../static/login.css" th:href="@{/login.css}">
+   <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
 </head>
 <body class="container-fluid text-center">
-   <header><img src="../static/logo-ezyperf.png" th:src="@{/images/logo-ezyperf.png}" class="pt-3 mb-3 img-fluid"></header>
+   <header><img src="../static/img/logo15.png" th:src="@{/img/logo15.png}" class="pt-3 mb-3 img-fluid"></header>
    <form th:action="@{/login}" method="post" th:object="${user}" class="d-inline-block shadow-sm p-3 text-left rounded">
        <p class="form-row mb-3 text-center alert alert-warning">Email ou mot de passe incorrect.</p>
        <div class="form-group mb-3" >
