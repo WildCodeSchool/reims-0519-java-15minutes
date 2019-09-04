@@ -1,36 +1,43 @@
 package com.quinzeminutespourmoi.quinzePourMoi.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
-public class Hypnotherapist{
-    public Hypnotherapist(){
+@Table(name = "hypnotherapist")
+public class Hypnotherapist {
+    public Hypnotherapist() {
     }
 
-    public Hypnotherapist(Long userId, String description, String phone,
-    String address, String adr_postal, String town){
+    public Hypnotherapist(User user, String description, String phone, String adr_num, String adr_street,
+            String adr_postal, String town) {
 
-        this.userId = userId;
+        this.user = user;
         this.description = description;
         this.phone = phone;
-        this.address = address;
+        this.adr_num = adr_num;
+        this.adr_street = adr_street;
         this.adr_postal = adr_postal;
         this.town = town;
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-    private Long userId;
     private String description;
     private String phone;
-    private String address;
+    private String adr_num;
+    private String adr_street;
     private String adr_postal;
     private String town;
 
+    @OneToOne
+    @MapsId
+    private User user;
 
     /**
      * @return Long return the id
@@ -44,20 +51,6 @@ public class Hypnotherapist{
      */
     public void setId(Long id) {
         this.id = id;
-    }
-
-    /**
-     * @return Long return the userId
-     */
-    public Long getUserId() {
-        return userId;
-    }
-
-    /**
-     * @param userId the userId to set
-     */
-    public void setUserId(Long userId) {
-        this.userId = userId;
     }
 
     /**
@@ -89,17 +82,31 @@ public class Hypnotherapist{
     }
 
     /**
-     * @return String return the address
+     * @return String return the adr_num
      */
-    public String getAddress() {
-        return address;
+    public String getAdr_num() {
+        return adr_num;
     }
 
     /**
-     * @param address the address to set
+     * @param adr_num the adr_num to set
      */
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAdr_num(String adr_num) {
+        this.adr_num = adr_num;
+    }
+
+    /**
+     * @return String return the adr_street
+     */
+    public String getAdr_street() {
+        return adr_street;
+    }
+
+    /**
+     * @param adr_street the adr_street to set
+     */
+    public void setAdr_street(String adr_street) {
+        this.adr_street = adr_street;
     }
 
     /**
@@ -128,6 +135,20 @@ public class Hypnotherapist{
      */
     public void setTown(String town) {
         this.town = town;
+    }
+
+    /**
+     * @return User return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }
