@@ -245,4 +245,17 @@ a {
     border-style: none;
 }
 
+/* Page Profil Particulier */
+
+.fa-address-card{
+    color: #8c56b8;
+}
+
+.fa-bell{
+    color: #8c56b8;
+}
+
+.fa-star{
+    color: #8c56b8;
+}
 
