@@ -39,43 +39,42 @@
     background-image:none;
     border-color:#d16ae6;
 }
+/* Choices : buttons */
 
 .btn{
-    border: solid 1px black;
     color: white;
-}
-.btn-secondary
-{
-background-color: yellowgreen;
+    border-radius: 0;
+ }
 
-}
+.btn-primar {
+background-color: rgb(208, 152, 236);
+ }
 
-.btn-tertiary
-{
-background-color: red;
-}
+.btn-secondary {
+ background-color: rgb(198, 126, 235);
+ }
 
-.btn-quaternary
-{
-background-color: gray;
-}
+.btn-tertiary {
+ background-color:rgb(188, 105, 230);
+ }
 
-.btn-quinary
-{
-background-color: blueviolet;
-}
+ .btn-quaternary {
+ background-color: rgb(178, 70, 211);
+ }
 
-.btn-senary
-{
-background-color: green;
-}
+ .btn-quinary {
+ background-color:rgb(158, 16, 214);
+ }
 
-.btn-septenary
-{
-background-color: gold;
-}
+.btn-senary {
+ background-color: rgb(148, 16, 214);
+ }
 
-h4{
+ .btn-septenary {
+ background-color:rgb(138, 20, 197);
+ }
+
+h4 {
     color: #9933CC;
 }
 
@@ -133,7 +132,7 @@ h4{
 
 /* Si elle porte en plus la classe '.gold', elle sera en jaune. */
 .fa-star.gold {
-	color: #ffdc0f;
+	color: #9933CC;
 }
 
 /* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
@@ -157,7 +156,7 @@ h4{
 /* A l'état :hover sur le parent '.rating',
         on force TOUTES les étoiles à passer en jaune. */
 .stars:hover .fa-star {
-    color: #ffdc0f;
+    color: #9933CC;
 }
 /* Et si la souris survole une étoile en particulier,
         on sélectionne toutes les étoiles qui sont APRÈS celle-ci
@@ -167,7 +166,7 @@ h4{
 }
 
 .fa-star.gold {
-	color: #ffdc0f;
+	color: #9933CC;
 }
 
 .rating {
@@ -182,18 +181,13 @@ h4{
 }
 
 .stars:hover .fa-star {
-	color: #ffdc0f;
+	color: #9933CC;
 }
 
 .stars .fa-star:hover ~ .fa-star {
 	color: gray;
 }
 
-html { 
-    text-align: center; 
-    font-family: 'Droid Sans', sans-serif; 
-    font-size: 1.4rem; 
-}
 a { 
     color: crimson; 
     font-weight: 600; 

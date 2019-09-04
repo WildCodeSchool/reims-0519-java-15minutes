@@ -6,16 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Practitioner{
-    public Practitioner(){
+public class Hypnotherapist{
+    public Hypnotherapist(){
     }
 
-    public Practitioner(String description, String phone, String mail,
+    public Hypnotherapist(Long userId, String description, String phone,
     String adr_num, String adr_street, String adr_postal, String town){
 
+        this.userId = userId;
         this.description = description;
         this.phone = phone;
-        this.mail = mail;
         this.adr_num = adr_num;
         this.adr_street = adr_street;
         this.adr_postal = adr_postal;
@@ -25,9 +25,9 @@ public class Practitioner{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long userId;
     private String description;
     private String phone;
-    private String mail;
     private String adr_num;
     private String adr_street;
     private String adr_postal;
@@ -44,15 +44,7 @@ public class Practitioner{
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
+    
     public String getAdr_num() {
         return adr_num;
     }
@@ -91,5 +83,13 @@ public class Practitioner{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }

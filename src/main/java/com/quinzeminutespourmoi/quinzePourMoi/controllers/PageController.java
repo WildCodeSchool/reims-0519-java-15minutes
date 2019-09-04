@@ -24,7 +24,6 @@ class PageController {
         return "choices";
     }
 
-
     @GetMapping("/about-us")
     public String aboutUs(Model model) {
         return "about-us";
@@ -34,39 +33,5 @@ class PageController {
     public String resultSurvey(Model model) {
         return "resultSurvey";
     }
-
-    @GetMapping("/subscribe")
-    public String subscribe(Model model) {
-        model.addAttribute("user", new User());
-        return "subscribe";
-    }
-
-
-    /* 
-    model.addAttribute("preSurvey", "preSurvey");
-    @GetMapping("/questions")
-    public String prepaQuest(@RequestParam Integer page, Model model) {
-        if(page) { // sous-entendu page != null
-            if(page.equals(1)) {
-                return "";
-            }
-            if(page.equals(2)) {
-                return "";
-            }
-            if(page.equals(3)) {
-                return "";
-            }
-            if(page.equals(4)) {
-                return "";
-            }
-            // les pages 2, 3... seront à rajouter ici
-            if(page.equals(100)) {
-                return "";
-            }
-            if(page.equals(101)) {
-                return "";
-            }
-        }
-        return "resultSurvey";
-    } */
 }
+
