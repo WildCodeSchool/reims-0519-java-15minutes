@@ -241,5 +241,10 @@ a {
 
 
 .politique {
-    font-size: 0.7rem;;
+    font-size: 0.7rem;
+}
+
+.return{
+    font-size: 30px;
+    color: #8c56b8;
 }
