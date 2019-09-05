@@ -17,7 +17,7 @@
 
 <body class="container-fluid d-flex flex-column justify-content-between  p-3">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
                     th:src="@{/img/logo15.png}" src="../static/img/logo15.png" alt="Responsive image" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -49,7 +49,7 @@
     </header>
 
 
-    <form action="#" class="text-center border border-light " th:action="@{/subscribe}" th:object="${user}"
+    <form action="#" id="form1" class="text-center border border-light " th:action="@{/subscribe}" th:object="${user}"
         method="POST">
         <p class="h4 mb-4">Inscription</p>
         <div class="form-row mb-4">
@@ -67,12 +67,18 @@
         <input type="hidden" name="role" value="user">
 
 
-        <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-info my-4 btn-block">Valider</button>
-        </div>
+        
         <p class="politique">En vous inscrivant vous acceptez la
             <a href="" target="_blank">politique de confidentialité</a>
     </form>
+    <input type="checkbox" id="myCheck" onclick="myFunction()">
+
+    <p id="text" style="display:none">Checkbox is CHECKED!</p>
+
+
+    <div class="d-flex justify-content-center">
+        <button type="submit" form="form1" class="btn btn-info my-4 btn-block">Valider</button>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -86,6 +92,7 @@
     <script src="../static/geoFindme.js"></script>
     <script src="../static/webStorage.js"></script>
     <script src="../static/all.js"></script>
+    <script src="../static/myFunction.js" th:src="@{/myFunction.js}"></script>
 
 </body>
 
