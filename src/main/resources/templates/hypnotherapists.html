@@ -59,7 +59,7 @@
                     </div>
 
                     <ul th:each="hypnotherapist : ${hypnotherapists}" class="list-group" id="user-list">
-                        <a th:href="@{/infos}" class="list-group-item list-group-item-action">
+                        <a th:href="@{/infos/{id}}" class="list-group-item list-group-item-action">
                             <div class="row">
                                 <div class="col-12 ">
                                     <div class="row align-items-center">
@@ -68,10 +68,11 @@
                                                 class="img-responsive img-circle rounded-circle" />
                                         </div>
                                         <div class="col-9">
-                                            <h5 class="font-weight-bold" th:text="${hypnotherapist.user.firstname}">
+                                            <h5 class="font-weight-bold"
+                                                th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname} ">
                                             </h5>
                                             <div class="user-detail">
-                                                <p><i class="fas fa-map-marker-alt mr-1 "></i>6 km</p>
+                                                <p><span id="dist" class="fas fa-map-marker-alt mr-1 "></span></i>km</p>
                                                 <div class="stars justify-content-start">
                                                     <i class="fas fa-star gold"></i>
                                                     <i class="fas fa-star gold"></i>
