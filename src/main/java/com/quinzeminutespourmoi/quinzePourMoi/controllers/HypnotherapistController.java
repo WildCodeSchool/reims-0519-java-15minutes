@@ -12,17 +12,16 @@ class HypnotherapistController {
 
     @Autowired
     private HypnotherapistRepository hypnotherapistRepository;
-    
-    @GetMapping("/hypnotherapists") 
-    public String hypnotherapists(Model model){
-        model.addAttribute(
-            "hypnotherapists",
-            hypnotherapistRepository.findAll()
-        );
+
+    @GetMapping("/hypnotherapists")
+    public String hypnotherapists(Model model) {
+        model.addAttribute("hypnotherapists", hypnotherapistRepository.findAll());
         return "hypnotherapists";
     }
-    @GetMapping("/infos")
-    public String infos(Model model) {
-        return "infos";
+
+    @GetMapping("/hypnotherapists/{id}")
+    public String Hypnotherapistbyid (Model model) {
+        return "infos" ;
     }
+
 }

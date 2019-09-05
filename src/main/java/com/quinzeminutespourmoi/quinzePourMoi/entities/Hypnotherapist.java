@@ -13,14 +13,13 @@ public class Hypnotherapist {
     public Hypnotherapist() {
     }
 
-    public Hypnotherapist(User user, String description, String phone, String adr_num, String adr_street,
+    public Hypnotherapist(User user, String description, String phone, String address,
             String adr_postal, String town) {
 
         this.user = user;
         this.description = description;
         this.phone = phone;
-        this.adr_num = adr_num;
-        this.adr_street = adr_street;
+        this.address = address;
         this.adr_postal = adr_postal;
         this.town = town;
     }
@@ -30,8 +29,7 @@ public class Hypnotherapist {
     private Long id;
     private String description;
     private String phone;
-    private String adr_num;
-    private String adr_street;
+    private String address;
     private String adr_postal;
     private String town;
 
@@ -81,33 +79,6 @@ public class Hypnotherapist {
         this.phone = phone;
     }
 
-    /**
-     * @return String return the adr_num
-     */
-    public String getAdr_num() {
-        return adr_num;
-    }
-
-    /**
-     * @param adr_num the adr_num to set
-     */
-    public void setAdr_num(String adr_num) {
-        this.adr_num = adr_num;
-    }
-
-    /**
-     * @return String return the adr_street
-     */
-    public String getAdr_street() {
-        return adr_street;
-    }
-
-    /**
-     * @param adr_street the adr_street to set
-     */
-    public void setAdr_street(String adr_street) {
-        this.adr_street = adr_street;
-    }
 
     /**
      * @return String return the adr_postal
@@ -149,6 +120,21 @@ public class Hypnotherapist {
      */
     public void setUser(User user) {
         this.user = user;
+    }
+
+
+    /**
+     * @return String return the address
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    /**
+     * @param address the address to set
+     */
+    public void setAddress(String address) {
+        this.address = address;
     }
 
 }
