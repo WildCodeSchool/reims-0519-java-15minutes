@@ -239,6 +239,23 @@ a {
     border-style: none;
 }
 
+/* Page Profil Particulier */
+
+.fa-address-card{
+    color: #8c56b8;
+}
+
+.fa-portrait{
+    color: #8c56b8;
+}
+
+.avis{
+    background-color: #8c56b8;
+}
+
+.notification{
+    background-color: #73568f;
+}
 
 .politique {
     font-size: 0.7rem;
