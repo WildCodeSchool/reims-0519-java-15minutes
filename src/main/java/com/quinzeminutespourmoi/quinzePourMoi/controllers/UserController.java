@@ -1,5 +1,6 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Hypnotherapist;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
@@ -21,10 +22,12 @@ class UserController {
     PasswordEncoder passwordEncoder;
 
     @GetMapping("/subscribe")
-    public String subscribe(Model model) {
+    public String subscribe(Model model, Model model2) {
         model.addAttribute("user", new User());
+        model2.addAttribute("hypnotherapist", new Hypnotherapist());
         return "subscribe";
     }
+
     
     @PostMapping("/subscribe")
     public User subscribe(@RequestParam String firstname, @RequestParam String lastname, @RequestParam String mail,

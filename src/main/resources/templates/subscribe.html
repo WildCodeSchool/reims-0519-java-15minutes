@@ -48,6 +48,9 @@
         </nav>
     </header>
 
+    <form action="#"class="text-center border border-light "
+    th:action="@{/subscribe/hypno}" th:object="${hypnotherapist}" method="POST">
+    
 
     <form action="#" id="form1" class="text-center border border-light " th:action="@{/subscribe}" th:object="${user}"
         method="POST">
@@ -67,18 +70,54 @@
         <input type="hidden" name="role" value="user">
 
 
-        
+
         <p class="politique">En vous inscrivant vous acceptez la
             <a href="" target="_blank">politique de confidentialité</a>
     </form>
-    <input type="checkbox" id="myCheck" onclick="myFunction()">
-
-    <p id="text" style="display:none">Checkbox is CHECKED!</p>
-
-
-    <div class="d-flex justify-content-center">
+<!--     pas moyen de passer premier bouton en display none voir function2 JS 
+ -->    <div class="d-flex justify-content-center" id="button1" style="display:none">
         <button type="submit" form="form1" class="btn btn-info my-4 btn-block">Valider</button>
     </div>
+
+    <input type="checkbox" id="myCheck" onclick="myFunction(), myFunction2()">
+
+    <div id="text" style="display:none" >
+        <div class="form-row mb-4">
+            <div class="col-6">
+                <input class="form-control" type="text" placeholder="description" th:field="*{description}">
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-6">
+                    <input class="form-control" type="number" placeholder="Téléphone" th:field="*{phone}">
+                </div>
+                <div class="form-row mb-4">
+                <div class="col-6">
+                    <input class="form-control" type="number" placeholder="Numéro" th:field="*{adr_num}">
+                </div>
+                <div class="form-row mb-4">
+                <div class="col-6">
+                    <input class="form-control" type="text" placeholder="Rue" th:field="*{adr_street}">
+                </div>
+                <div class="form-row mb-4">
+                <div class="col-6">
+                    <input class="form-control" type="number" placeholder="Code postal"
+                        th:field="*{adr_postal}">
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col-6">
+                        <input class="form-control" type="text" placeholder="Ville" th:field="*{town}">
+                    </div>
+<!--                     User ne veut pas s'integrer dans la requete
+ -->                <input type="hidden" name="user" value="user">
+
+            </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-info my-4 btn-block">Valider</button>
+        </div>
+    </form>
+
+
+   
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
