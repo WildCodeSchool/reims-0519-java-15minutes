@@ -19,8 +19,9 @@ class HypnotherapistController {
         return "hypnotherapists";
     }
 
-    @GetMapping("/infos")
-    public String infos(Model model) {
-        return "infos";
+    @GetMapping("/hypnotherapists/{id}")
+    public String Hypnotherapistbyid (Model model) {
+        return "infos" ;
     }
+
 }
