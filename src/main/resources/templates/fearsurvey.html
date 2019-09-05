@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+        
+        <title>Peur</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
+        <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
+        <script> type="text/javascript"; href="../static/fearsurvey.js"</script>
+    </head>
+
+    <body>
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>     
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mon suivi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/hypnotherapists}">Hypnothérapeutes</a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+        </header>
+
+            <div class="whatFear">Quelle est votre phobie ?</div>
+                    
+                <div class="pets">Peur des animaux de compagnies</div>
+                    <div class="pets1">Quand se manifeste-t'elle ?</div>
+                        <div class="answer1">Rien qu’en y pensant</div>
+                        <div class="answer2">En la voyant</div>
+                        <div class="answer3">Au toucher</div>
+            
+                    <div class="pets2">Y a t il des fois où cette phobie ne se manifeste pas ?</div>
+                        <div class="answer1">Oui</div>
+                        <div class="answer2">Non</div>
+
+                <div class="insects">Peur des araignées et insectes divers</div>
+                    <div class="insects1">Quand se manifeste-t'elle ?</div>
+                        <div class="answer1">Rien qu’en y pensant</div>
+                        <div class="answer2">En la voyant</div>
+                        <div class="answer3">Au toucher</div>
+    
+                    <div class="insects2">Y a t'il des fois où cette phobie ne se manifeste pas ?</div>
+                        <div class="answer1">Oui</div>
+                        <div class="answer2">Non</div>
+
+
+                <div class="car">Peur de conduire en voiture</div>
+                    <div class="car1">A quelle fréquence cela vous arrive-t'il ?</div>
+                        <div class="answer1">Tout le temps</div>
+                        <div class="answer2">Souvent</div>
+                        <div class="answer3">Rarement</div>
+
+                    <div class="car2">Cela dépend t'il de la vitesse ?</div>
+                        <div class="answer1">Oui</div>
+                        <div class="answer2">Non</div>
+
+                    <div class="car3">Sur quel type de route cela vous arrive-t'il ?</div>
+                        <div class="answer1">Plutôt sur les lignes droites</div>
+                        <div class="answer2">Lorsqu'il y a des virages</div>
+                        <div class="answer3">Peu importe</div>
+
+                    <div class="car4">Y a t'il eu un événement avant la phobie qui aurait pu déclencher votre peur ?</div>
+                        <div class="answer1">Oui</div>
+                        <div class="answer2">Non</div>
+
+                <div class="plane">Peur de prendre l’avion</div>
+                    <div class="plane1">Quand cela se manifeste-t'il ?</div>
+                        <div class="answer1">Avant d'entrer dans l'avion</div>
+                        <div class="answer2">Déjà plusieurs jours avant</div>
+
+                    <div class="plane2">Cette peur est-elle encore présente lorsque vous êtes en vol ?</div>
+                        <div class="answer1">Oui</div>
+                        <div class="answer2">Non</div>
+
+                <div class="people">Peur de la foule et des lieux publics</div>
+                    <div class="people1">Dans quelle situation se manifeste t'elle ?</div>
+                        <div class="answer1">Lorsque vous êtes en contact avec la foule</div>
+                        <div class="answer2">Dans les transports en commun</div>
+                        <div class="answer3">Lorsque vous entrez dans un lieu public</div>
+                        <div class="answer4">Lorsque vous êtes dans une rue passante</div>
+
+                <div class="water">Aquaphobie</div>
+                    <div class="water1">Quand cette peur se manifeste-t'elle ?</div>
+                        <div class="answer1">Rien qu'en y pensant</div>
+                        <div class="answer2">En voyant de l'eau</div>
+                        <div class="answer3">En étant au contact de l'eau</div>
+
+                <div class="close">Claustrophobie</div>
+                    <div class="close1">Dans quelle situation se manifest cette peur ?</div>
+                        <div class="answer1">Dans le noir</div>
+                        <div class="answer2">Dans un espace clos (ascenceur, pièces sans fenêtre ...)</div>
+                        <div class="answer3">Dans un espace restreint</div>
+
+
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+</html>
