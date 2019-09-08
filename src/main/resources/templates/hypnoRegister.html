@@ -54,15 +54,14 @@
         <p class="h4 mb-4">Enregistrement fiche Hypnothérapeute</p>
         <div class="form-row mb-4">
             <div class="col-6">
-                <input class="form-control" type="text" placeholder="Description" th:field="*{description}">
+                
             </div>
-            <div class="col-6">
-                <input class="form-control" type="number" placeholder="Téléphone" th:field="*{phone}">
-            </div>
-        </div>
-        <input class="form-control mb-4" type="text" placeholder="Numéro et rue" th:field="*{adr_street}">
+            
+        <input class="form-control" type="number" placeholder="Téléphone" th:field="*{phone}">            
+        <input class="form-control" type="text" placeholder="Numéro et rue" th:field="*{adr_street}">
         <input class="form-control" type="text" placeholder="Code postal" th:field="*{adr_postal}">
         <input class="form-control" type="text" placeholder="Ville" th:field="*{town}">
+        <input class="form-control" type="text" placeholder="Description" th:field="*{description}">
         <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
         </small>
         <input type="hidden" name="id" value="?????">
