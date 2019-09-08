@@ -10,16 +10,16 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "hypnotherapist")
 public class Hypnotherapist {
+    
     public Hypnotherapist() {
     }
 
-    public Hypnotherapist(User user, String description, String phone, String adr_num, String adr_street,
+    public Hypnotherapist(User user, String description, String phone, String adr_street,
             String adr_postal, String town) {
 
         this.user = user;
         this.description = description;
         this.phone = phone;
-        this.adr_num = adr_num;
         this.adr_street = adr_street;
         this.adr_postal = adr_postal;
         this.town = town;
@@ -30,7 +30,6 @@ public class Hypnotherapist {
     private Long id;
     private String description;
     private String phone;
-    private String adr_num;
     private String adr_street;
     private String adr_postal;
     private String town;
@@ -79,20 +78,6 @@ public class Hypnotherapist {
      */
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    /**
-     * @return String return the adr_num
-     */
-    public String getAdr_num() {
-        return adr_num;
-    }
-
-    /**
-     * @param adr_num the adr_num to set
-     */
-    public void setAdr_num(String adr_num) {
-        this.adr_num = adr_num;
     }
 
     /**

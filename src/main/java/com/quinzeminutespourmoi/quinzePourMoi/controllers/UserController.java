@@ -31,5 +31,4 @@ class UserController {
             @RequestParam String password, @RequestParam String role) {
         return userRepository.save(new User(firstname, lastname, passwordEncoder.encode(password), mail, role));
     }
-
 }
