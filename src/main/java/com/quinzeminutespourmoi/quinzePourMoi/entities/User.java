@@ -4,13 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -41,9 +39,6 @@ public class User implements UserDetails {
     private String password;
     private String mail;
     private String role;
-
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private Hypnotherapist hypnotherapist;
 
     /**
      * @return Long return the id
@@ -127,20 +122,6 @@ public class User implements UserDetails {
      */
     public void setRole(String role) {
         this.role = role;
-    }
-
-    /**
-     * @return Hypnotherapist return the hypnotherapist
-     */
-    public Hypnotherapist getHypnotherapist() {
-        return hypnotherapist;
-    }
-
-    /**
-     * @param hypnotherapist the hypnotherapist to set
-     */
-    public void setHypnotherapist(Hypnotherapist hypnotherapist) {
-        this.hypnotherapist = hypnotherapist;
     }
 
     @Override

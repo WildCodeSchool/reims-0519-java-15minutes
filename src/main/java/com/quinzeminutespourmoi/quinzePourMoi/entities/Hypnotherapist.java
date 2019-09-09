@@ -34,7 +34,7 @@ public class Hypnotherapist {
     private String adr_postal;
     private String town;
 
-    @OneToOne
+    @OneToOne(optional = true)
     @MapsId
     private User user;
 

@@ -17,7 +17,7 @@
 
 <body class="container-fluid d-flex flex-column justify-content-between  p-3">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
                     th:src="@{/img/logo15.png}" src="../static/img/logo15.png" alt="Responsive image" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -48,8 +48,11 @@
         </nav>
     </header>
 
+    <form action="#"class="text-center border border-light "
+    th:action="@{/subscribe/hypno}" th:object="${hypnotherapist}" method="POST">
+    
 
-    <form action="#" class="text-center border border-light " th:action="@{/subscribe}" th:object="${user}"
+    <form action="#" id="form1" class="text-center border border-light " th:action="@{/subscribe}" th:object="${user}"
         method="POST">
         <p class="h4 mb-4">Inscription</p>
         <div class="form-row mb-4">
@@ -67,12 +70,61 @@
         <input type="hidden" name="role" value="user">
 
 
-        <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-info my-4 btn-block">Valider</button>
-        </div>
+
         <p class="politique">En vous inscrivant vous acceptez la
             <a href="" target="_blank">politique de confidentialité</a>
     </form>
+<!--     pas moyen de passer premier bouton en display none voir function2 JS 
+ -->    <div class="d-flex justify-content-center" id="button1" style="display:none">
+        <button type="submit" form="form1" class="btn btn-info my-4 btn-block">Valider</button>
+    </div>
+
+    <input type="checkbox" id="myCheck" onclick="myFunction(), myFunction2()">
+
+    <div id="text" style="display:none" >
+        <div class="form-row mb-4">
+            <div class="col-6">
+                <input class="form-control" type="text" placeholder="description" th:field="*{description}">
+            </div>
+            <div class="form-row mb-4">
+                <div class="col-6">
+                    <input class="form-control" type="number" placeholder="Téléphone" th:field="*{phone}">
+                </div>
+                <div class="form-row mb-4">
+                <div class="col-6">
+                    <input class="form-control" type="number" placeholder="Numéro" th:field="*{adr_num}">
+                </div>
+                <div class="form-row mb-4">
+                <div class="col-6">
+                    <input class="form-control" type="text" placeholder="Rue" th:field="*{adr_street}">
+                </div>
+                <div class="form-row mb-4">
+                <div class="col-6">
+                    <input class="form-control" type="number" placeholder="Code postal"
+                        th:field="*{adr_postal}">
+                </div>
+                <div class="form-row mb-4">
+                    <div class="col-6">
+                        <input class="form-control" type="text" placeholder="Ville" th:field="*{town}">
+                    </div>
+<!--                     User ne veut pas s'integrer dans la requete
+ -->                <input type="hidden" name="user" value="user">
+
+            </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-info my-4 btn-block">Valider</button>
+        </div>
+    </form>
+
+
+   
+
+    <p><input type="checkbox" id="myCheck" onclick="myFunction()"> Je suis un professionnel.</p>
+
+    <form id="text" style="display:none">Futur form pro</form>
+
+
+    
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -86,6 +138,7 @@
     <script src="../static/geoFindme.js"></script>
     <script src="../static/webStorage.js"></script>
     <script src="../static/all.js"></script>
+    <script src="../static/myFunction.js" th:src="@{/myFunction.js}"></script>
 
 </body>
 
