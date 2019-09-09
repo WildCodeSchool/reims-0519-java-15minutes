@@ -48,6 +48,7 @@
         </nav>
     </header>
 
+
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <div class="img xavier">
@@ -58,7 +59,8 @@
     </div>
     <br>
     <div class="name col-12">
-        <h1 class="text-center">Xavier Filton</h1>
+        <h1 class="text-center"
+            th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname}"></h1>
     </div>
 
     <div class="rating col-12">
@@ -76,7 +78,8 @@
     <div class="row">
         <div class="col-12">
             <div class="address">
-                <p><i class="fas fa-map-marker-alt mr-2" aria-hidden="true"></i> 6 rue François Copée, 75015 Paris</p>
+            <i class="fas fa-map-marker-alt mr-2" aria-hidden="true"
+                th:text="' ' + ${hypnotherapist.address} + ', ' +${hypnotherapist.adr_postal} + ' ' + ${hypnotherapist.town}"></i>
             </div>
         </div>
     </div>
@@ -101,12 +104,8 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        Quod opera consulta cogitabatur astute, ut hoc insidiarum genere Galli periret avunculus, ne eum
-                        ut praepotens acueret in fiduciam exitiosa coeptantem. verum navata est opera diligens hocque
-                        dilato Eusebius praepositus cubiculi missus est Cabillona aurum secum perferens, quo per
-                        turbulentos seditionum concitores occultius distributo et tumor consenuit militum et salus est
-                        in tuto locata praefecti. deinde cibo abunde perlato castra die praedicto sunt mota.
+                    <div class="modal-body"
+                        th:text="${hypnotherapist.description}">
                     </div>
                 </div>
             </div>
@@ -183,8 +182,11 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p><i class="fas fa-phone-alt mr-2"></i>0000000000</p>
-                                <p><i class="fas fa-at mr-2"></i>x.filton@fake.com</p>
+                                <i class="fas fa-phone-alt mr-2"
+                                    th:text="'  ' + ${hypnotherapist.phone}"></i>
+
+                                <i class="fas fa-at mr-2"
+                                    th:text="'  ' + ${hypnotherapist.user.mail}"></i>
                             </div>
                         </div>
                     </div>
@@ -192,7 +194,7 @@
             </div>
         </div>
         <a class="fas fa-fast-backward return" th:href="@{/hypnotherapists}"></a>
-
+</ul>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
