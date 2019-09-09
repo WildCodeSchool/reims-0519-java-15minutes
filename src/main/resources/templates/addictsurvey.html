@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>Addiction</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
+        <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>     
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mon suivi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/hypnotherapists}">Hypnothérapeutes</a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+        </header>
+
+        <body>
+
+            <div class="whatAddiction">Quelle est votre addiction ?</div>
+                
+                <div class="food">Alimentaire (sucre, chocolat, café ...)</div>
+                    <div class="food1">La prenez vous pour compenser un stress ?</div>
+                        <div class="answer1">Oui</div>
+                        <div class="answer2">Non</div>
+
+                    <div class="food2">La prenez vous aussi sans aucune raison (automatisme) ?</div>
+                        <div class="answer1">Oui</div>
+                        <div class="answer2">Non</div>
+
+                    <div class="food3">Considérez vous que cette addiction nuit à votre bien être ?</div>
+                        <div class="answer1">Oui</div>
+                        <div class="answer2">Non</div>
+
+            <div class="alcool">Alcool / Drogues</div>
+            
+                <div class="alcool1">A quelle fréquence votre addiction se manifeste-t'elle ?</div>
+                    <div class="answer1">Tous les jours ou presque</div>
+                    <div class="answer2">1 à 3 fois par semaine</div>
+                    <div class="answer3">Rarement</div>
+
+                <div class="alcool2">Y a t'il eu un évènement dans votre vie qui aurait pu déclencher cette addiction ?</div>
+                    <div class="answer1">Oui</div>
+                    <div class="answer2">Non</div>
+
+                <div class="alcool3">Considérez vous que cette addiction nuit à votre santé ?</div>
+                    <div class="answer1">Oui</div>
+                    <div class="answer2">Non</div>
+
+                <div class="alcool4">Avez vous le sentiment que cette addiction vous isole ?</div>
+                    <div class="answer1">Oui</div>
+                    <div class="answer2">Non</div>
+
+            <div class="screen">Ecrans</div>
+
+                <div class="screen1">Quelle est votre addiction ?</div>
+                    <div class="answer1">TV</div>
+                    <div class="answer2">Jeux vidéos</div>
+                    <div class="answer3">Smartphones / tablettes</div>
+
+                <div class="screen2">Depuis combien de temps avez vous cette addiction ?</div>
+                    <!--case à remplir-->
+
+                <div class="screen3">Avez vous le sentiment que cette addiction vous isole ?</div>
+                    <div class="answer1">Oui</div>
+                    <div class="answer2">Non</div>
+
+                <div class="screen4">Avez vous le sentiment que votre addiction s’empire au fil du temps ?</div>
+                    <div class="answer1">Oui</div>
+                    <div class="answer2">Non</div>
+
+        </body>
+        
+</html>
