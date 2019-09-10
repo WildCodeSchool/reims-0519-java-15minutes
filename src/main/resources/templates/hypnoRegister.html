@@ -57,11 +57,11 @@
                 
             </div>
             
-        <input class="form-control" type="number" placeholder="Téléphone" th:field="*{phone}">            
-        <input class="form-control" type="text" placeholder="Numéro et rue" th:field="*{adr_street}">
-        <input class="form-control" type="text" placeholder="Code postal" th:field="*{adr_postal}">
-        <input class="form-control" type="text" placeholder="Ville" th:field="*{town}">
-        <input class="form-control" type="text" placeholder="Description" th:field="*{description}">
+        <input class="form-control" type="number" placeholder="Téléphone" th:field="*{phone} required">            
+        <input class="form-control" type="text" placeholder="Numéro et rue" th:field="*{adr_street} required">
+        <input class="form-control" type="text" placeholder="Code postal" th:field="*{adr_postal} required">
+        <input class="form-control" type="text" placeholder="Ville" th:field="*{town} required">
+        <input class="form-control" type="text" placeholder="Description" th:field="*{description} required">
         <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
         </small>
 <!--         <input type="hidden" name="####" value="####">
