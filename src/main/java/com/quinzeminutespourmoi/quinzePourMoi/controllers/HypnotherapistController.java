@@ -36,12 +36,7 @@ class HypnotherapistController {
     public Hypnotherapist register(Authentication authentication, @RequestParam String description,
             @RequestParam String phone, @RequestParam String adr_street, @RequestParam String adr_postal,
             @RequestParam String town) {
-            System.out.println(authentication.getPrincipal());
             User user = userRepository.findByMail(authentication.getName());
-            System.out.println("-------------------------------");
-            System.out.println(user.getUsername());
-            System.out.println("-------------------------------");
-
         return hypnotherapistRepository.save(new Hypnotherapist(user, description, phone, adr_street, adr_postal, town));
     }
 
