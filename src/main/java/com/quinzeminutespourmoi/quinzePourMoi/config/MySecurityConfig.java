@@ -25,6 +25,9 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
+                .antMatchers("/img/**").permitAll()
+                .antMatchers("/webfonts/**").permitAll()
+                .antMatchers("/**.css").permitAll()
                 .antMatchers("/").permitAll()
                 .antMatchers("/subscribe").permitAll()
                 .antMatchers("/**").access("hasRole('USER') or hasRole('ADMIN')")
