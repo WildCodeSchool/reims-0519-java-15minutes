@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -46,16 +46,16 @@
 
         <!-- Page Video  -->
 
-        <div class="embed-border">
-          <div class="embed-responsive">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Sw-jhxzb76Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+
+        <div class="col-12 d-flex justify-content-center mb-3">
+            <iframe width="560" height="315" th:src="@{https://www.youtube.com/embed/Sw-jhxzb76Q?rel=0}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
+
 
         <!-- Page Content  -->
     
         <div class="text-right">
-            <p class="intro mb-3 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
+            <p class="intro mb-3 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             <a href="#" class="btn btn-primary btn-continue mb-3 btn-block btn-lg">Continuer</a>
         </div>
         
