@@ -28,17 +28,15 @@ class UserController {
     
     @PostMapping("/subscribe")
     public String subscribe(@RequestParam String firstname, @RequestParam String lastname, @RequestParam String mail,
-            @RequestParam String password, @RequestParam String role, @RequestParam(defaultValue = "false") boolean isHypnotherapist) {
+            @RequestParam String password, @RequestParam String role, @RequestParam String image,@RequestParam(defaultValue = "false") boolean isHypnotherapist) {
 
-        userRepository.save(new User(firstname, lastname, passwordEncoder.encode(password), mail, role));
+        userRepository.save(new User(firstname, lastname, passwordEncoder.encode(password), mail, role, image));
 
         if(isHypnotherapist){
             return "redirect:/hypnoRegister";
         }
-
         return "redirect:/";
     }
-}
 
     @PostMapping("/users")
     public String subscribe(@ModelAttribute User user) {
