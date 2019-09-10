@@ -3,7 +3,6 @@ package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class PageController {
@@ -22,7 +21,6 @@ class PageController {
     public String choices(Model model) {
         return "choices";
     }
-
 
     @GetMapping("/about-us")
     public String aboutUs(Model model) {
