@@ -15,7 +15,7 @@
 
 </head>
 
-<body class="container-fluid d-flex flex-column justify-content-between  p-3">
+<body class="container-fluid d-flex flex-column justify-content-between p-3">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
@@ -47,27 +47,22 @@
             </div>
         </nav>
     </header>
-
-
     <form action="#" class="text-center border border-light " th:action="@{/hypnoRegister}" th:object="${hypnotherapist}"
         method="POST">
-        <p class="h4 mb-4">Enregistrement fiche Hypnothérapeute</p>
-        <div class="form-row mb-4">
-            <div class="col-6">
-                
-            </div>
-            
-        <input class="form-control" type="number" placeholder="Téléphone" th:field="*{phone}" required>            
-        <input class="form-control" type="text" placeholder="Numéro et rue" th:field="*{address}" required>
-        <input class="form-control" type="text" placeholder="Code postal" th:field="*{adr_postal}" required>
-        <input class="form-control" type="text" placeholder="Ville" th:field="*{town}" required>
-        <input class="form-control" type="text" placeholder="Description" th:field="*{description}" required>
-        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-        </small>
+        <p class="h4 p-4">Formulaire professionnel</p>
+        <div class="form-row justify-content-center">
+            <div class="col">
+                <input class="form-control mb-4" type="number" placeholder="Téléphone" th:field="*{phone}" required>            
+                <input class="form-control mb-4" type="text" placeholder="Numéro et rue" th:field="*{address}" required>
+                <input class="form-control mb-4" type="text" placeholder="Code postal" th:field="*{adr_postal}" required>
+                <input class="form-control mb-4" type="text" placeholder="Ville" th:field="*{town}" required>
+                <input class="form-control" type="text" placeholder="Description" th:field="*{description}" required>
+                <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                </small>
 <!--         <input type="hidden" name="####" value="####">
- -->
-
-        <div class="d-flex justify-content-center">
+ -->        </div>
+        </div>
+         <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-info my-4 btn-block">Valider</button>
         </div>
         <p class="politique">En nous donnant ces informations vous acceptez la
