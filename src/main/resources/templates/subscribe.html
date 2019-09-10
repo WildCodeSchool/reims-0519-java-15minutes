@@ -16,40 +16,10 @@
 </head>
 
 <body class="container-fluid d-flex flex-column justify-content-between  p-3">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
-                    th:src="@{/img/logo15.png}" src="../static/img/logo15.png" alt="Responsive image" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">S'inscrire / Se connecter <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mon suivi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Hypnothérapeutes</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <header th:replace="fragments/header.html :: header"></header>
 
 
-    <form action="#" class="text-center border border-light " th:action="@{/subscribe}" th:object="${user}"
+    <form action="#" class="text-center border border-light " th:action="@{/users}" th:object="${user}"
         method="POST">
         <p class="h4 mb-4">Inscription</p>
         <div class="form-row mb-4">
@@ -76,35 +46,6 @@
         <p class="politique">En vous inscrivant vous acceptez la
             <a href="" target="_blank">politique de confidentialité</a>
     </form>
-
-
-<!-- 
-
-    <a class="btn btn-info" data-toggle="modal" data-target="#modalForm">
-        Valider
-    </a>
-      
-      <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="modal inscription" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Création de compte</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              Choisissez votre type de compte :
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-outline" >Particulier</button>
-              <button type="submit" th:href="@{/hypnoRegister} class="btn btn-outline">Profesionnel</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
- -->
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

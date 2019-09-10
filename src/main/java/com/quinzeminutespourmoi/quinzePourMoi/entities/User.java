@@ -22,12 +22,13 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String firstname, String lastname, String password, String mail, String role) {
+    public User(String firstname, String lastname, String password, String mail, String role, String image) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;
         this.mail = mail;
         this.role = role;
+        this.image = image;
     }
 
     @Id
@@ -39,6 +40,10 @@ public class User implements UserDetails {
     private String password;
     private String mail;
     private String role;
+    private String image;
+    
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Hypnotherapist hypnotherapist;
 
     /**
      * @return Long return the id
@@ -153,4 +158,21 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+}
+
+
+    /**
+     * @return String return the image
+     */
+    public String getImage() {
+        return image;
+    }
+
+    /**
+     * @param image the image to set
+     */
+    public void setImage(String image) {
+        this.image = image;
+    }
+
 }

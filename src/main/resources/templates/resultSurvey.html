@@ -17,37 +17,8 @@
 </head>
 
 <body class="container-fluid d-flex flex-column justify-content-between resultQuestBg p-3">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
-                    src="../static/img/logo15.png" th:src="@{/img/logo15.png}" alt="Responsive image" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <header th:replace="fragments/header.html :: header"></header>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">S'inscrire / Se connecter <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mon suivi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/hypnotherapists}">Hypnothérapeutes</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
     <!-- Page Content  -->
 
     <div class="text-right">
