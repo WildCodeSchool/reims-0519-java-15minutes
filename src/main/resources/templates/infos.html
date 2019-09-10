@@ -15,38 +15,10 @@
 
 </head>
 
-<body class="container-fluid">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
-                    src="../static/img/logo15.png" th:src="@{/img/logo15.png}" alt="Responsive image" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<body class="container-fluid d-flex flex-column justify-content-between  p-3">
+    <header th:replace="fragments/header.html :: header"></header>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">S'inscrire / Se connecter <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mon suivi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/hypnotherapists}">Hypnothérapeutes</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+
 
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
@@ -58,7 +30,8 @@
     </div>
     <br>
     <div class="name col-12">
-        <h1 class="text-center">Xavier Filton</h1>
+        <h1 class="text-center"
+            th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname}"></h1>
     </div>
 
     <div class="rating col-12">
@@ -76,7 +49,8 @@
     <div class="row">
         <div class="col-12">
             <div class="address">
-                <p><i class="fas fa-map-marker-alt mr-2" aria-hidden="true"></i> 6 rue François Copée, 75015 Paris</p>
+            <i class="fas fa-map-marker-alt mr-2" aria-hidden="true"
+                th:text="' ' + ${hypnotherapist.address} + ', ' +${hypnotherapist.adr_postal} + ' ' + ${hypnotherapist.town}"></i>
             </div>
         </div>
     </div>
@@ -101,12 +75,8 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        Quod opera consulta cogitabatur astute, ut hoc insidiarum genere Galli periret avunculus, ne eum
-                        ut praepotens acueret in fiduciam exitiosa coeptantem. verum navata est opera diligens hocque
-                        dilato Eusebius praepositus cubiculi missus est Cabillona aurum secum perferens, quo per
-                        turbulentos seditionum concitores occultius distributo et tumor consenuit militum et salus est
-                        in tuto locata praefecti. deinde cibo abunde perlato castra die praedicto sunt mota.
+                    <div class="modal-body"
+                        th:text="${hypnotherapist.description}">
                     </div>
                 </div>
             </div>
@@ -183,19 +153,19 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p><i class="fas fa-phone-alt mr-2"></i>0000000000</p>
-                                <p><i class="fas fa-at mr-2"></i>x.filton@fake.com</p>
+                                <i class="fas fa-phone-alt mr-2"
+                                    th:text="'  ' + ${hypnotherapist.phone}"></i>
+
+                                <i class="fas fa-at mr-2"
+                                    th:text="'  ' + ${hypnotherapist.user.mail}"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div class="row mb-3">
-                <div class="col-12 d-flex justify-content-center">
-                    <a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>                </div>
-            </div> -->
-
+        <a class="fas fa-fast-backward return" th:href="@{/hypnotherapists}"></a>
+</ul>
     </footer>
 
     <script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}"
