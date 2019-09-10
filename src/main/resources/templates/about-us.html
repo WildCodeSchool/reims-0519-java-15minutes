@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
-
+​
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+​
     <title>15' Pour Moi</title>
-
+​
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
-
+​
 </head>
-
+​
   <body class="container-fluid d-flex flex-column justify-content-between ">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,7 +26,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" th:href="@{/subscribe}">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
@@ -44,15 +44,15 @@
           </div>
       </nav>
     </header>
-
+​
         <!-- Page Video  -->
-
+​
         <div class="embed-border">
           <div class="embed-responsive">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Sw-jhxzb76Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
-
+​
         <!-- Page Content  -->
     
         <div class="text-right">
@@ -61,7 +61,7 @@
         </div>
         
         
-
+​
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
@@ -70,7 +70,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
-
+​
+​
   </body>
 </html>

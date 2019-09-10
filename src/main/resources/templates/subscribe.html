@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <title>15' Pour Moi</title>
 
     <!-- Bootstrap CSS CDN -->
@@ -13,14 +11,15 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
 
 </head>
 
-<body class="container-fluid d-flex flex-column justify-content-between resultQuestBg p-3">
+<body class="container-fluid d-flex flex-column justify-content-between  p-3">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
-                    src="../static/img/logo15.png" th:src="@{/img/logo15.png}" alt="Responsive image" /></a>
+                    th:src="@{/img/logo15.png}" src="../static/img/logo15.png" alt="Responsive image" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -48,14 +47,32 @@
             </div>
         </nav>
     </header>
-    <!-- Page Content  -->
 
-    <div class="text-right">
-        <p class="intro mb-3 text-center">Découvrez la liste des thérapeutes les plus compétants et proches de chez vous
-            pour gérer votre besoin.</p>
-        <a th:href="@{/hypnotherapists}" class="btn btn-primary btn-continue mb-3 btn-block btn-lg">Découvrir les
-            spécialistes</a>
-    </div>
+
+    <form action="#" class="text-center border border-light " th:action="@{/subscribe}" th:object="${user}"
+        method="POST">
+        <p class="h4 mb-4">Inscription</p>
+        <div class="form-row mb-4">
+            <div class="col-6">
+                <input class="form-control" type="text" placeholder="Prénom" th:field="*{firstname}">
+            </div>
+            <div class="col-6">
+                <input class="form-control" type="text" placeholder="Nom" th:field="*{lastname}">
+            </div>
+        </div>
+        <input class="form-control mb-4" type="email" placeholder="E-mail" th:field="*{mail}">
+        <input class="form-control" type="password" placeholder="Mot de passe" th:field="*{password}">
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        </small>
+        <input type="hidden" name="role" value="user">
+
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-info my-4 btn-block">Valider</button>
+        </div>
+        <p class="politique">En vous inscrivant vous acceptez la
+            <a href="" target="_blank">politique de confidentialité</a>
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -66,6 +83,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="../static/geoFindme.js"></script>
+    <script src="../static/webStorage.js"></script>
+    <script src="../static/all.js"></script>
 
 </body>
 
