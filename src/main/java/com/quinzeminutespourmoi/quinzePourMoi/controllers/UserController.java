@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -22,9 +23,16 @@ class UserController {
     }
 
     @PostMapping("/users")
-    public String subscribe(@ModelAttribute User user) {
-        System.out.println(user.getId());
-        userRepository.save(user);
-        return "redirect:/";
+    public String store(@ModelAttribute User user) {
+        Long newId = userRepository.save(user).getId();
+        return "redirect:/users/" + newId;
     }
+
+    @GetMapping("/users/{id}")
+    public String read(Model model, @PathVariable("id") Long userId) {
+        User user = userRepository.findById(userId).get();
+        model.addAttribute("user", user);
+        return "profileUser";
+    }
+
 }
