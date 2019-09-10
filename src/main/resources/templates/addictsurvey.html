@@ -46,57 +46,117 @@
 
         <body>
 
-            <div class="whatAddiction">Quelle est votre addiction ?</div>
+            <form action="" method="post" class="addiction">
                 
-                <div class="food">Alimentaire (sucre, chocolat, café ...)</div>
-                    <div class="food1">La prenez vous pour compenser un stress ?</div>
-                        <div class="answer1">Oui</div>
-                        <div class="answer2">Non</div>
+                <div class="what">
+                    <label for="what">Quelle est votre addiction ?</label>
+                        <select id="what" multiple>
+                            <option value="food">Alimentaire (sucre, chocolat, café ...)</option>
+                            <option value="alcool">Alcool / Drogues</option>
+                            <option value="screen">Ecrans</option>
+                        </select>
+                </div>
+                
+                <div class="food1">
+                <label for="stress">La prenez vous pour compenser un stress ?</label>
+                    <select id="stress" multiple>
+                        <option value="yes">Oui</option>
+                        <option value="no">Non</option>
+                    </select>
+                </div>
 
-                    <div class="food2">La prenez vous aussi sans aucune raison (automatisme) ?</div>
-                        <div class="answer1">Oui</div>
-                        <div class="answer2">Non</div>
+                <div class="food2">
+                <label for="why">La prenez vous aussi sans aucune raison (automatisme) ?</label>
+                    <select id="why" multiple>
+                        <option value="yes">Oui</option>
+                        <option value="no">Non</option>
+                    </select>
+                </div>
+                
+                <div class="food3">
+                <label for="health">Considérez vous que cette addiction nuit à votre bien être ?</label>
+                    <select id="health" multiple>
+                        <option value="yes">Oui</option>
+                        <option value="no">Non</option>
+                    </select>
+                </div>
 
-                    <div class="food3">Considérez vous que cette addiction nuit à votre bien être ?</div>
-                        <div class="answer1">Oui</div>
-                        <div class="answer2">Non</div>
+                <div class="submit">
+                    <button type="submit">J'envoie mes réponses</button>
+                </div>
 
-            <div class="alcool">Alcool / Drogues</div>
-            
-                <div class="alcool1">A quelle fréquence votre addiction se manifeste-t'elle ?</div>
-                    <div class="answer1">Tous les jours ou presque</div>
-                    <div class="answer2">1 à 3 fois par semaine</div>
-                    <div class="answer3">Rarement</div>
+                <div class="alcool1">
+                    <label for="frequency">A quelle fréquence votre addiction se manifeste-t'elle ?</label>
+                        <select id="frequency" multiple>
+                            <option value="days">Tous les jours ou presque</option>
+                            <option value="weeks">1 à 3 fois par semaine</option>
+                            <option value="none">Rarement</option>
+                        </select>   
+                </div>
 
-                <div class="alcool2">Y a t'il eu un évènement dans votre vie qui aurait pu déclencher cette addiction ?</div>
-                    <div class="answer1">Oui</div>
-                    <div class="answer2">Non</div>
+                <div class="alcool2">
+                    <label for="event">Y a t'il eu un évènement dans votre vie qui aurait pu déclencher cette addiction ?</label>
+                        <select id="event" multiple>
+                            <option value="yes">Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                </div>
 
-                <div class="alcool3">Considérez vous que cette addiction nuit à votre santé ?</div>
-                    <div class="answer1">Oui</div>
-                    <div class="answer2">Non</div>
+                <div class="alcool3">
+                    <label for="health">Considérez vous que cette addiction nuit à votre santé ?</label>
+                        <select id="health" multiple>
+                            <option value="yes">Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                </div>
 
-                <div class="alcool4">Avez vous le sentiment que cette addiction vous isole ?</div>
-                    <div class="answer1">Oui</div>
-                    <div class="answer2">Non</div>
+                <div class="alcool4">
+                    <label for="isolation">Avez vous le sentiment que cette addiction vous isole ?</label>
+                        <select id="isolation" multiple>
+                            <option value="yes">Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                </div>
 
-            <div class="screen">Ecrans</div>
+                <div class="submit">
+                    <button type="submit">J'envoie mes réponses</button>
+                </div>
 
-                <div class="screen1">Quelle est votre addiction ?</div>
-                    <div class="answer1">TV</div>
-                    <div class="answer2">Jeux vidéos</div>
-                    <div class="answer3">Smartphones / tablettes</div>
+                <div class="screen1">
+                    <label for="what">Quelle est votre addiction ?</label>
+                        <select id="what" multiple>
+                            <option value="tv">TV</option>
+                            <option value="videosgames">Jeux vidéos</option>
+                            <option value="smartphones">Smartphones / tablettes</option>
+                        </select>   
+                </div>
 
-                <div class="screen2">Depuis combien de temps avez vous cette addiction ?</div>
-                    <!--case à remplir-->
+                <div class="screen2">
+                    <label for="time">Depuis combien de temps avez vous cette addiction ?</label>
+                        <input type="text" id="time" required>
+                </div>
 
-                <div class="screen3">Avez vous le sentiment que cette addiction vous isole ?</div>
-                    <div class="answer1">Oui</div>
-                    <div class="answer2">Non</div>
+                <div class="screen3">
+                    <label for="isolation">Avez vous le sentiment que cette addiction vous isole ?</label>
+                        <select id="isolation" multiple>
+                            <option value="yes">Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                </div>
 
-                <div class="screen4">Avez vous le sentiment que votre addiction s’empire au fil du temps ?</div>
-                    <div class="answer1">Oui</div>
-                    <div class="answer2">Non</div>
+                <div class="screen4">
+                    <label for="worst">Avez vous le sentiment que votre addiction s’empire au fil du temps ?</label>
+                        <select id="worst" multiple>
+                            <option value="yes">Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                </div>
+
+                <div class="submit">
+                    <button type="submit">J'envoie mes réponses</button>
+                </div>
+
+            </form>
 
         </body>
         

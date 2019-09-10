@@ -46,19 +46,36 @@
 
     <body>
         
-        <div class="smoke1">Depuis combien de temps fumez vous ?</div>
-            <!---- case à remplir-->
+    <form action="" method="post" class="smoke">
+        <div class="smoke1">
+            <label for="time">Depuis combien de temps fumez vous ?</label>
+            <input type="text" id="time" required>
+        </div>
 
-        <div class="smoke2">Combien de cigarettes fumez vous par jours ?</div>
-            <!---- case à remplir-->
+        <div class="smoke2">
+            <label for="number">Combien de cigarettes fumez vous par jours ?</label>
+            <input type="text" id="number" required>
+        </div>
 
-        <div class="smoke3">Avez vous déjà essayé d'arrêter de fumer ?</div>
-            <div class="answer1">Oui</div>
-            <div class="answer2">Non</div>
+        <div class="smoke3">
+            <label for="stop">Avez vous déjà essayé d'arrêter de fumer ?</label>
+                <select id="stop" multiple>
+                    <option value="yes">Oui</option>
+                    <option value="no">Non</option>
+                </select>
+        </div>
 
-        <div class="smoke4">Si oui qu’avez vous fait ?</div>
-            <!---- case à remplir-->
+        <div class="smoke4">
+            <label for="how">Si oui qu’avez vous fait ?</label>
+            <input type="text" id="how" required>
+        </div>
 
+        <div class="submit">
+            <button type="submit">J'envoie mes réponses</button>
+        </div>
+           
+    </form>
+            
     </body>
 
 </html>
