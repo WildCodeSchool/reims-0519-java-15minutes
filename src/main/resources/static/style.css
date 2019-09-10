@@ -238,3 +238,23 @@ a {
     background-color: #8c56b8;
     border-style: none;
 }
+
+/** questionnaire **/
+
+input{
+    border-style: solid;
+    border-color: #8c56b8;
+    border-width: 1px;
+}
+
+select{
+    border-style: none;
+    list-style-type: disc;
+}
+
+button{
+    background-color: #8c56b8;
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+}
