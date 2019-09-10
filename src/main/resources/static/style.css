@@ -239,25 +239,6 @@ a {
     border-style: none;
 }
 
-/** questionnaire **/
-
-input{
-    border-style: solid;
-    border-color: #8c56b8;
-    border-width: 1px;
-}
-
-select{
-    border-style: none;
-    list-style-type: disc;
-}
-
-button{
-    background-color: #8c56b8;
-    color: white;
-    border-radius: 10px;
-    border-style: none;
-}
 /* Page Profil Particulier */
 
 .fa-address-card{
@@ -283,4 +264,28 @@ button{
 .return{
     font-size: 30px;
     color: #8c56b8;
+}
+
+.btn-survey{
+    background-color: #8c56b8;
+}
+
+input[type=radio]{
+    display: none;
+}
+
+input[type=radio] + label:before {
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 17px;
+    height: 17px;
+}
+
+input[type=radio]:checked + label:before{
+    background: #8c56b8;
+
 }
