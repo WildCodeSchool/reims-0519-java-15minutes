@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>Addiction</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
+        <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>     
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mon suivi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/hypnotherapists}">Hypnothérapeutes</a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+        </header>
+
+        <body>
+
+            <form action="" method="post" class="addiction">
+                
+                <div class="what">
+                    <label for="what">Quelle est votre addiction ?</label>
+                        <select id="what" multiple>
+                            <option value="food">Alimentaire (sucre, chocolat, café ...)</option>
+                            <option value="alcool">Alcool / Drogues</option>
+                            <option value="screen">Ecrans</option>
+                        </select>
+                </div>
+                
+                <div class="food1">
+                <label for="stress">La prenez vous pour compenser un stress ?</label>
+                    <select id="stress" multiple>
+                        <option value="yes">Oui</option>
+                        <option value="no">Non</option>
+                    </select>
+                </div>
+
+                <div class="food2">
+                <label for="why">La prenez vous aussi sans aucune raison (automatisme) ?</label>
+                    <select id="why" multiple>
+                        <option value="yes">Oui</option>
+                        <option value="no">Non</option>
+                    </select>
+                </div>
+                
+                <div class="food3">
+                <label for="health">Considérez vous que cette addiction nuit à votre bien être ?</label>
+                    <select id="health" multiple>
+                        <option value="yes">Oui</option>
+                        <option value="no">Non</option>
+                    </select>
+                </div>
+
+                <div class="submit">
+                    <button type="submit">J'envoie mes réponses</button>
+                </div>
+
+                <div class="alcool1">
+                    <label for="frequency">A quelle fréquence votre addiction se manifeste-t'elle ?</label>
+                        <select id="frequency" multiple>
+                            <option value="days">Tous les jours ou presque</option>
+                            <option value="weeks">1 à 3 fois par semaine</option>
+                            <option value="none">Rarement</option>
+                        </select>   
+                </div>
+
+                <div class="alcool2">
+                    <label for="event">Y a t'il eu un évènement dans votre vie qui aurait pu déclencher cette addiction ?</label>
+                        <select id="event" multiple>
+                            <option value="yes">Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                </div>
+
+                <div class="alcool3">
+                    <label for="health">Considérez vous que cette addiction nuit à votre santé ?</label>
+                        <select id="health" multiple>
+                            <option value="yes">Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                </div>
+
+                <div class="alcool4">
+                    <label for="isolation">Avez vous le sentiment que cette addiction vous isole ?</label>
+                        <select id="isolation" multiple>
+                            <option value="yes">Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                </div>
+
+                <div class="submit">
+                    <button type="submit">J'envoie mes réponses</button>
+                </div>
+
+                <div class="screen1">
+                    <label for="what">Quelle est votre addiction ?</label>
+                        <select id="what" multiple>
+                            <option value="tv">TV</option>
+                            <option value="videosgames">Jeux vidéos</option>
+                            <option value="smartphones">Smartphones / tablettes</option>
+                        </select>   
+                </div>
+
+                <div class="screen2">
+                    <label for="time">Depuis combien de temps avez vous cette addiction ?</label>
+                        <input type="text" id="time" required>
+                </div>
+
+                <div class="screen3">
+                    <label for="isolation">Avez vous le sentiment que cette addiction vous isole ?</label>
+                        <select id="isolation" multiple>
+                            <option value="yes">Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                </div>
+
+                <div class="screen4">
+                    <label for="worst">Avez vous le sentiment que votre addiction s’empire au fil du temps ?</label>
+                        <select id="worst" multiple>
+                            <option value="yes">Oui</option>
+                            <option value="no">Non</option>
+                        </select>
+                </div>
+
+                <div class="submit">
+                    <button type="submit">J'envoie mes réponses</button>
+                </div>
+
+            </form>
+
+        </body>
+        
+</html>
