@@ -32,10 +32,10 @@ class HypnotherapistController {
 
     @PostMapping("/hypnoRegister")
     public Hypnotherapist register(Authentication authentication, @RequestParam String description,
-            @RequestParam String phone, @RequestParam String adr_street, @RequestParam String adr_postal,
+            @RequestParam String phone, @RequestParam String address, @RequestParam String adr_postal,
             @RequestParam String town) {
             User user = userRepository.findByMail(authentication.getName());
-        return hypnotherapistRepository.save(new Hypnotherapist(user, description, phone, adr_street, adr_postal, town));
+        return hypnotherapistRepository.save(new Hypnotherapist(user, description, phone, address, adr_postal, town));
     }
 
     @GetMapping("/hypnoRegister")
