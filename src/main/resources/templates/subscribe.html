@@ -21,20 +21,23 @@
 
     <form action="#" class="text-center border border-light " th:action="@{/users}" th:object="${user}"
         method="POST">
-        <p class="h4 mb-4">Inscription</p>
+        <p class="h4 p-4">Inscription</p>
         <div class="form-row mb-4">
             <div class="col-6">
-                <input class="form-control" type="text" placeholder="Prénom" th:field="*{firstname}">
+                <input class="form-control" type="text" placeholder="Prénom" th:field="*{firstname}" required>
             </div>
             <div class="col-6">
-                <input class="form-control" type="text" placeholder="Nom" th:field="*{lastname}">
+                <input class="form-control" type="text" placeholder="Nom" th:field="*{lastname}" required>
             </div>
         </div>
-        <input class="form-control mb-4" type="email" placeholder="E-mail" th:field="*{mail}">
-        <input class="form-control" type="password" placeholder="Mot de passe" th:field="*{password}">
+        <input class="form-control mb-4" type="email" placeholder="E-mail" th:field="*{mail}" required>
+        <input class="form-control" type="password" placeholder="Mot de passe" th:field="*{password}" required>
         <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
         </small>
         <input type="hidden" name="role" value="user">
+
+        <input type="checkbox" name="isHypnotherapist" value="true" checked="false" id="isHypnotherapist">
+        <label for="isHypnotherapist">Je suis Hypnothérapeuthe.</label>
 
 
         <div class="d-flex justify-content-center">
@@ -43,6 +46,7 @@
         <p class="politique">En vous inscrivant vous acceptez la
             <a href="" target="_blank">politique de confidentialité</a>
     </form>
+
 
     <script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
