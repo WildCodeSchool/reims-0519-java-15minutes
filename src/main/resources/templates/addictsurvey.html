@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
     </head>
 
-    <body>
+    <body class="container-fluid d-flex flex-column justify-content-between p-3">
 
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,119 +44,14 @@
             </nav>
         </header>
 
-        <body>
+            <h2>Quelle est votre addiction ?</h2>
 
-            <form action="" method="post" class="addiction">
-                
-                <div class="what">
-                    <label for="what">Quelle est votre addiction ?</label>
-                        <select id="what" multiple>
-                            <option value="food">Alimentaire (sucre, chocolat, café ...)</option>
-                            <option value="alcool">Alcool / Drogues</option>
-                            <option value="screen">Ecrans</option>
-                        </select>
-                </div>
-                
-                <div class="food1">
-                <label for="stress">La prenez vous pour compenser un stress ?</label>
-                    <select id="stress" multiple>
-                        <option value="yes">Oui</option>
-                        <option value="no">Non</option>
-                    </select>
-                </div>
+            <div class="containerButtons">
+                <a class="btn btn-primar btn-block mb-4" th:href="@{/foodAddictionSurvey}" role="button">Alimentaire (sucre, chocolat, café ...)</a>
+                <a class="btn btn-secondary btn-block mb-4" th:href="@{/alcoolAddictionSurvey}" role="button">Alcool / Drogues</a>
+                <a class="btn btn-tertiary btn-block mb-4" th:href="@{/screenAddictionSurvey}" role="button">Ecrans</a>
+            </div>
 
-                <div class="food2">
-                <label for="why">La prenez vous aussi sans aucune raison (automatisme) ?</label>
-                    <select id="why" multiple>
-                        <option value="yes">Oui</option>
-                        <option value="no">Non</option>
-                    </select>
-                </div>
-                
-                <div class="food3">
-                <label for="health">Considérez vous que cette addiction nuit à votre bien être ?</label>
-                    <select id="health" multiple>
-                        <option value="yes">Oui</option>
-                        <option value="no">Non</option>
-                    </select>
-                </div>
-
-                <div class="submit">
-                    <button type="submit">J'envoie mes réponses</button>
-                </div>
-
-                <div class="alcool1">
-                    <label for="frequency">A quelle fréquence votre addiction se manifeste-t'elle ?</label>
-                        <select id="frequency" multiple>
-                            <option value="days">Tous les jours ou presque</option>
-                            <option value="weeks">1 à 3 fois par semaine</option>
-                            <option value="none">Rarement</option>
-                        </select>   
-                </div>
-
-                <div class="alcool2">
-                    <label for="event">Y a t'il eu un évènement dans votre vie qui aurait pu déclencher cette addiction ?</label>
-                        <select id="event" multiple>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
-                        </select>
-                </div>
-
-                <div class="alcool3">
-                    <label for="health">Considérez vous que cette addiction nuit à votre santé ?</label>
-                        <select id="health" multiple>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
-                        </select>
-                </div>
-
-                <div class="alcool4">
-                    <label for="isolation">Avez vous le sentiment que cette addiction vous isole ?</label>
-                        <select id="isolation" multiple>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
-                        </select>
-                </div>
-
-                <div class="submit">
-                    <button type="submit">J'envoie mes réponses</button>
-                </div>
-
-                <div class="screen1">
-                    <label for="what">Quelle est votre addiction ?</label>
-                        <select id="what" multiple>
-                            <option value="tv">TV</option>
-                            <option value="videosgames">Jeux vidéos</option>
-                            <option value="smartphones">Smartphones / tablettes</option>
-                        </select>   
-                </div>
-
-                <div class="screen2">
-                    <label for="time">Depuis combien de temps avez vous cette addiction ?</label>
-                        <input type="text" id="time" required>
-                </div>
-
-                <div class="screen3">
-                    <label for="isolation">Avez vous le sentiment que cette addiction vous isole ?</label>
-                        <select id="isolation" multiple>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
-                        </select>
-                </div>
-
-                <div class="screen4">
-                    <label for="worst">Avez vous le sentiment que votre addiction s’empire au fil du temps ?</label>
-                        <select id="worst" multiple>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
-                        </select>
-                </div>
-
-                <div class="submit">
-                    <button type="submit">J'envoie mes réponses</button>
-                </div>
-
-            </form>
 
         </body>
         

@@ -43,19 +43,45 @@
                 </div>
             </nav>
         </header>
-        
-        <h2>Quelle est votre phobie ?</h2>
 
-        <div class="containerButtons">
-            <a class="btn btn-primar btn-block mb-4" th:href="@{/animalsFear}" role="button">Peur des animaux de compagnies</a>
-            <a class="btn btn-secondary btn-block mb-4" th:href="@{/animalsFear}" role="button">Peur des araignées et insectes divers</a>
-            <a class="btn btn-tertiary btn-block mb-4" th:href="@{/carFear}" role="button">Peur de conduire en voiture</a>
-            <a class="btn btn-quaternary btn-block mb-4" th:href="@{/planeFear}" role="button">Peur de prendre l'avion</a>
-            <a class="btn btn-quinary btn-block mb-4" th:href="@{/peopleFear}" role="button">Peur de la foule et des lieux publics</a>
-            <a class="btn btn-senary btn-block mb-4" th:href="@{/waterFear}" role="button">Aquaphobie</a>
-            <a class="btn btn-septenary btn-block mb-4" th:href="@{/closeFear}" role="button">Claustrophobie</a>
-        </div>
+        <form action="" method="post" class="fear">
 
+            <label for="form-check">Dans quelle situation se manifeste cette peur ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="dark" value="option1">
+                <label class="form-check-label" for="dark"> Dans le noir</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="close" value="option2">
+                <label class="form-check-label" for="close"> Dans un espace clos (ascenceur, pièces sans fenêtre ...)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="little" value="option3">
+                <label class="form-check-label" for="little"> Dans un espace restreint</label>
+            </div>
+
+            <hr width="100%" size="5">
+
+            <label for="form-check">Quand cela se manifeste-t'il ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="days" value="option1">
+                <label class="form-check-label" for="days"> Tous les jours ou presque</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="weeks" value="option2">
+                <label class="form-check-label" for="weeks"> 1 à 3 fois par semaine</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="none" value="option3">
+                <label class="form-check-label" for="none"> Rarement</label>
+            </div>
+
+            <br>
+
+            <div class="col-auto d-flex justify-content-center">
+                <button type="submit" class="btn btn-survey">J'envoie mes réponses</button>
+            </div>
+       
+        </form>
     </body>
-
 </html>
