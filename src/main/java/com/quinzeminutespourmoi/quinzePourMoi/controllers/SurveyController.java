@@ -61,4 +61,9 @@ class SurveyController{
     public String closeFear(Model model){
         return "closeFear";
     }
+
+    @GetMapping("/fearSurvey")
+    public String fearSurvey(Model model){
+        return "fearSurvey";
+    }
 }
