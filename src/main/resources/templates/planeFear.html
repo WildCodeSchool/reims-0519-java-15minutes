@@ -44,18 +44,37 @@
             </nav>
         </header>
         
-        <h2>Quelle est votre phobie ?</h2>
+        <form action="" method="post" class="fear">
 
-        <div class="containerButtons">
-            <a class="btn btn-primar btn-block mb-4" th:href="@{/animalsFear}" role="button">Peur des animaux de compagnies</a>
-            <a class="btn btn-secondary btn-block mb-4" th:href="@{/animalsFear}" role="button">Peur des araignées et insectes divers</a>
-            <a class="btn btn-tertiary btn-block mb-4" th:href="@{/carFear}" role="button">Peur de conduire en voiture</a>
-            <a class="btn btn-quaternary btn-block mb-4" th:href="@{/planeFear}" role="button">Peur de prendre l'avion</a>
-            <a class="btn btn-quinary btn-block mb-4" th:href="@{/peopleFear}" role="button">Peur de la foule et des lieux publics</a>
-            <a class="btn btn-senary btn-block mb-4" th:href="@{/waterFear}" role="button">Aquaphobie</a>
-            <a class="btn btn-septenary btn-block mb-4" th:href="@{/closeFear}" role="button">Claustrophobie</a>
-        </div>
+            <label for="form-check">Quand cela se manifeste-t'il ?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="intime" value="option1">
+                    <label class="form-check-label" for="intime"> Avant d'entrer dans l'avion</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="before" value="option2">
+                    <label class="form-check-label" for="before"> Déjà plusieurs jours avant</label>
+                </div>
+
+            <hr width="100%" size="5">
+
+            <label for="form-check">Cette peur est-elle encore présente lorsque vous êtes en vol ?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="oui" value="option1">
+                    <label class="form-check-label" for="oui"> Oui</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="non" value="option2">
+                    <label class="form-check-label" for="non"> Non</label>
+                </div>
+
+            <br>
+
+            <div class="col-auto d-flex justify-content-center">
+                <button type="submit" class="btn btn-survey">J'envoie mes réponses</button>
+            </div>
+
+        </form>
 
     </body>
-
 </html>
