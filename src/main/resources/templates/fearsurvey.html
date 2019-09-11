@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>Peur</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
+        <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>     
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mon suivi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/hypnotherapists}">Hypnothérapeutes</a>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+        </header>
+
+        <form action="" method="post" class="fear">
+
+            <div class="what">
+                <label for="what">Quelle est votre phobie ?</label>
+                    <select id="what" multiple>
+                        <option value="pets">Peur des animaux de compagnies</option>
+                        <option value="insects">Peur des araignées et insectes divers</option>
+                        <option value="car">Peur de conduire en voiture</option>
+                        <option value="plane">Peur de prendre l’avion</option>
+                        <option value="people">Peur de la foule et des lieux publics</option>
+                        <option value="water">Aquaphobie</option>
+                        <option value="close">Claustrophobie</option>
+                    </select>
+            </div>
+                    
+
+            <div class="pets1">
+                <label for="when">Quand se manifeste-t'elle ?</label>
+                    <select id="when" multiple>
+                        <option value="think">Rien qu’en y pensant</option>
+                        <option value="see">En la voyant</option>
+                        <option value="touch">Au toucher</option>
+                    </select>
+            </div>
+            
+            <div class="pets2">
+                <label for="how">Y a t il des fois où cette phobie ne se manifeste pas ?</label>
+                    <select id="how" multiple>
+                        <option value="yes">Oui</option>
+                        <option value="no">Non</option>
+                    </select>
+            </div>
+
+            <div class="submit">
+                <button type="submit">J'envoie mes réponses</button>
+            </div>
+
+                
+                    <!--<div class="insects1">Quand se manifeste-t'elle ?</div>
+                        <div class="answer1">Rien qu’en y pensant</div>
+                        <div class="answer2">En la voyant</div>
+                        <div class="answer3">Au toucher</div>
+    
+                    <div class="insects2">Y a t'il des fois où cette phobie ne se manifeste pas ?</div>
+                        <div class="answer1">Oui</div>
+                        <div class="answer2">Non</div>-->
+
+
+            <div class="car1">
+                <label for="frequency">A quelle fréquence cela vous arrive-t'il ?</label>
+                    <select id="frequency" multiple>
+                        <option value="anytime">Tout le temps</option>
+                        <option value="often">Souvent</option>
+                        <option value="none">Rarement</option>
+                    </select>
+            </div>
+
+            <div class="car2">
+                <label for="speed">Cela dépend t'il de la vitesse ?</label>
+                    <select id="speed" multiple>
+                        <option value="yes">Oui</option>
+                        <option value="no">Non</option>
+                    </select>
+            </div>
+
+            <div class="car3">
+                <label for="road">Sur quel type de route cela vous arrive-t'il ?</label>
+                    <select id="road" multiple>
+                        <option value="straight">Plutôt sur les lignes droites</option>
+                        <option value="turn">Lorsqu'il y a des virages</option>
+                        <option value="any">Peu importe</option>
+                    </select>
+            </div>
+
+            <div class="car4">
+                <label for="event">Y a t'il eu un événement avant la phobie qui aurait pu déclencher votre peur ?</label>
+                    <select id="event" multiple>
+                            <option value="yes">Oui</option>
+                            <option value="no">Non</option>
+                    </select>
+            </div>
+
+            <div class="submit">
+                <button type="submit">J'envoie mes réponses</button>
+            </div>
+
+
+            <div class="plane1">
+                <label for="when">Quand cela se manifeste-t'il ?</label>
+                    <select id="when" multiple>
+                        <option value="intime">Avant d'entrer dans l'avion</option>
+                        <option value="before">Déjà plusieurs jours avant</option>
+                    </select>
+            </div>
+
+            <div class="plane2">
+                <label for="inflight">Cette peur est-elle encore présente lorsque vous êtes en vol ?</label>
+                    <select id="inflight" multiple>
+                        <option value="yes">Oui</option>
+                        <option value="no">Non</option>
+                    </select>
+            </div>
+
+            <div class="submit">
+                <button type="submit">J'envoie mes réponses</button>
+            </div>
+
+        
+            <div class="people1">
+                <label for="situation">Dans quelle situation se manifeste-t'elle ?</label>
+                    <select id="situation" multiple>
+                        <option value="contact">Lorsque vous êtes en contact avec la foule</option>
+                        <option value="transport">Dans les transports en commun</option>
+                        <option value="publicspace">Lorsque vous entrez dans un lieu public</option>
+                        <option value="street">Lorsque vous êtes dans une rue passante</option>
+                    </select>
+            </div>
+
+            <div class="people2">
+                <label for="frequency">A quelle fréquence cette peur se manifeste-t’elle ?</label>
+                    <select id="frequency" multiple>
+                        <option value="anytime">Tout le temps</option>
+                        <option value="often">Souvent</option>
+                        <option value="none">Rarement</option>
+                    </select>
+            </div>
+
+            <div class="submit">
+                <button type="submit">J'envoie mes réponses</button>
+            </div>
+
+
+            <div class="water1">
+                <label for="when">Quand cette peur se manifeste-t'elle ?</label>
+                    <select id="when" multiple>
+                        <option value="think">Rien qu'en y pensant</option>
+                        <option value="see">En voyant de l'eau</option>
+                    </select>
+            </div>
+                
+            <div class="water2">
+                <label for="event">Y a t'il eu un événement qui aurait pu déclencher cette phobie ?</label>
+                    <select id="event" multiple>
+                        <option value="yes">Oui</option>
+                        <option value="no">Non</option>
+                    </select>
+            </div>
+
+            <div class="submit">
+                <button type="submit">J'envoie mes réponses</button>
+            </div>
+
+
+            <div class="close1">
+                <label for="situation">Dans quelle situation se manifeste cette peur ?</label>
+                    <select id="event" multiple>
+                        <option value="dark">Dans le noir</option>
+                        <option value="close">Dans un espace clos (ascenceur, pièces sans fenêtre ...)</option>
+                        <option value="little">Dans un espace restreint</option>
+                    </select>
+            </div>
+
+            <div class="close2">
+                <label for="when">Quand cela se manifeste-t'il ?</label>
+                    <select id="when" multiple>
+                        <option value="days">Tous les jours ou presque</option>
+                        <option value="weeks">1 à 3 fois par semaine</option>
+                        <option value="none">Rarement</option>
+                    </select>
+            </div>
+
+            <div class="submit">
+                <button type="submit">J'envoie mes réponses</button>
+            </div>
+
+        </form>
+
+    </body>
+
+</html>

@@ -1,7 +1,9 @@
 package com.quinzeminutespourmoi.quinzePourMoi.entities;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,10 +14,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements UserDetails {
 
     public User() {
     }
@@ -132,20 +137,35 @@ public class User {
         this.role = role;
     }
 
-    /**
-     * @return Hypnotherapist return the hypnotherapist
-     */
-    public Hypnotherapist getHypnotherapist() {
-        return hypnotherapist;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+       final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+       if(getMail().equals(mail)) {
+           authorities.add(new SimpleGrantedAuthority("ADMIN"));
+       }
+       return authorities;
     }
 
-    /**
-     * @param hypnotherapist the hypnotherapist to set
-     */
-    public void setHypnotherapist(Hypnotherapist hypnotherapist) {
-        this.hypnotherapist = hypnotherapist;
+    @Override
+    public String getUsername() {
+        return mail;
     }
-
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 
     /**
      * @return String return the image
@@ -160,5 +180,4 @@ public class User {
     public void setImage(String image) {
         this.image = image;
     }
-
 }

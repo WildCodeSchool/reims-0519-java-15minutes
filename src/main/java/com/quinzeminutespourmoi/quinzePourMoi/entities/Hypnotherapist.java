@@ -14,6 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "hypnotherapist")
 public class Hypnotherapist {
+    
     public Hypnotherapist() {
     }
 
@@ -37,7 +38,7 @@ public class Hypnotherapist {
     private String adr_postal;
     private String town;
 
-    @OneToOne
+    @OneToOne(optional = true)
     @MapsId
     private User user;
 
