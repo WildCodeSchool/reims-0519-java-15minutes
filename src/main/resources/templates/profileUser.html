@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>15' Pour Moi</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
+
+</head>
+
+<body class="container-fluid d-flex flex-column justify-content-between p-3">
+    <header th:replace="fragments/header.html :: header"></header>
+
+
+
+
+
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="img xavier">
+                <img th:src="${user.image}" class="img-fluid img-circle rounded-circle"
+                    alt="">
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="name col-12 text-center ">
+        <h1 class="text-center" th:text="${user.lastname} + ' ' + ${user.firstname}"></h1>
+        <i class=" fas fa-envelope" th:text=" ' ' + ${user.mail}"></i>
+
+
+    </div>
+
+    <div class="rating col-12">
+        <p class="text-center">Mon résultat :</p>
+    </div>
+
+    <hr width="100%" size="5">
+
+<!--     <div class="row">
+        <div class="col-6">
+            <i class="fas fa-envelope" th:text=" ' ' + ${user.mail}"></i>
+        </div>
+    </div> -->
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        Mes favoris </button>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Résultats</h4>
+                            </div>
+
+                            <ul class="list-group" id="user-list">
+                                <a class="list-group-item list-group-item-action">
+                                    <div class="row">
+                                        <div class="col-12 ">
+                                            <div class="row align-items-center">
+                                                <div class="col-3 user-img">
+                                                    <img class="img-responsive img-circle rounded-circle" />
+                                                </div>
+                                                <div class="col-9">
+                                                    <h5 class="font-weight-bold">
+                                                    </h5>
+                                                    <div class="user-detail">
+                                                        <p><span id="dist"
+                                                                class="fas fa-map-marker-alt mr-1 "></span></i>6 km</p>
+                                                        <div class="stars justify-content-start">
+                                                            <i class="fas fa-star gold"></i>
+                                                            <i class="fas fa-star gold"></i>
+                                                            <i class="fas fa-star gold"></i>
+                                                            <i class="fas fa-star gold"></i>
+                                                            <i class="fas fa-star gold"></i>
+                                                        </div>
+                                                        <span class="fas fa-heart right float-right"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- 
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+                    <div class=" img xavier">
+            <img src="https://res.cloudinary.com/dcpygeamv/image/upload/v1567597052/vincent.jpg"
+                class="img-fluid img-circle rounded-circle" alt="">
+        </div>
+    </div>
+    <div class="name col-12">
+        <h1 class="font-weight-bold text-center col">Vincent GUEGAN</h1>
+        <p class="text-center">Questionnary result</p>
+    </div>
+    <ul class="list-group list-group-flush col-12">
+        <li><i class="fas fa-at mr-2"></i>vincent@gmail.com</li><br>
+        <li><i class="fas fa-phone-alt mr-2"></i>0000000000</li><br>
+        <li><i class="fas fa-address-card mr-2"></i>Rue des 100K€</li><br>
+    </ul>
+
+    <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#contactCenter">Me
+                    contacter</button>
+    <button type="button" class="btn notification">Notifications</button><br>
+        </div>
+    </div>
+ -->
+    <script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js}"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js}"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script th:src="@{/static/all.js}"></script>
+    <script th:src="@{/static/geoFindme.js}"></script>
+    <script th:src="@{/static/webStorage.js}"></script>
+
+</body>
+
+</html>
