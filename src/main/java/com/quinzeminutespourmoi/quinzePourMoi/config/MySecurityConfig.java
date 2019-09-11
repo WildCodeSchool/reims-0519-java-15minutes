@@ -31,6 +31,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/subscribe").permitAll()
                 .antMatchers("/hypnoRegister").authenticated()
+                .antMatchers("/users/**").authenticated()
                 .antMatchers("/###").access("hasRole('user') or hasRole('ADMIN')")
                 .antMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
