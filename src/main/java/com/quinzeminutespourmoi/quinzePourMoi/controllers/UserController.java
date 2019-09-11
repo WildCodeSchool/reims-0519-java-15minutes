@@ -23,8 +23,8 @@ class UserController {
 
     @PostMapping("/subscribe")
     public User subscribe(@RequestParam String firstname, @RequestParam String lastname, @RequestParam String mail,
-            @RequestParam String password, @RequestParam String role, @RequestParam String image) {
-        return userRepository.save(new User(firstname, lastname, password, mail, role, image));
+            @RequestParam String password, @RequestParam String role, @RequestParam String image, @RequestParam String survey) {
+        return userRepository.save(new User(firstname, lastname, password, mail, role, image, survey));
 
     }
 

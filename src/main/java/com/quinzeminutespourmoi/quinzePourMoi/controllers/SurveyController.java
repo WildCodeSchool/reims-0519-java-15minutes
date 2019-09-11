@@ -32,6 +32,11 @@ class SurveyController{
         return "alcoolAddictionSurvey";
     }
 
+    @GetMapping("/fearSurvey")
+    public String fearSurvey(Model model){
+        return "fearSurvey";
+    }
+
     @GetMapping("/animalsFear")
     public String animalsFear(Model model){
         return "animalsFear";
@@ -62,8 +67,4 @@ class SurveyController{
         return "closeFear";
     }
 
-    @GetMapping("/fearSurvey")
-    public String fearSurvey(Model model){
-        return "fearSurvey";
-    }
 }

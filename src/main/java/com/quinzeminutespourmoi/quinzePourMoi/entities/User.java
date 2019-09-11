@@ -16,13 +16,14 @@ public class User {
     public User() {
     }
 
-    public User(String firstname, String lastname, String password, String mail, String role, String image) {
+    public User(String firstname, String lastname, String password, String mail, String role, String image, String survey) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;
         this.mail = mail;
         this.role = role;
         this.image = image;
+        this.survey = survey;
     }
 
     @Id
@@ -35,7 +36,8 @@ public class User {
     private String mail;
     private String role;
     private String image;
-    
+    private String survey;
+
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Hypnotherapist hypnotherapist;
 
@@ -150,6 +152,20 @@ public class User {
      */
     public void setImage(String image) {
         this.image = image;
+    }
+
+    /**
+     * @return String return the survey
+     */
+    public String getSurvey() {
+        return survey;
+    }
+
+    /**
+     * @param survey the survey to set
+     */
+    public void setSurvey(String survey) {
+        this.survey = survey;
     }
 
 }
