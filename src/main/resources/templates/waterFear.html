@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
     </head>
 
-    <body>
+    <body class="container-fluid d-flex flex-column justify-content-between p-3">
 
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,19 +43,34 @@
                 </div>
             </nav>
         </header>
-        
-        <h2>Quelle est votre phobie ?</h2>
+     
+        <form action="" method="post" class="smoke">
 
-        <div class="containerButtons">
-            <a class="btn btn-primar btn-block mb-4" th:href="@{/animalsFear}" role="button">Peur des animaux de compagnies</a>
-            <a class="btn btn-secondary btn-block mb-4" th:href="@{/animalsFear}" role="button">Peur des araignées et insectes divers</a>
-            <a class="btn btn-tertiary btn-block mb-4" th:href="@{/carFear}" role="button">Peur de conduire en voiture</a>
-            <a class="btn btn-quaternary btn-block mb-4" th:href="@{/planeFear}" role="button">Peur de prendre l'avion</a>
-            <a class="btn btn-quinary btn-block mb-4" th:href="@{/peopleFear}" role="button">Peur de la foule et des lieux publics</a>
-            <a class="btn btn-senary btn-block mb-4" th:href="@{/waterFear}" role="button">Aquaphobie</a>
-            <a class="btn btn-septenary btn-block mb-4" th:href="@{/closeFear}" role="button">Claustrophobie</a>
-        </div>
+            <label for="form-check">Quand cette peur se manifest-t'elle ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="see" value="option1">
+                <label class="form-check-label" for="see"> En voyant l'eau</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="think" value="option2">
+                <label class="form-check-label" for="think"> Rien qu'en y pensant</label>
+            </div>
+            
+            <label for="form-check">Y a t'il eu un événement qui aurait pu déclencher cette phobie ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="oui" value="option1">
+                <label class="form-check-label" for="oui"> Oui</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="non" value="option2">
+                <label class="form-check-label" for="non"> Non</label>
+            </div>
 
+            <br>
+
+            <div class="col-auto d-flex justify-content-center">
+                <button type="submit" class="btn btn-survey">J'envoie mes réponses</button>
+            </div>
+        </form>
     </body>
-
 </html>
