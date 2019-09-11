@@ -38,103 +38,12 @@
 
     </div>
 
-    <div class="rating col-12">
-        <p class="text-center">Mon résultat :</p>
-    </div>
-
-    <hr width="100%" size="5">
-
-    <hr>
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <p>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
-                        aria-expanded="false" aria-controls="collapseExample">
-                        Mes favoris </button>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Résultats</h4>
-                            </div>
-
-                            <ul th:each="hypnotherapist : ${hypnotherapists}" class="list-group" id="user-list">
-                                    <a th:href="@{/hypnotherapists/{id}(id=${hypnotherapist.id})}" class="list-group-item list-group-item-action">
-                                        <div class="row">
-                                            <div class="col-12 ">
-                                                <div class="row align-items-center">
-                                                    <div class="col-3 user-img">
-                                                        <img class="img-responsive img-circle rounded-circle" th:src="${hypnotherapist.user.image}" />
-                                                    </div>
-                                                    <div class="col-9">
-                                                        <h5 class="font-weight-bold"
-                                                            th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname} ">
-                                                        </h5>
-                                                        <div class="user-detail">
-                                                            <p><span id="dist" class="fas fa-map-marker-alt mr-1 "></span></i>6 km</p>
-                                                            <div class="stars justify-content-start">
-                                                                <i class="fas fa-star gold"></i>
-                                                                <i class="fas fa-star gold"></i>
-                                                                <i class="fas fa-star gold"></i>
-                                                                <i class="fas fa-star gold"></i>
-                                                                <i class="fas fa-star gold"></i>
-                                                            </div>
-                                                            <span class="fas fa-heart right float-right"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div th:replace="fragments/contentProfileUser.html :: contentProfileUser"></div>
+    <!--<div th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist"></div>-->
+    
 
 
-
-
-
-
-
-
-
-
-    <!-- 
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-                    <div class=" img xavier">
-            <img src="https://res.cloudinary.com/dcpygeamv/image/upload/v1567597052/vincent.jpg"
-                class="img-fluid img-circle rounded-circle" alt="">
-        </div>
-    </div>
-    <div class="name col-12">
-        <h1 class="font-weight-bold text-center col">Vincent GUEGAN</h1>
-        <p class="text-center">Questionnary result</p>
-    </div>
-    <ul class="list-group list-group-flush col-12">
-        <li><i class="fas fa-at mr-2"></i>vincent@gmail.com</li><br>
-        <li><i class="fas fa-phone-alt mr-2"></i>0000000000</li><br>
-        <li><i class="fas fa-address-card mr-2"></i>Rue des 100K€</li><br>
-    </ul>
-
-    <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#contactCenter">Me
-                    contacter</button>
-    <button type="button" class="btn notification">Notifications</button><br>
-        </div>
-    </div>
- -->
+    
     <script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
