@@ -14,33 +14,8 @@
     <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
 
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img class="ml-auto logo" src="../static/img/logo15.png" class="mx-auto img-responsive " alt="Responsive image"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">15' c'est quoi ?</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Mon suivi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Un autre besoin</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Hypnothérapeutes</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<body class="container-fluid d-flex flex-column justify-content-between  p-3">
+    <header th:replace="fragments/header.html :: header"></header>
 
 
     <div class="card p-2" style="width: 18rem;">
@@ -50,16 +25,14 @@
                     </div>
                 </div>
             <div class="card-body">
-            <h5 class="font-weight-bold text-center col">Vincent GUEGAN</h5>
-            <p class="card-text text-center">Questionnary result</p>
+            <h5 class="font-weight-bold text-center col" th:text="${user.lastname} + ' ' + ${user.firstname}"></h5>
+                <p class="card-text text-center">Questionnary result</p>
             </div>
             <ul class="list-group list-group-flush">
-            <li><i class="fas fa-at mr-2"></i>vincent@gmail.com</li><br>
-            <li><i class="fas fa-phone-alt mr-2"></i>0000000000</li><br>
-            <li><i class="fas fa-address-card mr-2"></i>Rue des 100K€</li><br>
+                <li><i class="fas fa-at mr-2 mb-3" th:text="${user.mail}"></i></li>
             </ul>
-        <button type="button" class="btn btn-primary avis">Mes favoris</button><br>
-        <button type="button" class="btn btn-primary notification">Notifications</button><br>
+        <button type="button" class="btn btn-primary avis mb-3">Mes favoris</button><br>
+        <button type="button" class="btn btn-primary notification mb-3">Notifications</button><br>
       </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

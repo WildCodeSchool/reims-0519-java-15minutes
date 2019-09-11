@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class UserController {
@@ -21,11 +22,17 @@ class UserController {
         return "subscribe";
     }
 
-    @PostMapping("/subscribe")
-    public User subscribe(@RequestParam String firstname, @RequestParam String lastname, @RequestParam String mail,
-            @RequestParam String password, @RequestParam String role, @RequestParam String image) {
-        return userRepository.save(new User(firstname, lastname, password, mail, role, image));
+    @PostMapping("/users")
+    public String store(@ModelAttribute User user) {
+        Long newId = userRepository.save(user).getId();
+        return "redirect:/users/" + newId;
+    }
 
+    @GetMapping("/users/{id}")
+    public String read(Model model, @PathVariable("id") Long userId) {
+        User user = userRepository.findById(userId).get();
+        model.addAttribute("user", user);
+        return "profileUser";
     }
 
 }
