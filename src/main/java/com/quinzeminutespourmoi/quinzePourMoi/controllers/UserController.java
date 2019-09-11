@@ -23,10 +23,9 @@ class UserController {
     }
 
     @PostMapping("/users")
-    public String subscribe(@ModelAttribute User user) {
-        System.out.println(user.getId());
-        userRepository.save(user);
-        return "redirect:/";
+    public String store(@ModelAttribute User user) {
+        Long newId = userRepository.save(user).getId();
+        return "redirect:/users/" + newId;
     }
 
     @GetMapping("/users/{id}")
@@ -35,5 +34,4 @@ class UserController {
         model.addAttribute("user", user);
         return "profileUser";
     }
-    
 }
