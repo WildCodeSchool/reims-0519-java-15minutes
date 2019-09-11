@@ -66,41 +66,39 @@
                                 <h4>Résultats</h4>
                             </div>
 
-                            <ul class="list-group" id="user-list">
-                                <a class="list-group-item list-group-item-action">
-                                    <div class="row">
-                                        <div class="col-12 ">
-                                            <div class="row align-items-center">
-                                                <div class="col-3 user-img">
-                                                    <img class="img-responsive img-circle rounded-circle" />
-                                                </div>
-                                                <div class="col-9">
-                                                    <h5 class="font-weight-bold">
-                                                    </h5>
-                                                    <div class="user-detail">
-                                                        <p><span id="dist"
-                                                                class="fas fa-map-marker-alt mr-1 "></span></i>6 km</p>
-                                                        <div class="stars justify-content-start">
-                                                            <i class="fas fa-star gold"></i>
-                                                            <i class="fas fa-star gold"></i>
-                                                            <i class="fas fa-star gold"></i>
-                                                            <i class="fas fa-star gold"></i>
-                                                            <i class="fas fa-star gold"></i>
+                            <ul th:each="hypnotherapist : ${hypnotherapists}" class="list-group" id="user-list">
+                                    <a th:href="@{/hypnotherapists/{id}(id=${hypnotherapist.id})}" class="list-group-item list-group-item-action">
+                                        <div class="row">
+                                            <div class="col-12 ">
+                                                <div class="row align-items-center">
+                                                    <div class="col-3 user-img">
+                                                        <img class="img-responsive img-circle rounded-circle" th:src="${hypnotherapist.user.image}" />
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <h5 class="font-weight-bold"
+                                                            th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname} ">
+                                                        </h5>
+                                                        <div class="user-detail">
+                                                            <p><span id="dist" class="fas fa-map-marker-alt mr-1 "></span></i>6 km</p>
+                                                            <div class="stars justify-content-start">
+                                                                <i class="fas fa-star gold"></i>
+                                                                <i class="fas fa-star gold"></i>
+                                                                <i class="fas fa-star gold"></i>
+                                                                <i class="fas fa-star gold"></i>
+                                                                <i class="fas fa-star gold"></i>
+                                                            </div>
+                                                            <span class="fas fa-heart right float-right"></span>
                                                         </div>
-                                                        <span class="fas fa-heart right float-right"></span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </ul>
+                                    </a>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
 
 
