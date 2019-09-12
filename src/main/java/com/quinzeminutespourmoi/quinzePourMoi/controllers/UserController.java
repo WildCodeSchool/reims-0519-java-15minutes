@@ -1,6 +1,10 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
+import java.util.List;
+
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Hypnotherapist;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.HypnotherapistRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 class UserController {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private HypnotherapistRepository hypnotherapistRepository;
 
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -26,30 +32,26 @@ class UserController {
         model.addAttribute("user", new User());
         return "subscribe";
     }
-    
     @PostMapping("/subscribe")
-    public String subscribe(@RequestParam String firstname, @RequestParam String lastname, @RequestParam String mail,
-            @RequestParam String password, @RequestParam String role, @RequestParam String image,@RequestParam(defaultValue = "false") boolean isHypnotherapist) {
-
-        userRepository.save(new User(firstname, lastname, passwordEncoder.encode(password), mail, role, image));
-
+    public String store(@ModelAttribute User user, @RequestParam(defaultValue = "false") boolean isHypnotherapist) {
+        user.setPassword(
+            passwordEncoder.encode(
+                user.getPassword()
+            )
+        );
+        Long newId = userRepository.save(user).getId();
         if(isHypnotherapist){
             return "redirect:/hypnoRegister";
         }
-        return "redirect:/";
-    }
-
-    @PostMapping("/users")
-    public String store(@ModelAttribute User user) {
-        Long newId = userRepository.save(user).getId();
-        return "redirect:/users/" + newId;
+        return "redirect:/users" + newId;
     }
 
     @GetMapping("/users/{id}")
     public String read(Model model, @PathVariable("id") Long userId) {
+        List<Hypnotherapist> hypnotherapists = hypnotherapistRepository.findAll();
+        model.addAttribute("hypnotherapists", hypnotherapists);
         User user = userRepository.findById(userId).get();
         model.addAttribute("user", user);
         return "profileUser";
     }
-
 }

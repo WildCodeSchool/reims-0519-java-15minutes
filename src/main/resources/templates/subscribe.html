@@ -19,7 +19,7 @@
     <header th:replace="fragments/header.html :: header"></header>
 
 
-    <form action="#" class="text-center border border-light " th:action="@{/users}" th:object="${user}"
+    <form action="#" class="text-center border border-light " th:action="@{/subscribe}" th:object="${user}"
         method="POST">
         <p class="h4 p-4">Inscription</p>
         <div class="form-row mb-4">
@@ -57,9 +57,9 @@
     <script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js}"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <script th:src="@{../static/all.js}"></script>
-    <script th:src="@{../static/geoFindme.js}"></script>
-    <script th:src="@{../static/webStorage.js}"></script>
+    <script th:src="@{/static/all.js}"></script>
+    <script th:src="@{/static/geoFindme.js}"></script>
+    <script th:src="@{/static/webStorage.js}"></script>
 
 </body>
 
