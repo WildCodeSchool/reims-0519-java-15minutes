@@ -1,185 +1,186 @@
 <!DOCTYPE HTML>
 <html>
-    <head>  
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">    
-        
-        <title>En savoir plus</title>
-        
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
-        <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
 
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <body class="container-fluid">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>     
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-            
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mon suivi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/hypnotherapists}">Hypnothérapeutes</a>
-                    </li>
-                </ul>
-              </div>
-            </nav>
-          </header>
+    <title>En savoir plus</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
+
+</head>
+
+<body class="container-fluid d-flex flex-column justify-content-between  p-3">
+    <header th:replace="fragments/header.html :: header"></header>
 
 
+
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="img xavier">
+                <img src="http://nicesnippets.com/demo/cs-image4.jpg" class="img-fluid img-circle rounded-circle"
+                    alt="">
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="name col-12">
+        <h1 class="text-center"
+            th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname}"></h1>
+    </div>
+
+    <div class="rating col-12">
+        <div class="stars d-flex justify-content-center">
+            <i class="fas fa-star gold"></i>
+            <i class="fas fa-star gold"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+    </div>
+
+    <hr width="100%" size="5">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="address">
+            <i class="fas fa-map-marker-alt mr-2" aria-hidden="true"
+                th:text="' ' + ${hypnotherapist.address} + ', ' +${hypnotherapist.adr_postal} + ' ' + ${hypnotherapist.town}"></i>
+            </div>
+        </div>
+    </div>
+
+    <hr width="100%" size="5">
+
+    <div class="row">
+        <div class="col-6">
+            <p><i class="fas fa-quote-right mr-2"></i>Présentation</p>
+        </div>
+        <div class="col-6 text-right">
+            <button type="button" class="btn btn-infos" data-toggle="modal" data-target="#presentationCenter">+
+            </button>
+        </div>
+        <div class="modal fade" id="presentationCenter" tabindex="-1" role="dialog" aria-labelledby="presentationTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="presentationTitle">Présentation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body"
+                        th:text="${hypnotherapist.description}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <hr width="100%" size="5">
+
+    <div class="row">
+        <div class="col-6">
+            <p><i class="fas fa-comment-alt mr-2"></i> Avis</p>
+        </div>
+        <div class="col-6 text-right">
+            <button type="button" class="btn btn-infos" data-toggle="modal" data-target="#avisCenter">+</button>
+        </div>
+        <div class="modal fade" id="avisCenter" tabindex="-1" role="dialog" aria-labelledby="avisCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="avisCenterTitle">Avis</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card">
+                            <div class="card-header">
+                                Lorem ipsum
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+                                        ante.</p>
+                                    <footer class="blockquote-footer">Hana Song </footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card">
+                            <div class="card-header">
+                                Lorem ipsum
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+                                        ante.</p>
+                                    <footer class="blockquote-footer">Amélie Lacroix </footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <hr>
+    <footer>
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
-                <div class="img xavier">
-                    <img src="http://nicesnippets.com/demo/cs-image4.jpg" class="img-fluid img-circle rounded-circle" alt="">
-                </div>
-            </div>
-            <br>    
-            <div class="name col-12">
-                <h1 class="text-center">Xavier Filton</h1>
-            </div>
-            <div class="rating col-12">
-                <div class="stars d-flex justify-content-center">
-                    <i class="fas fa-star gold"></i>
-                    <i class="fas fa-star gold"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>               
-        </div> 
-
-        <hr width="100%" size="5">
-
-        <div class="row">
-            <div class="col-12">
-            <div class="address">
-                <p><i class="fas fa-map-marker-alt mr-2" aria-hidden="true"></i> 6 rue François Copée, 75015 Paris</p>
-            </div>
-            </div>
-        </div>
-
-        <hr width="100%" size="5">
-
-        <div class="row">
-            <div class="col-6">
-                <p><i class="fas fa-quote-right mr-2"></i> Présentation</p>
-            </div>
-            <div class="col-6 text-right">
-                <button type="button" class="btn btn-infos" data-toggle="modal" data-target="#presentationCenter">+ </button> 
-            </div>   
-                <div class="modal fade" id="presentationCenter" tabindex="-1" role="dialog" aria-labelledby="presentationTitle" aria-hidden="true">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#contactCenter">Me
+                    contacter</button>
+                <div class="modal fade" id="contactCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="contactCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="presentationTitle">Présentation</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Quod opera consulta cogitabatur astute, ut hoc insidiarum genere Galli periret avunculus, ne eum ut praepotens acueret in fiduciam exitiosa coeptantem. verum navata est opera diligens hocque dilato Eusebius praepositus cubiculi missus est Cabillona aurum secum perferens, quo per turbulentos seditionum concitores occultius distributo et tumor consenuit militum et salus est in tuto locata praefecti. deinde cibo abunde perlato castra die praedicto sunt mota.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <hr width="100%" size="5">
-
-        <div class="row"> 
-            <div class="col-6">
-                <p><i class="fas fa-comment-alt mr-2"></i> Avis</p>
-            </div>
-            <div class="col-6 text-right">
-                <button type="button" class="btn btn-infos" data-toggle="modal" data-target="#avisCenter">+</button>
-            </div>
-                <div class="modal fade" id="avisCenter" tabindex="-1" role="dialog" aria-labelledby="avisCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="avisCenterTitle">Avis</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="card">
-                                    <div class="card-header">
-                                        Lorem ipsum
-                                    </div>
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        <footer class="blockquote-footer">Hana Song </footer>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="card">
-                                    <div class="card-header">
-                                        Lorem ipsum
-                                    </div>
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                        <footer class="blockquote-footer">Amélie Lacroix </footer>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>    
-        <hr>
-        <footer>
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center">
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#contactCenter">Me contacter</button>
-                    <div class="modal fade" id="contactCenter" tabindex="-1" role="dialog" aria-labelledby="contactCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p><i class="fas fa-phone-alt mr-2"></i>0000000000</p>
-                                    <p><i class="fas fa-at mr-2"></i>x.filton@fake.com</p>
-                                </div>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <i class="fas fa-phone-alt mr-2"
+                                    th:text="'  ' + ${hypnotherapist.phone}"></i>
+
+                                <i class="fas fa-at mr-2"
+                                    th:text="'  ' + ${hypnotherapist.user.mail}"></i>
                             </div>
                         </div>
-                    </div>        
+                    </div>
                 </div>
             </div>
-        </footer>
-        
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>       
-    <script src="../static/all.js"></script>
-    <script src="../static/geoFindme.js"></script>
-    <script src="../static/webStorage.js"></script>
+        </div>
+        <a class="fas fa-fast-backward return" th:href="@{/hypnotherapists}"></a>
+</ul>
+    </footer>
 
-    </body>
+    <script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js}"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js}"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+        <script th:src="@{/all.js}"></script>
+        <script th:src="@{/geoFindme.js}"></script>
+        <script th:src="@{/webStorage.js}"></script>
+
+</body>
+
 </html>

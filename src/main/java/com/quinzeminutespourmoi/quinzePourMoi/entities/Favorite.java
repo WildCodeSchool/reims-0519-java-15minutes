@@ -1,52 +1,28 @@
 package com.quinzeminutespourmoi.quinzePourMoi.entities;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Comment{
-    public Comment(){
+public class Favorite{
+    public Favorite(){
     }
 
-    public Comment(String title, String content, Long hypnotherapistId, Long userId, Date creationDate){
-        this.title = title;
-        this.content = content;
+    public Favorite(Long hypnotherapistId, Long userId){
         this.hypnotherapistId = hypnotherapistId;
         this.userId = userId;
-        this.creationDate = creationDate;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String content;
     private Long hypnotherapistId;
     private Long userId;
-    private Date creationDate;
 
     public Long getId() {
         return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 
     public void setId(Long id) {
@@ -67,13 +43,5 @@ public class Comment{
 
     public void setUserId(Long userId) {
         this.userId = userId;
-    }
-
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
     }
 }

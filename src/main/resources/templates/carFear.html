@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>Peur</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
+        <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
+    </head>
+
+    <body class="container-fluid d-flex flex-column justify-content-between p-3">
+
+        <header th:replace="fragments/header.html :: header"></header>
+
+
+        <form action="" method="post" class="fear">
+
+            <label for="form-check">A quelle fréquence cela vous arrive-t'il ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="eveytime" value="option1">
+                <label class="form-check-label" for="everytime"> Tous le temps</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="often" value="option2">
+                <label class="form-check-label" for="often"> Souvent</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="none" value="option3">
+                <label class="form-check-label" for="none"> Rarement</label>
+            </div>
+
+            <hr width="100%" size="5">
+
+            <label for="form-check">Cela dépend t'il de la vitesse ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="oui" value="option1">
+                <label class="form-check-label" for="oui"> Oui</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="non" value="option2">
+                <label class="form-check-label" for="non"> Non</label>
+            </div>
+
+            <hr width="100%" size="5">
+
+            <label for="form-check">Sur quel type de route cela vous arrive-t'il ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="straight" value="option1">
+                <label class="form-check-label" for="straight"> Plutôt les lignes droites</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="turn" value="option2">
+                <label class="form-check-label" for="turn"> Lorsqu'il y a des virages</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="any" value="option3">
+                <label class="form-check-label" for="any"> Peu importe</label>
+            </div>
+
+            <hr width="100%" size="5">
+
+            <label for="form-check">Y a t'il eu un événement avant la phobie qui aurait pu déclencher votre peur ?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="oui" value="option1">
+                    <label class="form-check-label" for="oui"> Oui</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="non" value="option2">
+                    <label class="form-check-label" for="non"> Non</label>
+                </div>
+
+            <br>
+
+            <div class="col-auto d-flex justify-content-center">
+                <button type="submit" class="btn btn-survey">J'envoie mes réponses</button>
+            </div>
+        </form>
+
+
+    </body>
+</html>

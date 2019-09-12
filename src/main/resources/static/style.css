@@ -46,39 +46,40 @@
     border-radius: 0;
  }
  .btn-primar{
-    background-color: rgb(208, 152, 236);
+    background-image: linear-gradient(35deg, rgb(29, 68, 187),  rgb(134, 187, 218));
  }
  
  .btn-secondary
  {
- background-color: rgb(198, 126, 235);
+ background-image: linear-gradient(35deg, rgb(185, 21, 125),rgb(230, 119, 134));
 }
  
  .btn-tertiary
  {
- background-color:rgb(188, 105, 230);
+ background-image: linear-gradient(35deg, rgb(28, 156, 73),rgb(167, 221, 124));
  }
  .btn-quaternary
  {
- background-color: rgb(178, 70, 211);
+ background-image: linear-gradient(35deg,rgb(216, 43, 52), rgb(221, 205, 112));
  }
 
  .btn-quinary
  {
- background-color:rgb(158, 16, 214);
+ background-image:linear-gradient(35deg, rgb(142, 36, 180),rgb(230, 161, 201));
  }
 
  .btn-senary
  {
- background-color: rgb(148, 16, 214);
+ background-image: linear-gradient(35deg,rgb(28, 121, 102), rgb(121, 230, 179));
  }
  
  .btn-septenary
  {
- background-color:rgb(138, 20, 197);
+ background-image:linear-gradient(35deg, rgb(255, 115, 0),rgb(240, 209, 107));
  }
 
-h4{
+
+h4 {
     color: #9933CC;
 }
 
@@ -243,3 +244,53 @@ a {
     border-style: none;
 }
 
+/* Page Profil Particulier */
+
+.fa-address-card{
+    color: #8c56b8;
+}
+
+.fa-portrait{
+    color: #8c56b8;
+}
+
+.avis{
+    background-color: #8c56b8;
+}
+
+.notification{
+    background-color: #73568f;
+}
+
+.politique {
+    font-size: 0.7rem;
+}
+
+.return{
+    font-size: 30px;
+    color: #8c56b8;
+}
+
+.btn-survey{
+    background-color: #8c56b8;
+}
+
+input[type=radio]{
+    display: none;
+}
+
+input[type=radio] + label:before {
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 17px;
+    height: 17px;
+}
+
+input[type=radio]:checked + label:before{
+    background: #8c56b8;
+
+}

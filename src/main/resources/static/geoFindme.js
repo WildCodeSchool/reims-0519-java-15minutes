@@ -35,7 +35,9 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 		var radlat2 = Math.PI * lat2/180;
 		var theta = lon1-lon2;
 		var radtheta = Math.PI * theta/180;
-		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+    var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+    var distance = dist;
+    
 		if (dist > 1) {
 			dist = 1;
 		}
@@ -44,7 +46,9 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 		dist = dist * 60 * 1.1515;
 		if (unit=="K") { dist = dist * 1.609344 }
 		if (unit=="N") { dist = dist * 0.8684 }
-		return dist;
+    return dist;
+    
+
 	}
 }
 
