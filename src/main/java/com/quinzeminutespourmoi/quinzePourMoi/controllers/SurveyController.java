@@ -1,28 +1,15 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
-import com.quinzeminutespourmoi.quinzePourMoi.entities.Survey;
-import com.quinzeminutespourmoi.quinzePourMoi.repositories.SurveyRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 class SurveyController{
-    @Autowired
-    private SurveyRepository surveyRepository;
 
     @GetMapping("/smokeSurvey")
     public String smokesurvey(Model model){
         return "smokeSurvey";
-    }
-
-    @PostMapping("/resultSurvey")
-    Survey newSurvey(@RequestBody Survey newSurvey) {
-        return surveyRepository.save(newSurvey);
     }
 
     @GetMapping("/addictSurvey")

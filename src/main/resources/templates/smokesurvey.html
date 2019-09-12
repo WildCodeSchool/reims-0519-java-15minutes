@@ -45,6 +45,7 @@
         </header>
 
         <form action="" method="post" class="smoke">
+
             <div class="form-group">
               <label for="time">Depuis combien de temps fumez-vous ?</label>
               <input type="text" class="form-control" id="time">
@@ -73,7 +74,7 @@
             <br>
 
             <div class="col-auto d-flex justify-content-center">
-                <button type="submit" class="btn btn-survey">J'envoie mes réponses</button>
+                <a type="submit" th:href="@{/resultSurvey}" class="btn btn-survey">J'envoie mes réponses</a>
             </div>
         </form>
             
