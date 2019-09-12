@@ -14,12 +14,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "hypnotherapist")
 public class Hypnotherapist {
-    
+
     public Hypnotherapist() {
     }
 
-    public Hypnotherapist(User user, String description, String phone, String address,
-            String adr_postal, String town) {
+    public Hypnotherapist(User user, String description, String phone, String address, String adr_postal, String town) {
 
         this.user = user;
         this.description = description;
@@ -43,8 +42,8 @@ public class Hypnotherapist {
     private User user;
 
     @ManyToMany
-    Set<User> likedHypno;
-
+    @JoinTable(name = "favorite")
+    private Set<User> likedHypno;
 
     /**
      * @return Long return the id
@@ -88,7 +87,6 @@ public class Hypnotherapist {
         this.phone = phone;
     }
 
-
     /**
      * @return String return the adr_postal
      */
@@ -130,7 +128,6 @@ public class Hypnotherapist {
     public void setUser(User user) {
         this.user = user;
     }
-
 
     /**
      * @return String return the address
