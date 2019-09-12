@@ -16,47 +16,18 @@
 </head>
 
 <body class="container-fluid d-flex flex-column justify-content-between p-3">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid"
-                    th:src="@{/img/logo15.png}" src="../static/img/logo15.png" alt="Responsive image" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <header th:replace="fragments/header.html :: header"></header>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">S'inscrire / Se connecter <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mon suivi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Hypnothérapeutes</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
     <form action="#" class="text-center border border-light " th:action="@{/hypnoRegister}" th:object="${hypnotherapist}"
         method="POST">
         <p class="h4 p-4">Formulaire professionnel</p>
         <div class="form-row justify-content-center">
             <div class="col">
-                <input class="form-control mb-4" type="number" placeholder="Téléphone" th:field="*{phone}" required>            
-                <input class="form-control mb-4" type="text" placeholder="Numéro et rue" th:field="*{address}" required>
-                <input class="form-control mb-4" type="text" placeholder="Code postal" th:field="*{adr_postal}" required>
-                <input class="form-control mb-4" type="text" placeholder="Ville" th:field="*{town}" required>
-                <input class="form-control" type="text" placeholder="Description" th:field="*{description}" required>
+                <input class="form-control mb-4" type="number" placeholder="Téléphone *" th:field="*{phone}" required>            
+                <input class="form-control mb-4" type="text" placeholder="Numéro et rue *" th:field="*{address}" required>
+                <input class="form-control mb-4" type="text" placeholder="Code postal *" th:field="*{adr_postal}" required>
+                <input class="form-control mb-4" type="text" placeholder="Ville *" th:field="*{town}" required>
+                <input class="form-control" type="text" placeholder="Description *" th:field="*{description}" required>
                 <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                 </small>
 <!--         <input type="hidden" name="####" value="####">
