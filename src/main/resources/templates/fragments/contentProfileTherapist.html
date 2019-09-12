@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+​
+<body>
+    <div th:fragment="contentProfileTherapist">
+            <div class="name col-12 text-center ">
+                    <i class=" fas fa-envelope" th:text=" ' ' + ${user.mail}"></i>
+                    <i class="far fa-phone" th:text=" ' ' + ${user.phone}"></i>
+                    <i class="fas fa-address-card" th:text=" ' ' + ${user.adr_street}"></i>
+                    <i class="fad fa-mailbox" th:text=" ' ' + ${user.adr_postal}"></i>
+                    <i class="fas fa-city" th:text=" ' ' + ${user.town}"></i>
+            </div>
+    </div>
+</body>
+​
+</html>
