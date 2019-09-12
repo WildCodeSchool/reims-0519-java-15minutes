@@ -20,15 +20,15 @@
 
             <label for="form-check">A quelle fréquence votre addiction se manifeste-t'elle ?</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="days" value="option1">
+                <input class="form-check-input" type="radio" name="frequency" id="days" value="option1">
                 <label class="form-check-label" for="days"> Tous les jours ou presque</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="weeks" value="option2">
+                <input class="form-check-input" type="radio" name="frequency" id="weeks" value="option2">
                 <label class="form-check-label" for="weeks"> 1 à 3 fois par semaine</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="none" value="option3">
+                <input class="form-check-input" type="radio" name="frequency" id="none" value="option3">
                 <label class="form-check-label" for="none"> Rarement</label>
             </div>
 
@@ -36,11 +36,11 @@
 
             <label for="form-check">Y a t'il eu un évènement dans votre vie qui aurait pu déclencher cette addiction ?</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="oui" value="option1">
+                <input class="form-check-input" type="radio" name="event" id="oui" value="option1">
                 <label class="form-check-label" for="oui"> Oui</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="non" value="option2">
+                <input class="form-check-input" type="radio" name="event" id="non" value="option2">
                 <label class="form-check-label" for="non"> Non</label>
             </div>
 
@@ -48,11 +48,11 @@
 
             <label for="form-check">Considérez-vous que cette addiction nuit à votre santé ?</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="oui" value="option1">
+                <input class="form-check-input" type="radio" name="health" id="oui" value="option1">
                 <label class="form-check-label" for="oui"> Oui</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="non" value="option2">
+                <input class="form-check-input" type="radio" name="health" id="non" value="option2">
                 <label class="form-check-label" for="non"> Non</label>
             </div>
 
@@ -60,18 +60,18 @@
 
             <label for="form-check">Avez-vous le sentiment que cette addiction vous isole ?</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="oui" value="option1">
+                <input class="form-check-input" type="radio" name="isolation" id="oui" value="option1">
                 <label class="form-check-label" for="oui"> Oui</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="non" value="option2">
+                <input class="form-check-input" type="radio" name="isolation" id="non" value="option2">
                 <label class="form-check-label" for="non"> Non</label>
             </div>
 
             <br>
 
             <div class="col-auto d-flex justify-content-center">
-                <button type="submit" class="btn btn-survey">J'envoie mes réponses</button>
+                <a th:href="@{/resultSurvey}" type="submit" class="btn btn-survey">J'envoie mes réponses</a>
             </div>
 
             </form>
