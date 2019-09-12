@@ -48,8 +48,8 @@ public class User implements UserDetails {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Hypnotherapist hypnotherapist;
 
-    @ManyToMany
-    Set<Hypnotherapist> likes;
+    @ManyToMany (mappedBy = "likedHypno")
+    private Set<Hypnotherapist> likes;
 
 
 
