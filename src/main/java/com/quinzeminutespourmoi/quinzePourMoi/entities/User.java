@@ -3,13 +3,14 @@ package com.quinzeminutespourmoi.quinzePourMoi.entities;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -46,6 +47,11 @@ public class User implements UserDetails {
     
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Hypnotherapist hypnotherapist;
+
+    @ManyToMany
+    Set<Hypnotherapist> likes;
+
+
 
     /**
      * @return Long return the id

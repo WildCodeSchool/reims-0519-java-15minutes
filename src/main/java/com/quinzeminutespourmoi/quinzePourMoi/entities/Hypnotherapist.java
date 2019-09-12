@@ -1,8 +1,12 @@
 package com.quinzeminutespourmoi.quinzePourMoi.entities;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -37,6 +41,10 @@ public class Hypnotherapist {
     @OneToOne(optional = true)
     @MapsId
     private User user;
+
+    @ManyToMany
+    Set<User> likedHypno;
+
 
     /**
      * @return Long return the id
