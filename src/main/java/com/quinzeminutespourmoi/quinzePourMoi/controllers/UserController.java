@@ -48,10 +48,10 @@ class UserController {
 
     @GetMapping("/users/{id}")
     public String read(Model model, @PathVariable("id") Long userId) {
-        List<Hypnotherapist> hypnotherapists = hypnotherapistRepository.findAll();
-        model.addAttribute("hypnotherapists", hypnotherapists);
+        Hypnotherapist hypnotherapist = hypnotherapistRepository.findById(userId).get();
         User user = userRepository.findById(userId).get();
         model.addAttribute("user", user);
+        model.addAttribute("hypnotherapist", hypnotherapist);
         return "profileUser";
     }
 }
