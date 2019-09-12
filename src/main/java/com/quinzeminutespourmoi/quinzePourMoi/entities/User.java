@@ -19,7 +19,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-@Table(name = "user")
 public class User implements UserDetails {
 
     public User() {
@@ -48,7 +47,7 @@ public class User implements UserDetails {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Hypnotherapist hypnotherapist;
 
-    @ManyToMany (mappedBy = "likedHypno")
+    @ManyToMany (mappedBy = "followers")
     private Set<Hypnotherapist> likes;
 
 
@@ -180,4 +179,33 @@ public class User implements UserDetails {
     public void setImage(String image) {
         this.image = image;
     }
+
+    /**
+     * @return Hypnotherapist return the hypnotherapist
+     */
+    public Hypnotherapist getHypnotherapist() {
+        return hypnotherapist;
+    }
+
+    /**
+     * @param hypnotherapist the hypnotherapist to set
+     */
+    public void setHypnotherapist(Hypnotherapist hypnotherapist) {
+        this.hypnotherapist = hypnotherapist;
+    }
+
+    /**
+     * @return Set<Hypnotherapist> return the likes
+     */
+    public Set<Hypnotherapist> getLikes() {
+        return likes;
+    }
+
+    /**
+     * @param likes the likes to set
+     */
+    public void setLikes(Set<Hypnotherapist> likes) {
+        this.likes = likes;
+    }
+
 }

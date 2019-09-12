@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.security.core.Authentication;
 
 @Controller
 class UserController {
@@ -49,9 +48,9 @@ class UserController {
 
     @GetMapping("/users/{id}")
     public String read(Model model, Authentication authentication) {
-        List<Hypnotherapist> hypnotherapists = hypnotherapistRepository.findAll();
-        model.addAttribute("hypnotherapists", hypnotherapists);
         User user = userRepository.findByMail(authentication.getName());
+        user.getLikes(
+        );
         model.addAttribute("user", user);
         return "profileUser";
     }
