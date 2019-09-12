@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.security.core.Authentication;
 
 @Controller
 class UserController {
@@ -52,10 +53,10 @@ class UserController {
     }
 
     @GetMapping("/users/{id}")
-    public String read(Model model, @PathVariable("id") Long userId) {
+    public String read(Model model, Authentication authentication) {
         List<Hypnotherapist> hypnotherapists = hypnotherapistRepository.findAll();
         model.addAttribute("hypnotherapists", hypnotherapists);
-        User user = userRepository.findById(userId).get();
+        User user = userRepository.findByMail(authentication.getName());
         model.addAttribute("user", user);
         return "profileUser";
     }
