@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 ​
 <body>
-    <div th:fragment="contentProfileTherapist">
+    <div th:fragment="contentProfileTherapist (hypnotherapist)">
             <div class="name col-12 text-center ">
                     <i class="far fa-phone" th:text=" ' ' + ${hypnotherapist.phone}"></i>
                     <i class="fas fa-address-card" th:text=" ' ' + ${hypnotherapist.address}"></i>

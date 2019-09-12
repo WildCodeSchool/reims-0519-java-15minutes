@@ -48,10 +48,9 @@ class UserController {
 
     @GetMapping("/users/{id}")
     public String read(Model model, @PathVariable("id") Long userId) {
-        Hypnotherapist hypnotherapist = hypnotherapistRepository.findById(userId).get();
         User user = userRepository.findById(userId).get();
         model.addAttribute("user", user);
-        model.addAttribute("hypnotherapist", hypnotherapist);
+        model.addAttribute("isHypnotherapist", user.getHypnotherapist() != null);
         return "profileUser";
     }
 }

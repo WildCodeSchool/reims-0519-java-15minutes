@@ -40,8 +40,8 @@
 ​
     <div th:replace="fragments/contentProfileUser.html :: contentProfileUser"></div>
 
-   <div th:if="${user.authorities} != NULL">
-        <div th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist"></div>
+    <div th:if="${isHypnotherapist}">
+        <div th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user.hypnotherapist})"></div>
     </div>
 ​
 ​

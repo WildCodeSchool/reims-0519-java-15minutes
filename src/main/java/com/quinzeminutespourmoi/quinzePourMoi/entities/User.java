@@ -183,4 +183,12 @@ public class User implements UserDetails {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public Hypnotherapist getHypnotherapist() {
+        return hypnotherapist;
+    }
+
+    public void setHypnotherapist(Hypnotherapist hypnotherapist) {
+        this.hypnotherapist = hypnotherapist;
+    }
 }
