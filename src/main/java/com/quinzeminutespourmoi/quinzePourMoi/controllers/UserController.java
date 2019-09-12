@@ -32,23 +32,18 @@ class UserController {
         model.addAttribute("user", new User());
         return "subscribe";
     }
-    
     @PostMapping("/subscribe")
-    public String subscribe(@RequestParam String firstname, @RequestParam String lastname, @RequestParam String mail,
-            @RequestParam String password, @RequestParam String role, @RequestParam String image,@RequestParam(defaultValue = "false") boolean isHypnotherapist) {
-
-        userRepository.save(new User(firstname, lastname, passwordEncoder.encode(password), mail, role, image));
-
+    public String store(@ModelAttribute User user, @RequestParam(defaultValue = "false") boolean isHypnotherapist) {
+        user.setPassword(
+            passwordEncoder.encode(
+                user.getPassword()
+            )
+        );
+        Long newId = userRepository.save(user).getId();
         if(isHypnotherapist){
             return "redirect:/hypnoRegister";
         }
-        return "redirect:/";
-    }
-
-    @PostMapping("/users")
-    public String store(@ModelAttribute User user) {
-        Long newId = userRepository.save(user).getId();
-        return "redirect:/users/" + newId;
+        return "redirect:/users" + newId;
     }
 
     @GetMapping("/users/{id}")
