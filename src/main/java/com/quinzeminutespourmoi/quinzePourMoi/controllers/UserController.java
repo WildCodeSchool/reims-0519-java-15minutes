@@ -8,12 +8,12 @@ import com.quinzeminutespourmoi.quinzePourMoi.repositories.HypnotherapistReposit
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -46,11 +46,11 @@ class UserController {
         return "redirect:/users" + newId;
     }
 
-    @GetMapping("/users/{id}")
-    public String read(Model model, @PathVariable("id") Long userId) {
+    @GetMapping("/users/profile")
+    public String read(Model model, Authentication authentication){
         List<Hypnotherapist> hypnotherapists = hypnotherapistRepository.findAll();
         model.addAttribute("hypnotherapists", hypnotherapists);
-        User user = userRepository.findById(userId).get();
+        User user = userRepository.findByMail(authentication.getName());
         model.addAttribute("user", user);
         return "profileUser";
     }
