@@ -22,15 +22,15 @@
 
                 <label for="form-check">Quelle est votre addiction ?</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="tv" value="option1">
+                    <input class="form-check-input" type="radio" name="what" id="tv" value="option1">
                     <label class="form-check-label" for="tv"> TV</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="videogames" value="option2">
+                    <input class="form-check-input" type="radio" name="what" id="videogames" value="option2">
                     <label class="form-check-label" for="videogames"> Jeux vidéos</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="smartphone" value="option3">
+                    <input class="form-check-input" type="radio" name="what" id="smartphone" value="option3">
                     <label class="form-check-label" for="smartphone"> Smartphones</label>
                 </div>
 
@@ -45,11 +45,11 @@
 
                 <label for="form-check">Avez-vous le sentiment que cette addiction vous isole ?</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="oui" value="option1">
+                    <input class="form-check-input" type="radio" name="isolation" id="oui" value="option1">
                     <label class="form-check-label" for="oui"> Oui</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="non" value="option2">
+                    <input class="form-check-input" type="radio" name="isolation" id="non" value="option2">
                     <label class="form-check-label" for="non"> Non</label>
                 </div>
 
@@ -57,18 +57,18 @@
 
                 <label for="form-check">Avez-vous le sentiment que votre addiction s'empire au fil du temps</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="oui" value="option1">
+                    <input class="form-check-input" type="radio" name="worst" id="oui" value="option1">
                     <label class="form-check-label" for="oui"> Oui</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="non" value="option2">
+                    <input class="form-check-input" type="radio" name="worst" id="non" value="option2">
                     <label class="form-check-label" for="non"> Non</label>
                 </div>
 
                 <br>
 
                 <div class="col-auto d-flex justify-content-center">
-                    <button type="submit" class="btn btn-survey">J'envoie mes réponses</button>
+                    <a th:href="@{/resultSurvey}" type="submit" class="btn btn-survey">J'envoie mes réponses</a>
                 </div>
         
             </form>
