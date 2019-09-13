@@ -43,7 +43,7 @@ class UserController {
         if(isHypnotherapist){
             return "redirect:/hypnoRegister";
         }
-        return "redirect:/users" + newId;
+        return "redirect:/users/" + newId;
     }
 
     @GetMapping("/users/{id}")
