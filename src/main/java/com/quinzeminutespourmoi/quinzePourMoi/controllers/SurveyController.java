@@ -28,7 +28,7 @@ class SurveyController{
     }
 
     @GetMapping("/alcoholAddictionSurvey")
-    public String alcoolAddictionSurvey(Model model){
+    public String alcoholAddictionSurvey(Model model){
         return "alcoholAddictionSurvey";
     }
 
