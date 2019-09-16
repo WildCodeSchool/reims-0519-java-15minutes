@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Controller
 class UserController {
@@ -27,8 +25,6 @@ class UserController {
 
     @Autowired
     PasswordEncoder passwordEncoder;
-
-    Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @GetMapping("/subscribe")
     public String subscribe(Model model) {
@@ -68,5 +64,5 @@ class UserController {
         model.addAttribute("user", user);
         model.addAttribute("isHypnotherapist", user.getHypnotherapist() != null);
         return "profileUser";
-    }
+    } 
 }
