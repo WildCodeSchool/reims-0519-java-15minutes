@@ -64,5 +64,5 @@ class UserController {
         model.addAttribute("user", user);
         model.addAttribute("isHypnotherapist", user.getHypnotherapist() != null);
         return "profileUser";
-    } 
+    }
 }
