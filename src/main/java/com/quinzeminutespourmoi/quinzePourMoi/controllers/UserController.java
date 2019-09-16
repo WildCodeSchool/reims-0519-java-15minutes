@@ -39,6 +39,11 @@ class UserController {
                 user.getPassword()
             )
         );
+            if(isHypnotherapist){
+                user.setRole(
+                    "hypno"
+                );
+            }
         Long newId = userRepository.save(user).getId();
         if(isHypnotherapist){
             return "redirect:/hypnoRegister";
