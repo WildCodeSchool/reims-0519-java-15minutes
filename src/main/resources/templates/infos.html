@@ -23,34 +23,33 @@
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <div class="img xavier">
-                <img src="http://nicesnippets.com/demo/cs-image4.jpg" class="img-fluid img-circle rounded-circle"
-                    alt="">
+                <img th:src="${hypnotherapist.user.image}" class="img-fluid img-circle rounded-circle" alt="">
             </div>
         </div>
     </div>
     <br>
     <div class="name col-12">
-        <h1 class="text-center"
-            th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname}"></h1>
+        <h1 class="text-center" th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname}"></h1>
     </div>
 
     <div class="rating col-12">
         <div class="stars d-flex justify-content-center">
             <i class="fas fa-star gold"></i>
             <i class="fas fa-star gold"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star gold"></i>
+            <i class="fas fa-star gold"></i>
+            <i class="fas fa-star gold"></i>
         </div>
     </div>
 
     <hr width="100%" size="5">
 
     <div class="row">
-        <div class="col-12">
+        <div class="col-6">
             <div class="address">
-            <i class="fas fa-map-marker-alt mr-2" aria-hidden="true"
-                th:text="' ' + ${hypnotherapist.address} + ', ' +${hypnotherapist.adr_postal} + ' ' + ${hypnotherapist.town}"></i>
+                <p
+                    th:text="' ' + ${hypnotherapist.address} + ', ' +${hypnotherapist.adr_postal} + ' ' + ${hypnotherapist.town}">
+                </p>
             </div>
         </div>
     </div>
@@ -75,8 +74,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body"
-                        th:text="${hypnotherapist.description}">
+                    <div class="modal-body" th:text="${hypnotherapist.description}">
                     </div>
                 </div>
             </div>
@@ -153,22 +151,22 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <i class="fas fa-phone-alt mr-2"
-                                    th:text="'  ' + ${hypnotherapist.phone}"></i>
+                                <p th:text="'  ' + ${hypnotherapist.phone}"></p>
 
-                                <i class="fas fa-at mr-2"
-                                    th:text="'  ' + ${hypnotherapist.user.mail}"></i>
+                                <p th:text="'  ' + ${hypnotherapist.user.mail}"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <a class="fas fa-fast-backward return" th:href="@{/hypnotherapists}"></a>
-</ul>
+        <!--         <a class="fas fa-fast-backward return" th:href="@{/hypnotherapists}"></a>
+ -->
+        </ul>
     </footer>
 
     <script th:replace="fragments/script.html :: script"></script>
+
 </body>
 
 </html>
