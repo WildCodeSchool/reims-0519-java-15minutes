@@ -36,9 +36,9 @@
         <div class="stars d-flex justify-content-center">
             <i class="fas fa-star gold"></i>
             <i class="fas fa-star gold"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star gold"></i>
+            <i class="fas fa-star gold"></i>
+            <i class="fas fa-star gold"></i>
         </div>
     </div>
 
@@ -49,7 +49,7 @@
             <div class="address">
                 <p
                     th:text="' ' + ${hypnotherapist.address} + ', ' +${hypnotherapist.adr_postal} + ' ' + ${hypnotherapist.town}">
-                    <i class="fas fa-home"></i></p>
+                </p>
             </div>
         </div>
     </div>
@@ -151,16 +151,17 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <i class="fas fa-phone-alt mr-2" th:text="'  ' + ${hypnotherapist.phone}"></i>
+                                <p th:text="'  ' + ${hypnotherapist.phone}"></p>
 
-                                <i class="fas fa-at mr-2" th:text="'  ' + ${hypnotherapist.user.mail}"></i>
+                                <p th:text="'  ' + ${hypnotherapist.user.mail}"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <a class="fas fa-fast-backward return" th:href="@{/hypnotherapists}"></a>
+        <!--         <a class="fas fa-fast-backward return" th:href="@{/hypnotherapists}"></a>
+ -->
         </ul>
     </footer>
 
