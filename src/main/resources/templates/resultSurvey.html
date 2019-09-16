@@ -1,20 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<div th:replace="fragments/head.html :: head"></div>
 
-    <title>15' Pour Moi</title>
-
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
-
-</head>
 
 <body class="container-fluid d-flex flex-column justify-content-between resultQuestBg p-3">
     <header th:replace="fragments/header.html :: header"></header>
