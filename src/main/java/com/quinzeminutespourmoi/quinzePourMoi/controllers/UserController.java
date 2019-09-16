@@ -1,8 +1,8 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-
 import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
@@ -16,8 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 @Controller
 class UserController {
@@ -27,8 +26,6 @@ class UserController {
 
     @Autowired
     PasswordEncoder passwordEncoder;
-
-    Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @GetMapping("/subscribe")
     public String subscribe(Model model) {

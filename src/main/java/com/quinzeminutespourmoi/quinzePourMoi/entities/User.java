@@ -12,14 +12,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-@Table(name = "user")
 public class User implements UserDetails {
 
     public User() {
@@ -48,7 +46,7 @@ public class User implements UserDetails {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Hypnotherapist hypnotherapist;
 
-    @ManyToMany (mappedBy = "likedHypno")
+    @ManyToMany (mappedBy = "followers")
     private Set<Hypnotherapist> likes;
 
 
@@ -184,5 +182,33 @@ public class User implements UserDetails {
 	public Object getHypnotherapist() {
 		return null;
 	}
+
+    /**
+     * @return Hypnotherapist return the hypnotherapist
+     */
+    public Hypnotherapist getHypnotherapist() {
+        return hypnotherapist;
+    }
+
+    /**
+     * @param hypnotherapist the hypnotherapist to set
+     */
+    public void setHypnotherapist(Hypnotherapist hypnotherapist) {
+        this.hypnotherapist = hypnotherapist;
+    }
+
+    /**
+     * @return Set<Hypnotherapist> return the likes
+     */
+    public Set<Hypnotherapist> getLikes() {
+        return likes;
+    }
+
+    /**
+     * @param likes the likes to set
+     */
+    public void setLikes(Set<Hypnotherapist> likes) {
+        this.likes = likes;
+    }
 
 }
