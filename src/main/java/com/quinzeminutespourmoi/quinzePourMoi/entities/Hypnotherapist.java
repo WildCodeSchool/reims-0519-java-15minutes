@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.MapsId;
@@ -42,8 +43,11 @@ public class Hypnotherapist {
     private User user;
 
     @ManyToMany
-    @JoinTable(name = "favorite")
-    private Set<User> likedHypno;
+    @JoinTable(
+        name = "favorite", 
+        joinColumns = @JoinColumn(name = "hypnotherapist_id"), 
+        inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private Set<User> followers;
 
     /**
      * @return Long return the id
@@ -141,6 +145,14 @@ public class Hypnotherapist {
      */
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Set<User> getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(Set<User> followers) {
+        this.followers = followers;
     }
 
 }
