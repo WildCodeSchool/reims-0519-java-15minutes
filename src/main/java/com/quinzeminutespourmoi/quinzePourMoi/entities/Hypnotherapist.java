@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.MapsId;
@@ -14,12 +15,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "hypnotherapist")
 public class Hypnotherapist {
-    
+
     public Hypnotherapist() {
     }
 
-    public Hypnotherapist(User user, String description, String phone, String address,
-            String adr_postal, String town) {
+    public Hypnotherapist(User user, String description, String phone, String address, String adr_postal, String town) {
 
         this.user = user;
         this.description = description;
@@ -43,8 +43,11 @@ public class Hypnotherapist {
     private User user;
 
     @ManyToMany
-    Set<User> likedHypno;
-
+    @JoinTable(
+        name = "favorite", 
+        joinColumns = @JoinColumn(name = "hypnotherapist_id"), 
+        inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private Set<User> followers;
 
     /**
      * @return Long return the id
@@ -88,7 +91,6 @@ public class Hypnotherapist {
         this.phone = phone;
     }
 
-
     /**
      * @return String return the adr_postal
      */
@@ -131,7 +133,6 @@ public class Hypnotherapist {
         this.user = user;
     }
 
-
     /**
      * @return String return the address
      */
@@ -144,6 +145,14 @@ public class Hypnotherapist {
      */
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Set<User> getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(Set<User> followers) {
+        this.followers = followers;
     }
 
 }

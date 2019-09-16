@@ -1,62 +1,27 @@
 <!DOCTYPE HTML>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
-        <title>Addiction</title>
-        
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" th:href="@{/all.css}" href="../static/all.css">
-        <link rel="stylesheet" type="text/css" th:href="@{/style.css}" href="../static/style.css">
-    </head>
+<div th:replace="fragments/head.html :: head"></div>
+
 
     <body class="container-fluid d-flex flex-column justify-content-between p-3">
 
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" th:href="@{/}"><img class="ml-auto logo mx-auto img-fluid" th:src="@{/img/logo15.png}" alt="Responsive image"/></a>     
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-            
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">S'inscrire / Se connecter <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/about-us}">15' c'est quoi ?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mon suivi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/choices}">Un autre besoin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/hypnotherapists}">Hypnothérapeutes</a>
-                    </li>
-                </ul>
-                </div>
-            </nav>
-        </header>
+        <header th:replace="fragments/header.html :: header"></header>
+
         
             <form action="" method="post" class="addiction">
 
                 <label for="form-check">Quelle est votre addiction ?</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="tv" value="option1">
+                    <input class="form-check-input" type="radio" name="what" id="tv" value="option1">
                     <label class="form-check-label" for="tv"> TV</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="videogames" value="option2">
+                    <input class="form-check-input" type="radio" name="what" id="videogames" value="option2">
                     <label class="form-check-label" for="videogames"> Jeux vidéos</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="smartphone" value="option3">
+                    <input class="form-check-input" type="radio" name="what" id="smartphone" value="option3">
                     <label class="form-check-label" for="smartphone"> Smartphones</label>
                 </div>
 
@@ -71,11 +36,11 @@
 
                 <label for="form-check">Avez-vous le sentiment que cette addiction vous isole ?</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="oui" value="option1">
+                    <input class="form-check-input" type="radio" name="isolation" id="oui" value="option1">
                     <label class="form-check-label" for="oui"> Oui</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="non" value="option2">
+                    <input class="form-check-input" type="radio" name="isolation" id="non" value="option2">
                     <label class="form-check-label" for="non"> Non</label>
                 </div>
 
@@ -83,21 +48,23 @@
 
                 <label for="form-check">Avez-vous le sentiment que votre addiction s'empire au fil du temps</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="oui" value="option1">
-                    <label class="form-check-label" for="oui"> Oui</label>
+                    <input class="form-check-input" type="radio" name="worst" id="yes" value="option1">
+                    <label class="form-check-label" for="yes"> Oui</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="non" value="option2">
-                    <label class="form-check-label" for="non"> Non</label>
+                    <input class="form-check-input" type="radio" name="worst" id="no" value="option2">
+                    <label class="form-check-label" for="no"> Non</label>
                 </div>
 
                 <br>
 
                 <div class="col-auto d-flex justify-content-center">
-                    <button type="submit" class="btn btn-survey">J'envoie mes réponses</button>
+                    <a th:href="@{/resultSurvey}" type="submit" class="btn btn-survey">J'envoie mes réponses</a>
                 </div>
         
             </form>
         </div>
+
+        <script th:replace="fragments/script.html :: script"></script>
     </body>
 </html>

@@ -9,7 +9,7 @@ class PageController {
 
     @GetMapping("/")
     public String intro(Model model) {
-        return "intro";
+        return "home";
     }
 
     @GetMapping("/preSurvey")

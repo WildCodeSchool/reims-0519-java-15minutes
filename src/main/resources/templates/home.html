@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="fragments/head.html :: head"></div>
+
+
+
+<body class="container-fluid d-flex flex-column justify-content-between indexBg p-3">
+  <header th:replace="fragments/header.html :: header"></header>
+
+    <!-- Page Content  -->
+
+    <div class="text-right">
+        
+        <p class="intro mb-3 text-center">Prenez conscience de vos difficultés et faites le premier pas pour les surmonter.</p>
+        <a th:href="@{/preSurvey}" id="find-me" class="btn btn-primary btn-continue mb-3 btn-block btn-lg" role="button" >Continuer</a>
+        <input id="status" name="status" type="hidden" value="xm234jq">
+        <input id="map-link" name="map-link" type="hidden" value="xm234jq">
+    </div>
+
+
+
+    <script th:replace="fragments/script.html :: script"></script>
+</body>
+
+</html>

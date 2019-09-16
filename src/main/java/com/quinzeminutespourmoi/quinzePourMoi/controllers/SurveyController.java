@@ -27,9 +27,9 @@ class SurveyController{
         return "screenAddictionSurvey";
     }
 
-    @GetMapping("/alcoolAddictionSurvey")
-    public String alcoolAddictionSurvey(Model model){
-        return "alcoolAddictionSurvey";
+    @GetMapping("/alcoholAddictionSurvey")
+    public String alcoholAddictionSurvey(Model model){
+        return "alcoholAddictionSurvey";
     }
 
     @GetMapping("/animalsFear")
