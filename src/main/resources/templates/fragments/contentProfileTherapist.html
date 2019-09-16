@@ -2,14 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 ​
 <body>
-    <div>
-            <div class="name col-12 text-center " th:fragment="contentProfileTherapist (hypnotherapist)">
-                    <i class="fas fa-phone" th:text=" ' ' + ${hypnotherapist.phone}"></i><br>
-                    <i class="fas fa-address-card" th:text=" ' ' + ${hypnotherapist.address}"></i><br>
-                    <i class="fas fa-mail-bulk" th:text=" ' ' + ${hypnotherapist.adr_postal}"></i><br>
-                    <i class="fas fa-city" th:text=" ' ' + ${hypnotherapist.town}"></i>
-            </div>
-    </div>
+        <ul class="list-group list-group-flush" th:fragment="contentProfileTherapist (hypnotherapist)">
+                <li class="list-group-item" th:text=" 'Téléphone : ' + ${hypnotherapist.phone}"></li>
+                <li class="list-group-item" th:text=" 'Adresse : ' + ${hypnotherapist.address}"></li>
+                <li class="list-group-item" th:text=" 'Code Postal : ' + ${hypnotherapist.adr_postal}"></li>
+                <li class="list-group-item" th:text=" 'Ville : ' + ${hypnotherapist.town}"></li>
+        </ul>                     
 </body>
-​
 </html>
