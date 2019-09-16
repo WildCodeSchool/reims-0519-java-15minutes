@@ -42,11 +42,9 @@ class UserController {
         return "redirect:/users/" + newId;
     }
 
-    @GetMapping("/users/monProfil")
+    @GetMapping("/users/profile")
     public String read(Model model, Authentication authentication) {
         User user = userRepository.findByMail(authentication.getName());
-        user.getLikes(
-        );
         model.addAttribute("user", user);
         model.addAttribute("isHypnotherapist", user.getHypnotherapist() != null);
         return "profileUser";
