@@ -180,4 +180,8 @@ public class User implements UserDetails {
     public void setImage(String image) {
         this.image = image;
     }
+
+	public Object getHypnotherapist() {
+		return null;
+	}
 }
