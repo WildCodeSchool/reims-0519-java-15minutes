@@ -1,13 +1,9 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
-import com.quinzeminutespourmoi.quinzePourMoi.entities.Hypnotherapist;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
-import com.quinzeminutespourmoi.quinzePourMoi.repositories.HypnotherapistRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,13 +26,9 @@ class UserController {
     private UserRepository userRepository;
 
     @Autowired
-    private HypnotherapistRepository hypnotherapistRepository;
-
-    @Autowired
     PasswordEncoder passwordEncoder;
 
     Logger logger = LoggerFactory.getLogger(LoginController.class);
-
 
     @GetMapping("/subscribe")
     public String subscribe(Model model) {
@@ -53,7 +45,7 @@ class UserController {
         try {
             request.login(mail, password);
         } catch (ServletException e) {
-            logger.error("Error while login ", e);
+            e.printStackTrace();
         }
 
         if (isHypnotherapist) {
@@ -76,5 +68,5 @@ class UserController {
         model.addAttribute("user", user);
         model.addAttribute("isHypnotherapist", user.getHypnotherapist() != null);
         return "profileUser";
-    } 
+    }
 }

@@ -184,4 +184,5 @@ public class User implements UserDetails {
 	public Object getHypnotherapist() {
 		return null;
 	}
+
 }
