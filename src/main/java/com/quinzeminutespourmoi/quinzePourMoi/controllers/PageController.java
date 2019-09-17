@@ -12,12 +12,12 @@ class PageController {
         return "home";
     }
 
-    @GetMapping("/preSurvey")
+    @GetMapping("/home")
     public String preSurvey(Model model) {
         return "preSurvey";
     }
 
-    @GetMapping("/choices")
+    @GetMapping("/survey")
     public String choices(Model model) {
         return "choices";
     }
@@ -27,8 +27,9 @@ class PageController {
         return "about-us";
     }
 
-    @GetMapping("/resultSurvey")
+    @GetMapping("/survey/result")
     public String resultSurvey(Model model) {
         return "resultSurvey";
     }
+
 }
