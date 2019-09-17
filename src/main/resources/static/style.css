@@ -294,3 +294,30 @@ input[type=radio]:checked + label:before{
     background: #8c56b8;
 
 }
+
+.dot {
+    background: #8c56b8;
+    border: 2px solid #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 17px;
+    height: 17px;
+  }
+
+.dot2{
+    background: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 17px;
+    height: 17px;
+
+}
+  
+
+
+  
+
