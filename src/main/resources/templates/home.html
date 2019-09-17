@@ -10,15 +10,16 @@
 
     <!-- Page Content  -->
 
-    <div class="text-right">
+    <div class="text-center">
         
-        <p class="intro mb-3 text-center">Prenez conscience de vos difficultés et faites le premier pas pour les surmonter.</p>
+        <p class="intro mb-3">Prenez conscience de vos difficultés et faites le premier pas pour les surmonter.</p>
         <a th:href="@{/preSurvey}" id="find-me" class="btn btn-primary btn-continue mb-3 btn-block btn-lg" role="button" >Continuer</a>
         <input id="status" name="status" type="hidden" value="xm234jq">
         <input id="map-link" name="map-link" type="hidden" value="xm234jq">
+
+        <a class="dot"></a>
+        <a class="dot2"></a>
     </div>
-
-
 
     <script th:replace="fragments/script.html :: script"></script>
 </body>
