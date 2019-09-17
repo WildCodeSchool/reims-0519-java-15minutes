@@ -1,5 +1,8 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+
 import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
@@ -16,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class UserController {
+
     @Autowired
     private UserRepository userRepository;
-
 
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -28,18 +31,23 @@ class UserController {
         model.addAttribute("user", new User());
         return "subscribe";
     }
+
     @PostMapping("/subscribe")
-    public String store(@ModelAttribute User user, @RequestParam(defaultValue = "false") boolean isHypnotherapist) {
-        user.setPassword(
-            passwordEncoder.encode(
-                user.getPassword()
-            )
-        );
-        Long newId = userRepository.save(user).getId();
-        if(isHypnotherapist){
+    public String store(HttpServletRequest request, String mail, String password, @ModelAttribute User user,
+            @RequestParam(defaultValue = "false") boolean isHypnotherapist) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        userRepository.save(user).getId();
+
+        try {
+            request.login(mail, password);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        }
+
+        if (isHypnotherapist) {
             return "redirect:/hypnoRegister";
         }
-        return "redirect:/users/" + newId;
+        return "redirect:/users/profile";
     }
 
     @GetMapping("/users/profile")
@@ -56,5 +64,5 @@ class UserController {
         model.addAttribute("user", user);
         model.addAttribute("isHypnotherapist", user.getHypnotherapist() != null);
         return "profileUser";
-    } 
+    }
 }
