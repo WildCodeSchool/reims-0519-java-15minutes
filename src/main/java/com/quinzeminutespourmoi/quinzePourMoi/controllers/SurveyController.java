@@ -7,62 +7,62 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 class SurveyController{
 
-    @GetMapping("/smokeSurvey")
+    @GetMapping("/survey/smoke")
     public String smokesurvey(Model model){
         return "smokeSurvey";
     }
 
-    @GetMapping("/addictSurvey")
+    @GetMapping("/survey/addiction")
     public String addictsurvey(Model model){
         return "addictSurvey";
     }
 
-    @GetMapping("/foodAddictionSurvey")
+    @GetMapping("/survey/addiction/food")
     public String foodAddictionSurvey(Model model){
         return "foodAddictionSurvey";
     }
 
-    @GetMapping("/screenAddictionSurvey")
+    @GetMapping("/survey/addiction/screen")
     public String screenAddictionSurvey(Model model){
         return "screenAddictionSurvey";
     }
 
-    @GetMapping("/alcoholAddictionSurvey")
+    @GetMapping("/survey/addiction/alcohol")
     public String alcoholAddictionSurvey(Model model){
         return "alcoholAddictionSurvey";
     }
 
-    @GetMapping("/animalsFear")
+    @GetMapping("/survey/fear/animals+insects")
     public String animalsFear(Model model){
         return "animalsFear";
     }
 
-    @GetMapping("/carFear")
+    @GetMapping("/survey/fear/car")
     public String carFear(Model model){
         return "carFear";
     }
 
-    @GetMapping("/planeFear")
+    @GetMapping("/survey/fear/plane")
     public String planeFear(Model model){
         return "planeFear";
     }
 
-    @GetMapping("/peopleFear")
+    @GetMapping("/survey/fear/people")
     public String peopleFear(Model model){
         return "peopleFear";
     }
 
-    @GetMapping("/waterFear")
+    @GetMapping("/survey/fear/water")
     public String waterFear(Model model){
         return "waterFear";
     }
 
-    @GetMapping("/closeFear")
+    @GetMapping("/survey/fear/close")
     public String closeFear(Model model){
         return "closeFear";
     }
 
-    @GetMapping("/fearSurvey")
+    @GetMapping("/survey/fear")
     public String fearSurvey(Model model){
         return "fearSurvey";
     }
