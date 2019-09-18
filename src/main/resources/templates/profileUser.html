@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-
+​
 <div th:replace="fragments/head.html :: head"></div>
-
-
+​
+​
 <body class="container-fluid d-flex flex-column justify-content-between p-3">
     <header th:replace="fragments/header.html :: header"></header>
-
+​
     ​<div class="card d-flex justify-content-center">
         <img th:src="${user.image}" class="img-fluid img-circle rounded-circle img xavier" alt="">
         <div class="card-body">
@@ -18,18 +18,16 @@
             <li class="list-group-item" th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user.hypnotherapist})"></li>
         </div>
         </ul>
-    
-        <div sec:authorize access="isAuthenticated()">
+        <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
+            <div th:if="!${isHypnotherapist}">
                 <div th:replace="fragments/contentProfileUser.html :: contentProfileUser"></div>
             </div>
-            <div th:if="${user.role == 'user'}">
-                </div> 
-    
+        </div>
     </div>
-
-
+​
+​
     <script th:replace="fragments/script.html :: script"></script>
-
+​
 </body>
 ​
 </html>
