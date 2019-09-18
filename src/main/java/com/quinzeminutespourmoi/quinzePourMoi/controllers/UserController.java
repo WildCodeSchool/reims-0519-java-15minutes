@@ -60,7 +60,7 @@ class UserController {
         User user = userRepository.findByMail(authentication.getName());
         model.addAttribute("user", user);
         model.addAttribute("isHypnotherapist", user.getHypnotherapist() != null);
-        return "profileUser";
+        return "profilePerso";
     }
 
     @GetMapping("/users/{id}")

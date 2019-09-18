@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+​
+<div th:replace="fragments/head.html :: head"></div>
+​
+​
+<body class="container-fluid d-flex flex-column justify-content-between p-3">
+    <header th:replace="fragments/header.html :: header"></header>
+​
+    ​<div class="card d-flex justify-content-center">
+        <img th:src="${user.image}" class="img-fluid img-circle rounded-circle img xavier" alt="">
+        <div class="card-body">
+          <h3 class="card-title" th:text="${user.lastname} + ' ' + ${user.firstname}"></h3>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" th:text=" 'Email : ' + ${user.mail}"></li>
+          <div th:if="${isHypnotherapist}">
+            <li class="list-group-item" th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user.hypnotherapist})"></li>
+        </div>
+        </ul>
+        <div th:if="!${isHypnotherapist}">
+            <div th:replace="fragments/contentProfileUserPerso.html :: contentProfileUserPerso"></div>
+        </div>
+    </div>
+​
+​
+    <script th:replace="fragments/script.html :: script"></script>
+​
+</body>
+​
+</html>
