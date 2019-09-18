@@ -36,6 +36,11 @@ class UserController {
     public String store(HttpServletRequest request, String mail, String password, @ModelAttribute User user,
             @RequestParam(defaultValue = "false") boolean isHypnotherapist) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        if(isHypnotherapist){
+            user.setRole(
+            "hypno"
+            );
+        }
         userRepository.save(user).getId();
 
         try {
