@@ -21,8 +21,8 @@ public class Question{
     private Long id;
     private String title;
 
-    @OneToMany(mappedBy = "answer")
-    Set<Answer>answers;
+    @OneToMany(mappedBy = "question")
+    private Set<Answer>answers;
 
     public Long getId() {
         return id;
@@ -38,5 +38,13 @@ public class Question{
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Set<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(Set<Answer> answers) {
+        this.answers = answers;
     }
 }

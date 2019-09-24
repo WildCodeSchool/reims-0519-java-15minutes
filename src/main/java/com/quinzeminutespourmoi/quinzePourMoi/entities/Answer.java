@@ -1,9 +1,13 @@
 package com.quinzeminutespourmoi.quinzePourMoi.entities;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
@@ -23,10 +27,14 @@ public class Answer{
 
 
     @ManyToOne
-    Question question;
+    private Question question;
 
     @ManyToMany
-
+    @JoinTable(
+        name = "userAnswer",
+        joinColumns = @JoinColumn(name = "answer_id"),
+        inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private Set<User> answers;
     
     public Long getId() {
         return id;
@@ -42,6 +50,22 @@ public class Answer{
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+
+    public Set<User> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(Set<User> answers) {
+        this.answers = answers;
     }
 
 }

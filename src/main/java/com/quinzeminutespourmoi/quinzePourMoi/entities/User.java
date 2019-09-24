@@ -49,6 +49,8 @@ public class User implements UserDetails {
     @ManyToMany (mappedBy = "followers")
     private Set<Hypnotherapist> likes;
 
+    @ManyToMany(mappedBy = "answers")
+    private Set<Answer> testAnswer;
     /**
      * @return Long return the id
      */
