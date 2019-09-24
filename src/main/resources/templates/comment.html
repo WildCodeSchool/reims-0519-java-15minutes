@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+
+<div th:replace="fragments/head.html :: head"></div>
+
+
+    <body class="container-fluid d-flex flex-column justify-content-between  p-3">
+        <header th:replace="fragments/header.html :: header"></header>
+
+        <h4>Note</h4>
+
+        <div class="rating col-12">
+            <div class="stars d-flex justify-content-center">
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+                <i class="fas fa-star gold"></i>
+            </div>
+        </div>
+
+        <h4>Commentaire</h4>
+
+        <textarea></textarea>
+
+        <div class="col-auto d-flex justify-content-center">
+            <a th:href="@{/hypnotherapists}" type="submit" class="btn btn-survey">Envoyer</a>
+        </div>
+
+
+
+
+
+
+
+    </body>
+</html>
