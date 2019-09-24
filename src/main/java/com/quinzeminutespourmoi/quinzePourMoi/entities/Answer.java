@@ -31,10 +31,10 @@ public class Answer{
 
     @ManyToMany
     @JoinTable(
-        name = "userAnswer",
+        name = "answer_user",
         joinColumns = @JoinColumn(name = "answer_id"),
         inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private Set<User> answers;
+    private Set<Answer> answers;
     
     public Long getId() {
         return id;
@@ -60,12 +60,11 @@ public class Answer{
         this.question = question;
     }
 
-    public Set<User> getAnswers() {
+    public Set<Answer> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(Set<User> answers) {
+    public void setAnswers(Set<Answer> answers) {
         this.answers = answers;
     }
-
 }

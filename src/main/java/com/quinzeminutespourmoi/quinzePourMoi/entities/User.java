@@ -50,7 +50,10 @@ public class User implements UserDetails {
     private Set<Hypnotherapist> likes;
 
     @ManyToMany(mappedBy = "answers")
-    private Set<Answer> testAnswer;
+    private Set<User> users;
+
+
+
     /**
      * @return Long return the id
      */
@@ -135,6 +138,8 @@ public class User implements UserDetails {
         this.role = role;
     }
 
+
+    
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
@@ -207,5 +212,4 @@ public class User implements UserDetails {
     public void setLikes(Set<Hypnotherapist> likes) {
         this.likes = likes;
     }
-
 }
