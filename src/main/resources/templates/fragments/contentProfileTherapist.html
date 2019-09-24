@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+​
+<body>
+        <ul class="list-group list-group-flush" th:fragment="contentProfileTherapist (hypnotherapist)">
+                <li class="list-group-item" th:text=" 'Téléphone : ' + ${hypnotherapist.phone}"></li>
+                <li class="list-group-item" th:text=" 'Adresse : ' + ${hypnotherapist.address}"></li>
+                <li class="list-group-item" th:text=" 'Code Postal : ' + ${hypnotherapist.adr_postal}"></li>
+                <li class="list-group-item" th:text=" 'Ville : ' + ${hypnotherapist.town}"></li>
+                <li class="list-group-item" th:text=" 'Description : ' + ${hypnotherapist.description}"></li>
+        </ul>                     
+</body>
+</html>
