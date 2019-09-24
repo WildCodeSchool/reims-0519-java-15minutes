@@ -36,7 +36,7 @@ class HypnotherapistController {
             @RequestParam String town) {
             User user = userRepository.findByMail(authentication.getName());
         hypnotherapistRepository.save(new Hypnotherapist(user, description, phone, address, adr_postal, town));
-        return "home";
+        return "redirect:/users/profile";
     }
 
     @GetMapping("/hypnoRegister")
