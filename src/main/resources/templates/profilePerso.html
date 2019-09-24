@@ -18,10 +18,8 @@
             <li class="list-group-item" th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user.hypnotherapist})"></li>
         </div>
         </ul>
-        <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
-            <div th:if="!${isHypnotherapist}">
-                <div th:replace="fragments/contentProfileUser.html :: contentProfileUser"></div>
-            </div>
+        <div th:if="!${isHypnotherapist}">
+            <div th:replace="fragments/contentProfileUserPerso.html :: contentProfileUserPerso"></div>
         </div>
     </div>
 ​

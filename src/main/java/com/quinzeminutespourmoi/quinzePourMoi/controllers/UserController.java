@@ -36,6 +36,11 @@ class UserController {
     public String store(HttpServletRequest request, String mail, String password, @ModelAttribute User user,
             @RequestParam(defaultValue = "false") boolean isHypnotherapist) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        if(isHypnotherapist){
+            user.setRole(
+            "hypno"
+            );
+        }
         userRepository.save(user).getId();
 
         try {
@@ -55,7 +60,7 @@ class UserController {
         User user = userRepository.findByMail(authentication.getName());
         model.addAttribute("user", user);
         model.addAttribute("isHypnotherapist", user.getHypnotherapist() != null);
-        return "profileUser";
+        return "profilePerso";
     }
 
     @GetMapping("/users/{id}")

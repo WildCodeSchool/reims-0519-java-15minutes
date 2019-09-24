@@ -137,11 +137,12 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-       final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-       if(getMail().equals(mail)) {
-           authorities.add(new SimpleGrantedAuthority("ADMIN"));
-       }
-       return authorities;
+        final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+        authorities.add(new SimpleGrantedAuthority("USER"));
+        if(hypnotherapist != null) {
+            authorities.add(new SimpleGrantedAuthority("HYPNOTHERAPIST"));
+        }
+        return authorities;
     }
 
     @Override
