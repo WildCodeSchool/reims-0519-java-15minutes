@@ -45,13 +45,12 @@ class QuestionController {
     @PutMapping("/questions/{id}")
     public Question edit(@Valid @ModelAttribute Question question) {
         questionRepository.save(question);
-        return "/";
+        return "";
     }
 
     @DeleteMapping("/questions/{id}")
     public void destroy(@PathVariable Long id) {
         questionRepository.delete(
-            questionRepository.findById(id).get()
-        ); 
+            questionRepository.findById(id).get()); 
     }
 }

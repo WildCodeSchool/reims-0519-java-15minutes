@@ -34,7 +34,7 @@ public class Answer{
         name = "answer_user",
         joinColumns = @JoinColumn(name = "answer_id"),
         inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private Set<Answer> answers;
+    private Set<User> users;
     
     public Long getId() {
         return id;
@@ -60,11 +60,12 @@ public class Answer{
         this.question = question;
     }
 
-    public Set<Answer> getAnswers() {
-        return answers;
+    public Set<User> getUsers() {
+        return users;
     }
 
-    public void setAnswers(Set<Answer> answers) {
-        this.answers = answers;
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
+
 }
