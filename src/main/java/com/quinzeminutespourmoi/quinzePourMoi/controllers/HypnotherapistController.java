@@ -13,6 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import kong.unirest.Unirest;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -34,6 +37,12 @@ class HypnotherapistController {
     public String register(Authentication authentication, @RequestParam String description,
             @RequestParam String phone, @RequestParam String address, @RequestParam String adr_postal,
             @RequestParam String town) {
+                Unirest.get("https://api.opencagedata.com/geocode/v1/json?")
+                .queryString("q", town)
+                .queryString("key", "6deb4479ec784e1d9a5a521e2da8655c")
+                .asString();
+                System.out.print(town);
+
             User user = userRepository.findByMail(authentication.getName());
         hypnotherapistRepository.save(new Hypnotherapist(user, description, phone, address, adr_postal, town));
         return "home";
