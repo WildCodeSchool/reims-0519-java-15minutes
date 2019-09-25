@@ -14,10 +14,13 @@
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item" th:text=" 'Email : ' + ${user.mail}"></li>
-          <div th:if="${isHypnotherapist}">
+        <div th:if="${isHypnotherapist}">
             <li class="list-group-item" th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user.hypnotherapist})"></li>
         </div>
         </ul>
+        <div th:if="${isHypnotherapist}">
+            <div th:replace="fragments/contentProfileTherapistPerso.html :: contentProfileTherapistPerso"></div>
+        </div>
         <div th:if="!${isHypnotherapist}">
             <div th:replace="fragments/contentProfileUserPerso.html :: contentProfileUserPerso"></div>
         </div>
