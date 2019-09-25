@@ -65,7 +65,7 @@ class UserController {
         User user = userRepository.findByMail(authentication.getName());
         model.addAttribute("user", user);
         model.addAttribute("isHypnotherapist", user.getHypnotherapist() != null);
-        Notification notification = notificationRepository.findNotificationByUserIdAndHypnotherapistUserId(user.getId(), hypnotherapistId);
+        Notification notification = notificationRepository.findNotificationByUserId(user.getId());
         model.addAttribute("notification", notification);
         return "profilePerso";
     }

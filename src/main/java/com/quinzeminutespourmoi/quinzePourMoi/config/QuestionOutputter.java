@@ -1,4 +1,4 @@
-package com.quinzeminutespourmoi.quinzePourMoi.config;
+/* package com.quinzeminutespourmoi.quinzePourMoi.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -22,4 +22,4 @@ public class QuestionOutputter implements CommandLineRunner{
             }
         }
     }
-}
+} */

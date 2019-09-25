@@ -52,6 +52,7 @@ public class User implements UserDetails {
 
 
     @OneToMany(mappedBy = "user")
+    private Set<Notification> notifications;
 
     @ManyToMany(mappedBy = "users")
     private Set<Answer> Answers;
