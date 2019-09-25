@@ -13,7 +13,7 @@ public class Question{
     public Question(){
     }
 
-    public Question(String title){
+    public Question(Long id, String title){
         this.title = title;
     }
     @Id
