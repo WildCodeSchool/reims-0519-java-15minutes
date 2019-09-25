@@ -50,8 +50,12 @@ public class User implements UserDetails {
     @ManyToMany (mappedBy = "followers")
     private Set<Hypnotherapist> likes;
 
+
     @OneToMany(mappedBy = "user")
-    Set<Notification> notifications;
+
+    @ManyToMany(mappedBy = "users")
+    private Set<Answer> Answers;
+
 
 
 
@@ -139,6 +143,8 @@ public class User implements UserDetails {
         this.role = role;
     }
 
+
+    
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
@@ -212,6 +218,7 @@ public class User implements UserDetails {
         this.likes = likes;
     }
 
+
     public Set<Notification> getNotifications() {
         return notifications;
     }
@@ -220,4 +227,12 @@ public class User implements UserDetails {
         this.notifications = notifications;
     }
 
+
+    public Set<Answer> getAnswers() {
+        return Answers;
+    }
+
+    public void setAnswers(Set<Answer> answers) {
+        Answers = answers;
+    }
 }
