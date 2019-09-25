@@ -12,14 +12,12 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "hypnotherapist")
 public class Hypnotherapist {
 
-    public Hypnotherapist() {
-    }
-
-    public Hypnotherapist(User user, String description, String phone, String address, String adr_postal, String town) {
+    public Hypnotherapist(User user, String description, String phone, String address, String adr_postal, String town, Double lat, Double lng) {
 
         this.user = user;
         this.description = description;
@@ -27,9 +25,15 @@ public class Hypnotherapist {
         this.address = address;
         this.adr_postal = adr_postal;
         this.town = town;
+        this.lng = lng;
+        this.lat = lat;
+
     }
 
-    @Id
+    public Hypnotherapist() {
+	}
+
+	@Id
     @Column(name = "id")
     private Long id;
     private String description;
@@ -37,6 +41,8 @@ public class Hypnotherapist {
     private String address;
     private String adr_postal;
     private String town;
+    private Double lat;
+    private Double lng;
 
     @OneToOne(optional = true)
     @MapsId
@@ -153,6 +159,35 @@ public class Hypnotherapist {
 
     public void setFollowers(Set<User> followers) {
         this.followers = followers;
+    }
+
+
+    /**
+     * @return Double return the lat
+     */
+    public Double getLat() {
+        return lat;
+    }
+
+    /**
+     * @param lat the lat to set
+     */
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    /**
+     * @return Double return the lng
+     */
+    public Double getLng() {
+        return lng;
+    }
+
+    /**
+     * @param lng the lng to set
+     */
+    public void setLng(Double lng) {
+        this.lng = lng;
     }
 
 }
