@@ -20,7 +20,7 @@ public class Notification{
     @ManyToOne
     private Hypnotherapist hypnotherapist;
     private Boolean userResponse;
-    private Boolean hypnoResponse;
+    private Boolean hypnotherapistResponse;
 
     public Long getId() {
         return id;
@@ -54,27 +54,27 @@ public class Notification{
         this.userResponse = userResponse;
     }
 
-    public Boolean getHypnoResponse() {
-        return hypnoResponse;
+    public Boolean getHypnotherapistResponse() {
+        return hypnotherapistResponse;
     }
 
-    public void setHypnoResponse(Boolean hypnoResponse) {
-        this.hypnoResponse = hypnoResponse;
+    public void setHypnotherapistResponse(Boolean hypnotherapistResponse) {
+        this.hypnotherapistResponse = hypnotherapistResponse;
     }
 
-    public Notification(User user, Hypnotherapist hypnotherapist, Boolean userResponse, Boolean hypnoResponse) {
+    public Notification(User user, Hypnotherapist hypnotherapist, Boolean userResponse, Boolean hypnotherapistResponse) {
         this.hypnotherapist = hypnotherapist;
         this.user = user;
         this.userResponse = userResponse;
-        this.hypnoResponse = hypnoResponse;
+        this.hypnotherapistResponse = hypnotherapistResponse;
     }
 
-    public Notification(Long id, User user, Hypnotherapist hypnotherapist, Boolean userResponse,Boolean hypnoResponse) {
+    public Notification(Long id, User user, Hypnotherapist hypnotherapist, Boolean userResponse,Boolean hypnotherapistResponse) {
         this.id = id;
         this.hypnotherapist = hypnotherapist;
         this.user = user;
         this.userResponse = userResponse;
-        this.hypnoResponse = hypnoResponse;
+        this.hypnotherapistResponse = hypnotherapistResponse;
     }
     
 }

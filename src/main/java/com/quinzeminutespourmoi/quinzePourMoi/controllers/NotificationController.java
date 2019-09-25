@@ -9,9 +9,9 @@ import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class NotificationController {
@@ -22,9 +22,26 @@ public class NotificationController {
     UserRepository userRepository;
 
     @PostMapping("/notifications")
-    public String store(Authentication authentication, @ModelAttribute Hypnotherapist hypnotherapist, @RequestParam(required = false) Boolean userResponse, @RequestParam(required = false) Boolean hypnoResponse){
-        User user = userRepository.findByMail(authentication.getName());
-        notificationRepository.save(new Notification(user, hypnotherapist, true, true));
-        return "redirect:/hypnotherapists/"+hypnotherapist.getId();
+    public String store(Authentication authentication, Notification notification){
+        notification.setUser((User)authentication.getPrincipal());
+        notification = notificationRepository.save(notification);
+        return "redirect:/hypnotherapists/"+notification.getHypnotherapist().getId();
+    }
+
+    @PatchMapping("/notifications/{id}")
+    public String update(Authentication authentication, @PathVariable Long id, Notification notification){
+        Notification notificationToPatch = notificationRepository.findById(id).get();
+        if(notification.getUserResponse() != null) {
+            notificationToPatch.setUserResponse(
+                notification.getUserResponse()
+            );
+        }
+        if(notification.getHypnotherapistResponse() != null) {
+            notificationToPatch.setHypnotherapistResponse(
+                notification.getHypnotherapistResponse()
+            );
+        }
+        notificationRepository.save(notificationToPatch);
+        return "redirect:/users/profile";
     }
 }
