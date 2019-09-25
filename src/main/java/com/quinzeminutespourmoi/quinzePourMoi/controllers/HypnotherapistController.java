@@ -1,10 +1,12 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Hypnotherapist;
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Notification;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
 import java.util.List;
 
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.HypnotherapistRepository;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.NotificationRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,8 @@ class HypnotherapistController {
     private HypnotherapistRepository hypnotherapistRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private NotificationRepository notificationRepository;
 
 
     @GetMapping("/infos")
@@ -55,6 +59,9 @@ class HypnotherapistController {
     @GetMapping("/hypnotherapists/{id}")
     public String HypnotherapistById (Model model, Authentication authentication, @PathVariable("id") Long hypnotherapistId) {
         Hypnotherapist hypnotherapist = hypnotherapistRepository.findById(hypnotherapistId).get();
+        User user = (User)authentication.getPrincipal();
+        Notification notification = notificationRepository.findNotificationByUserIdAndHypnotherapistUserId(user.getId(), hypnotherapistId);
+        model.addAttribute("notification", notification);
         model.addAttribute("hypnotherapist", hypnotherapist);
         return "infos";
     }
