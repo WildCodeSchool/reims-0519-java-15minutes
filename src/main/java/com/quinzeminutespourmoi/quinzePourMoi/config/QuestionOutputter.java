@@ -157,5 +157,5 @@ public class QuestionOutputter implements CommandLineRunner{
         for(Answer answer : data2){
             answerRepository.save(answer);
         }*/
-    }    
+    }
 }
