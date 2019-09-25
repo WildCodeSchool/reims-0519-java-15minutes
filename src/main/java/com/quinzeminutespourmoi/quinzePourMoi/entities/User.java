@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -48,6 +49,9 @@ public class User implements UserDetails {
 
     @ManyToMany (mappedBy = "followers")
     private Set<Hypnotherapist> likes;
+
+    @OneToMany(mappedBy = "user")
+    Set<Notification> notifications;
 
 
 
@@ -206,6 +210,14 @@ public class User implements UserDetails {
      */
     public void setLikes(Set<Hypnotherapist> likes) {
         this.likes = likes;
+    }
+
+    public Set<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(Set<Notification> notifications) {
+        this.notifications = notifications;
     }
 
 }

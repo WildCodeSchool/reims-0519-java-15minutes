@@ -53,10 +53,9 @@ class HypnotherapistController {
     }
 
     @GetMapping("/hypnotherapists/{id}")
-    public String HypnotherapistById (Model model, @PathVariable("id") Long hypnotherapistId) {
+    public String HypnotherapistById (Model model, Authentication authentication, @PathVariable("id") Long hypnotherapistId) {
         Hypnotherapist hypnotherapist = hypnotherapistRepository.findById(hypnotherapistId).get();
         model.addAttribute("hypnotherapist", hypnotherapist);
         return "infos";
     }
-
 }

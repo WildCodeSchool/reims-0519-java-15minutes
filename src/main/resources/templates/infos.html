@@ -128,8 +128,10 @@
     <footer>
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#contactCenter">Me
-                    contacter</button>
+                <form th:action="@{/notifications}" method="POST">
+                    <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
+                    <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#contactCenter">Me contacter</button>
+                </form>
                 <div class="modal fade" id="contactCenter" tabindex="-1" role="dialog"
                     aria-labelledby="contactCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
