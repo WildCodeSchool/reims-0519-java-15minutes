@@ -60,7 +60,7 @@ class HypnotherapistController {
     public String HypnotherapistById (Model model, Authentication authentication, @PathVariable("id") Long hypnotherapistId) {
         Hypnotherapist hypnotherapist = hypnotherapistRepository.findById(hypnotherapistId).get();
         User user = (User)authentication.getPrincipal();
-        Notification notification = notificationRepository.findNotificationByUserIdAndHypnotherapistUserId(user.getId(), hypnotherapistId);
+        Notification notification = notificationRepository.findNotificationByUserIdAndHypnotherapistId(user.getId(), hypnotherapistId);
         model.addAttribute("notification", notification);
         model.addAttribute("hypnotherapist", hypnotherapist);
         return "infos";
