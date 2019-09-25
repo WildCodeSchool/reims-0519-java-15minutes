@@ -50,7 +50,7 @@ public class User implements UserDetails {
     private Set<Hypnotherapist> likes;
 
     @ManyToMany(mappedBy = "users")
-    private Set<User> users;
+    private Set<Answer> Answers;
 
 
 
@@ -211,5 +211,13 @@ public class User implements UserDetails {
      */
     public void setLikes(Set<Hypnotherapist> likes) {
         this.likes = likes;
+    }
+
+    public Set<Answer> getAnswers() {
+        return Answers;
+    }
+
+    public void setAnswers(Set<Answer> answers) {
+        Answers = answers;
     }
 }
