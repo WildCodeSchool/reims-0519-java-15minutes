@@ -127,7 +127,7 @@
     <hr>
     <footer>
         <div class="row">
-            <div class="col-12 d-flex justify-content-center">
+            <div class="col-12 d-flex justify-content-center" th:if="${notification == null}">
                 <form th:action="@{/notifications}" method="POST">
                     <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
                     <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#contactCenter">Me contacter</button>
