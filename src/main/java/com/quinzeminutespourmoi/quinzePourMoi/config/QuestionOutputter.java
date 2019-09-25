@@ -74,14 +74,85 @@ public class QuestionOutputter implements CommandLineRunner{
 
         /*Answer[] data2 = new Answer[]{
 
+            //animaux et araignée/insectes
             new Answer(1L,"Rien qu'en y pensant"),
             new Answer(2L,"En la voyant"),
             new Answer(3L,"Au toucher"),
-            new Answer(4L, "Oui"),
-            new Answer(5L, "Non"),
-            new Answer()
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
 
+            //voiture
+            new Answer(6L,"Tout le temps"),
+            new Answer(7l,"Souvent"),
+            new Answer(8l,"Rarement"),
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
+            new Answer(9l,"Plutôt les lignes droites"),
+            new Answer(10l,"Lorsqu'il y a des virages"),
+            new Answer(11l,"Peu importe"),
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
 
+            //avion
+            new Answer(12L,"Avant d'entrer dans l'avion"),
+            new Answer(13L,"Déjà plusieurs jours avant"),
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
+
+            //foule
+            new Answer(14L,"Lorsque vous êtes en contact avec la foule"),
+            new Answer(15L," Dans les transports en commun"
+            new Answer(16L," Lorsque vous entrez dans un lieu public"
+            new Answer(17L," Lorsque vous êtes dans une rue passante"
+            new Answer(6L,"Tout le temps"),
+            new Answer(7l,"Souvent"),
+            new Answer(8l,"Rarement"),
+            
+            //aquaphobie
+            new Answer(18L,"En voyant l'eau"),
+            new Answer(19L,"Rien qu'en y pensant"),
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
+
+            //claustrophobie
+            new Answer(20L,"Dans le noir"),
+            new Answer(21L,"Dans un espace clos (ascenceur, pièces sans fenêtre ...)"),
+            new Answer(22L,"Dans un espace restreint"),
+            new Answer(23L,"Tous les jours ou presque"),
+            new Answer(24L,"1 à 3 fois par semaine"),
+            new Answer(25L,"Rarement"), 
+
+            //cigarette
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
+
+            //alimentaire
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
+
+            //alcohol
+            new Answer(23L,"Tous les jours ou presque"),
+            new Answer(24L,"1 à 3 fois par semaine"),
+            new Answer(25L,"Rarement"),
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
+
+            //écran
+            new Answer(26L,"TV"),
+            new Answer(27L,"Jeux vidéos"),
+            new Answer(28L,"Smartphones"),
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non"),
+            new Answer(4L,"Oui"),
+            new Answer(5L,"Non")
             };
         for(Answer answer : data2){
             answerRepository.save(answer);
