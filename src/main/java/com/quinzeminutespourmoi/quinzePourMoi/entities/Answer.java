@@ -3,8 +3,6 @@ package com.quinzeminutespourmoi.quinzePourMoi.entities;
 import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -16,12 +14,12 @@ public class Answer{
     public Answer(){
     }
 
-    public Answer(String answer){
+    public Answer(Long id, String answer){
+        this.id = id;
         this.answer = answer;
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String answer;
 
