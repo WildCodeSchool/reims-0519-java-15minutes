@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Notification{
@@ -11,16 +12,15 @@ public class Notification{
     public Notification() {
     }
 
-    public Notification(Long hypnotherapistId, Long userId) {
-        this.hypnotherapistId = hypnotherapistId;
-        this.userId = userId;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long hypnotherapistId;
-    private Long userId;
+    @ManyToOne
+    private User user;
+    @ManyToOne
+    private Hypnotherapist hypnotherapist;
+    private Boolean userResponse;
+    private Boolean hypnoResponse;
 
     public Long getId() {
         return id;
@@ -30,19 +30,51 @@ public class Notification{
         this.id = id;
     }
 
-    public Long getHypnotherapistId() {
-        return hypnotherapistId;
+    public Hypnotherapist getHypnotherapist() {
+        return hypnotherapist;
     }
 
-    public void setHypnotherapistId(Long hypnotherapistId) {
-        this.hypnotherapistId = hypnotherapistId;
+    public void setHypnotherapist(Hypnotherapist hypnotherapist) {
+        this.hypnotherapist = hypnotherapist;
     }
 
-    public Long getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
+
+    public Boolean getUserResponse() {
+        return userResponse;
+    }
+
+    public void setUserResponse(Boolean userResponse) {
+        this.userResponse = userResponse;
+    }
+
+    public Boolean getHypnoResponse() {
+        return hypnoResponse;
+    }
+
+    public void setHypnoResponse(Boolean hypnoResponse) {
+        this.hypnoResponse = hypnoResponse;
+    }
+
+    public Notification(User user, Hypnotherapist hypnotherapist, Boolean userResponse, Boolean hypnoResponse) {
+        this.hypnotherapist = hypnotherapist;
+        this.user = user;
+        this.userResponse = userResponse;
+        this.hypnoResponse = hypnoResponse;
+    }
+
+    public Notification(Long id, User user, Hypnotherapist hypnotherapist, Boolean userResponse,Boolean hypnoResponse) {
+        this.id = id;
+        this.hypnotherapist = hypnotherapist;
+        this.user = user;
+        this.userResponse = userResponse;
+        this.hypnoResponse = hypnoResponse;
+    }
+    
 }

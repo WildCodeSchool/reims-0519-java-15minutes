@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -48,6 +49,9 @@ public class Hypnotherapist {
         joinColumns = @JoinColumn(name = "hypnotherapist_id"), 
         inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> followers;
+
+    @OneToMany(mappedBy = "hypnotherapist")
+    Set<Notification> notifications;
 
     /**
      * @return Long return the id
@@ -154,5 +158,26 @@ public class Hypnotherapist {
     public void setFollowers(Set<User> followers) {
         this.followers = followers;
     }
+
+    public Set<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(Set<Notification> notifications) {
+        this.notifications = notifications;
+    }
+
+	public Hypnotherapist(Long id, String description, String phone, String address, String adr_postal, String town,
+			User user, Set<User> followers, Set<Notification> notifications) {
+		this.id = id;
+		this.description = description;
+		this.phone = phone;
+		this.address = address;
+		this.adr_postal = adr_postal;
+		this.town = town;
+		this.user = user;
+		this.followers = followers;
+		this.notifications = notifications;
+	}
 
 }
