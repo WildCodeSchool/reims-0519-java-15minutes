@@ -3,7 +3,9 @@ package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Notification;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.NotificationRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,9 @@ class UserController {
 
     @Autowired
     PasswordEncoder passwordEncoder;
+
+    @Autowired
+    NotificationRepository notificationRepository;
 
     @GetMapping("/subscribe")
     public String subscribe(Model model) {
@@ -60,6 +65,8 @@ class UserController {
         User user = userRepository.findByMail(authentication.getName());
         model.addAttribute("user", user);
         model.addAttribute("isHypnotherapist", user.getHypnotherapist() != null);
+        Notification notification = notificationRepository.findNotificationByUserIdAndHypnotherapistUserId(user.getId(), hypnotherapistId);
+        model.addAttribute("notification", notification);
         return "profilePerso";
     }
 
