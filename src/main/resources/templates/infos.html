@@ -12,13 +12,13 @@
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <div class="img xavier">
-                <img th:src="${hypnotherapist.user.image}" class="img-fluid img-circle rounded-circle" alt="">
+                <img th:src="${hypnotherapist.image}" class="img-fluid img-circle rounded-circle" alt="">
             </div>
         </div>
     </div>
     <br>
     <div class="name col-12">
-        <h1 class="text-center" th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname}"></h1>
+        <h1 class="text-center" th:text="${hypnotherapist.firstname} + ' ' + ${hypnotherapist.lastname}"></h1>
     </div>
 
     <div class="rating col-12">
@@ -128,24 +128,15 @@
     <footer>
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#contactCenter">Me
-                    contacter</button>
-                <div class="modal fade" id="contactCenter" tabindex="-1" role="dialog"
-                    aria-labelledby="contactCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p th:text="'  ' + ${hypnotherapist.phone}"></p>
-
-                                <p th:text="'  ' + ${hypnotherapist.user.mail}"></p>
-                            </div>
-                        </div>
-                    </div>
+                <div th:if="${notification == null}">
+                    <form th:action="@{/notifications}" method="POST">
+                        <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
+                        <button type="submit" class="btn btn-info">Me contacter</button>
+                    </form>
+                </div>
+                <div th:if="${notification != null}">
+                    <p th:text="'  ' + ${hypnotherapist.phone}"></p>
+                    <p th:text="'  ' + ${hypnotherapist.mail}"></p>
                 </div>
             </div>
         </div>

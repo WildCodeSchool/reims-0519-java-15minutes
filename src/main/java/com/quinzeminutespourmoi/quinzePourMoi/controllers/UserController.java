@@ -3,7 +3,11 @@ package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Hypnotherapist;
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Notification;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.HypnotherapistRepository;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.NotificationRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +16,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,7 +27,13 @@ class UserController {
     private UserRepository userRepository;
 
     @Autowired
+    private HypnotherapistRepository hypnotherapistRepository;
+
+    @Autowired
     PasswordEncoder passwordEncoder;
+
+    @Autowired
+    NotificationRepository notificationRepository;
 
     @GetMapping("/subscribe")
     public String subscribe(Model model) {
@@ -33,15 +42,16 @@ class UserController {
     }
 
     @PostMapping("/subscribe")
-    public String store(HttpServletRequest request, String mail, String password, @ModelAttribute User user,
+    public String store(HttpServletRequest request, String mail, String password, User user,
             @RequestParam(defaultValue = "false") boolean isHypnotherapist) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        if(isHypnotherapist){
-            user.setRole(
-            "hypno"
-            );
+
+        if (isHypnotherapist) {
+            user = hypnotherapistRepository.save(new Hypnotherapist(user));
         }
-        userRepository.save(user).getId();
+        else {
+            user = userRepository.save(user);
+        }
 
         try {
             request.login(mail, password);
@@ -50,7 +60,7 @@ class UserController {
         }
 
         if (isHypnotherapist) {
-            return "redirect:/hypnoRegister";
+            return "redirect:/hypnotherapists/profile";
         }
         return "redirect:/users/profile";
     }
@@ -59,7 +69,8 @@ class UserController {
     public String read(Model model, Authentication authentication) {
         User user = userRepository.findByMail(authentication.getName());
         model.addAttribute("user", user);
-        model.addAttribute("isHypnotherapist", user.getHypnotherapist() != null);
+        Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+        model.addAttribute("notification", notification);
         return "profilePerso";
     }
 
@@ -67,7 +78,6 @@ class UserController {
     public String read(Model model, @PathVariable("id") Long userId) {
         User user = userRepository.findById(userId).get();
         model.addAttribute("user", user);
-        model.addAttribute("isHypnotherapist", user.getHypnotherapist() != null);
         return "profileUser";
     }
 }
