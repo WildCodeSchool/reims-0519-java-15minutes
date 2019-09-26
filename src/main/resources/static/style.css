@@ -134,12 +134,6 @@ h4 {
     font-size: 14px;
 }
 
-
-/* Si elle porte en plus la classe '.gold', elle sera en jaune. */
-.fa-star.gold {
-	color: #9933CC;
-}
-
 /* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
 .rating {
 	display: flex;
@@ -147,50 +141,24 @@ h4 {
 	align-items: center;
 }
 
-/* Le groupe '.stars' positionne les étoiles
-        les unes à côté des autres sans espacements. */
+/* Le groupe '.stars' positionne les étoiles les unes à côté des autres sans espacements. */
 .stars {
     display: inline-flex;
     justify-content: center;
 }
 
-/**
-    * Et là opère la magie du ':hover' !
-    */
-
-/* A l'état :hover sur le parent '.rating',
-        on force TOUTES les étoiles à passer en jaune. */
-.stars:hover .fa-star {
-    color: #9933CC;
-}
-/* Et si la souris survole une étoile en particulier,
-        on sélectionne toutes les étoiles qui sont APRÈS celle-ci
-        grâce à l'opérateur '~' et on les force en GRIS */
-.stars .fa-star:hover ~ .fa-star {
+.stars .fa-star{
     color: gray;
 }
 
-.fa-star.gold {
-	color: #9933CC;
+/* Et là opère la magie du ':hover' ! A l'état :hover sur le parent '.rating', on force TOUTES les étoiles à passer en jaune. */
+.stars .fa-star {
+    color: #9933CC;
 }
 
-.rating {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.stars {
-	display: inline-flex;
-	justify-content: center;
-}
-
-.stars:hover .fa-star {
-	color: #9933CC;
-}
-
-.stars .fa-star:hover ~ .fa-star {
-	color: gray;
+/* Et si la souris survole une étoile en particulier, on sélectionne toutes les étoiles qui sont APRÈS celle-ci grâce à l'opérateur '~' et on les force en GRIS */
+.stars .fa-star ~ .fa-star{
+    color: gray;
 }
 
 a { 
@@ -314,8 +282,12 @@ input[type=radio]:checked + label:before{
     content: '';
     width: 17px;
     height: 17px;
-
 }
+
+.comment{
+    height: 120px;
+}
+
   
 
 

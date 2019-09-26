@@ -49,6 +49,7 @@ public class Hypnotherapist {
         inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> followers;
 
+
     /**
      * @return Long return the id
      */

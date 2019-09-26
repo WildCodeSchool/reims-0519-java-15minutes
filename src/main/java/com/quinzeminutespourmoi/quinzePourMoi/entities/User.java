@@ -51,6 +51,7 @@ public class User implements UserDetails {
 
 
 
+
     /**
      * @return Long return the id
      */
