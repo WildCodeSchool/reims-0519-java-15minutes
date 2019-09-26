@@ -48,10 +48,12 @@ public class User implements UserDetails {
     @ManyToMany (mappedBy = "followers")
     private Set<Hypnotherapist> likes;
 
+
     @ManyToMany(mappedBy = "users")
     private Set<Answer> answers;
     @OneToMany(mappedBy = "user")
     private Set<Notification> notifications;
+
 
 
 
