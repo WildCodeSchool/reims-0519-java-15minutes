@@ -5,7 +5,6 @@ import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
 
 import java.util.List;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -18,13 +17,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.thymeleaf.spring5.expression.Fields;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import com.mashape.unirest.request.GetRequest;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,31 +41,30 @@ class HypnotherapistController {
 
     @PostMapping("/hypnoRegister")
     public String register(Authentication authentication, @RequestParam String description, @RequestParam String phone,
-            @RequestParam String address, @RequestParam String adr_postal, @RequestParam String town) {
+            @RequestParam String address, @RequestParam String adr_postal, @RequestParam String town, @RequestParam Double lat, @RequestParam Double lng) {
 
         HttpResponse<JsonNode> jsonResponse;
         try {
-            jsonResponse = Unirest.get("https://api.opencagedata.com/geocode/v1/json?")
-                    .queryString("q", address)
-                    .queryString("key", "6deb4479ec784e1d9a5a521e2da8655c")
-                    .asJson();
+            jsonResponse = Unirest.get("https://api.opencagedata.com/geocode/v1/json?").queryString("q", address)
+                    .queryString("key", "6deb4479ec784e1d9a5a521e2da8655c").asJson();
 
             assertNotNull(jsonResponse.getBody());
             assertEquals(200, jsonResponse.getStatus());
 
             JSONObject rootGeo = (JSONObject) jsonResponse.getBody().getObject();
-            JSONObject firstResult = (JSONObject)rootGeo.getJSONArray("results").get(0);
+            JSONObject firstResult = (JSONObject) rootGeo.getJSONArray("results").get(0);
             JSONObject geometry = (JSONObject) firstResult.getJSONObject("geometry");
-            double lng = geometry.getDouble("lng");
-            double lat = geometry.getDouble("lat");
-            
+            lng = geometry.getDouble("lng");
+            lat = geometry.getDouble("lat");
+
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (UnirestException e) {
             e.printStackTrace();
         }
         User user = userRepository.findByMail(authentication.getName());
-        hypnotherapistRepository.save(new Hypnotherapist(user, description, phone, address, adr_postal, town));
+        hypnotherapistRepository
+                .save(new Hypnotherapist(user, description, phone, address, adr_postal, town, lat, lng));
         return "home";
     }
 

@@ -13,19 +13,24 @@
             <div class="col-12">
                 <div class="card">
                     <ul th:each="hypnotherapist : ${hypnotherapists}" class="list-group" id="user-list">
-                        <a th:href="@{/hypnotherapists/{id}(id=${hypnotherapist.id})}" class="list-group-item list-group-item-action">
+                        <a th:href="@{/hypnotherapists/{id}(id=${hypnotherapist.id})}"
+                            class="list-group-item list-group-item-action">
                             <div class="row">
                                 <div class="col-12 ">
                                     <div class="row align-items-center">
                                         <div class="col-3 user-img">
-                                            <img class="img-responsive img-circle rounded-circle" th:src="${hypnotherapist.user.image}" />
+                                            <img class="img-responsive img-circle rounded-circle"
+                                                th:src="${hypnotherapist.user.image}" />
                                         </div>
                                         <div class="col-9">
                                             <h5 class="font-weight-bold"
                                                 th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname} ">
                                             </h5>
                                             <div class="user-detail">
-                                                <p><span id="dist" class="fas fa-map-marker-alt mr-1 "></span></i>6 km</p>
+<!--                                                 <p id="coord" th:text="${hypnotherapist.lng}" hidden></p>
+                                                <p id="coord" th:text="${hypnotherapist.lat}" hidden></p> -->
+                                                <p><span  class="fas fa-map-marker-alt mr-1 "></span></i>6 km</p>
+                                                
                                                 <div class="stars justify-content-start">
                                                     <i class="fas fa-star gold"></i>
                                                     <i class="fas fa-star gold"></i>
@@ -39,15 +44,33 @@
                                 </div>
                             </div>
                         </a>
-                    </ul>
+                    </ul>                       
+                        <!-- <a id="find-me" class="btn btn-primary btn-continue mb-3 btn-block btn-lg"
+                            role="button">Distance</a>
+                        <p hidden id="status" name="status" type="hidden" value="xm234jq">Lat</p>
+                        <p hidden id="map-link" name="map-link" type="hidden" value="xm234jq"> Long</p> -->
+                    
                 </div>
             </div>
         </div>
+
+
+
     </div>
 
 
-    <script th:replace="fragments/script.html :: script"></script>
 
+    <script th:replace="fragments/script.html :: script"></script>
+    <script>$("#handle2").roundSlider({
+            sliderType: "min-range",
+            radius: 130,
+            showTooltip: false,
+            width: 16,
+            value: 22,
+            handleSize: 0,
+            handleShape: "square",
+            circleShape: "half-top"
+        });</script>
 </body>
 
 </html>
