@@ -7,8 +7,8 @@
 <body class="container-fluid d-flex flex-column justify-content-between p-3">
     <header th:replace="fragments/header.html :: header"></header>
 
-    <form action="#" class="text-center border border-light " th:action="@{/hypnoRegister}" th:object="${hypnotherapist}"
-        method="POST">
+    <form action="#" class="text-center border border-light " th:action="@{/hypnotherapists/profile}" th:object="${hypnotherapist}"
+        th:method="patch">
         <p class="h4 p-4">Formulaire professionnel</p>
         <div class="form-row justify-content-center">
             <div class="col">

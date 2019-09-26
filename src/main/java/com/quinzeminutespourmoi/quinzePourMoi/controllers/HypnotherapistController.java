@@ -7,14 +7,12 @@ import java.util.List;
 
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.HypnotherapistRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.NotificationRepository;
-import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -24,8 +22,6 @@ class HypnotherapistController {
     @Autowired
     private HypnotherapistRepository hypnotherapistRepository;
     @Autowired
-    private UserRepository userRepository;
-    @Autowired
     private NotificationRepository notificationRepository;
 
 
@@ -34,18 +30,21 @@ class HypnotherapistController {
         return "infos";
     }
 
-    @PostMapping("/hypnoRegister")
-    public String register(Authentication authentication, @RequestParam String description,
-            @RequestParam String phone, @RequestParam String address, @RequestParam String adr_postal,
-            @RequestParam String town) {
-            User user = userRepository.findByMail(authentication.getName());
-        hypnotherapistRepository.save(new Hypnotherapist(user, description, phone, address, adr_postal, town));
+    @PatchMapping("/hypnotherapists/profile")
+    public String register(Authentication authentication, Hypnotherapist hypnotherapist) {
+        Hypnotherapist hypnotherapistToPatch = hypnotherapistRepository.findByMail(authentication.getName());
+        hypnotherapistToPatch.setDescription(hypnotherapist.getDescription());
+        hypnotherapistToPatch.setPhone(hypnotherapist.getPhone());
+        hypnotherapistToPatch.setAddress(hypnotherapist.getAddress());
+        hypnotherapistToPatch.setAdr_postal(hypnotherapist.getAdr_postal());
+        hypnotherapistToPatch.setTown(hypnotherapist.getTown());
+        hypnotherapistRepository.save(hypnotherapistToPatch);
         return "home";
     }
 
-    @GetMapping("/hypnoRegister")
-    public String subscribe(Model model) {
-        model.addAttribute("hypnotherapist", new Hypnotherapist());
+    @GetMapping("/hypnotherapists/profile")
+    public String subscribe(Model model, Authentication authentication) {
+        model.addAttribute("hypnotherapist", hypnotherapistRepository.findByMail(authentication.getName()));
         return "hypnoRegister";
     }
 
