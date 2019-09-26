@@ -55,7 +55,7 @@ public class User implements UserDetails {
     private Set<Notification> notifications;
 
     @ManyToMany(mappedBy = "users")
-    private Set<Answer> Answers;
+    private Set<Answer> answers;
 
 
 
@@ -230,10 +230,10 @@ public class User implements UserDetails {
 
 
     public Set<Answer> getAnswers() {
-        return Answers;
+        return answers;
     }
 
     public void setAnswers(Set<Answer> answers) {
-        Answers = answers;
+        this.answers = answers;
     }
 }

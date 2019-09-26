@@ -1,11 +1,19 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
+import java.util.List;
+
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Question;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.QuestionRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 class SurveyController{
+    @Autowired
+    private QuestionRepository questionRepository;
 
     @GetMapping("/survey/smoke")
     public String smokesurvey(Model model){
@@ -29,6 +37,8 @@ class SurveyController{
 
     @GetMapping("/survey/addiction/alcohol")
     public String alcoholAddictionSurvey(Model model){
+        List<Question> questions = questionRepository.findAll();
+        model.addAttribute("questions", questions);
         return "alcoholAddictionSurvey";
     }
 
