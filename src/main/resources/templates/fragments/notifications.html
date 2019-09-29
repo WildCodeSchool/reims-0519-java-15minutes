@@ -72,6 +72,7 @@
             <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
                 <div th:if="!${notification.userResponse}">
                     <label for="form-check" th:text= "'Avez-vous eu un entretien avec '+ ${notification.hypnotherapist.firstname} + ' ' + ${notification.hypnotherapist.lastname}"></label>     
+                    <a th:href="@{/users/{id}(id=${notification.hypnotherapist.id})}">Voir son profile</a>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="userResponse" id="yes" value="oui" checked>
                             <label class="form-check-label" for="yes"> Oui</label>    
