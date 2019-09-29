@@ -27,7 +27,9 @@
         </div>
         </ul>
         <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
-            <div th:replace="fragments/contentProfileUserPerso.html :: contentProfileUserPerso"></div>
+            <div class="rating col-12">
+                <p class="text-center">Mes besoins :</p>
+            </div>
         </div>
     </div>
 ​
