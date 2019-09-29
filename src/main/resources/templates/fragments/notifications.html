@@ -8,9 +8,28 @@
     <input type="image" class="cloche" alt="notificationButton" data-toggle="modal" data-target="#exampleModal"
        th:src="@{/img/cloche0.png}">
     </div>
+    
     <div th:if="${notification}">
-        <input type="image" class="cloche" alt="notificationButton" data-toggle="modal" data-target="#exampleModal"
-        th:src="@{/img/cloche1.png}">
+        <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
+            <div th:if="!${notification.userResponse}">
+                <input type="image" class="cloche" alt="notificationButton" data-toggle="modal" data-target="#exampleModal"
+                th:src="@{/img/cloche1.png}">
+            </div>
+            <div th:if="${notification.userResponse}">
+                <input type="image" class="cloche" alt="notificationButton" data-toggle="modal" data-target="#exampleModal"
+                th:src="@{/img/cloche0.png}">
+            </div>
+        </div>
+        <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
+            <div th:if="!${notification.hypnotherapistResponse}">
+                <input type="image" class="cloche" alt="notificationButton" data-toggle="modal" data-target="#exampleModal"
+                th:src="@{/img/cloche1.png}">
+            </div>
+            <div th:if="${notification.hypnotherapistResponse}">
+                <input type="image" class="cloche" alt="notificationButton" data-toggle="modal" data-target="#exampleModal"
+                th:src="@{/img/cloche0.png}">
+            </div>
+        </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
