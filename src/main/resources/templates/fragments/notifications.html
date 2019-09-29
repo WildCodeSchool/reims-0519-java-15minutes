@@ -33,23 +33,25 @@
             <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
                 <label for="form-check" th:text= "'Avez-vous eu un entretien avec '+ ${notification.hypnotherapist.firstname} + ' ' + ${notification.hypnotherapist.lastname}"></label>
             </div>
-                <div class="form-check">
-            <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">      
-                <input class="form-check-input" type="radio" name="hypnotherapistResponse" id="yes" value="true" checked>
-            </div>
-            <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">      
-                <input class="form-check-input" type="radio" name="userResponse" id="yes" value="true" checked>
-            </div>
-                <label class="form-check-label" for="yes"> Oui</label>
+            <div class="form-check">
+                <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">      
+                    <input class="form-check-input" type="radio" name="hypnotherapistResponse" id="yes" value="true" checked>
+                    <label class="form-check-label" for="yes"> Oui</label>
+                </div>
+                <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">      
+                    <input class="form-check-input" type="radio" name="userResponse" id="yes" value="true" checked>
+                    <label class="form-check-label" for="yes"> Oui</label>
+                </div>
             </div>
             <div class="form-check">
-            <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">                      
-                <input class="form-check-input" type="radio" name="hypnotherapistResponse" id="no" value="false" >
-            </div>
-            <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">                      
-                <input class="form-check-input" type="radio" name="userResponse" id="no" value="false" >
-            </div>
-                <label class="form-check-label" for="no"> Non</label>
+                <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">                      
+                    <input class="form-check-input" type="radio" name="hypnotherapistResponse" id="no" value="false" >
+                    <label class="form-check-label" for="no"> Non</label>
+                </div>
+                <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">                      
+                    <input class="form-check-input" type="radio" name="userResponse" id="no" value="false" >
+                    <label class="form-check-label" for="no"> Non</label>
+                </div>
             </div>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
