@@ -12,15 +12,13 @@
         <div class="card-body">
           <h3 class="card-title" th:text="${user.lastname} + ' ' + ${user.firstname}"></h3>
         </div>
+        <div th:replace="fragments/notifications.html :: notifications"></div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item" th:text=" 'Email : ' + ${user.mail}"></li>
         <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
             <li class="list-group-item" th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user})"></li>
         </div>
         </ul>
-        <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
-            <div th:replace="fragments/contentProfileTherapistPerso.html :: contentProfileTherapistPerso"></div>
-        </div>
         <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
             <div th:replace="fragments/contentProfileUserPerso.html :: contentProfileUserPerso"></div>
         </div>

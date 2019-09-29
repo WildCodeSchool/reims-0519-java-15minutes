@@ -6,46 +6,6 @@
         <div class="rating col-12">
             <p class="text-center">Mes besoins :</p>
         </div>
-        <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Notifications
-    </button>
-      
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Vos notifications</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div th:if="!${notification}" class="modal-body">
-                <p>Vous n'avez pas de notifications pour le moment.</p>
-        </div>
-        <div th:if="${notification}" class="modal-body">
-            <form th:action="@{/notifications/{id}(id=${notification.id})}" th:object="${notification}" th:method="patch" >
-                <label for="form-check" th:text= "'Avez-vous eu un entretien avec '+ ${notification.hypnotherapist.firstname} + ' ' + ${notification.hypnotherapist.lastname}"></label>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="userResponse" id="yes" value="true" checked>
-                <label class="form-check-label" for="yes"> Oui</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="userResponse" id="no" value="false" >
-                <label class="form-check-label" for="no"> Non</label>
-            </div>
-                <button type="submit" class="btn btn-primary">Envoyer</button>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-        </div>
-    </div>
-    </div>
-        
-    </div>
     </body>
 ​
 </html>
