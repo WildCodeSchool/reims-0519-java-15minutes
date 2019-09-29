@@ -46,7 +46,7 @@
         </div>
         <div th:if="${notification}" class="modal-body">
             <form th:action="@{/notifications/{id}(id=${notification.id})}" th:object="${notification}" th:method="patch" >
-           
+
             <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
                 <div th:if="!${notification.hypnotherapistResponse}">    
                     <label for="form-check" th:text= "'Avez-vous eu un entretien avec '+ ${notification.user.firstname} + ' ' + ${notification.user.lastname}"></label>
@@ -67,7 +67,6 @@
                     </p>
                 </div>
             </div>
-
 
             <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
                 <div th:if="!${notification.userResponse}">
