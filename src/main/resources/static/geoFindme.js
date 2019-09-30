@@ -103,4 +103,7 @@ function geoFindMe() {
     secondElem.innerHTML = 'Something happened here!';
     secondElem.style.fontWeight = 'bold';
 
+    const secondElem = document.getElementById('coord');
+    
+
   
