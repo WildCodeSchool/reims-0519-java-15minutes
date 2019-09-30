@@ -35,7 +35,7 @@
 
     <div class="row">
         <div class="col-6">
-            <p><i class="fas fa-quote-right mr-2"></i>Présentation</p>
+            <p><i class="fas fa-quote-right mr-3"></i>Présentation</p>
         </div>
         <div class="col-6 text-right">
             <button type="button" class="btn btn-infos" data-toggle="modal" data-target="#presentationCenter">+
@@ -65,7 +65,7 @@
 
     <div class="row">
         <div class="col-6">
-            <p><i class="fas fa-comment-alt mr-2"></i> Avis</p>
+            <p><i class="fas fa-comment-alt mr-3"></i> Avis</p>
         </div>
         <div class="col-6 text-right">
             <button type="button" class="btn btn-infos" data-toggle="modal" data-target="#avisCenter">+</button>
@@ -116,36 +116,12 @@
     <hr width="100%" size="5">
 
     <div th:if="${notification != null}" class="row">
-            <div class="col-6">
-                <p><i class="fas fa-map-marker-alt"></i>Coordonnées</p>
-            </div>
-            <div class="col-6 text-right">
-                <button type="button" class="btn btn-infos" data-toggle="modal" data-target="#coordonneesCenter">+
-                </button>
-            </div>
-            <div class="modal fade" id="coordonneesCenter" tabindex="-1" role="dialog" aria-labelledby="coordonneesTitle"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="coordonneesTitle">Coordonnées</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div
-                            class="modal-body" th:text="'Téléphone : '+ ${hypnotherapist.phone}">
-                        </div>
-                        <div
-                            class="modal-body" th:text="'Email : '+ ${hypnotherapist.user.mail}">
-                        </div>
-                        <div
-                            class="modal-body" th:text="'Adresse : '+ ${hypnotherapist.address} + ', ' +${hypnotherapist.adr_postal} + ' ' + ${hypnotherapist.town}">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <p class="col-12"><i class="fas fa-at mr-3"></i><span th:text="${hypnotherapist.user.mail}"></span></p>
+            <hr width="100%" size="5">
+            <p class="col-12"><i class="fas fa-phone-alt mr-3"></i><span th:text="${hypnotherapist.phone}"></span></p>
+            <hr width="100%" size="5">
+            <p class="col-12"><i class="fas fa-map-marker-alt mr-3"></i><span th:text="${hypnotherapist.address} + ', ' +${hypnotherapist.adr_postal} + ' ' + ${hypnotherapist.town}"></span></p>
+    </div>
         </div>
         </div>
         </div>
