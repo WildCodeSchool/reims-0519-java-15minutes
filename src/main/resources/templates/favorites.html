@@ -6,8 +6,10 @@
 
 <body class="container-fluid d-flex flex-column justify-content-between  p-3">
     <header th:replace="fragments/header.html :: header"></header>
-
-
+<div th:if="!${favorites}">
+    <h4>Vous n'avez pas de favoris pour le moment.</h4>
+</div>
+<div th:if="${favorites}">
     <div class="container ">
         <div class="row">
             <div class="col-12">
@@ -44,6 +46,7 @@
             </div>
         </div>
     </div>
+</div>
 
 
     <script th:replace="fragments/script.html :: script"></script>
