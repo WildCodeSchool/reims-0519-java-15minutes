@@ -143,13 +143,13 @@
         <div class="row">
             <div class="col-12 d-flex justify-content-between">
                 <a th:href="@{/hypnotherapists}"><i class="fas fa-fast-backward return" ></i></a>
-                <div th:if="${favorite == null}">
+                <div th:if="!${favorite}">
                     <form th:action="@{/favorites}" method="POST">
                         <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
                         <button type="submit" class="btn btn-link"><i class="far fa-heart favorite"></i></button>
                     </form>
                 </div>
-                <div th:if="${favorite != null}">
+                <div th:if="${favorite}">
                     <form th:action="@{/favorites/{id}(id=${favorite.id})}" method="POST">
                         <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
                         <button type="submit" class="btn btn-link"><i class="fas fa-heart favorite"></i></button>

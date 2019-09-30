@@ -24,7 +24,7 @@ class FavoriteController {
         return "redirect:/hypnotherapists/"+favorite.getHypnotherapist().getId();
     }
 
-    @DeleteMapping("/favorites/{id}")
+    @PostMapping("/favorites/{id}")
     public String destroy(@PathVariable Long id, Favorite favorite) {
         favoriteRepository.delete(
             favoriteRepository.findById(id).get());

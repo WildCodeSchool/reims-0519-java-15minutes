@@ -1,10 +1,12 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Favorite;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Hypnotherapist;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Notification;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
 import java.util.List;
 
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.FavoriteRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.HypnotherapistRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.NotificationRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
@@ -26,7 +28,8 @@ class HypnotherapistController {
     private NotificationRepository notificationRepository;
     @Autowired
     private UserRepository userRepository;
-
+    @Autowired
+    private FavoriteRepository favoriteRepository;
 
     @GetMapping("/infos")
     public String infos(Model model, Authentication authentication) {
@@ -87,8 +90,10 @@ class HypnotherapistController {
         Hypnotherapist hypnotherapist = hypnotherapistRepository.findById(hypnotherapistId).get();
         User user = (User)authentication.getPrincipal();
         Notification notification = notificationRepository.findNotificationByUserIdAndHypnotherapistId(user.getId(), hypnotherapistId);
+        Favorite favorite = favoriteRepository.findFavoriteByUserIdAndHypnotherapistId(user.getId(), hypnotherapistId);
         model.addAttribute("notification", notification);
         model.addAttribute("hypnotherapist", hypnotherapist);
+        model.addAttribute("favorite", favorite);
         return "infos";
     }
 }
