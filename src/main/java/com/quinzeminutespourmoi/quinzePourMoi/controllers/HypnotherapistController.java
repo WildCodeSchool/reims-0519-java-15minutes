@@ -39,43 +39,58 @@ class HypnotherapistController {
 
     @GetMapping("/infos")
     public String infos(Model model, Authentication authentication) {
-        if(authentication != null){
+        if (authentication != null) {
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(),
+                    user.getId());
             model.addAttribute("notification", notification);
         }
         return "infos";
     }
 
     @PatchMapping("/hypnotherapists/profile")
-    public String profile(Authentication authentication, Hypnotherapist hypnotherapist, double lat, double lng, String address) {
+    public String profile(Authentication authentication, Hypnotherapist hypnotherapist) {
         Hypnotherapist hypnotherapistToPatch = hypnotherapistRepository.findByMail(authentication.getName());
-        hypnotherapistToPatch.setDescription(hypnotherapist.getDescription());
-        hypnotherapistToPatch.setPhone(hypnotherapist.getPhone());
+        if(hypnotherapist.getDescription() != null) {
+            hypnotherapistToPatch.setDescription(hypnotherapist.getDescription());
+        }
+        if(hypnotherapist.getPhone() != null) {
+            hypnotherapistToPatch.setPhone(hypnotherapist.getPhone());
+        }
+        if(hypnotherapist.getAddress() != null) {
         hypnotherapistToPatch.setAddress(hypnotherapist.getAddress());
+        }
+        if(hypnotherapist.getAdr_postal() != null) {
         hypnotherapistToPatch.setAdr_postal(hypnotherapist.getAdr_postal());
+        }
+        if(hypnotherapist.getTown() != null) {
         hypnotherapistToPatch.setTown(hypnotherapist.getTown());
-        hypnotherapistToPatch.setLng(hypnotherapist.getLng());
-        hypnotherapistToPatch.setLat(hypnotherapist.getLat());
+        }
+        System.out.println("1111111111111111");
 
         HttpResponse<JsonNode> jsonResponse;
         try {
+            String address = (hypnotherapist.getAddress());
             jsonResponse = Unirest.get("https://api.opencagedata.com/geocode/v1/json?").queryString("q", address)
                     .queryString("key", "6deb4479ec784e1d9a5a521e2da8655c").asJson();
+            System.out.println(address);
 
             JSONObject rootGeo = (JSONObject) jsonResponse.getBody().getObject();
             JSONObject firstResult = (JSONObject) rootGeo.getJSONArray("results").get(0);
             JSONObject geometry = (JSONObject) firstResult.getJSONObject("geometry");
-            lng = geometry.getDouble("lng");
-            lat = geometry.getDouble("lat");
+            Double lng = geometry.getDouble("lng");
+            Double lat = geometry.getDouble("lat");
+            System.out.println("33333333333333333");
 
+            hypnotherapistToPatch.setLng(lng);
+            hypnotherapistToPatch.setLat(lat);
+            System.out.println("44444444444444444444");
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (UnirestException e) {
             e.printStackTrace();
         }
-        User user = userRepository.findByMail(authentication.getName());
         hypnotherapistRepository.save(hypnotherapistToPatch);
 
         return "home";
