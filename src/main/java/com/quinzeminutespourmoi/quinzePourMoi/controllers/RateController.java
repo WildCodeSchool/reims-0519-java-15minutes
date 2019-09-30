@@ -13,11 +13,10 @@ public class RateController{
     @Autowired
     private RateRepository rateRepository;
 
-    @PostMapping
+    /*@PostMapping
     public String store(Authentication authentication, int rate){
         rate.SetUser(User)authentication.getPrincipal();
         rate = rateRepository.save(rate);
-        return "/infos";
-    }
-
+        return "/infos";*/
 }
+

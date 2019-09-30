@@ -41,10 +41,10 @@ public class Hypnotherapist extends User {
     private Set<User> followers;
 
     @OneToMany(mappedBy = "hypnotherapist")
-    Set<Notification> notifications;
+    private Set<Notification> notifications;
 
-    @OneToMany(mappedBy ="hypnotherapist")
-    Set<Rate> rates;
+    /*@OneToMany(mappedBy ="hypnotherapist")
+    private Set<Rate> rates;*/
 
     /**
      * @return String return the description
@@ -137,5 +137,13 @@ public class Hypnotherapist extends User {
         final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>(super.getAuthorities());
         authorities.add(new SimpleGrantedAuthority("HYPNOTHERAPIST"));
         return authorities;
+    }
+
+    /*public Set<Rate> getRates() {
+        return rates;
+    }
+
+    public void setRates(Set<Rate> rates) {
+        this.rates = rates;*/  
     }
 }

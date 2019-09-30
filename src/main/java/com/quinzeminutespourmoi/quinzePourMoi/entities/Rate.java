@@ -1,6 +1,8 @@
-package com.quinzeminutespourmoi.quinzePourMoi.entities;
+/*package com.quinzeminutespourmoi.quinzePourMoi.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -10,17 +12,18 @@ public class Rate {
     public Rate(){
     }
     
-    public Rate(Long id, int rate){
+    public Rate(Long id, int rating){
         this.id = id;
-        this.rate = rate;
+        this.rating = rating;
     }
 
     @ManyToOne
     private Rate rates;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private int rate;
+    private int rating;
 
     public Long getId() {
         return id;
@@ -30,11 +33,11 @@ public class Rate {
         this.id = id;
     }
 
-    public int getRate() {
-        return rate;
+    public int getRating() {
+        return rating;
     }
 
-    public void setRate(int rate) {
-        this.rate = rate;
+    public void setRating(int rating) {
+        this.rating = rating;
     }
-}
+}*/
