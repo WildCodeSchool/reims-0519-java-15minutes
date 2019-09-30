@@ -75,7 +75,13 @@ class UserController {
     }
 
     @GetMapping("/users/{id}")
-    public String read(Model model, @PathVariable("id") Long userId) {
+    public String read(Model model, @PathVariable("id") Long userId, Authentication authentication) {
+        if(authentication != null){
+            User user = userRepository.findByMail(authentication.getName());
+            model.addAttribute("user", user);
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            model.addAttribute("notification", notification);
+        }
         User user = userRepository.findById(userId).get();
         model.addAttribute("user", user);
         return "profileUser";
