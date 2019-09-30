@@ -18,7 +18,7 @@
                                     th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname} ">
                                 </h5>
                                 <div class="user-detail">
-                                    <p id="coord" th:text="${hypnotherapist.lng}" hidden></p>
+                                    <p th:data-="coord" th:text="${hypnotherapist.lng}" hidden></p>
                                     <p id="coord" th:text="${hypnotherapist.lat}" hidden></p> 
                                     <p id="succoord"><i class="fas fa-map-marker-alt mr-1"></i>6 km</p>
                                     
