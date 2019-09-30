@@ -32,7 +32,7 @@ public class Hypnotherapist extends User {
     @OneToMany(mappedBy = "hypnotherapist")
     Set<Notification> notifications;
 
-    @OneToMany(mappedBy ="hypnotherapist")
+    @OneToMany(mappedBy = "hypnotherapist")
     Set<Favorite> favorites;
 
     /**
