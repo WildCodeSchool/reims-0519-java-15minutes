@@ -87,26 +87,36 @@ public class QuestionOutputter implements CommandLineRunner{
         answers.add(new Answer(922L, "Non", questionRepository.findById(92L).get()));
         answers.add(new Answer(931L,"Oui", questionRepository.findById(93L).get()));
         answers.add(new Answer(932L, "Non", questionRepository.findById(93L).get()));
+        //animals
+        answers.add(new Answer(11L,"Rien qu'en y pensant", questionRepository.findById(1L).get()));
+        answers.add(new Answer(12L,"En la voyant", questionRepository.findById(1L).get()));
+        answers.add(new Answer(13L,"Au toucher", questionRepository.findById(1L).get()));
+        answers.add(new Answer(21L,"Oui", questionRepository.findById(2L).get()));
+        answers.add(new Answer(22L,"Non", questionRepository.findById(2L).get()));
+        // Spiders/insects
+        answers.add(new Answer(111L,"Rien qu'en y pensant", questionRepository.findById(11L).get()));
+        answers.add(new Answer(112L,"En la voyant", questionRepository.findById(11L).get()));
+        answers.add(new Answer(113L,"Au toucher", questionRepository.findById(11L).get()));
+        answers.add(new Answer(121L,"Oui", questionRepository.findById(12L).get()));
+        answers.add(new Answer(122L,"Non", questionRepository.findById(12L).get()));
+        // cars
+        answers.add(new Answer(211L,"Tout le temps", questionRepository.findById(21L).get()));
+        answers.add(new Answer(212L,"Souvent", questionRepository.findById(21L).get()));
+        answers.add(new Answer(213L,"Rarement", questionRepository.findById(21L).get()));
+        answers.add(new Answer(221L,"Oui", questionRepository.findById(22L).get()));
+        answers.add(new Answer(222L,"Non", questionRepository.findById(22L).get()));
+        answers.add(new Answer(231L,"Plutôt les lignes droites", questionRepository.findById(23L).get()));
+        answers.add(new Answer(232L,"Lorsqu'il y a des virages", questionRepository.findById(23L).get()));
+        answers.add(new Answer(233L,"Peu importe", questionRepository.findById(23L).get()));
+        answers.add(new Answer(241L,"Oui", questionRepository.findById(24L).get()));
+        answers.add(new Answer(242L,"Non", questionRepository.findById(24L).get()));
+
+
+
         for(Answer answer : answers){
             answerRepository.save(answer);
         }
         // /*Answer[] data2 = new Answer[]{
-
-        //     //animaux
-        //     new Answer(11L,"Rien qu'en y pensant"),
-        //     new Answer(12L,"En la voyant"),
-        //     new Answer(13L,"Au toucher"),
-        //     new Answer(21L,"Oui"),
-        //     new Answer(22L,"Non"),
-
-        //     araignée/insectes
-        //     new Answer(111L,"Rien qu'en y pensant"),
-        //     new Answer(112L,"En la voyant"),
-        //     new Answer(113L,"Au toucher"),
-        //     new Answer(21L,"Oui"),
-        //     new Answer(22L,"Non"),
-
-
         //     //voiture
         //     new Answer(6L,"Tout le temps"),
         //     new Answer(7l,"Souvent"),
