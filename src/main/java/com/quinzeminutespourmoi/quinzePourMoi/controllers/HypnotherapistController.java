@@ -51,7 +51,7 @@ class HypnotherapistController {
     }
 
     @PatchMapping("/hypnotherapists/profile")
-    public String profile(Authentication authentication, Hypnotherapist hypnotherapist) {
+    public String profile(Authentication authentication, Hypnotherapist hypnotherapist, double lat, double lng, String address) {
         Hypnotherapist hypnotherapistToPatch = hypnotherapistRepository.findByMail(authentication.getName());
         hypnotherapistToPatch.setDescription(hypnotherapist.getDescription());
         hypnotherapistToPatch.setPhone(hypnotherapist.getPhone());
