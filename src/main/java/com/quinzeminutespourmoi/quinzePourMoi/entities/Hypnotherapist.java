@@ -5,21 +5,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -51,72 +42,43 @@ public class Hypnotherapist extends User {
     @OneToMany(mappedBy = "hypnotherapist")
     Set<Notification> notifications;
 
-    /**
-     * @return String return the description
-     */
+
     public String getDescription() {
         return description;
     }
 
-    /**
-     * @param description the description to set
-     */
     public void setDescription(String description) {
         this.description = description;
     }
 
-    /**
-     * @return String return the phone
-     */
     public String getPhone() {
         return phone;
     }
 
-    /**
-     * @param phone the phone to set
-     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    /**
-     * @return String return the adr_postal
-     */
     public String getAdr_postal() {
         return adr_postal;
     }
 
-    /**
-     * @param adr_postal the adr_postal to set
-     */
     public void setAdr_postal(String adr_postal) {
         this.adr_postal = adr_postal;
     }
 
-    /**
-     * @return String return the town
-     */
     public String getTown() {
         return town;
     }
 
-    /**
-     * @param town the town to set
-     */
     public void setTown(String town) {
         this.town = town;
     }
 
-    /**
-     * @return String return the address
-     */
     public String getAddress() {
         return address;
     }
 
-    /**
-     * @param address the address to set
-     */
     public void setAddress(String address) {
         this.address = address;
     }

@@ -4,9 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-//import com.quinzeminutespourmoi.quinzePourMoi.entities.Answer;
+import java.util.HashSet;
+import java.util.Set;
+
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Answer;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Question;
-//simport com.quinzeminutespourmoi.quinzePourMoi.repositories.AnswerRepository;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.AnswerRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.QuestionRepository;
 
 @Component
@@ -14,11 +17,12 @@ public class QuestionOutputter implements CommandLineRunner{
 
     @Autowired
     private QuestionRepository questionRepository;
-    //private AnswerRepository answerRepository;
+    @Autowired
+    private AnswerRepository answerRepository;
 
     public void run(String... args) throws Exception{
+        answerRepository.deleteAll();
         questionRepository.deleteAll();
-        // //answerRepository.deleteAll();
 
         Question[] data = new Question []{
              /*phobies*/
@@ -34,7 +38,7 @@ public class QuestionOutputter implements CommandLineRunner{
              new Question(23L,"Sur quel type de route cela vous arrive-t'il ?"),
              new Question(24L,"Y a t'il eu un événement avant la phobie qui aurait pu déclencher votre peur ?"),
              /*avions*/
-             new Question(31L,"Quand cela se manifeste-t'il ?"),
+             new Question(31L,"Cette peur est-elle encore présente lorsque vous êtes en vol ?"),
              new Question(32L,"Quand cela se manifeste-t'il ?"),
              /*foule*/
              new Question(41L,"Dans quelle situation se manifeste-t'elle ?"),
@@ -72,14 +76,27 @@ public class QuestionOutputter implements CommandLineRunner{
             questionRepository.save(question);
         }
 
+        Set<Answer> answers = new HashSet<Answer>();
+        answers.add(new Answer(1L,"Rien qu'en y pensant", questionRepository.findById(101L).get()));
+        for(Answer answer : answers){
+            answerRepository.save(answer);
+        }
         // /*Answer[] data2 = new Answer[]{
 
-        //     //animaux et araignée/insectes
-        //     new Answer(1L,"Rien qu'en y pensant"),
-        //     new Answer(2L,"En la voyant"),
-        //     new Answer(3L,"Au toucher"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
+        //     //animaux
+        //     new Answer(11L,"Rien qu'en y pensant"),
+        //     new Answer(12L,"En la voyant"),
+        //     new Answer(13L,"Au toucher"),
+        //     new Answer(21L,"Oui"),
+        //     new Answer(22L,"Non"),
+
+        //     araignée/insectes
+        //     new Answer(111L,"Rien qu'en y pensant"),
+        //     new Answer(112L,"En la voyant"),
+        //     new Answer(113L,"Au toucher"),
+        //     new Answer(21L,"Oui"),
+        //     new Answer(22L,"Non"),
+
 
         //     //voiture
         //     new Answer(6L,"Tout le temps"),
