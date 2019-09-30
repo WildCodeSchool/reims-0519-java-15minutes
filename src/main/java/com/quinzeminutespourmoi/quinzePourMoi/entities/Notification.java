@@ -77,6 +77,4 @@ public class Notification{
         this.userResponse = userResponse;
         this.hypnotherapistResponse = hypnotherapistResponse;
     }
-
-    
 }
