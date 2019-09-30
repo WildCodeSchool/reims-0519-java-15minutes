@@ -38,8 +38,8 @@ public class QuestionOutputter implements CommandLineRunner{
              new Question(23L,"Sur quel type de route cela vous arrive-t'il ?"),
              new Question(24L,"Y a t'il eu un événement avant la phobie qui aurait pu déclencher votre peur ?"),
              /*avions*/
-             new Question(31L,"Cette peur est-elle encore présente lorsque vous êtes en vol ?"),
-             new Question(32L,"Quand cela se manifeste-t'il ?"),
+             new Question(31L,"Quand cela se manifeste-t'il ?"),
+             new Question(32L,"Cette peur est-elle encore présente lorsque vous êtes en vol ?"),
              /*foule*/
              new Question(41L,"Dans quelle situation se manifeste-t'elle ?"),
              new Question(42L,"Quand cela se manifeste-t'il ?"),
@@ -110,24 +110,17 @@ public class QuestionOutputter implements CommandLineRunner{
         answers.add(new Answer(233L,"Peu importe", questionRepository.findById(23L).get()));
         answers.add(new Answer(241L,"Oui", questionRepository.findById(24L).get()));
         answers.add(new Answer(242L,"Non", questionRepository.findById(24L).get()));
-
+        //plane
+        answers.add(new Answer(311L,"Avant d'entrer dans l'avion", questionRepository.findById(31L).get()));
+        answers.add(new Answer(312L,"Déjà plusieurs jours avant", questionRepository.findById(31L).get()));
+        answers.add(new Answer(321L,"Oui", questionRepository.findById(32L).get()));
+        answers.add(new Answer(322L,"Non", questionRepository.findById(32L).get()));
 
 
         for(Answer answer : answers){
             answerRepository.save(answer);
         }
         // /*Answer[] data2 = new Answer[]{
-        //     //voiture
-        //     new Answer(6L,"Tout le temps"),
-        //     new Answer(7l,"Souvent"),
-        //     new Answer(8l,"Rarement"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-        //     new Answer(9l,"Plutôt les lignes droites"),
-        //     new Answer(10l,"Lorsqu'il y a des virages"),
-        //     new Answer(11l,"Peu importe"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
 
         //     //avion
         //     new Answer(12L,"Avant d'entrer dans l'avion"),
