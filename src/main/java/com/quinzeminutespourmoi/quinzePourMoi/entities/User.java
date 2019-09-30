@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,8 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -47,14 +46,15 @@ public class User implements UserDetails {
 
     @ManyToMany (mappedBy = "followers")
     private Set<Hypnotherapist> likes;
-
+ 
 
     @ManyToMany(mappedBy = "users")
     private Set<Answer> answers;
     @OneToMany(mappedBy = "user")
     private Set<Notification> notifications;
 
-
+    @ManyToOne
+    private Rate rate;
 
 
 
@@ -197,6 +197,14 @@ public class User implements UserDetails {
 
     public void setNotifications(Set<Notification> notifications) {
         this.notifications = notifications;
+    }
+
+    public Rate getRate() {
+        return rate;
+    }
+
+    public void setRate(Rate rate) {
+        this.rate = rate;
     }
 
 }

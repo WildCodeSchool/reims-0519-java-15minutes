@@ -5,21 +5,14 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.MapsId;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -48,25 +41,11 @@ public class Hypnotherapist extends User {
         inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> followers;
 
-<<<<<<< HEAD
-
-    /**
-     * @return Long return the id
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-=======
     @OneToMany(mappedBy = "hypnotherapist")
     Set<Notification> notifications;
->>>>>>> dbe939f0f63eb1116de12100448ce5b36273f6f4
+
+    @ManyToOne
+    private Rate rate;
 
     /**
      * @return String return the description
@@ -159,5 +138,13 @@ public class Hypnotherapist extends User {
         final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>(super.getAuthorities());
         authorities.add(new SimpleGrantedAuthority("HYPNOTHERAPIST"));
         return authorities;
+    }
+
+    public Rate getRate() {
+        return rate;
+    }
+
+    public void setRate(Rate rate) {
+        this.rate = rate;
     }
 }
