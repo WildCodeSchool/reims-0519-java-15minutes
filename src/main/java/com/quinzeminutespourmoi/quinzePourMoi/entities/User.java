@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +14,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -45,17 +44,14 @@ public class User implements UserDetails {
     private String mail;
     private String image;
 
-    @ManyToMany (mappedBy = "followers")
-    private Set<Hypnotherapist> likes;
-
-
     @ManyToMany(mappedBy = "users")
     private Set<Answer> answers;
+
     @OneToMany(mappedBy = "user")
     private Set<Notification> notifications;
 
-
-
+    @OneToMany(mappedBy = "user")
+    private Set<Favorite> favorites;
 
     /**
      * @return Long return the id
@@ -169,20 +165,6 @@ public class User implements UserDetails {
         this.image = image;
     }
 
-    /**
-     * @return Set<Hypnotherapist> return the likes
-     */
-    public Set<Hypnotherapist> getLikes() {
-        return likes;
-    }
-
-    /**
-     * @param likes the likes to set
-     */
-    public void setLikes(Set<Hypnotherapist> likes) {
-        this.likes = likes;
-    }
-
     public Set<Answer> getAnswers() {
         return answers;
     }
@@ -198,4 +180,11 @@ public class User implements UserDetails {
         this.notifications = notifications;
     }
 
+    public Set<Favorite> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(Set<Favorite> favorites) {
+        this.favorites = favorites;
+    }
 }
