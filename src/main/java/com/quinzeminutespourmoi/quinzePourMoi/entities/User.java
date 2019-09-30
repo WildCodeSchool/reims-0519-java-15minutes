@@ -10,7 +10,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -18,17 +21,17 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User implements UserDetails {
 
     public User() {
     }
 
-    public User(String firstname, String lastname, String password, String mail, String role, String image) {
+    public User(String firstname, String lastname, String password, String mail, String image) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;
         this.mail = mail;
-        this.role = role;
         this.image = image;
     }
 
@@ -40,14 +43,17 @@ public class User implements UserDetails {
     private String lastname;
     private String password;
     private String mail;
-    private String role;
     private String image;
-    
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private Hypnotherapist hypnotherapist;
 
     @ManyToMany (mappedBy = "followers")
     private Set<Hypnotherapist> likes;
+
+
+    @ManyToMany(mappedBy = "users")
+    private Set<Answer> answers;
+    @OneToMany(mappedBy = "user")
+    private Set<Notification> notifications;
+
 
 
 
@@ -121,28 +127,11 @@ public class User implements UserDetails {
     public void setMail(String mail) {
         this.mail = mail;
     }
-
-    /**
-     * @return String return the role
-     */
-    public String getRole() {
-        return role;
-    }
-
-    /**
-     * @param role the role to set
-     */
-    public void setRole(String role) {
-        this.role = role;
-    }
-
+    
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
         authorities.add(new SimpleGrantedAuthority("USER"));
-        if(hypnotherapist != null) {
-            authorities.add(new SimpleGrantedAuthority("HYPNOTHERAPIST"));
-        }
         return authorities;
     }
 
@@ -182,20 +171,6 @@ public class User implements UserDetails {
     }
 
     /**
-     * @return Hypnotherapist return the hypnotherapist
-     */
-    public Hypnotherapist getHypnotherapist() {
-        return hypnotherapist;
-    }
-
-    /**
-     * @param hypnotherapist the hypnotherapist to set
-     */
-    public void setHypnotherapist(Hypnotherapist hypnotherapist) {
-        this.hypnotherapist = hypnotherapist;
-    }
-
-    /**
      * @return Set<Hypnotherapist> return the likes
      */
     public Set<Hypnotherapist> getLikes() {
@@ -207,6 +182,21 @@ public class User implements UserDetails {
      */
     public void setLikes(Set<Hypnotherapist> likes) {
         this.likes = likes;
+    }
+
+    public Set<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(Set<Answer> answers) {
+        this.answers = answers;
+    }
+    public Set<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(Set<Notification> notifications) {
+        this.notifications = notifications;
     }
 
 }

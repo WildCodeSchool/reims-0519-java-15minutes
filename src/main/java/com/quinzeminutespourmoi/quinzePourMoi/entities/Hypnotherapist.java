@@ -1,46 +1,45 @@
 package com.quinzeminutespourmoi.quinzePourMoi.entities;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 @Entity
-@Table(name = "hypnotherapist")
-public class Hypnotherapist {
+@PrimaryKeyJoinColumn(name = "id")
+public class Hypnotherapist extends User {
 
     public Hypnotherapist() {
     }
 
-    public Hypnotherapist(User user, String description, String phone, String address, String adr_postal, String town) {
-
-        this.user = user;
-        this.description = description;
-        this.phone = phone;
-        this.address = address;
-        this.adr_postal = adr_postal;
-        this.town = town;
+    public Hypnotherapist(User user) {
+        super(user.getFirstname(), user.getLastname(), user.getPassword(), user.getMail(), user.getImage());
     }
 
-    @Id
-    @Column(name = "id")
-    private Long id;
     private String description;
     private String phone;
     private String address;
     private String adr_postal;
     private String town;
-
-    @OneToOne(optional = true)
-    @MapsId
-    private User user;
 
     @ManyToMany
     @JoinTable(
@@ -49,6 +48,7 @@ public class Hypnotherapist {
         inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> followers;
 
+<<<<<<< HEAD
 
     /**
      * @return Long return the id
@@ -63,6 +63,10 @@ public class Hypnotherapist {
     public void setId(Long id) {
         this.id = id;
     }
+=======
+    @OneToMany(mappedBy = "hypnotherapist")
+    Set<Notification> notifications;
+>>>>>>> dbe939f0f63eb1116de12100448ce5b36273f6f4
 
     /**
      * @return String return the description
@@ -121,20 +125,6 @@ public class Hypnotherapist {
     }
 
     /**
-     * @return User return the user
-     */
-    public User getUser() {
-        return user;
-    }
-
-    /**
-     * @param user the user to set
-     */
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    /**
      * @return String return the address
      */
     public String getAddress() {
@@ -156,4 +146,18 @@ public class Hypnotherapist {
         this.followers = followers;
     }
 
+    public Set<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(Set<Notification> notifications) {
+        this.notifications = notifications;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>(super.getAuthorities());
+        authorities.add(new SimpleGrantedAuthority("HYPNOTHERAPIST"));
+        return authorities;
+    }
 }
