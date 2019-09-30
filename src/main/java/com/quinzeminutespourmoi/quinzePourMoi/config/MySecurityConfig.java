@@ -28,11 +28,12 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/img/**").permitAll()
                 .antMatchers("/webfonts/**").permitAll()
                 .antMatchers("/**.css").permitAll()
-                .antMatchers("/").authenticated()
+                .antMatchers("/").permitAll()
                 .antMatchers("/subscribe").permitAll()
                 .antMatchers("/resultSurvey").authenticated()
-                .antMatchers("/hypnoRegister").authenticated()
+                .antMatchers("/hypnotherapists/profile").authenticated()
                 .antMatchers("/users/**").authenticated()
+                .antMatchers("/notification").authenticated()
                 .antMatchers("/admin").hasAuthority("ADMIN")
                 .and()
             .formLogin()
@@ -46,7 +47,10 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
             .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/login")
                 .and()
-            .httpBasic();
+            .httpBasic()
+                .and()
+            .csrf()
+                .disable();
     }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

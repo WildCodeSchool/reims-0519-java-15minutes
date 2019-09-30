@@ -6,6 +6,14 @@ ul {
 {
     height: 3rem;
 }
+.cloche
+{
+    height: 3rem;
+}
+.clocheNavbar
+{
+    height: 2rem;
+}
 .indexBg 
 {
     background-image: url("img/backgroundIndex.png");
