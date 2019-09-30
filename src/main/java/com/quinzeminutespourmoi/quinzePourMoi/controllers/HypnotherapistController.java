@@ -67,25 +67,20 @@ class HypnotherapistController {
         if(hypnotherapist.getTown() != null) {
         hypnotherapistToPatch.setTown(hypnotherapist.getTown());
         }
-        System.out.println("1111111111111111");
-
         HttpResponse<JsonNode> jsonResponse;
         try {
             String address = (hypnotherapist.getAddress());
             jsonResponse = Unirest.get("https://api.opencagedata.com/geocode/v1/json?").queryString("q", address)
                     .queryString("key", "6deb4479ec784e1d9a5a521e2da8655c").asJson();
-            System.out.println(address);
 
             JSONObject rootGeo = (JSONObject) jsonResponse.getBody().getObject();
             JSONObject firstResult = (JSONObject) rootGeo.getJSONArray("results").get(0);
             JSONObject geometry = (JSONObject) firstResult.getJSONObject("geometry");
             Double lng = geometry.getDouble("lng");
             Double lat = geometry.getDouble("lat");
-            System.out.println("33333333333333333");
 
             hypnotherapistToPatch.setLng(lng);
             hypnotherapistToPatch.setLat(lat);
-            System.out.println("44444444444444444444");
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (UnirestException e) {
