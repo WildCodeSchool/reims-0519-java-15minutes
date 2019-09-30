@@ -77,7 +77,16 @@ public class QuestionOutputter implements CommandLineRunner{
         }
 
         Set<Answer> answers = new HashSet<Answer>();
-        answers.add(new Answer(1L,"Rien qu'en y pensant", questionRepository.findById(101L).get()));
+        // alcohol
+        answers.add(new Answer(901L,"Tous les jours ou presque", questionRepository.findById(90L).get()));
+        answers.add(new Answer(902L,"1 à 3 fois par semaine", questionRepository.findById(90L).get()));
+        answers.add(new Answer(903L,"Rarement", questionRepository.findById(90L).get()));
+        answers.add(new Answer(911L,"Oui", questionRepository.findById(91L).get()));
+        answers.add(new Answer(912L, "Non", questionRepository.findById(91L).get()));
+        answers.add(new Answer(921L,"Oui", questionRepository.findById(92L).get()));
+        answers.add(new Answer(922L, "Non", questionRepository.findById(92L).get()));
+        answers.add(new Answer(931L,"Oui", questionRepository.findById(93L).get()));
+        answers.add(new Answer(932L, "Non", questionRepository.findById(93L).get()));
         for(Answer answer : answers){
             answerRepository.save(answer);
         }
