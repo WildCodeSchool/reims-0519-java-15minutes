@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -53,8 +52,8 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user")
     private Set<Notification> notifications;
 
-    @ManyToOne
-    private Rate rate;
+    @OneToMany(mappedBy="users")
+    private Set<Rate> rates;
 
 
 
@@ -198,13 +197,4 @@ public class User implements UserDetails {
     public void setNotifications(Set<Notification> notifications) {
         this.notifications = notifications;
     }
-
-    public Rate getRate() {
-        return rate;
-    }
-
-    public void setRate(Rate rate) {
-        this.rate = rate;
-    }
-
 }

@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 
@@ -44,8 +43,8 @@ public class Hypnotherapist extends User {
     @OneToMany(mappedBy = "hypnotherapist")
     Set<Notification> notifications;
 
-    @ManyToOne
-    private Rate rate;
+    @OneToMany(mappedBy ="hypnotherapist")
+    Set<Rate> rates;
 
     /**
      * @return String return the description
@@ -138,13 +137,5 @@ public class Hypnotherapist extends User {
         final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>(super.getAuthorities());
         authorities.add(new SimpleGrantedAuthority("HYPNOTHERAPIST"));
         return authorities;
-    }
-
-    public Rate getRate() {
-        return rate;
-    }
-
-    public void setRate(Rate rate) {
-        this.rate = rate;
     }
 }
