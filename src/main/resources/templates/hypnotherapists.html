@@ -12,10 +12,10 @@
                     <li th:each="hypnotherapist : ${hypnotherapists}" class="list-group-item list-group-item-action">
                         <a th:href="@{/hypnotherapists/{id}(id=${hypnotherapist.id})}" class="user-img d-flex align-items-center">
                             <img class="img-fluid img-circle rounded-circle"
-                                    th:src="${hypnotherapist.user.image}" />
+                                    th:src="${hypnotherapist.image}" />
                             <div class="d-flex flex-column px-3">
                                 <h5 class="font-weight-bold"
-                                    th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname} ">
+                                    th:text="${hypnotherapist.firstname} + ' ' + ${hypnotherapist.lastname} ">
                                 </h5>
                                 <div class="user-detail">
                                     <p th:data-="coord" th:text="${hypnotherapist.lng}" hidden></p>
@@ -40,13 +40,7 @@
                 <p hidden id="map-link" name="map-link" type="hidden" value="xm234jq"> Long</p>
             </div>
         </div>
-
-
-
     </div>
-
-
-
     <script th:replace="fragments/script.html :: script"></script>
     
 </body>

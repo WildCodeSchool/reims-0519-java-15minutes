@@ -116,7 +116,7 @@
     <hr width="100%" size="5">
 
     <div th:if="${notification != null}" class="row">
-            <p class="col-12"><i class="fas fa-at mr-3"></i><span th:text="${hypnotherapist.user.mail}"></span></p>
+            <p class="col-12"><i class="fas fa-at mr-3"></i><span th:text="${hypnotherapist.mail}"></span></p>
             <hr width="100%" size="5">
             <p class="col-12"><i class="fas fa-phone-alt mr-3"></i><span th:text="${hypnotherapist.phone}"></span></p>
             <hr width="100%" size="5">
@@ -143,12 +143,26 @@
              </div>
         </div>
         </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between">
+                <a th:href="@{/hypnotherapists}"><i class="fas fa-fast-backward return" ></i></a>
+                <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
+                    <div th:if="!${favorite}">
+                        <form th:action="@{/favorites}" method="POST">
+                            <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
+                            <button type="submit" class="btn btn-link"><i class="far fa-heart favorite"></i></button>
+                        </form>
+                    </div>
+                    <div th:if="${favorite}">
+                        <form th:action="@{/favorites/{id}(id=${favorite.id})}" method="POST">
+                            <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
+                            <button type="submit" class="btn btn-link"><i class="fas fa-heart favorite"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <hr width="100%" size="5">
-
-    <a th:href="@{/hypnotherapists}"><i class="fas fa-fast-backward return" ></i></a>
- 
-        </ul>
     </footer>
 
     <script th:replace="fragments/script.html :: script"></script>

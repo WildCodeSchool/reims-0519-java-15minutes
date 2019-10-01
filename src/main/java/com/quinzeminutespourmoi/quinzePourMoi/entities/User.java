@@ -42,15 +42,18 @@ public class User implements UserDetails {
     private String mail;
     private String image;
 
-    @ManyToMany (mappedBy = "followers")
-    private Set<Hypnotherapist> likes;
-
     @ManyToMany(mappedBy = "users")
     private Set<Answer> answers;
 
     @OneToMany(mappedBy = "user")
     private Set<Notification> notifications;
 
+    @OneToMany(mappedBy = "user")
+    private Set<Favorite> favorites;
+
+    /**
+     * @return Long return the id
+     */
     @OneToMany(mappedBy="user")
     private Set<Rate> rates;
 
@@ -131,14 +134,6 @@ public class User implements UserDetails {
         this.image = image;
     }
 
-    public Set<Hypnotherapist> getLikes() {
-        return likes;
-    }
-
-    public void setLikes(Set<Hypnotherapist> likes) {
-        this.likes = likes;
-    }
-    
     public Set<Answer> getAnswers() {
         return answers;
     }
@@ -154,6 +149,14 @@ public class User implements UserDetails {
         this.notifications = notifications;
     }
 
+    public Set<Favorite> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(Set<Favorite> favorites) {
+        this.favorites = favorites;
+    }
+    
     public Set<Rate> getRates() {
         return rates;
     }
