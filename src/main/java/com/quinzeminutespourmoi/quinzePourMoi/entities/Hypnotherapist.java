@@ -4,21 +4,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-<<<<<<< HEAD
 
-=======
->>>>>>> b3aaf7a1b4cd5f9c696ff5e4f467bffa0179fd88
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> b3aaf7a1b4cd5f9c696ff5e4f467bffa0179fd88
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
@@ -143,14 +135,14 @@ public class Hypnotherapist extends User {
         return authorities;
     }
 
-<<<<<<< HEAD
     public Set<Rate> getRates() {
         return rates;
     }
 
     public void setRates(Set<Rate> rates) {
         this.rates = rates;
-=======
+    }
+    
     public Double getLat() {
         return lat;
     }
@@ -165,7 +157,6 @@ public class Hypnotherapist extends User {
 
     public void setLng(Double lng) {
 		this.lng = lng;
->>>>>>> b3aaf7a1b4cd5f9c696ff5e4f467bffa0179fd88
     }
 }
 
