@@ -132,8 +132,8 @@
                     <form th:action="@{/notifications}" method="POST">
                         <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
                         <button type="submit" class="btn btn-info">Me contacter</button>
-                        <button type="text" class="btn btn-info" th:href="@{/comment}">Me noter</button>
                     </form>
+                    <a class="btn btn-info" th:href="@{/comment}">Me noter</a>
                 </div>
                 <div th:if="${notification != null}">
                     <p th:text="'  ' + ${hypnotherapist.phone}"></p>
