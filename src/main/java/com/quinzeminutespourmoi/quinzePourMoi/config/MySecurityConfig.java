@@ -33,7 +33,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/resultSurvey").authenticated()
                 .antMatchers("/hypnotherapists/profile").authenticated()
                 .antMatchers("/users/**").authenticated()
-                .antMatchers("/notification").authenticated()
+                .antMatchers("/notifications").authenticated()
                 .antMatchers("/admin").hasAuthority("ADMIN")
                 .and()
             .formLogin()
