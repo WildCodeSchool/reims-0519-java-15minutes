@@ -29,13 +29,14 @@ public class Notification{
     public void setId(Long id) {
         this.id = id;
     }
-
+    
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
+
     }
 
     public Hypnotherapist getHypnotherapist() {
@@ -77,6 +78,4 @@ public class Notification{
         this.userResponse = userResponse;
         this.hypnotherapistResponse = hypnotherapistResponse;
     }
-
-    
 }
