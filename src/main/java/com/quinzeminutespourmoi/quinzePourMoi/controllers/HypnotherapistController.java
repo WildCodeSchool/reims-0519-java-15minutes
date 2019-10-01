@@ -36,6 +36,8 @@ class HypnotherapistController {
     private NotificationRepository notificationRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private NotificationRepository notificationRepository;
 
     @GetMapping("/infos")
     public String infos(Model model, Authentication authentication) {

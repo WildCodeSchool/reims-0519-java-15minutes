@@ -1,5 +1,4 @@
 package com.quinzeminutespourmoi.quinzePourMoi.config;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -11,10 +10,8 @@ import com.quinzeminutespourmoi.quinzePourMoi.entities.Answer;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Question;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.AnswerRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.QuestionRepository;
-
 @Component
 public class QuestionOutputter implements CommandLineRunner{
-
     @Autowired
     private QuestionRepository questionRepository;
     @Autowired
@@ -23,7 +20,8 @@ public class QuestionOutputter implements CommandLineRunner{
     public void run(String... args) throws Exception{
         answerRepository.deleteAll();
         questionRepository.deleteAll();
-
+      
+      
         Question[] data = new Question []{
              /*phobies*/
              /*animaux*/
@@ -55,7 +53,6 @@ public class QuestionOutputter implements CommandLineRunner{
              new Question(72L,"Combien de cigarettes fumez-vous par jours ?"),
              new Question(73L,"Avez-vous déjà essayé d'arrêter ?"),
              new Question(74L,"Si oui, qu'avez-vous fait ?"),
-
              /*addictions*/
              /*alimentaire*/
              new Question(81L,"La prenez vous pour compenser un stress ?"),
@@ -75,7 +72,8 @@ public class QuestionOutputter implements CommandLineRunner{
         for(Question question : data){
             questionRepository.save(question);
         }
-
+      
+      
         Set<Answer> answers = new HashSet<Answer>();
         // alcohol
         answers.add(new Answer(901L,"Tous les jours ou presque", questionRepository.findById(90L).get()));
@@ -152,9 +150,9 @@ public class QuestionOutputter implements CommandLineRunner{
         answers.add(new Answer(1041L,"Oui", questionRepository.findById(104L).get()));
         answers.add(new Answer(1042L,"Oui", questionRepository.findById(104L).get()));
         //cigarettes
+        //champs texte à remplir
         answers.add(new Answer(731L,"Oui", questionRepository.findById(73L).get()));
         answers.add(new Answer(732L,"Non", questionRepository.findById(73L).get()));
-
 
         for(Answer answer : answers){
             answerRepository.save(answer);

@@ -30,12 +30,21 @@ public class Notification{
         this.id = id;
     }
 
+    public Hypnotherapist getHypnotherapist() {
+        return hypnotherapist;
+    }
+
+    public void setHypnotherapist(Hypnotherapist hypnotherapist) {
+        this.hypnotherapist = hypnotherapist;
+    }
+
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
+
     }
 
     public Hypnotherapist getHypnotherapist() {
@@ -77,6 +86,4 @@ public class Notification{
         this.userResponse = userResponse;
         this.hypnotherapistResponse = hypnotherapistResponse;
     }
-
-    
 }
