@@ -2,10 +2,12 @@ package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Hypnotherapist;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Rate;
+import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.HypnotherapistRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.RateRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,17 +22,18 @@ public class RateController{
     @Autowired
     private HypnotherapistRepository hypnotherapistRepository;
 
-    @GetMapping("/comment/{id}")
-    public String comment(Model model, @PathVariable("id") Long hypnotherapistId){
+    @GetMapping("/rate/{id}")
+    public String read(Model model, @PathVariable("id") Long hypnotherapistId){
         Hypnotherapist hypnotherapist = hypnotherapistRepository.findById(hypnotherapistId).get();
         model.addAttribute("hypnotherapist", hypnotherapist);
         return "comment";
     }
 
-    @PostMapping("/comment/{id}")
-    public String rate(Rate rating){
-        rating = rateRepository.save(rating);
-        return "redirect:/infos/"+rating.getHypnotherapist().getId();
+    @PostMapping("/rate")
+    public String store(Authentication authentication, Rate rate){
+        rate.setUser((User)authentication.getPrincipal());
+        rate = rateRepository.save(rate);
+        return "redirect:/";
     }
 }
 
