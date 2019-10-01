@@ -251,8 +251,11 @@ a {
     color: #8c56b8;
 }
 
-.btn-survey{
-    background-color: #8c56b8;
+.survey.btn-primary{
+    color:white;
+    background-color:#8c56b8;
+    background-image:none;
+    border-color:#d16ae6;
 }
 
 input[type=radio]{

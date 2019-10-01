@@ -1,9 +1,11 @@
 package com.quinzeminutespourmoi.quinzePourMoi.entities;
 
 import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 @Entity
 public class Question{
@@ -21,6 +23,7 @@ public class Question{
     private String type;
 
     @OneToMany(mappedBy = "question")
+    @OrderBy("answer DESC")
     private Set<Answer> answers;
 
     public Long getId() {
