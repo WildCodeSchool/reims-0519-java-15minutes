@@ -1,6 +1,4 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
-
-import com.quinzeminutespourmoi.quinzePourMoi.entities.Hypnotherapist;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Notification;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.NotificationRepository;
@@ -44,4 +42,6 @@ public class NotificationController {
         notificationRepository.save(notificationToPatch);
         return "redirect:/users/profile";
     }
+
+
 }

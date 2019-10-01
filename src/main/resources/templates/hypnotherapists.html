@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<div th:replace="fragments/head.html :: head"></div>
-
-
+<head th:replace="fragments/head.html :: head"></head>
 <body class="container-fluid d-flex flex-column justify-content-between  p-3">
     <header th:replace="fragments/header.html :: header"></header>
 
@@ -11,43 +8,47 @@
     <div class="container ">
         <div class="row">
             <div class="col-12">
-                <div class="card">
-                    <ul th:each="hypnotherapist : ${hypnotherapists}" class="list-group" id="user-list">
-                        <a th:href="@{/hypnotherapists/{id}(id=${hypnotherapist.id})}" class="list-group-item list-group-item-action">
-                            <div class="row">
-                                <div class="col-12 ">
-                                    <div class="row align-items-center">
-                                        <div class="col-3 user-img">
-                                            <img class="img-responsive img-circle rounded-circle" th:src="${hypnotherapist.image}" />
-                                        </div>
-                                        <div class="col-9">
-                                            <h5 class="font-weight-bold"
-                                                th:text="${hypnotherapist.firstname} + ' ' + ${hypnotherapist.lastname} ">
-                                            </h5>
-                                            <div class="user-detail">
-                                                <p><span id="dist" class="fas fa-map-marker-alt mr-1 "></span></i>6 km</p>
-                                                <div class="stars justify-content-start">
-                                                    <i class="fas fa-star gold"></i>
-                                                    <i class="fas fa-star gold"></i>
-                                                    <i class="fas fa-star gold"></i>
-                                                    <i class="fas fa-star gold"></i>
-                                                    <i class="fas fa-star gold"></i>
-                                                </div>
-                                            </div>
-                                        </div>
+                <ul class="list-group">
+                    <li th:each="hypnotherapist : ${hypnotherapists}" class="list-group-item list-group-item-action">
+                        <a th:href="@{/hypnotherapists/{id}(id=${hypnotherapist.id})}" class="user-img d-flex align-items-center">
+                            <img class="img-fluid img-circle rounded-circle"
+                                    th:src="${hypnotherapist.user.image}" />
+                            <div class="d-flex flex-column px-3">
+                                <h5 class="font-weight-bold"
+                                    th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname} ">
+                                </h5>
+                                <div class="user-detail">
+                                    <p th:data-="coord" th:text="${hypnotherapist.lng}" hidden></p>
+                                    <p id="coord" th:text="${hypnotherapist.lat}" hidden></p> 
+                                    <p id="succoord"><i class="fas fa-map-marker-alt mr-1"></i>6 km</p>
+                                    
+                                    <div class="stars justify-content-start">
+                                        <i class="fas fa-star gold"></i>
+                                        <i class="fas fa-star gold"></i>
+                                        <i class="fas fa-star gold"></i>
+                                        <i class="fas fa-star gold"></i>
+                                        <i class="fas fa-star gold"></i>
                                     </div>
                                 </div>
                             </div>
                         </a>
-                    </ul>
-                </div>
+                    </li>
+                </ul>
+                <a id="find-me" class="btn btn-primary btn-continue mb-3 btn-block btn-lg"
+                role="button">Distance</a>
+                <p hidden id="status" name="status" type="hidden" value="xm234jq">Lat</p>
+                <p hidden id="map-link" name="map-link" type="hidden" value="xm234jq"> Long</p>
             </div>
         </div>
+
+
+
     </div>
 
 
-    <script th:replace="fragments/script.html :: script"></script>
 
+    <script th:replace="fragments/script.html :: script"></script>
+    
 </body>
 
 </html>

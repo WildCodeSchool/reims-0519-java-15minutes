@@ -4,22 +4,27 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+<<<<<<< HEAD
 
+=======
+>>>>>>> b3aaf7a1b4cd5f9c696ff5e4f467bffa0179fd88
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b3aaf7a1b4cd5f9c696ff5e4f467bffa0179fd88
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
 public class Hypnotherapist extends User {
-
     public Hypnotherapist() {
     }
 
@@ -32,12 +37,11 @@ public class Hypnotherapist extends User {
     private String address;
     private String adr_postal;
     private String town;
+    private Double lat;
+    private Double lng;
 
     @ManyToMany
-    @JoinTable(
-        name = "favorite", 
-        joinColumns = @JoinColumn(name = "hypnotherapist_id"), 
-        inverseJoinColumns = @JoinColumn(name = "user_id"))
+    @JoinTable(name = "favorite", joinColumns = @JoinColumn(name = "hypnotherapist_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> followers;
 
     @OneToMany(mappedBy = "hypnotherapist")
@@ -139,11 +143,29 @@ public class Hypnotherapist extends User {
         return authorities;
     }
 
+<<<<<<< HEAD
     public Set<Rate> getRates() {
         return rates;
     }
 
     public void setRates(Set<Rate> rates) {
         this.rates = rates;
+=======
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public Double getLng() {
+        return lng;
+    }
+
+    public void setLng(Double lng) {
+		this.lng = lng;
+>>>>>>> b3aaf7a1b4cd5f9c696ff5e4f467bffa0179fd88
     }
 }
+
