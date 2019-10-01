@@ -19,7 +19,7 @@ public class Question{
     private String title;
 
     @OneToMany(mappedBy = "question")
-    private Set<Answer>answers;
+    private Set<Answer> answers;
 
     public Long getId() {
         return id;

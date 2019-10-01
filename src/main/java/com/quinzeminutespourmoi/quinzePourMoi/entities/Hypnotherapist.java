@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -36,7 +37,10 @@ public class Hypnotherapist extends User {
     private Set<User> followers;
 
     @OneToMany(mappedBy = "hypnotherapist")
-    Set<Notification> notifications;
+    private Set<Notification> notifications;
+
+    @OneToMany(mappedBy ="hypnotherapist")
+    private Set<Rate> rates;
 
     /**
      * @return String return the description
@@ -131,6 +135,14 @@ public class Hypnotherapist extends User {
         return authorities;
     }
 
+    public Set<Rate> getRates() {
+        return rates;
+    }
+
+    public void setRates(Set<Rate> rates) {
+        this.rates = rates;
+    }
+    
     public Double getLat() {
         return lat;
     }

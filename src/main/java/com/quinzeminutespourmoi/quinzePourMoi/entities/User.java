@@ -44,11 +44,15 @@ public class User implements UserDetails {
 
     @ManyToMany (mappedBy = "followers")
     private Set<Hypnotherapist> likes;
+
     @ManyToMany(mappedBy = "users")
     private Set<Answer> answers;
+
     @OneToMany(mappedBy = "user")
     private Set<Notification> notifications;
 
+    @OneToMany(mappedBy="user")
+    private Set<Rate> rates;
 
 
 
@@ -204,4 +208,11 @@ public class User implements UserDetails {
         this.notifications = notifications;
     }
 
+    public Set<Rate> getRates() {
+        return rates;
+    }
+
+    public void setRates(Set<Rate> rates) {
+        this.rates = rates;
+    }
 }
