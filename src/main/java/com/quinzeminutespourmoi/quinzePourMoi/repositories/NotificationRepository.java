@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface NotificationRepository extends JpaRepository<Notification, Long>{
-    Notification findNotificationByUserIdAndHypnotherapistUserId(Long userID, Long hypnotherapistUserID);
-    Notification findNotificationByUserId(Long userID);
+    Notification findNotificationByUserIdAndHypnotherapistId(Long userID, Long hypnotherapistID);
+    Notification findNotificationByUserIdOrHypnotherapistId(Long userID, Long hypnotherapistID);
 }

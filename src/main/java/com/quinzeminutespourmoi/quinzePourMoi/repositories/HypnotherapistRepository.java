@@ -7,4 +7,7 @@ import com.quinzeminutespourmoi.quinzePourMoi.entities.Hypnotherapist;
 
 @Repository
 public interface HypnotherapistRepository extends JpaRepository<Hypnotherapist, Long> {
+
+	Hypnotherapist findByMail(String name);
+
 }

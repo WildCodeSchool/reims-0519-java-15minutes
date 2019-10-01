@@ -19,8 +19,8 @@ public class Notification{
     private User user;
     @ManyToOne
     private Hypnotherapist hypnotherapist;
-    private Boolean userResponse;
-    private Boolean hypnoResponse;
+    private String userResponse;
+    private String hypnotherapistResponse;
 
     public Long getId() {
         return id;
@@ -44,37 +44,46 @@ public class Notification{
 
     public void setUser(User user) {
         this.user = user;
+
     }
 
-    public Boolean getUserResponse() {
+    public Hypnotherapist getHypnotherapist() {
+        return hypnotherapist;
+    }
+
+    public void setHypnotherapist(Hypnotherapist hypnotherapist) {
+        this.hypnotherapist = hypnotherapist;
+    }
+
+    public String getUserResponse() {
         return userResponse;
     }
 
-    public void setUserResponse(Boolean userResponse) {
+    public void setUserResponse(String userResponse) {
         this.userResponse = userResponse;
     }
 
-    public Boolean getHypnoResponse() {
-        return hypnoResponse;
+    public String getHypnotherapistResponse() {
+        return hypnotherapistResponse;
     }
 
-    public void setHypnoResponse(Boolean hypnoResponse) {
-        this.hypnoResponse = hypnoResponse;
+    public void setHypnotherapistResponse(String hypnotherapistResponse) {
+        this.hypnotherapistResponse = hypnotherapistResponse;
     }
 
-    public Notification(User user, Hypnotherapist hypnotherapist, Boolean userResponse, Boolean hypnoResponse) {
-        this.hypnotherapist = hypnotherapist;
+    public Notification(User user, Hypnotherapist hypnotherapist, String userResponse, String hypnotherapistResponse) {
         this.user = user;
+        this.hypnotherapist = hypnotherapist;
         this.userResponse = userResponse;
-        this.hypnoResponse = hypnoResponse;
+        this.hypnotherapistResponse = hypnotherapistResponse;
     }
 
-    public Notification(Long id, User user, Hypnotherapist hypnotherapist, Boolean userResponse,Boolean hypnoResponse) {
+    public Notification(Long id, User user, Hypnotherapist hypnotherapist, String userResponse,
+            String hypnotherapistResponse) {
         this.id = id;
-        this.hypnotherapist = hypnotherapist;
         this.user = user;
+        this.hypnotherapist = hypnotherapist;
         this.userResponse = userResponse;
-        this.hypnoResponse = hypnoResponse;
+        this.hypnotherapistResponse = hypnotherapistResponse;
     }
-    
 }

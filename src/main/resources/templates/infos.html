@@ -12,13 +12,13 @@
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <div class="img xavier">
-                <img th:src="${hypnotherapist.user.image}" class="img-fluid img-circle rounded-circle" alt="">
+                <img th:src="${hypnotherapist.image}" class="img-fluid img-circle rounded-circle" alt="">
             </div>
         </div>
     </div>
     <br>
     <div class="name col-12">
-        <h1 class="text-center" th:text="${hypnotherapist.user.firstname} + ' ' + ${hypnotherapist.user.lastname}"></h1>
+        <h1 class="text-center" th:text="${hypnotherapist.firstname} + ' ' + ${hypnotherapist.lastname}"></h1>
     </div>
 
     <div class="rating col-12">
@@ -134,6 +134,10 @@
                         <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
                         <button type="submit" class="btn btn-info">Me contacter</button>
                     </form>
+                </div>
+                <div th:if="${notification != null}">
+                    <p th:text="'  ' + ${hypnotherapist.phone}"></p>
+                    <p th:text="'  ' + ${hypnotherapist.mail}"></p>
                 </div>
              </div>
         </div>
