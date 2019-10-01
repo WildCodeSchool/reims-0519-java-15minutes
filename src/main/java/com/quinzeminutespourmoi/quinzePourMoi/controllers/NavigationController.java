@@ -12,7 +12,7 @@ import com.quinzeminutespourmoi.quinzePourMoi.repositories.NotificationRepositor
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
 @Controller
-class PageController {
+class NavigationController {
 
     @Autowired
     private UserRepository userRepository;
