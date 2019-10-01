@@ -43,8 +43,8 @@ public class Hypnotherapist extends User {
     @OneToMany(mappedBy = "hypnotherapist")
     private Set<Notification> notifications;
 
-    /*@OneToMany(mappedBy ="hypnotherapist")
-    private Set<Rate> rates;*/
+    @OneToMany(mappedBy ="hypnotherapist")
+    private Set<Rate> rates;
 
     /**
      * @return String return the description
@@ -139,11 +139,11 @@ public class Hypnotherapist extends User {
         return authorities;
     }
 
-    /*public Set<Rate> getRates() {
+    public Set<Rate> getRates() {
         return rates;
     }
 
     public void setRates(Set<Rate> rates) {
-        this.rates = rates;*/  
+        this.rates = rates;
     }
 }

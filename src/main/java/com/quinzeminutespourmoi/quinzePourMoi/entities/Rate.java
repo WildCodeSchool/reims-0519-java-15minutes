@@ -1,4 +1,4 @@
-/*package com.quinzeminutespourmoi.quinzePourMoi.entities;
+package com.quinzeminutespourmoi.quinzePourMoi.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +18,10 @@ public class Rate {
     }
 
     @ManyToOne
-    private Rate rates;
+    private User user;
+
+    @ManyToOne
+    private Hypnotherapist hypnotherapist;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,4 +43,20 @@ public class Rate {
     public void setRating(int rating) {
         this.rating = rating;
     }
-}*/
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Hypnotherapist getHypnotherapist() {
+        return hypnotherapist;
+    }
+
+    public void setHypnotherapist(Hypnotherapist hypnotherapist) {
+        this.hypnotherapist = hypnotherapist;
+    }
+}
