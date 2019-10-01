@@ -13,7 +13,7 @@
                     <p th:text="${question.title}"></p>
                     <input th:if="${question.type != 'radio'}" th:type="${question.type}" th:name="|question${question.id}|">
                     <div th:if="${question.type == 'radio'}" th:each="answer : ${question.answers}">
-                        <input th:type="${question.type}" th:id="${answer.id}" th:name="|question${question.id}|" th:value="|answer${answer.id}|">
+                        <input th:type="${question.type}" th:id="${answer.id}" th:name="|${question.title}|" th:value="|${answer.answer}|">
                         <label th:text="${answer.answer}" th:for="${answer.id}"></label>
                     </div>
                 </div>
