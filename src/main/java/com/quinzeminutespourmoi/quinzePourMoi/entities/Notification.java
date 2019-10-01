@@ -29,15 +29,7 @@ public class Notification{
     public void setId(Long id) {
         this.id = id;
     }
-
-    public Hypnotherapist getHypnotherapist() {
-        return hypnotherapist;
-    }
-
-    public void setHypnotherapist(Hypnotherapist hypnotherapist) {
-        this.hypnotherapist = hypnotherapist;
-    }
-
+    
     public User getUser() {
         return user;
     }
