@@ -76,9 +76,4 @@ class PageController {
         return "resultSurvey";
     }
 
-    @GetMapping("/comment")
-    public String comment(Model model){
-        return "comment";
-    }
-
 }

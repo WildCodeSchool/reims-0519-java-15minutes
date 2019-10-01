@@ -13,6 +13,10 @@ public class RateController{
     @Autowired
     private RateRepository rateRepository;
 
+    @GetMapping("/comment")
+    public String comment(Model model){
+        return "comment";
+    }
 
     @PostMapping("/comment")
     public String rate(Rate rating){
