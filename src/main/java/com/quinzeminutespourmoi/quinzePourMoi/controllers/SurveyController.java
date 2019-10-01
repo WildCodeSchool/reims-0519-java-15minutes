@@ -1,5 +1,6 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
+import java.util.Map;
 import java.util.Set;
 
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Question;
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 class SurveyController{
@@ -39,7 +42,6 @@ class SurveyController{
         Set<Question> questions = questionRepository.findByIdBetween(100L, 110L);
         model.addAttribute("questions", questions);
         return "alcoholAddictionSurvey";
-        //return "screenAddictionSurvey";
     }
 
     @GetMapping("/survey/addiction/alcohol")
@@ -94,5 +96,13 @@ class SurveyController{
     @GetMapping("/survey/fear")
     public String fearSurvey(Model model){
         return "fearSurvey";
+    }
+
+    @PostMapping("/survey")
+    public String store(@RequestParam Map<String, String> request) {
+        for(Map.Entry<String, String> entry : request.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+        return "redirect:/survey/result";
     }
 }

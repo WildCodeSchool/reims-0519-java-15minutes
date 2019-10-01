@@ -8,20 +8,21 @@
 
         <header th:replace="fragments/header.html :: header"></header>
 
-            <div th:each="question : ${questions}">
-                <p th:text="${question.title}"></p>
-                <input th:if="${question.type != 'radio'}" th:type="${question.type}" th:name="|question${question.id}|">
-                <div th:if="${question.type == 'radio'}" th:each="answer : ${question.answers}">
-                    <input th:type="${question.type}" th:id="${answer.id}" th:name="|question${question.id}|">
-                    <label th:text="${answer.answer}" th:for="${answer.id}"></label>
+            <form th:action="@{/survey}" method="post">
+                <div th:each="question : ${questions}">
+                    <p th:text="${question.title}"></p>
+                    <input th:if="${question.type != 'radio'}" th:type="${question.type}" th:name="|question${question.id}|">
+                    <div th:if="${question.type == 'radio'}" th:each="answer : ${question.answers}">
+                        <input th:type="${question.type}" th:id="${answer.id}" th:name="|${question.title}|" th:value="|${answer.answer}|">
+                        <label th:text="${answer.answer}" th:for="${answer.id}"></label>
+                    </div>
                 </div>
-            </div>
 
-            <br>
+                <br>
 
-            <div class="col-auto d-flex justify-content-center mt-3">
-                <a th:href="@{/survey/result}" type="submit" class="btn btn-survey">J'envoie mes réponses</a>
-            </div>
+                <div class="col-auto d-flex justify-content-center">
+                    <button type="submit" class="survey btn btn-primary">J'envoie mes réponses</button>
+                </div>
 
             </form>
         </div>
