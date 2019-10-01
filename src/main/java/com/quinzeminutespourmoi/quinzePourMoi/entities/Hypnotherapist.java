@@ -42,72 +42,43 @@ public class Hypnotherapist extends User {
     @OneToMany(mappedBy ="hypnotherapist")
     private Set<Rate> rates;
 
-    /**
-     * @return String return the description
-     */
+
     public String getDescription() {
         return description;
     }
 
-    /**
-     * @param description the description to set
-     */
     public void setDescription(String description) {
         this.description = description;
     }
 
-    /**
-     * @return String return the phone
-     */
     public String getPhone() {
         return phone;
     }
 
-    /**
-     * @param phone the phone to set
-     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    /**
-     * @return String return the adr_postal
-     */
     public String getAdr_postal() {
         return adr_postal;
     }
 
-    /**
-     * @param adr_postal the adr_postal to set
-     */
     public void setAdr_postal(String adr_postal) {
         this.adr_postal = adr_postal;
     }
 
-    /**
-     * @return String return the town
-     */
     public String getTown() {
         return town;
     }
 
-    /**
-     * @param town the town to set
-     */
     public void setTown(String town) {
         this.town = town;
     }
 
-    /**
-     * @return String return the address
-     */
     public String getAddress() {
         return address;
     }
 
-    /**
-     * @param address the address to set
-     */
     public void setAddress(String address) {
         this.address = address;
     }

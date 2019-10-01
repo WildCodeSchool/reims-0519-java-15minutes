@@ -54,75 +54,42 @@ public class User implements UserDetails {
     @OneToMany(mappedBy="user")
     private Set<Rate> rates;
 
-
-
-
-    /**
-     * @return Long return the id
-     */
     public Long getId() {
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
     public void setId(Long id) {
         this.id = id;
     }
 
-    /**
-     * @return String return the firstname
-     */
     public String getFirstname() {
         return firstname;
     }
 
-    /**
-     * @param firstname the firstname to set
-     */
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
-    /**
-     * @return String return the lastname
-     */
     public String getLastname() {
         return lastname;
     }
 
-    /**
-     * @param lastname the lastname to set
-     */
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
 
-    /**
-     * @return String return the password
-     */
     public String getPassword() {
         return password;
     }
 
-    /**
-     * @param password the password to set
-     */
     public void setPassword(String password) {
         this.password = password;
     }
 
-    /**
-     * @return String return the mail
-     */
     public String getMail() {
         return mail;
     }
 
-    /**
-     * @param mail the mail to set
-     */
     public void setMail(String mail) {
         this.mail = mail;
     }
@@ -155,30 +122,19 @@ public class User implements UserDetails {
         return true;
     }
 
-    /**
-     * @return String return the image
-     */
+
     public String getImage() {
         return image;
     }
 
-    /**
-     * @param image the image to set
-     */
     public void setImage(String image) {
         this.image = image;
     }
 
-    /**
-     * @return Set<Hypnotherapist> return the likes
-     */
     public Set<Hypnotherapist> getLikes() {
         return likes;
     }
 
-    /**
-     * @param likes the likes to set
-     */
     public void setLikes(Set<Hypnotherapist> likes) {
         this.likes = likes;
     }
