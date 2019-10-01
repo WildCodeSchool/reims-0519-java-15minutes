@@ -9,13 +9,16 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
 public class Hypnotherapist extends User {
-
     public Hypnotherapist() {
     }
 
@@ -28,9 +31,14 @@ public class Hypnotherapist extends User {
     private String address;
     private String adr_postal;
     private String town;
+    private Double lat;
+    private Double lng;
 
     @OneToMany(mappedBy = "hypnotherapist")
-    Set<Notification> notifications;
+    private Set<Notification> notifications;
+
+    @OneToMany(mappedBy ="hypnotherapist")
+    private Set<Rate> rates;
 
     @OneToMany(mappedBy = "hypnotherapist")
     Set<Favorite> favorites;
@@ -42,65 +50,38 @@ public class Hypnotherapist extends User {
         return description;
     }
 
-    /**
-     * @param description the description to set
-     */
     public void setDescription(String description) {
         this.description = description;
     }
 
-    /**
-     * @return String return the phone
-     */
     public String getPhone() {
         return phone;
     }
 
-    /**
-     * @param phone the phone to set
-     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    /**
-     * @return String return the adr_postal
-     */
     public String getAdr_postal() {
         return adr_postal;
     }
 
-    /**
-     * @param adr_postal the adr_postal to set
-     */
     public void setAdr_postal(String adr_postal) {
         this.adr_postal = adr_postal;
     }
 
-    /**
-     * @return String return the town
-     */
     public String getTown() {
         return town;
     }
 
-    /**
-     * @param town the town to set
-     */
     public void setTown(String town) {
         this.town = town;
     }
 
-    /**
-     * @return String return the address
-     */
     public String getAddress() {
         return address;
     }
 
-    /**
-     * @param address the address to set
-     */
     public void setAddress(String address) {
         this.address = address;
     }
@@ -126,5 +107,28 @@ public class Hypnotherapist extends User {
 
     public void setFavorites(Set<Favorite> favorites) {
         this.favorites = favorites;
+    public Set<Rate> getRates() {
+        return rates;
+    }
+
+    public void setRates(Set<Rate> rates) {
+        this.rates = rates;
+    }
+    
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public Double getLng() {
+        return lng;
+    }
+
+    public void setLng(Double lng) {
+		this.lng = lng;
     }
 }
+

@@ -1,25 +1,27 @@
 package com.quinzeminutespourmoi.quinzePourMoi.config;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-//import com.quinzeminutespourmoi.quinzePourMoi.entities.Answer;
-import com.quinzeminutespourmoi.quinzePourMoi.entities.Question;
-//simport com.quinzeminutespourmoi.quinzePourMoi.repositories.AnswerRepository;
-import com.quinzeminutespourmoi.quinzePourMoi.repositories.QuestionRepository;
+import java.util.HashSet;
+import java.util.Set;
 
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Answer;
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Question;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.AnswerRepository;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.QuestionRepository;
 @Component
 public class QuestionOutputter implements CommandLineRunner{
-
     @Autowired
     private QuestionRepository questionRepository;
-    //private AnswerRepository answerRepository;
+    @Autowired
+    private AnswerRepository answerRepository;
 
     public void run(String... args) throws Exception{
+        answerRepository.deleteAll();
         questionRepository.deleteAll();
-        // //answerRepository.deleteAll();
-
+      
+      
         Question[] data = new Question []{
              /*phobies*/
              /*animaux*/
@@ -35,7 +37,7 @@ public class QuestionOutputter implements CommandLineRunner{
              new Question(24L,"Y a t'il eu un événement avant la phobie qui aurait pu déclencher votre peur ?"),
              /*avions*/
              new Question(31L,"Quand cela se manifeste-t'il ?"),
-             new Question(32L,"Quand cela se manifeste-t'il ?"),
+             new Question(32L,"Cette peur est-elle encore présente lorsque vous êtes en vol ?"),
              /*foule*/
              new Question(41L,"Dans quelle situation se manifeste-t'elle ?"),
              new Question(42L,"Quand cela se manifeste-t'il ?"),
@@ -51,7 +53,6 @@ public class QuestionOutputter implements CommandLineRunner{
              new Question(72L,"Combien de cigarettes fumez-vous par jours ?"),
              new Question(73L,"Avez-vous déjà essayé d'arrêter ?"),
              new Question(74L,"Si oui, qu'avez-vous fait ?"),
-
              /*addictions*/
              /*alimentaire*/
              new Question(81L,"La prenez vous pour compenser un stress ?"),
@@ -71,91 +72,90 @@ public class QuestionOutputter implements CommandLineRunner{
         for(Question question : data){
             questionRepository.save(question);
         }
+      
+      
+        Set<Answer> answers = new HashSet<Answer>();
+        // alcohol
+        answers.add(new Answer(901L,"Tous les jours ou presque", questionRepository.findById(90L).get()));
+        answers.add(new Answer(902L,"1 à 3 fois par semaine", questionRepository.findById(90L).get()));
+        answers.add(new Answer(903L,"Rarement", questionRepository.findById(90L).get()));
+        answers.add(new Answer(911L,"Oui", questionRepository.findById(91L).get()));
+        answers.add(new Answer(912L, "Non", questionRepository.findById(91L).get()));
+        answers.add(new Answer(921L,"Oui", questionRepository.findById(92L).get()));
+        answers.add(new Answer(922L, "Non", questionRepository.findById(92L).get()));
+        answers.add(new Answer(931L,"Oui", questionRepository.findById(93L).get()));
+        answers.add(new Answer(932L, "Non", questionRepository.findById(93L).get()));
+        //animals
+        answers.add(new Answer(11L,"Rien qu'en y pensant", questionRepository.findById(1L).get()));
+        answers.add(new Answer(12L,"En la voyant", questionRepository.findById(1L).get()));
+        answers.add(new Answer(13L,"Au toucher", questionRepository.findById(1L).get()));
+        answers.add(new Answer(21L,"Oui", questionRepository.findById(2L).get()));
+        answers.add(new Answer(22L,"Non", questionRepository.findById(2L).get()));
+        // Spiders/insects
+        answers.add(new Answer(111L,"Rien qu'en y pensant", questionRepository.findById(11L).get()));
+        answers.add(new Answer(112L,"En la voyant", questionRepository.findById(11L).get()));
+        answers.add(new Answer(113L,"Au toucher", questionRepository.findById(11L).get()));
+        answers.add(new Answer(121L,"Oui", questionRepository.findById(12L).get()));
+        answers.add(new Answer(122L,"Non", questionRepository.findById(12L).get()));
+        // cars
+        answers.add(new Answer(211L,"Tout le temps", questionRepository.findById(21L).get()));
+        answers.add(new Answer(212L,"Souvent", questionRepository.findById(21L).get()));
+        answers.add(new Answer(213L,"Rarement", questionRepository.findById(21L).get()));
+        answers.add(new Answer(221L,"Oui", questionRepository.findById(22L).get()));
+        answers.add(new Answer(222L,"Non", questionRepository.findById(22L).get()));
+        answers.add(new Answer(231L,"Plutôt les lignes droites", questionRepository.findById(23L).get()));
+        answers.add(new Answer(232L,"Lorsqu'il y a des virages", questionRepository.findById(23L).get()));
+        answers.add(new Answer(233L,"Peu importe", questionRepository.findById(23L).get()));
+        answers.add(new Answer(241L,"Oui", questionRepository.findById(24L).get()));
+        answers.add(new Answer(242L,"Non", questionRepository.findById(24L).get()));
+        //plane
+        answers.add(new Answer(311L,"Avant d'entrer dans l'avion", questionRepository.findById(31L).get()));
+        answers.add(new Answer(312L,"Déjà plusieurs jours avant", questionRepository.findById(31L).get()));
+        answers.add(new Answer(321L,"Oui", questionRepository.findById(32L).get()));
+        answers.add(new Answer(322L,"Non", questionRepository.findById(32L).get()));
+        //foule
+        answers.add(new Answer(411L,"Lorsque vous êtes en contact avec la foule", questionRepository.findById(41L).get()));
+        answers.add(new Answer(412L,"Dans les transports en commun", questionRepository.findById(41L).get()));
+        answers.add(new Answer(413L,"Lorsque vous entrez dans un lieu public", questionRepository.findById(41L).get()));
+        answers.add(new Answer(414L,"Lorsque vous êtes dans une rue passante", questionRepository.findById(41L).get()));
+        answers.add(new Answer(421L,"Tout le temps", questionRepository.findById(42L).get()));
+        answers.add(new Answer(422L,"Souvent", questionRepository.findById(42L).get()));
+        answers.add(new Answer(423L,"Rarement", questionRepository.findById(42L).get()));
+        //aquaphobie
+        answers.add(new Answer(511L,"En voyant l'eau", questionRepository.findById(51L).get()));
+        answers.add(new Answer(512L,"Rien qu'en y pensant", questionRepository.findById(51L).get()));
+        answers.add(new Answer(521L,"Oui", questionRepository.findById(52L).get()));
+        answers.add(new Answer(522L,"Non", questionRepository.findById(52L).get()));
+        //claustro
+        answers.add(new Answer(611L,"Dans le noir", questionRepository.findById(61L).get()));
+        answers.add(new Answer(612L,"Dans un espace clos (ascenceur, pièces sans fenêtre ...)", questionRepository.findById(61L).get()));
+        answers.add(new Answer(613L,"Dans un espace restreint", questionRepository.findById(61L).get()));
+        answers.add(new Answer(621L,"Tous les jours ou presque", questionRepository.findById(62L).get()));
+        answers.add(new Answer(622L,"1 à 3 fois par semaine", questionRepository.findById(62L).get()));
+        answers.add(new Answer(623L,"Rarement", questionRepository.findById(62L).get()));
+        //alimenaire
+        answers.add(new Answer(811L,"Oui", questionRepository.findById(81L).get()));
+        answers.add(new Answer(812L,"Non", questionRepository.findById(81L).get()));
+        answers.add(new Answer(821L,"Oui", questionRepository.findById(82L).get()));
+        answers.add(new Answer(822L,"Non", questionRepository.findById(82L).get()));
+        answers.add(new Answer(831L,"Oui", questionRepository.findById(83L).get()));
+        answers.add(new Answer(832L,"Non", questionRepository.findById(83L).get()));
+        //écrans
+        answers.add(new Answer(1011L,"TV", questionRepository.findById(101L).get()));
+        answers.add(new Answer(1012L,"Jeux vidéos", questionRepository.findById(101L).get()));
+        answers.add(new Answer(1013L,"Smartphones", questionRepository.findById(101L).get()));
+        //champs texte à remplir
+        answers.add(new Answer(1031L,"Oui", questionRepository.findById(103L).get()));
+        answers.add(new Answer(1032L,"Non", questionRepository.findById(103L).get()));
+        answers.add(new Answer(1041L,"Oui", questionRepository.findById(104L).get()));
+        answers.add(new Answer(1042L,"Oui", questionRepository.findById(104L).get()));
+        //cigarettes
+        //champs texte à remplir
+        answers.add(new Answer(731L,"Oui", questionRepository.findById(73L).get()));
+        answers.add(new Answer(732L,"Non", questionRepository.findById(73L).get()));
 
-        // /*Answer[] data2 = new Answer[]{
-
-        //     //animaux et araignée/insectes
-        //     new Answer(1L,"Rien qu'en y pensant"),
-        //     new Answer(2L,"En la voyant"),
-        //     new Answer(3L,"Au toucher"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-
-        //     //voiture
-        //     new Answer(6L,"Tout le temps"),
-        //     new Answer(7l,"Souvent"),
-        //     new Answer(8l,"Rarement"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-        //     new Answer(9l,"Plutôt les lignes droites"),
-        //     new Answer(10l,"Lorsqu'il y a des virages"),
-        //     new Answer(11l,"Peu importe"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-
-        //     //avion
-        //     new Answer(12L,"Avant d'entrer dans l'avion"),
-        //     new Answer(13L,"Déjà plusieurs jours avant"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-
-        //     //foule
-        //     new Answer(14L,"Lorsque vous êtes en contact avec la foule"),
-        //     new Answer(15L," Dans les transports en commun"
-        //     new Answer(16L," Lorsque vous entrez dans un lieu public"
-        //     new Answer(17L," Lorsque vous êtes dans une rue passante"
-        //     new Answer(6L,"Tout le temps"),
-        //     new Answer(7l,"Souvent"),
-        //     new Answer(8l,"Rarement"),
-            
-        //     //aquaphobie
-        //     new Answer(18L,"En voyant l'eau"),
-        //     new Answer(19L,"Rien qu'en y pensant"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-
-        //     //claustrophobie
-        //     new Answer(20L,"Dans le noir"),
-        //     new Answer(21L,"Dans un espace clos (ascenceur, pièces sans fenêtre ...)"),
-        //     new Answer(22L,"Dans un espace restreint"),
-        //     new Answer(23L,"Tous les jours ou presque"),
-        //     new Answer(24L,"1 à 3 fois par semaine"),
-        //     new Answer(25L,"Rarement"), 
-
-        //     //cigarette
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-
-        //     //alimentaire
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-
-        //     //alcohol
-        //     new Answer(23L,"Tous les jours ou presque"),
-        //     new Answer(24L,"1 à 3 fois par semaine"),
-        //     new Answer(25L,"Rarement"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-
-        //     //écran
-        //     new Answer(26L,"TV"),
-        //     new Answer(27L,"Jeux vidéos"),
-        //     new Answer(28L,"Smartphones"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non")
-        //     };
-        // for(Answer answer : data2){
-        //     answerRepository.save(answer);
-        // }*/
+        for(Answer answer : answers){
+            answerRepository.save(answer);
+        }
     }
 }

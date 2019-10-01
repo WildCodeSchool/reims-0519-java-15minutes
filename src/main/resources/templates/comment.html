@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+
+<div th:replace="fragments/head.html :: head"></div>
+
+    <body class="container-fluid d-flex flex-column justify-content-between ">
+        <header th:replace="fragments/header.html :: header"></header>
+
+        <h4>Note</h4>
+
+    <form action="@{/comment}" method="post" th:object="${rate}">
+
+        <div class="rating">
+            <div class="stars">
+
+                <div class="d-flex flex-row">
+                    <input type="radio" name="star" value="1" id="one" class="sr-only" />
+                    <label for="one">
+                        <span aria-hidden="true" class="fas fa-star"></span>
+                    </label>
+                </div>
+
+                <div class="d-flex flex-row">
+                    <input type="radio" name="star" value="2" id="two" class="sr-only" />
+                    <label for="two">
+                        <span aria-hidden="true" class="fas fa-star"></span>
+                    </label>
+                </div>
+
+                <div class="d-flex flex-row">
+                    <input type="radio" name="star" value="3" id="three" class="sr-only" />
+                    <label for="three">
+                        <span aria-hidden="true" class="fas fa-star"></span>
+                    </label>
+                </div>
+
+                <div class="d-flex flex-row">
+                    <input type="radio" name="star" value="4" id="four" class="sr-only" />
+                    <label for="four">
+                        <span aria-hidden="true" class="fas fa-star"></span>
+                    </label>
+                </div>
+
+                <div class="d-flex flex-row">
+                    <input type="radio" name="star" value="5" id="five" class="sr-only" />
+                    <label for="five">
+                        <span aria-hidden="true" class="fas fa-star"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <hr width="100%" size="5">
+
+        <h4>Commentaire</h4>
+
+        <textarea id="comment" class="justify-content-center"></textarea>
+
+        <div class="col-auto d-flex justify-content-center">
+            <a th:href="@{/hypnotherapists}" type="submit" class="btn btn-survey btn-block mb-4">Envoyer</a>
+        </div>
+
+    </form>
+
+
+        <script th:replace="fragments/script.html :: script"></script>
+    </body>
+</html>

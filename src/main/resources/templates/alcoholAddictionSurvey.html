@@ -8,11 +8,12 @@
 
         <header th:replace="fragments/header.html :: header"></header>
 
-            <!-- <div th:each="question : ${questions}">
-                    <p th:text="${question.title}"></p>
-                </div> -->
-
-            <p>Bonjour</p>
+            <div th:each="question : ${questions}">
+                <p th:text="${question.title}"></p>
+                <p th:each="answer : ${question.answers}" th:text="${answer.answer}"></p>
+            </div>
+            
+            <!--p>Bonjour</p>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="frequency" id="days" value="option1" checked>
                 <label class="form-check-label" for="days"> Tous les jours ou presque</label>
@@ -60,7 +61,7 @@
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="isolation" id="n" value="option2">
                 <label class="form-check-label" for="n"> Non</label>
-            </div>
+            </div-->
 
             <br>
 

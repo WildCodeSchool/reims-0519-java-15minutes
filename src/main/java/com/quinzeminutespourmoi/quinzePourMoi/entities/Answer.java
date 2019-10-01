@@ -18,6 +18,11 @@ public class Answer{
         this.id = id;
         this.answer = answer;
     }
+    public Answer(Long id, String answer, Question question){
+        this.id = id;
+        this.answer = answer;
+        this.question = question;
+    }
 
     @Id
     private Long id;

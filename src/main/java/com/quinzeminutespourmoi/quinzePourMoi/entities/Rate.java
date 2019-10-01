@@ -4,24 +4,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Rate{
+public class Rate {
+
     public Rate(){
     }
-
-    public Rate(int rate, Long hypnotherapistId, Long userId){
-        this.rate = rate;
-        this.hypnotherapistId = hypnotherapistId;
-        this.userId = userId;
+    
+    public Rate(Long id, int rating){
+        this.id = id;
+        this.rating = rating;
     }
+
+    @ManyToOne
+    private User user;
+
+    @ManyToOne
+    private Hypnotherapist hypnotherapist;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private int rate;
-    private Long hypnotherapistId;
-    private Long userId;
+    private int rating;
 
     public Long getId() {
         return id;
@@ -31,28 +36,27 @@ public class Rate{
         this.id = id;
     }
 
-    public int getRate() {
-        return rate;
+    public int getRating() {
+        return rating;
     }
 
-    public void setRate(int rate) {
-        this.rate = rate;
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
-    public Long getHypnotherapistId() {
-        return hypnotherapistId;
+    public User getUser() {
+        return user;
     }
 
-    public void setHypnotherapistId(Long hypnotherapistId) {
-        this.hypnotherapistId = hypnotherapistId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Hypnotherapist getHypnotherapist() {
+        return hypnotherapist;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setHypnotherapist(Hypnotherapist hypnotherapist) {
+        this.hypnotherapist = hypnotherapist;
     }
-    
 }

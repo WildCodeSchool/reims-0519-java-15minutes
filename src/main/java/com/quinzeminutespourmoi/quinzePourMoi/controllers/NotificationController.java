@@ -44,6 +44,4 @@ public class NotificationController {
         notificationRepository.save(notificationToPatch);
         return "redirect:/users/profile";
     }
-
-
 }

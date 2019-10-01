@@ -1,6 +1,6 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
-import java.util.List;
+import java.util.Set;
 
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Question;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.QuestionRepository;
@@ -17,7 +17,9 @@ class SurveyController{
 
     @GetMapping("/survey/smoke")
     public String smokesurvey(Model model){
-        return "smokeSurvey";
+        Set<Question> questions = questionRepository.findByIdBetween(70L, 79L);
+        model.addAttribute("questions", questions);
+        return "alcoholAddictionSurvey";
     }
 
     @GetMapping("/survey/addiction")
@@ -27,49 +29,66 @@ class SurveyController{
 
     @GetMapping("/survey/addiction/food")
     public String foodAddictionSurvey(Model model){
-        return "foodAddictionSurvey";
+        Set<Question> questions = questionRepository.findByIdBetween(80L, 89L);
+        model.addAttribute("questions", questions);
+        return "alcoholAddictionSurvey";
     }
 
     @GetMapping("/survey/addiction/screen")
     public String screenAddictionSurvey(Model model){
-        return "screenAddictionSurvey";
+        Set<Question> questions = questionRepository.findByIdBetween(100L, 110L);
+        model.addAttribute("questions", questions);
+        return "alcoholAddictionSurvey";
+        //return "screenAddictionSurvey";
     }
 
     @GetMapping("/survey/addiction/alcohol")
     public String alcoholAddictionSurvey(Model model){
-        List<Question> questions = questionRepository.findAll();
+        Set<Question> questions = questionRepository.findByIdBetween(90L, 99L);
         model.addAttribute("questions", questions);
         return "alcoholAddictionSurvey";
     }
 
     @GetMapping("/survey/fear/animals+insects")
     public String animalsFear(Model model){
-        return "animalsFear";
+        Set<Question> questions = questionRepository.findByIdBetween(10L, 19L);
+        model.addAttribute("questions", questions);
+        return "alcoholAddictionSurvey";
     }
 
     @GetMapping("/survey/fear/car")
     public String carFear(Model model){
-        return "carFear";
+        Set<Question> questions = questionRepository.findByIdBetween(20L, 29L);
+        model.addAttribute("questions", questions);
+        return "alcoholAddictionSurvey";
     }
 
     @GetMapping("/survey/fear/plane")
     public String planeFear(Model model){
-        return "planeFear";
+        Set<Question> questions = questionRepository.findByIdBetween(30L, 39L);
+        model.addAttribute("questions", questions);
+        return "alcoholAddictionSurvey";
     }
 
     @GetMapping("/survey/fear/people")
     public String peopleFear(Model model){
-        return "peopleFear";
+        Set<Question> questions = questionRepository.findByIdBetween(40L, 49L);
+        model.addAttribute("questions", questions);
+        return "alcoholAddictionSurvey";
     }
 
     @GetMapping("/survey/fear/water")
     public String waterFear(Model model){
-        return "waterFear";
+        Set<Question> questions = questionRepository.findByIdBetween(50L, 59L);
+        model.addAttribute("questions", questions);
+        return "alcoholAddictionSurvey";
     }
 
     @GetMapping("/survey/fear/close")
     public String closeFear(Model model){
-        return "closeFear";
+        Set<Question> questions = questionRepository.findByIdBetween(60L, 69L);
+        model.addAttribute("questions", questions);
+        return "alcoholAddictionSurvey";
     }
 
     @GetMapping("/survey/fear")
