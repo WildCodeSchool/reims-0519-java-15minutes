@@ -155,6 +155,8 @@ public class User implements UserDetails {
 
     public void setFavorites(Set<Favorite> favorites) {
         this.favorites = favorites;
+    }
+    
     public Set<Rate> getRates() {
         return rates;
     }
