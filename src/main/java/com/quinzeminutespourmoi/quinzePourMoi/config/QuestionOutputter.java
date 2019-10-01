@@ -115,76 +115,49 @@ public class QuestionOutputter implements CommandLineRunner{
         answers.add(new Answer(312L,"Déjà plusieurs jours avant", questionRepository.findById(31L).get()));
         answers.add(new Answer(321L,"Oui", questionRepository.findById(32L).get()));
         answers.add(new Answer(322L,"Non", questionRepository.findById(32L).get()));
+        //foule
+        answers.add(new Answer(411L,"Lorsque vous êtes en contact avec la foule", questionRepository.findById(41L).get()));
+        answers.add(new Answer(412L,"Dans les transports en commun", questionRepository.findById(41L).get()));
+        answers.add(new Answer(413L,"Lorsque vous entrez dans un lieu public", questionRepository.findById(41L).get()));
+        answers.add(new Answer(414L,"Lorsque vous êtes dans une rue passante", questionRepository.findById(41L).get()));
+        answers.add(new Answer(421L,"Tout le temps", questionRepository.findById(42L).get()));
+        answers.add(new Answer(422L,"Souvent", questionRepository.findById(42L).get()));
+        answers.add(new Answer(423L,"Rarement", questionRepository.findById(42L).get()));
+        //aquaphobie
+        answers.add(new Answer(511L,"En voyant l'eau", questionRepository.findById(51L).get()));
+        answers.add(new Answer(512L,"Rien qu'en y pensant", questionRepository.findById(51L).get()));
+        answers.add(new Answer(521L,"Oui", questionRepository.findById(52L).get()));
+        answers.add(new Answer(522L,"Non", questionRepository.findById(52L).get()));
+        //claustro
+        answers.add(new Answer(611L,"Dans le noir", questionRepository.findById(61L).get()));
+        answers.add(new Answer(612L,"Dans un espace clos (ascenceur, pièces sans fenêtre ...)", questionRepository.findById(61L).get()));
+        answers.add(new Answer(613L,"Dans un espace restreint", questionRepository.findById(61L).get()));
+        answers.add(new Answer(621L,"Tous les jours ou presque", questionRepository.findById(62L).get()));
+        answers.add(new Answer(622L,"1 à 3 fois par semaine", questionRepository.findById(62L).get()));
+        answers.add(new Answer(623L,"Rarement", questionRepository.findById(62L).get()));
+        //alimenaire
+        answers.add(new Answer(811L,"Oui", questionRepository.findById(81L).get()));
+        answers.add(new Answer(812L,"Non", questionRepository.findById(81L).get()));
+        answers.add(new Answer(821L,"Oui", questionRepository.findById(82L).get()));
+        answers.add(new Answer(822L,"Non", questionRepository.findById(82L).get()));
+        answers.add(new Answer(831L,"Oui", questionRepository.findById(83L).get()));
+        answers.add(new Answer(832L,"Non", questionRepository.findById(83L).get()));
+        //écrans
+        answers.add(new Answer(1011L,"TV", questionRepository.findById(101L).get()));
+        answers.add(new Answer(1012L,"Jeux vidéos", questionRepository.findById(101L).get()));
+        answers.add(new Answer(1013L,"Smartphones", questionRepository.findById(101L).get()));
+        //champs texte à remplir
+        answers.add(new Answer(1031L,"Oui", questionRepository.findById(103L).get()));
+        answers.add(new Answer(1032L,"Non", questionRepository.findById(103L).get()));
+        answers.add(new Answer(1041L,"Oui", questionRepository.findById(104L).get()));
+        answers.add(new Answer(1042L,"Oui", questionRepository.findById(104L).get()));
+        //cigarettes
+        answers.add(new Answer(731L,"Oui", questionRepository.findById(73L).get()));
+        answers.add(new Answer(732L,"Non", questionRepository.findById(73L).get()));
 
 
         for(Answer answer : answers){
             answerRepository.save(answer);
         }
-        // /*Answer[] data2 = new Answer[]{
-
-        //     //avion
-        //     new Answer(12L,"Avant d'entrer dans l'avion"),
-        //     new Answer(13L,"Déjà plusieurs jours avant"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-
-        //     //foule
-        //     new Answer(14L,"Lorsque vous êtes en contact avec la foule"),
-        //     new Answer(15L," Dans les transports en commun"
-        //     new Answer(16L," Lorsque vous entrez dans un lieu public"
-        //     new Answer(17L," Lorsque vous êtes dans une rue passante"
-        //     new Answer(6L,"Tout le temps"),
-        //     new Answer(7l,"Souvent"),
-        //     new Answer(8l,"Rarement"),
-            
-        //     //aquaphobie
-        //     new Answer(18L,"En voyant l'eau"),
-        //     new Answer(19L,"Rien qu'en y pensant"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-
-        //     //claustrophobie
-        //     new Answer(20L,"Dans le noir"),
-        //     new Answer(21L,"Dans un espace clos (ascenceur, pièces sans fenêtre ...)"),
-        //     new Answer(22L,"Dans un espace restreint"),
-        //     new Answer(23L,"Tous les jours ou presque"),
-        //     new Answer(24L,"1 à 3 fois par semaine"),
-        //     new Answer(25L,"Rarement"), 
-
-        //     //cigarette
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-
-        //     //alimentaire
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-
-        //     //alcohol
-        //     new Answer(23L,"Tous les jours ou presque"),
-        //     new Answer(24L,"1 à 3 fois par semaine"),
-        //     new Answer(25L,"Rarement"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-
-        //     //écran
-        //     new Answer(26L,"TV"),
-        //     new Answer(27L,"Jeux vidéos"),
-        //     new Answer(28L,"Smartphones"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non"),
-        //     new Answer(4L,"Oui"),
-        //     new Answer(5L,"Non")
-        //     };
-        // for(Answer answer : data2){
-        //     answerRepository.save(answer);
-        // }*/
     }
 }
