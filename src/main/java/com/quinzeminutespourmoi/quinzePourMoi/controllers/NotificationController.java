@@ -17,6 +17,7 @@ public class NotificationController {
 
     @Autowired
     NotificationRepository notificationRepository;
+    
     @Autowired
     UserRepository userRepository;
 

@@ -6,11 +6,13 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
+
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
@@ -32,17 +34,18 @@ public class Hypnotherapist extends User {
     private Double lat;
     private Double lng;
 
-    @ManyToMany
-    @JoinTable(name = "favorite", joinColumns = @JoinColumn(name = "hypnotherapist_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private Set<User> followers;
-
     @OneToMany(mappedBy = "hypnotherapist")
     private Set<Notification> notifications;
 
     @OneToMany(mappedBy ="hypnotherapist")
     private Set<Rate> rates;
 
+    @OneToMany(mappedBy = "hypnotherapist")
+    Set<Favorite> favorites;
 
+    /**
+     * @return String return the description
+     */
     public String getDescription() {
         return description;
     }
@@ -83,14 +86,6 @@ public class Hypnotherapist extends User {
         this.address = address;
     }
 
-    public Set<User> getFollowers() {
-        return followers;
-    }
-
-    public void setFollowers(Set<User> followers) {
-        this.followers = followers;
-    }
-
     public Set<Notification> getNotifications() {
         return notifications;
     }
@@ -106,6 +101,14 @@ public class Hypnotherapist extends User {
         return authorities;
     }
 
+    public Set<Favorite> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(Set<Favorite> favorites) {
+        this.favorites = favorites;
+    }
+    
     public Set<Rate> getRates() {
         return rates;
     }
