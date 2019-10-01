@@ -13,7 +13,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -45,7 +44,7 @@ public class User implements UserDetails {
 
     @ManyToMany (mappedBy = "followers")
     private Set<Hypnotherapist> likes;
- 
+
     @ManyToMany(mappedBy = "users")
     private Set<Answer> answers;
 
@@ -54,6 +53,7 @@ public class User implements UserDetails {
 
     @OneToMany(mappedBy="user")
     private Set<Rate> rates;
+
 
 
 
@@ -182,6 +182,16 @@ public class User implements UserDetails {
     public void setLikes(Set<Hypnotherapist> likes) {
         this.likes = likes;
     }
+
+
+    public Set<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(Set<Notification> notifications) {
+        this.notifications = notifications;
+    }
+
 
     public Set<Answer> getAnswers() {
         return answers;
