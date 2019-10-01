@@ -58,8 +58,7 @@ function geoFindMe() {
 
     const status = document.querySelector('#status');
     const mapLink = document.querySelector('#map-link');
-    
-    console.log(
+ /*    console.log(
       distance(
         49.257165,
         4.019972,
@@ -68,7 +67,7 @@ function geoFindMe() {
         "K"
       )
     );
-  
+   */
     mapLink.href = '';
     mapLink.textContent = '';
   
@@ -76,7 +75,7 @@ function geoFindMe() {
       const latitude  = position.coords.latitude;
       const longitude = position.coords.longitude;
       const time = Date.now();
-  
+
       status.textContent = '';
       mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
       mapLink.textContent = `Date: ${time} Latitude: ${latitude} °, Longitude: ${longitude} °`;
@@ -96,3 +95,15 @@ function geoFindMe() {
   }
   
   document.querySelector('#find-me').addEventListener('click', geoFindMe);
+
+ 
+
+    const secondElem = document.getElementById('succoord');
+    // Alter both its content and style
+    secondElem.innerHTML = 'Something happened here!';
+    secondElem.style.fontWeight = 'bold';
+
+    const secondElem = document.getElementById('coord');
+    
+
+  

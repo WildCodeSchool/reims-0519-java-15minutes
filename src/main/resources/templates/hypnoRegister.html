@@ -17,6 +17,11 @@
                 <input class="form-control mb-4" type="text" placeholder="Code postal *" th:field="*{adr_postal}" required>
                 <input class="form-control mb-4" type="text" placeholder="Ville *" th:field="*{town}" required>
                 <input class="form-control" type="text" placeholder="Description *" th:field="*{description}" required>
+                <input class="form-control" type="hidden"th:field="*{lat}" required>
+                <input class="form-control" type="hidden" th:field="*{lng}" required>
+
+                
+                
                 <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                 </small>
         </div>
