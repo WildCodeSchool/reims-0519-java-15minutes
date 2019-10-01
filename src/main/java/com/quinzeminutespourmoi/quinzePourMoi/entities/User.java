@@ -138,17 +138,7 @@ public class User implements UserDetails {
     public void setLikes(Set<Hypnotherapist> likes) {
         this.likes = likes;
     }
-
-
-    public Set<Notification> getNotifications() {
-        return notifications;
-    }
-
-    public void setNotifications(Set<Notification> notifications) {
-        this.notifications = notifications;
-    }
-
-
+    
     public Set<Answer> getAnswers() {
         return answers;
     }
