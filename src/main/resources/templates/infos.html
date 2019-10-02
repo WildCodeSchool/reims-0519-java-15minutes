@@ -128,22 +128,25 @@
 
     <footer>
         <div class="row">
-            <div class="col-12 d-flex justify-content-center">
+            <div class="col-12 d-flex justify-content-around">
                 <div th:if="${notification == null}">
                     <form th:action="@{/notifications}" method="POST">
                         <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
                         <button type="submit" class="btn btn-info">Me contacter</button>
                     </form>
-                    <form th:action="@{/rate/{id}(id=${hypnotherapist.id})" method="post">
-                        <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
-                        <button type="submit" class="btn btn-info">Me noter</button>
-                    </form>
                 </div>
                 <div th:if="${notification != null}">
                     <p th:text="'  ' + ${hypnotherapist.phone}"></p>
-                    <p th:text="'  ' + ${hypnotherapist.mail}"></p>
+                    <p th:text="'  ' + ${hypnotherapist.mail}"></p> 
                 </div>
-             </div>
+
+                <a th:href="@{/rate/{id}(id=${hypnotherapist.id})}" class="btn btn-info">Me noter</a>
+
+                <!--<form th:action="@{/rate/{id}(id=${hypnotherapist.id})}" method="get">
+                    <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
+                    <button type="submit" class="btn btn-info">Me noter</button>
+                </form>-->
+            </div>
         </div>
         </div>
         <div class="row">

@@ -29,11 +29,11 @@ public class RateController{
         return "comment";
     }
 
-    @PostMapping("/rate")
+    @PostMapping("/rate/{id}")
     public String store(Authentication authentication, Rate rate){
         rate.setUser((User)authentication.getPrincipal());
         rate = rateRepository.save(rate);
-        return "redirect:/";
+        return "redirect:/hypnotherapists"+rate.getHypnotherapist().getId();
     }
 }
 

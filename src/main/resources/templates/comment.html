@@ -8,41 +8,66 @@
 
         <h4>Note</h4>
 
-    <form action="@{/comment}" method="post" th:object="${rate}">
+    <form action="@{/rate/{id}(id=${hypnotherapist.id})}" method="post" th:object="${rate}">
 
         <div class="rating">
             <div class="stars">
 
+                <!--<input type="hidden" name="rate" th:value="${1}" th:field="*{rating}">
+                <button type="submit" class="btn btn-link">
+                    <i class="fas fa-star"></i>
+                </button>
+
+                <input type="hidden" name="rate" th:value="${2}" th:field="*{rating}">
+                <button type="submit" class="btn btn-link">
+                    <i class="fas fa-star"></i>
+                </button>
+
+                <input type="hidden" name="rate" th:value="${3}" th:field="*{rating}">
+                <button type="submit" class="btn btn-link">
+                    <i class="fas fa-star"></i>
+                </button>
+
+                <input type="hidden" name="rate" th:value="${4}" th:field="*{rating}">
+                <button type="submit" class="btn btn-link">
+                    <i class="fas fa-star"></i>
+                </button>
+
+                <input type="hidden" name="rate" th:value="${5}" th:field="*{rating}">
+                <button type="submit" class="btn btn-link">
+                    <i class="fas fa-star"></i>
+                </button>-->
+
                 <div class="d-flex flex-row">
-                    <input type="radio" name="star" value="1" id="one" class="sr-only" th:field="*{rating}"/>
+                    <input type="radio" name="rating" th:value="${1}" id="one" class="sr-only"/>
                     <label for="one">
                         <span aria-hidden="true" class="fas fa-star"></span>
                     </label>
                 </div>
 
                 <div class="d-flex flex-row">
-                    <input type="radio" name="star" value="2" id="two" class="sr-only" th:field="*{rating}"/>
+                    <input type="radio" name="rating" th:value="${2}" id="two" class="sr-only"/>
                     <label for="two">
                         <span aria-hidden="true" class="fas fa-star"></span>
                     </label>
                 </div>
 
                 <div class="d-flex flex-row">
-                    <input type="radio" name="star" value="3" id="three" class="sr-only" th:field="*{rating}"/>
+                    <input type="radio" name="rating" th:value="${3}" id="three" class="sr-only"/>
                     <label for="three">
                         <span aria-hidden="true" class="fas fa-star"></span>
                     </label>
                 </div>
 
                 <div class="d-flex flex-row">
-                    <input type="radio" name="star" value="4" id="four" class="sr-only" th:field="*{rating}"/>
+                    <input type="radio" name="rating" th:value="${4}" id="four" class="sr-only"/>
                     <label for="four">
                         <span aria-hidden="true" class="fas fa-star"></span>
                     </label>
                 </div>
 
                 <div class="d-flex flex-row">
-                    <input type="radio" name="star" value="5" id="five" class="sr-only" th:field="*{rating}"/>
+                    <input type="radio" name="rating" th:value="${5}" id="five" class="sr-only"/>
                     <label for="five">
                         <span aria-hidden="true" class="fas fa-star"></span>
                     </label>
