@@ -25,49 +25,49 @@ public class QuestionOutputter implements CommandLineRunner{
         Question[] data = new Question []{
              /*phobies*/
              /*animaux*/
-             new Question(1L,"Quand cela se manifeste-t'il ?"),
-             new Question(2L,"Y a t'il des fois où cette phobie ne se manifeste pas ?"),
+             new Question(1L,"Quand cela se manifeste-t'il ?", "radio"),
+             new Question(2L,"Y a t'il des fois où cette phobie ne se manifeste pas ?", "radio"),
              /*araignée/insectes */
-             new Question(11L,"Quand cela se manifeste-t'il ?"),
-             new Question(12L,"Y a t'il des fois où cette phobie ne se manifeste pas ?"),
+             new Question(11L,"Quand cela se manifeste-t'il ?", "radio"),
+             new Question(12L,"Y a t'il des fois où cette phobie ne se manifeste pas ?", "radio"),
              /*voitures*/
-             new Question(21L,"A quelle fréquence cela vous arrive-t'il ?"),
-             new Question(22L,"Cela dépend t'il de la vitesse ?"),
-             new Question(23L,"Sur quel type de route cela vous arrive-t'il ?"),
-             new Question(24L,"Y a t'il eu un événement avant la phobie qui aurait pu déclencher votre peur ?"),
+             new Question(21L,"A quelle fréquence cela vous arrive-t'il ?", "radio"),
+             new Question(22L,"Cela dépend t'il de la vitesse ?", "radio"),
+             new Question(23L,"Sur quel type de route cela vous arrive-t'il ?", "radio"),
+             new Question(24L,"Y a t'il eu un événement avant la phobie qui aurait pu déclencher votre peur ?", "radio"),
              /*avions*/
-             new Question(31L,"Quand cela se manifeste-t'il ?"),
-             new Question(32L,"Cette peur est-elle encore présente lorsque vous êtes en vol ?"),
+             new Question(31L,"Quand cela se manifeste-t'il ?", "radio"),
+             new Question(32L,"Cette peur est-elle encore présente lorsque vous êtes en vol ?", "radio"),
              /*foule*/
-             new Question(41L,"Dans quelle situation se manifeste-t'elle ?"),
-             new Question(42L,"Quand cela se manifeste-t'il ?"),
+             new Question(41L,"Dans quelle situation se manifeste-t'elle ?", "radio"),
+             new Question(42L,"Quand cela se manifeste-t'il ?", "radio"),
              /*aquaphobie*/
-             new Question(51L,"Quand cette peur se manifeste-t'elle ?"),
-             new Question(52L,"Y a t'il eu un événement qui aurait pu déclencher cette phobie ?"),
+             new Question(51L,"Quand cette peur se manifeste-t'elle ?", "radio"),
+             new Question(52L,"Y a t'il eu un événement qui aurait pu déclencher cette phobie ?", "radio"),
              /*claustrophobie*/
-             new Question(61L,"Dans quelle situation se manifeste cette peur ?"),
-             new Question(62L,"Quand cela se manifeste-t'il ?"),
+             new Question(61L,"Dans quelle situation se manifeste cette peur ?", "radio"),
+             new Question(62L,"Quand cela se manifeste-t'il ?", "radio"),
             
              /*stop à la cigarette */
-             new Question(71L,"Depuis combien de temps fumez-vous ?"),
-             new Question(72L,"Combien de cigarettes fumez-vous par jours ?"),
-             new Question(73L,"Avez-vous déjà essayé d'arrêter ?"),
-             new Question(74L,"Si oui, qu'avez-vous fait ?"),
+             new Question(71L,"Depuis combien de temps fumez-vous ?", "text"),
+             new Question(72L,"Combien de cigarettes fumez-vous par jours ?", "number"),
+             new Question(73L,"Avez-vous déjà essayé d'arrêter ?", "radio"),
+             new Question(74L,"Si oui, qu'avez-vous fait ?", "text"),
              /*addictions*/
              /*alimentaire*/
-             new Question(81L,"La prenez vous pour compenser un stress ?"),
-             new Question(82L,"La prenez vous aussi sans aucune raison (automatisme) ?"),
-             new Question(83L,"Considérez vous que cette addiction nuit à votre bien être ?"),
+             new Question(81L,"La prenez vous pour compenser un stress ?", "radio"),
+             new Question(82L,"La prenez vous aussi sans aucune raison (automatisme) ?", "radio"),
+             new Question(83L,"Considérez vous que cette addiction nuit à votre bien être ?", "radio"),
                  /*alcool*/
-             new Question(90L,"A quelle fréquence votre addiction se manifeste-t'elle ?"),
-             new Question(91L,"Y a t'il eu un évènement dans votre vie qui aurait pu déclencher cette addiction ?"),
-             new Question(92L,"Considérez-vous que cette addiction nuit à votre santé ?"),
-             new Question(93L,"Avez-vous le sentiment que cette addiction vous isole ?"),
+             new Question(90L,"A quelle fréquence votre addiction se manifeste-t'elle ?", "radio"),
+             new Question(91L,"Y a t'il eu un évènement dans votre vie qui aurait pu déclencher cette addiction ?", "radio"),
+             new Question(92L,"Considérez-vous que cette addiction nuit à votre santé ?", "radio"),
+             new Question(93L,"Avez-vous le sentiment que cette addiction vous isole ?", "radio"),
                  /*ecran*/
-             new Question(101L,"Quelle est votre addiction ?"),
-             new Question(102L,"Depuis combien de temps avez-vous cette addiction ?"),
-             new Question(103L,"Avez-vous le sentiment que cette addiction vous isole ?"),
-             new Question(104L,"Avez-vous le sentiment que votre addiction s'empire au fil du temps")
+             new Question(101L,"Quelle est votre addiction ?", "radio"),
+             new Question(102L,"Depuis combien de temps avez-vous cette addiction ?", "text"),
+             new Question(103L,"Avez-vous le sentiment que cette addiction vous isole ?", "radio"),
+             new Question(104L,"Avez-vous le sentiment que votre addiction s'empire au fil du temps", "radio")
         };
         for(Question question : data){
             questionRepository.save(question);
@@ -148,7 +148,7 @@ public class QuestionOutputter implements CommandLineRunner{
         answers.add(new Answer(1031L,"Oui", questionRepository.findById(103L).get()));
         answers.add(new Answer(1032L,"Non", questionRepository.findById(103L).get()));
         answers.add(new Answer(1041L,"Oui", questionRepository.findById(104L).get()));
-        answers.add(new Answer(1042L,"Oui", questionRepository.findById(104L).get()));
+        answers.add(new Answer(1042L,"Non", questionRepository.findById(104L).get()));
         //cigarettes
         //champs texte à remplir
         answers.add(new Answer(731L,"Oui", questionRepository.findById(73L).get()));
