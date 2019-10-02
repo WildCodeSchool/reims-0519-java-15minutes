@@ -7,9 +7,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Notification{
+public class Favorite{
 
-    public Notification() {
+    public Favorite(){
     }
 
     @Id
@@ -19,8 +19,6 @@ public class Notification{
     private User user;
     @ManyToOne
     private Hypnotherapist hypnotherapist;
-    private String userResponse;
-    private String hypnotherapistResponse;
 
     public Long getId() {
         return id;
@@ -29,14 +27,13 @@ public class Notification{
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
-
     }
 
     public Hypnotherapist getHypnotherapist() {
@@ -47,35 +44,14 @@ public class Notification{
         this.hypnotherapist = hypnotherapist;
     }
 
-    public String getUserResponse() {
-        return userResponse;
-    }
-
-    public void setUserResponse(String userResponse) {
-        this.userResponse = userResponse;
-    }
-
-    public String getHypnotherapistResponse() {
-        return hypnotherapistResponse;
-    }
-
-    public void setHypnotherapistResponse(String hypnotherapistResponse) {
-        this.hypnotherapistResponse = hypnotherapistResponse;
-    }
-
-    public Notification(User user, Hypnotherapist hypnotherapist, String userResponse, String hypnotherapistResponse) {
+    public Favorite(User user, Hypnotherapist hypnotherapist) {
         this.user = user;
         this.hypnotherapist = hypnotherapist;
-        this.userResponse = userResponse;
-        this.hypnotherapistResponse = hypnotherapistResponse;
     }
 
-    public Notification(Long id, User user, Hypnotherapist hypnotherapist, String userResponse,
-            String hypnotherapistResponse) {
+    public Favorite(Long id, User user, Hypnotherapist hypnotherapist) {
         this.id = id;
         this.user = user;
         this.hypnotherapist = hypnotherapist;
-        this.userResponse = userResponse;
-        this.hypnotherapistResponse = hypnotherapistResponse;
     }
 }

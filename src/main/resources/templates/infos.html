@@ -35,19 +35,7 @@
 
     <div class="row">
         <div class="col-6">
-            <div class="address">
-                <p
-                    th:text="' ' + ${hypnotherapist.address} + ', ' +${hypnotherapist.adr_postal} + ' ' + ${hypnotherapist.town}">
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <hr width="100%" size="5">
-
-    <div class="row">
-        <div class="col-6">
-            <p><i class="fas fa-quote-right mr-2"></i>Présentation</p>
+            <p><i class="fas fa-quote-right mr-3"></i>Présentation</p>
         </div>
         <div class="col-6 text-right">
             <button type="button" class="btn btn-infos" data-toggle="modal" data-target="#presentationCenter">+
@@ -69,15 +57,12 @@
             </div>
         </div>
     </div>
-    </div>
-    </div>
-    </div>
 
     <hr width="100%" size="5">
 
     <div class="row">
         <div class="col-6">
-            <p><i class="fas fa-comment-alt mr-2"></i> Avis</p>
+            <p><i class="fas fa-comment-alt mr-3"></i> Avis</p>
         </div>
         <div class="col-6 text-right">
             <button type="button" class="btn btn-infos" data-toggle="modal" data-target="#avisCenter">+</button>
@@ -123,8 +108,17 @@
             </div>
         </div>
     </div>
+    
+    <hr width="100%" size="5">
+
+    <div th:if="${notification != null}" class="row">
+            <p class="col-12"><i class="fas fa-at mr-3"></i><span th:text="${hypnotherapist.mail}"></span></p>
+            <hr width="100%" size="5">
+            <p class="col-12"><i class="fas fa-phone-alt mr-3"></i><span th:text="${hypnotherapist.phone}"></span></p>
+            <hr width="100%" size="5">
+            <p class="col-12"><i class="fas fa-map-marker-alt mr-3"></i><span th:text="${hypnotherapist.address} + ', ' +${hypnotherapist.adr_postal} + ' ' + ${hypnotherapist.town}"></span></p>
     </div>
-    <hr>
+
     <footer>
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
@@ -133,16 +127,31 @@
                         <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
                         <button type="submit" class="btn btn-info">Me contacter</button>
                     </form>
+                    <a class="btn btn-info" th:href="@{/comment}">Me noter</a>
                 </div>
-                <div th:if="${notification != null}">
-                    <p th:text="'  ' + ${hypnotherapist.phone}"></p>
-                    <p th:text="'  ' + ${hypnotherapist.mail}"></p>
+             </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between">
+                <a th:href="@{/hypnotherapists}"><i class="fas fa-fast-backward return" ></i></a>
+                <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
+                    <div th:if="!${favorite}">
+                        <form th:action="@{/favorites}" method="POST">
+                            <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
+                            <button type="submit" class="btn btn-link"><i class="far fa-heart favorite"></i></button>
+                        </form>
+                    </div>
+                    <div th:if="${favorite}">
+                        <form th:action="@{/favorites/{id}(id=${favorite.id})}" method="POST">
+                            <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
+                            <button type="submit" class="btn btn-link"><i class="fas fa-heart favorite"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    <a th:href="@{/hypnotherapists}"><i class="fas fa-fast-backward return" ></i></a>
- 
-        </ul>
+
     </footer>
 
     <script th:replace="fragments/script.html :: script"></script>

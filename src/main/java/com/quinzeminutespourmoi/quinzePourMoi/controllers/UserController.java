@@ -1,11 +1,15 @@
 package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Favorite;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Hypnotherapist;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Notification;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.FavoriteRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.HypnotherapistRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.NotificationRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
@@ -34,6 +38,9 @@ class UserController {
 
     @Autowired
     NotificationRepository notificationRepository;
+
+    @Autowired
+    FavoriteRepository favoriteRepository;
 
     @GetMapping("/subscribe")
     public String subscribe(Model model) {
@@ -66,11 +73,13 @@ class UserController {
     }
 
     @GetMapping("/users/profile")
-    public String read(Model model, Authentication authentication) {
+    public String read(Model model, Authentication authentication, Long hypnotherapistId) {
         User user = userRepository.findByMail(authentication.getName());
         model.addAttribute("user", user);
         Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
         model.addAttribute("notification", notification);
+        List <Favorite> favorites = favoriteRepository.findFavoriteByUserIdOrHypnotherapistId(user.getId(),user.getId());
+        model.addAttribute("favorites", favorites);
         return "profilePerso";
     }
 

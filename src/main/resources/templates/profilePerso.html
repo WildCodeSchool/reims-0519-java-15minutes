@@ -18,10 +18,18 @@
         <div class="name col-12">
             <h1 class="text-center" th:text="${user.firstname} + ' ' + ${user.lastname}"></h1>
         </div>
-        <div th:replace="fragments/notifications.html :: notifications"></div>
-    
+            <div class="row d-flex col-12 justify-content-between">
+                <div th:replace="fragments/notifications.html :: notifications"></div>
+                <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
+                    <button type="button" data-toggle="collapse" data-target="#collapseFavorite"
+                        aria-expanded="false" aria-controls="collapaseExemple" class="btn btn-link"><i class="fas fa-heart favorite"></i>
+                    </button>
+                </div>
+            </div>
+                <div th:replace="fragments/favorites.html :: favorites"></div>
+                <br>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item" th:text=" 'Email : ' + ${user.mail}"></li>
+            <p class="col-12"><i class="fas fa-at mr-3"></i><span th:text="${user.mail}"></span></p>
         <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
             <li class="list-group-item" th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user})"></li>
         </div>
