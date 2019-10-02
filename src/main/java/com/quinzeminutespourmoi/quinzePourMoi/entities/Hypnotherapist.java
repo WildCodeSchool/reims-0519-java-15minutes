@@ -9,10 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
@@ -43,9 +39,7 @@ public class Hypnotherapist extends User {
     @OneToMany(mappedBy = "hypnotherapist")
     Set<Favorite> favorites;
 
-    /**
-     * @return String return the description
-     */
+
     public String getDescription() {
         return description;
     }
