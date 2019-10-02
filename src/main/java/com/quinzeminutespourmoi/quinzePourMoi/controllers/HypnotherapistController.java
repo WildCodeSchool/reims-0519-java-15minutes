@@ -69,7 +69,11 @@ class HypnotherapistController {
         }
         HttpResponse<JsonNode> jsonResponse;
         try {
-            String address = (hypnotherapist.getAddress());
+            String street = (hypnotherapist.getAddress());
+            String town = (hypnotherapist.getTown());
+            String adrPostal = (hypnotherapist.getAdr_postal());
+            String address = street + ", "+ town + ", " +  adrPostal;
+            System.out.println(address);
             jsonResponse = Unirest.get("https://api.opencagedata.com/geocode/v1/json?").queryString("q", address)
                     .queryString("key", "6deb4479ec784e1d9a5a521e2da8655c").asJson();
 
