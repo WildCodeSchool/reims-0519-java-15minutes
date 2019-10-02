@@ -30,10 +30,11 @@ public class RateController{
     }
 
     @PostMapping("/rate/{id}")
-    public String store(Authentication authentication, Rate rate){
+    public String store(Authentication authentication, Rate rate, @PathVariable("id") Long hypnotherapistId){
         rate.setUser((User)authentication.getPrincipal());
+        rate.setHypnotherapist(hypnotherapistRepository.findById(hypnotherapistId).get());
         rate = rateRepository.save(rate);
-        return "redirect:/hypnotherapists"+rate.getHypnotherapist().getId();
+        return "redirect:/hypnotherapists";
     }
 }
 

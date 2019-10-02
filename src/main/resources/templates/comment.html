@@ -8,7 +8,7 @@
 
         <h4>Note</h4>
 
-    <form action="@{/rate/{id}(id=${hypnotherapist.id})}" method="post" th:object="${rate}">
+    <form action="#" th:action="@{/rate/{id}(id=${hypnotherapist.id})}" method="post" th:object="${rate}">
 
         <div class="rating">
             <div class="stars">
@@ -81,8 +81,13 @@
 
         <textarea id="comment" class="justify-content-center"></textarea>
 
+        <!--<form th:action="@{/rate/{id}(id=${hypnotherapist.id})}" method="get">
+                <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
+                <button type="submit" class="btn btn-info">Me noter</button>
+            </form>-->
+
         <div class="col-auto d-flex justify-content-center">
-            <a th:href="@{/hypnotherapists}" type="submit" class="btn btn-survey btn-block mb-4">Envoyer</a>
+            <button type="submit" class="btn btn-info">Envoyer</button>
         </div>
 
     </form>
