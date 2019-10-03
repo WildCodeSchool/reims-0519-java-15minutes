@@ -31,6 +31,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/subscribe").permitAll()
                 .antMatchers("/resultSurvey").authenticated()
+                .antMatchers("/hypnotherapists").authenticated()
                 .antMatchers("/hypnotherapists/profile").authenticated()
                 .antMatchers("/users/**").authenticated()
                 .antMatchers("/notifications").authenticated()
