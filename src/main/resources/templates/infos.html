@@ -123,7 +123,7 @@
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
                 <div th:if="${notification == null}">
-                    <form th:action="@{/notifications}" method="POST">
+                    <form class="mb" th:action="@{/notifications}" method="POST">
                         <input type="hidden" name="hypnotherapist" th:value="${hypnotherapist.id}">
                         <button type="submit" class="btn btn-info">Me contacter</button>
                     </form>
