@@ -38,14 +38,16 @@
 
         <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
             <div class="d-flex justify-content-center">
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseResult" role="button" aria-expanded="false" aria-controls="collapseResult">
-                    Réponses :
-                </a>
+                    <button type="button" data-toggle="collapse" data-target="#collapseResult"
+                        aria-expanded="false" aria-controls="collapaseResult" class="btn ">Réponses :</button>
             </div>
             <div class="collapse" id="collapseResult">
+                <div th:if="!${user.answers}">
+                    <p>Vous n'avez pas encore répondu au questionnaire !</p>
+                </div>
+                <div th:if="${user.answers}">
                 <div class="card card-body">                    
                     <ul>
-                        <p th:text="${answer.question.category}"></p>
                         <li th:each="answer : ${user.answers}">
                             <p th:text="${answer.question.title}"></p>
                             <p th:text="${answer.answer}"></p>
@@ -53,6 +55,7 @@
                     </ul>
                 </div>
             </div>
+        </div>
 <script th:replace="fragments/script.html :: script"></script>
 ​
 </body>
