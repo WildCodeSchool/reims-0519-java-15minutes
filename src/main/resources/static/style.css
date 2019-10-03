@@ -230,6 +230,14 @@ a {
     color: #8c56b8;
 }
 
+.fa-envelope-square{
+    color: #8c56b8;
+}
+
+.fa-align-justify{
+    color: #8c56b8;
+}
+
 .fa-portrait{
     color: #8c56b8;
 }
@@ -307,7 +315,9 @@ input[type=radio]:checked + label:before{
     height: 120px;
 }
 
-  
+.mt-3-red{
+    color: red;
+}
 
 
   
