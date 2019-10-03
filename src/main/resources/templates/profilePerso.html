@@ -45,8 +45,8 @@
             <div class="collapse" id="collapseResult">
                 <div class="card card-body">                    
                     <ul>
+                        <p th:text="${answer.question.category}"></p>
                         <li th:each="answer : ${user.answers}">
-                            <p th:text="${answer.question.category}"></p>
                             <p th:text="${answer.question.title}"></p>
                             <p th:text="${answer.answer}"></p>
                         </li>
