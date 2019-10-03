@@ -322,6 +322,19 @@ input[type=radio]:checked + label:before{
     color: red;
 }
 
+.need{
+    background-color: #8c56b8;
+    font-weight:bold;
+}
+
+
+.mb{
+    margin-bottom: 10px;
+}
+
+h5{
+    font-weight:bold;
+}
 /* Page Profil Hypnothérapeute */
 
 .mb{
