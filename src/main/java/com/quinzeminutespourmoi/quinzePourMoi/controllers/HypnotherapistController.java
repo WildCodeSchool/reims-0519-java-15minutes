@@ -3,6 +3,7 @@ package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Favorite;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Hypnotherapist;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Notification;
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Rate;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import org.json.JSONObject;
 
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.HypnotherapistRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.NotificationRepository;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.RateRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,8 @@ class HypnotherapistController {
     private UserRepository userRepository;
     @Autowired
     private FavoriteRepository favoriteRepository;
+    @Autowired
+    private RateRepository rateRepository;
 
     @GetMapping("/infos")
     public String infos(Model model, Authentication authentication) {
@@ -137,11 +141,11 @@ class HypnotherapistController {
         Notification notification = notificationRepository.findNotificationByUserIdAndHypnotherapistId(user.getId(),
                 hypnotherapistId);
         Favorite favorite = favoriteRepository.findFavoriteByUserIdAndHypnotherapistId(user.getId(), hypnotherapistId);
-        // Rate rate = RateRepository.findRateByUserIdAndHypnotherapistId(user.getId(), hypnotherapistId);
+        Rate rate = rateRepository.findByHypnotherapistId(user.getId(), hypnotherapistId);
         model.addAttribute("notification", notification);
         model.addAttribute("hypnotherapist", hypnotherapist);
         model.addAttribute("favorite", favorite);
-        // model.addAttribute("rate", rate);
+        model.addAttribute("rate", rate);
         return "infos";
     }
 }
