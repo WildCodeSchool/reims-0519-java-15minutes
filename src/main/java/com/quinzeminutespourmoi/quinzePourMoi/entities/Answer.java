@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OrderBy;
 
 @Entity
 public class Answer{
@@ -30,6 +31,7 @@ public class Answer{
 
 
     @ManyToOne
+    @OrderBy("category ASC")
     private Question question;
 
     @ManyToMany
