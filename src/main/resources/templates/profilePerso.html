@@ -35,22 +35,18 @@
         </div>
         </ul>
         <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
-            <div class="rating col-12">
-                <p class="text-center">Mes besoins :</p>
-            </div>
-        </div>
-    </div>
-    ​<section>
-        <h3>Réponses</h3>
-        <ul>
-            <li th:each="answer : ${user.answers}">
-                <p th:text="${answer.question.title}"></p>
-                <p th:text="${answer.answer}"></p>
-            </li>
-        </ul>
-    </section>
-​
-​
+            ​<section>
+                <div class="rating col-12">
+                        <h3 class="text-center">Réponses :</h3>
+                </div>
+                <ul>
+                    <li th:each="answer : ${user.answers}">
+                        <p th:text="${answer.question.title}"></p>
+                        <p th:text="${answer.answer}"></p>
+                    </li>
+                </ul>
+            </section>​
+​       </div>
     <script th:replace="fragments/script.html :: script"></script>
 ​
 </body>
