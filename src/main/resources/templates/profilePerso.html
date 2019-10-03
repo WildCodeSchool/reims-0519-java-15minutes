@@ -34,24 +34,29 @@
             <li class="list-group-item" th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user})"></li>
         </div>
         </ul>
+        <hr width="100%" size="5">
+
         <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
-            <div class="rating col-12">
-                <p class="text-center">Mes besoins :</p>
+            <div class="d-flex justify-content-center">
+                    <button type="button" data-toggle="collapse" data-target="#collapseResult"
+                        aria-expanded="false" aria-controls="collapaseResult" class="btn ">Réponses :</button>
+            </div>
+            <div class="collapse" id="collapseResult">
+                <div th:if="!${user.answers}">
+                    <p>Vous n'avez pas encore répondu au questionnaire !</p>
+                </div>
+                <div th:if="${user.answers}">
+                <div class="card card-body">                    
+                    <ul>
+                        <li th:each="answer : ${user.answers}">
+                            <p th:text="${answer.question.title}"></p>
+                            <p th:text="${answer.answer}"></p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    ​<section>
-        <h3>Réponses</h3>
-        <ul>
-            <li th:each="answer : ${user.answers}">
-                <p th:text="${answer.question.title}"></p>
-                <p th:text="${answer.answer}"></p>
-            </li>
-        </ul>
-    </section>
-​
-​
-    <script th:replace="fragments/script.html :: script"></script>
+<script th:replace="fragments/script.html :: script"></script>
 ​
 </body>
 ​

@@ -6,12 +6,10 @@ document.getElementById('find-me').onclick = function() {
 
 	};
 	sessionStorage.setItem('coord',JSON.stringify(coordonnees));
-	alert("Mémorisation effectuée");
 };
 // Méthode de lecture
 document.getElementById('lecture').onclick = function() {
 	const coordonnees = JSON.parse(sessionStorage.getItem('coord'));
 	document.getElementById('status').value = coordonnees.lat;
 	document.getElementById('map-link').value = coordonnees.long;
-	alert("Lecture effectuée");
 };

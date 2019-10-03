@@ -50,7 +50,7 @@
                 <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
                     <div th:if="!${notification.hypnotherapistResponse}">    
                         <label for="form-check" th:text= "'Avez-vous eu un entretien avec '+ ${notification.user.firstname} + ' ' + ${notification.user.lastname}"></label>
-                        <a th:href="@{/users/{id}(id=${notification.user.id})}">Voir son profile</a>
+                        <a th:href="@{/users/{id}(id=${notification.user.id})}">Voir son profil</a>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="hypnotherapistResponse" id="yes" value="oui" checked>
                                 <label class="form-check-label" for="yes"> Oui</label>
@@ -72,7 +72,7 @@
                 <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
                     <div th:if="!${notification.userResponse}">
                         <label for="form-check" th:text= "'Avez-vous eu un entretien avec '+ ${notification.hypnotherapist.firstname} + ' ' + ${notification.hypnotherapist.lastname}"></label>     
-                        <a th:href="@{/users/{id}(id=${notification.hypnotherapist.id})}">Voir son profile</a>
+                        <a th:href="@{/hypnotherapists/{id}(id=${notification.hypnotherapist.id})}">Voir son profil</a>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="userResponse" id="yes" value="oui" checked>
                                 <label class="form-check-label" for="yes"> Oui</label>    
@@ -93,7 +93,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
             </div>
             </div>
         </div>

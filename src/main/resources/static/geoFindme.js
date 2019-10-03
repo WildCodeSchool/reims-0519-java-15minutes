@@ -27,83 +27,52 @@
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 function distance(lat1, lon1, lat2, lon2, unit) {
-	if ((lat1 == lat2) && (lon1 == lon2)) {
-		return 0;
-	}
-	else {
-		var radlat1 = Math.PI * lat1/180;
-		var radlat2 = Math.PI * lat2/180;
-		var theta = lon1-lon2;
-		var radtheta = Math.PI * theta/180;
+  if ((lat1 == lat2) && (lon1 == lon2)) {
+    return 0;
+  }
+  else {
+    var radlat1 = Math.PI * lat1 / 180;
+    var radlat2 = Math.PI * lat2 / 180;
+    var theta = lon1 - lon2;
+    var radtheta = Math.PI * theta / 180;
     var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
     var distance = dist;
-    
-		if (dist > 1) {
-			dist = 1;
-		}
-		dist = Math.acos(dist);
-		dist = dist * 180/Math.PI;
-		dist = dist * 60 * 1.1515;
-		if (unit=="K") { dist = dist * 1.609344 }
-		if (unit=="N") { dist = dist * 0.8684 }
-    return dist;
-    
 
-	}
+    if (dist > 1) {
+      dist = 1;
+    }
+    dist = Math.acos(dist);
+    dist = dist * 180 / Math.PI;
+    dist = dist * 60 * 1.1515;
+    if (unit == "K") { dist = dist * 1.609344 }
+    if (unit == "N") { dist = dist * 0.8684 }
+    return dist;
+
+
+  }
 }
 
 // my geolocation
 
 function geoFindMe() {
 
-    const status = document.querySelector('#status');
-    const mapLink = document.querySelector('#map-link');
- /*    console.log(
-      distance(
-        49.257165,
-        4.019972,
-        49.260659,
-        4.029896,
-        "K"
-      )
-    );
-   */
-    mapLink.href = '';
-    mapLink.textContent = '';
-  
-    function success(position) {
-      const latitude  = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      const time = Date.now();
+  function success(position) {
+    const latitude = 49.257926//position.coords.latitude;
+    const longitude = 4.016644//position.coords.longitude;
 
-      status.textContent = '';
-      mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-      mapLink.textContent = `Date: ${time} Latitude: ${latitude} °, Longitude: ${longitude} °`;
+    const baseElements = document.querySelectorAll("li.list-group-item");
+
+    for (let baseElement of baseElements) {
+      const baseElementLng = parseFloat(baseElement.getAttribute("data-lng"));
+      const baseElementLat = parseFloat(baseElement.getAttribute("data-lat"));
+      baseElement.querySelector(".distance").innerHTML = distance(latitude,longitude, baseElementLat, baseElementLng, "K").toFixed(2);
     }
-  
-    function error() {
-      status.textContent = 'Unable to retrieve your location';
-    }
-  
-    if (!navigator.geolocation) {
-      status.textContent = 'Geolocation is not supported by your browser';
-    } else {
-      status.textContent = 'Locating…';
-      const watchId = navigator.geolocation.watchPosition(success, error);
-    }
-  
   }
-  
-  document.querySelector('#find-me').addEventListener('click', geoFindMe);
 
- 
+  if (navigator.geolocation) {
+    const watchId = navigator.geolocation.watchPosition(success);
+  }
 
-    const secondElem = document.getElementById('succoord');
-    // Alter both its content and style
-    secondElem.innerHTML = 'Something happened here!';
-    secondElem.style.fontWeight = 'bold';
+}
 
-    const secondElem = document.getElementById('coord');
-    
-
-  
+geoFindMe()
