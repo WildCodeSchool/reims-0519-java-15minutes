@@ -50,7 +50,7 @@
                 <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
                     <a class="mb-3 profil-review" th:href="@{/users/{id}(id=${notification.user.id})}">Pour voir le profil, cliquez ici !</a>
                     <div th:if="!${notification.hypnotherapistResponse}">    
-                        <label for="form-check" th:text= "'Avez-vous eu un entretien avec '+ ${notification.user.firstname} + ' ' + ${notification.user.lastname}"></label>
+                        <label for="form-check" th:text= "'Avez-vous eu un entretien avec ' + ${notification.user.firstname} + ' ' + ${notification.user.lastname} + ' ?'"></label>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="hypnotherapistResponse" id="yes" value="oui" checked>
                             <label class="form-check-label" for="yes"> Oui</label>
