@@ -31,7 +31,6 @@ public class Answer{
 
 
     @ManyToOne
-    @OrderBy("category ASC")
     private Question question;
 
     @ManyToMany
