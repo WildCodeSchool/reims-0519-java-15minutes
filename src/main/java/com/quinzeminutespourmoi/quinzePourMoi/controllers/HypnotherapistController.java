@@ -56,20 +56,20 @@ class HypnotherapistController {
     @PatchMapping("/hypnotherapists/profile")
     public String profile(Authentication authentication, Hypnotherapist hypnotherapist) {
         Hypnotherapist hypnotherapistToPatch = hypnotherapistRepository.findByMail(authentication.getName());
-        if(hypnotherapist.getDescription() != null) {
+        if (hypnotherapist.getDescription() != null) {
             hypnotherapistToPatch.setDescription(hypnotherapist.getDescription());
         }
-        if(hypnotherapist.getPhone() != null) {
+        if (hypnotherapist.getPhone() != null) {
             hypnotherapistToPatch.setPhone(hypnotherapist.getPhone());
         }
-        if(hypnotherapist.getAddress() != null) {
-        hypnotherapistToPatch.setAddress(hypnotherapist.getAddress());
+        if (hypnotherapist.getAddress() != null) {
+            hypnotherapistToPatch.setAddress(hypnotherapist.getAddress());
         }
-        if(hypnotherapist.getAdr_postal() != null) {
-        hypnotherapistToPatch.setAdr_postal(hypnotherapist.getAdr_postal());
+        if (hypnotherapist.getAdr_postal() != null) {
+            hypnotherapistToPatch.setAdr_postal(hypnotherapist.getAdr_postal());
         }
-        if(hypnotherapist.getTown() != null) {
-        hypnotherapistToPatch.setTown(hypnotherapist.getTown());
+        if (hypnotherapist.getTown() != null) {
+            hypnotherapistToPatch.setTown(hypnotherapist.getTown());
         }
         HttpResponse<JsonNode> jsonResponse;
         try {
@@ -97,10 +97,11 @@ class HypnotherapistController {
 
     @GetMapping("/hypnotherapists/profile")
     public String subscribe(Model model, Authentication authentication) {
-        if(authentication != null){
+        if (authentication != null) {
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(),
+                    user.getId());
             model.addAttribute("notification", notification);
         }
         model.addAttribute("hypnotherapist", hypnotherapistRepository.findByMail(authentication.getName()));
@@ -109,10 +110,11 @@ class HypnotherapistController {
 
     @GetMapping("/hypnotherapists")
     public String hypnotherapists(Model model, Authentication authentication) {
-        if(authentication != null){
+        if (authentication != null) {
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(),
+                    user.getId());
             model.addAttribute("notification", notification);
         }
         List<Hypnotherapist> hypnotherapists = hypnotherapistRepository.findAll();
@@ -121,20 +123,25 @@ class HypnotherapistController {
     }
 
     @GetMapping("/hypnotherapists/{id}")
-    public String hypnotherapistById (Model model, Authentication authentication, @PathVariable("id") Long hypnotherapistId) {
-        if(authentication != null){
+    public String hypnotherapistById(Model model, Authentication authentication,
+            @PathVariable("id") Long hypnotherapistId) {
+        if (authentication != null) {
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(),
+                    user.getId());
             model.addAttribute("notification", notification);
         }
         Hypnotherapist hypnotherapist = hypnotherapistRepository.findById(hypnotherapistId).get();
-        User user = (User)authentication.getPrincipal();
-        Notification notification = notificationRepository.findNotificationByUserIdAndHypnotherapistId(user.getId(), hypnotherapistId);
+        User user = (User) authentication.getPrincipal();
+        Notification notification = notificationRepository.findNotificationByUserIdAndHypnotherapistId(user.getId(),
+                hypnotherapistId);
         Favorite favorite = favoriteRepository.findFavoriteByUserIdAndHypnotherapistId(user.getId(), hypnotherapistId);
+        // Rate rate = RateRepository.findRateByUserIdAndHypnotherapistId(user.getId(), hypnotherapistId);
         model.addAttribute("notification", notification);
         model.addAttribute("hypnotherapist", hypnotherapist);
         model.addAttribute("favorite", favorite);
+        // model.addAttribute("rate", rate);
         return "infos";
     }
 }
