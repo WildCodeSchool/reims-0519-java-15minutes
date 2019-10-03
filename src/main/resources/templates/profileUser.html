@@ -18,15 +18,14 @@
             <li class="list-group-item" th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user.hypnotherapist})"></li>
         </div>
         </ul>
-        <div sec:authentication="name"></div>
-        <div sec:authentication="principal.authorities"></div>
+
         <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
             <div th:if="!${isHypnotherapist}">
                 <div th:replace="fragments/contentProfileUser.html :: contentProfileUser"></div>
             </div>
         </div>
     </div>
-​    <a th:href="@{/users/profile}"><i class="fas fa-fast-backward return" ></i></a>
+​       <a th:href="@{/users/profile}"><i class="fas fa-fast-backward return" ></i></a>
 
     <script th:replace="fragments/script.html :: script"></script>
 ​
