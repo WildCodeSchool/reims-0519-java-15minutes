@@ -51,9 +51,7 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user")
     private Set<Favorite> favorites;
 
-    /**
-     * @return Long return the id
-     */
+    
     @OneToMany(mappedBy="user")
     private Set<Rate> rates;
 

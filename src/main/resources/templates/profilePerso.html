@@ -40,6 +40,15 @@
             </div>
         </div>
     </div>
+    ​<section>
+        <h3>Réponses</h3>
+        <ul>
+            <li th:each="answer : ${user.answers}">
+                <p th:text="${answer.question.title}"></p>
+                <p th:text="${answer.answer}"></p>
+            </li>
+        </ul>
+    </section>
 ​
 ​
     <script th:replace="fragments/script.html :: script"></script>

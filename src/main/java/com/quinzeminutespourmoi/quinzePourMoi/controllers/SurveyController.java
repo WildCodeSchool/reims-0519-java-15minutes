@@ -3,10 +3,17 @@ package com.quinzeminutespourmoi.quinzePourMoi.controllers;
 import java.util.Map;
 import java.util.Set;
 
+import javax.servlet.http.HttpSession;
+
+import com.quinzeminutespourmoi.quinzePourMoi.entities.Answer;
 import com.quinzeminutespourmoi.quinzePourMoi.entities.Question;
+import com.quinzeminutespourmoi.quinzePourMoi.entities.User;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.AnswerRepository;
 import com.quinzeminutespourmoi.quinzePourMoi.repositories.QuestionRepository;
+import com.quinzeminutespourmoi.quinzePourMoi.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +24,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 class SurveyController{
     @Autowired
     private QuestionRepository questionRepository;
+
+    @Autowired
+    private AnswerRepository answerRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping("/survey/smoke")
     public String smokesurvey(Model model){
@@ -99,9 +112,19 @@ class SurveyController{
     }
 
     @PostMapping("/survey")
-    public String store(@RequestParam Map<String, String> request) {
-        for(Map.Entry<String, String> entry : request.entrySet()) {
-            System.out.println(entry.getKey() + " " + entry.getValue());
+    public String store(HttpSession session, Authentication authentication, @RequestParam Map<String, String> request) {
+        if(authentication == null) {
+            session.setAttribute("answers", request);
+        }
+        else {
+            User user = (User)authentication.getPrincipal();
+
+            for(Map.Entry<String, String> entry : request.entrySet()) {
+                Long answerId = Long.valueOf(entry.getValue().substring(6));
+                Answer answer = answerRepository.getOne(answerId);
+                answer.getUsers().add(user);
+                answerRepository.save(answer);
+            }
         }
         return "redirect:/survey/result";
     }
