@@ -12,15 +12,17 @@ public class Question{
     public Question(){
     }
 
-    public Question(Long id, String title, String type){
+    public Question(Long id, String title, String type, String category){
         this.id = id;
         this.title = title;
         this.type = type;
+        this.category = category;
     }
     @Id
     private Long id;
     private String title;
     private String type;
+    private String category;
 
     @OneToMany(mappedBy = "question")
     @OrderBy("answer DESC")
@@ -56,5 +58,13 @@ public class Question{
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
