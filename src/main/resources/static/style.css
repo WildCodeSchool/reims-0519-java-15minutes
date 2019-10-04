@@ -173,11 +173,18 @@ h4 {
     color: gray;
 }
 
-a { 
+
+
+.black{
     color: inherit; 
     font-weight: 600; 
     transition: all 0.8s cubic-bezier(.14,1.36,.5,.88); 
-    display: inline-block; 
+    display: inline-block;
+}
+
+.back {
+    color: #8c56b8;
+
 }
 
 .xavier{
@@ -209,12 +216,12 @@ a {
     color: #8c56b8;
 }
 
+
 .close{
     color: #8c56b8;
 }
 
 .btn-infos{
-    background-color: #8c56b8;
     border-style: none;
     border-radius: 50%;
 }
