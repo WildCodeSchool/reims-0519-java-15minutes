@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <div th:fragment="favorites">
+        <div th:if="${favorites == null || favorites.size() == 0}">
+            <div class="collapse" id="collapseFavorite">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Vous n'avez pas de favoris pour le moment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:if="${favorites}">
+            <div class="collapse" id="collapseFavorite">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <ul th:each="favorite : ${favorites}" class="list-group" id="user-list">
+                                    <a th:href="@{/hypnotherapists/{id}(id=${favorite.hypnotherapist.id})}" class="list-group-item list-group-item-action">
+                                        <div class="row">
+                                            <div class="col-12 ">
+                                                <div class="row align-items-center">
+                                                    <div class="col-3 user-img">
+                                                        <img class="img-responsive img-circle rounded-circle" th:src="${favorite.hypnotherapist.image}" />
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <h5 class="font-weight-bold"
+                                                            th:text="${favorite.hypnotherapist.firstname} + ' ' + ${favorite.hypnotherapist.lastname} ">
+                                                        </h5>
+                                                        <div class="user-detail">
+                                                            <p><span id="dist" class="fas fa-map-marker-alt mr-1 "></span></i>6 km</p>
+                                                            <div class="stars justify-content-start">
+                                                                <i class="fas fa-star gold"></i>
+                                                                <i class="fas fa-star gold"></i>
+                                                                <i class="fas fa-star gold"></i>
+                                                                <i class="fas fa-star gold"></i>
+                                                                <i class="fas fa-star gold"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+​
+<div th:replace="fragments/head.html :: head"></div>
+​
+​
+<body class="container-fluid d-flex flex-column justify-content-between p-3">
+    <header th:replace="fragments/header.html :: header"></header>
+​
+    ​    <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="img xavier">
+                    <img th:src="${user.image}" class="img-fluid img-circle rounded-circle" alt="">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="name col-12">
+            <h1 class="text-center" th:text="${user.firstname} + ' ' + ${user.lastname}"></h1>
+        </div>
+            <div class="row d-flex col-12 justify-content-between">
+                <div th:replace="fragments/notifications.html :: notifications"></div>
+                <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
+                    <button type="button" data-toggle="collapse" data-target="#collapseFavorite"
+                        aria-expanded="false" aria-controls="collapaseExemple" class="btn btn-link"><i class="fas fa-heart favorite"></i>
+                    </button>
+                </div>
+            </div>
+                <div th:replace="fragments/favorites.html :: favorites"></div>
+                <br>
+        <ul class="list-group list-group-flush">
+            <p class="col-12"><i class="fas fa-at mr-3"></i><span th:text="${user.mail}"></span></p>
+        <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
+            <li class="list-group-item" th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user})"></li>
+        </div>
+        </ul>
+        <hr width="100%" size="5">
+
+        <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
+
+            <div class="d-flex justify-content-center">
+                <button type="button" data-toggle="collapse" data-target="#collapseResult"
+                        aria-expanded="false" aria-controls="collapaseResult" class="btn btn-primary survey mb-3">Réponses</button>
+            </div>
+            <div class="collapse" id="collapseResult">
+                <div class="card card-body btn-primary survey">                    
+                    <ul>
+                        <li th:each="answer : ${user.answers}">
+                            <h5 th:text="${answer.question.category}"></h5>
+                            <p th:text="${answer.question.title}"></p>
+                            <p th:text="${answer.answer}"></p>
+                            <hr width="100%" size="5">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<script th:replace="fragments/script.html :: script"></script>
+​
+</body>
+​
+</html>

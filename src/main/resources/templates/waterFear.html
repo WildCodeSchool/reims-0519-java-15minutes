@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+
+<div th:replace="fragments/head.html :: head"></div>
+
+
+    <body class="container-fluid d-flex flex-column justify-content-between p-3">
+
+        <header th:replace="fragments/header.html :: header"></header>
+
+     
+        <form action="" method="post" class="smoke">
+
+            <p>Quand cette peur se manifeste-t'elle ?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="when" id="see" value="option1" checked>
+                <label class="form-check-label" for="see"> En voyant l'eau</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="when" id="think" value="option2">
+                <label class="form-check-label" for="think"> Rien qu'en y pensant</label>
+            </div>
+
+            <hr width="100%" size="5">
+            
+            <p>Y a t'il eu un événement qui aurait pu déclencher cette phobie ?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="event" id="oui" value="option1" checked>
+                <label class="form-check-label" for="oui"> Oui</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="event" id="non" value="option2">
+                <label class="form-check-label" for="non"> Non</label>
+            </div>
+
+            <br>
+
+            <div class="col-auto d-flex justify-content-center">
+                <a th:href="@{/survey/result}" type="submit" class="btn btn-survey">J'envoie mes réponses</a>
+            </div>
+        </form>
+        <a th:href="@{/survey}"><i class="fas fa-fast-backward return" ></i></a>
+
+        <script th:replace="fragments/script.html :: script"></script>
+
+    </body>
+</html>

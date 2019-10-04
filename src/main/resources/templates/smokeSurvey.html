@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<div th:replace="fragments/head.html :: head"></div>
+
+
+    <body class="container-fluid d-flex flex-column justify-content-between p-3">
+
+        <header th:replace="fragments/header.html :: header"></header>
+
+
+        <form action="" method="post" class="smoke">
+
+            <div class="form-group">
+              <p>Depuis combien de temps fumez-vous ?</p>
+              <input type="text" class="form-control" id="time" required>
+            </div>
+
+            <hr width="100%" size="5">
+
+            <div class="form-group">
+              <p>Combien de cigarettes fumez-vous par jours ?</p>
+              <input type="text" class="form-control" id="howmuch" required>
+            </div>
+
+            <hr width="100%" size="5">
+
+            <p>Avez-vous déjà essayé d'arrêter ?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="stop" id="oui" value="option1" checked>
+                <label class="form-check-label" for="oui"> Oui</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="stop" id="non" value="option2">
+                <label class="form-check-label" for="non"> Non</label>
+            </div>
+
+            <hr width="100%" size="5">
+
+            <div class="form-group">
+                <p>Si oui, qu'avez-vous fait ?</p>
+                <input type="text" class="form-control" id="did" required>
+            </div>
+
+            <br>
+
+            <div class="col-auto d-flex justify-content-center">
+                <a type="submit" th:href="@{/survey/result}" class="btn btn-survey">J'envoie mes réponses</a>
+            </div>
+        </form>
+
+        <a th:href="@{/survey}"><i class="fas fa-fast-backward return" ></i></a>
+        
+        <script th:replace="fragments/script.html :: script"></script>
+
+            
+    </body>
+
+</html>

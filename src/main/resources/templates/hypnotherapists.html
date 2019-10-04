@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/head.html :: head"></head>
+<body class="container-fluid d-flex flex-column justify-content-between  p-3">
+    <header th:replace="fragments/header.html :: header"></header>
+
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                <ul class="list-group">
+                    <li th:each="hypnotherapist : ${hypnotherapists}" class="list-group-item list-group-item-action" th:data-lng="${hypnotherapist.lng}"  th:data-lat="${hypnotherapist.lat}">
+                        <a th:href="@{/hypnotherapists/{id}(id=${hypnotherapist.id})}" class="black user-img d-flex align-items-center">
+                            <img class="img-fluid img-circle rounded-circle"
+                                    th:src="${hypnotherapist.image}" />
+                            <div class="d-flex flex-column px-3">
+                                <h5 class="font-weight-bold"
+                                    th:text="${hypnotherapist.firstname} + ' ' + ${hypnotherapist.lastname} ">
+                                </h5>
+                                <div class="user-detail">
+                                    <p><i class="fas fa-map-marker-alt mr-1"></i><span class="distance">...</span> km</p>
+                                    
+                                    <div class="stars justify-content-start">
+                                        <i class="fas fa-star gold"></i>
+                                        <i class="fas fa-star gold"></i>
+                                        <i class="fas fa-star gold"></i>
+                                        <i class="fas fa-star gold"></i>
+                                        <i class="fas fa-star gold"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    <script th:replace="fragments/script.html :: script"></script>
+    <script th:src="@{/geoFindme.js}"></script>
+
+</body>
+
+</html>

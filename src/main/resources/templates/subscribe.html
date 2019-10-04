@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="fragments/head.html :: head"></div>
+
+
+<body class="container-fluid d-flex flex-column justify-content-between  p-3">
+    <header th:replace="fragments/header.html :: header"></header>
+
+
+    <form action="#" class="text-center border border-light " th:action="@{/subscribe}" th:object="${user}"
+        method="POST">
+        <p class="h4 p-4">Inscription</p>
+        <div class="form-row mb-4">
+            <div class="col-6">
+                <input class="form-control" type="text" placeholder="Prénom *" th:field="*{firstname}" required>
+            </div>
+            <div class="col-6">
+                <input class="form-control" type="text" placeholder="Nom *" th:field="*{lastname}" required>
+            </div>
+        </div>
+        <input class="form-control mb-4" type="email" placeholder="E-mail *" th:field="*{mail}" required>
+        <input class="form-control" type="password" placeholder="Mot de passe *" th:field="*{password}" required>
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        </small>
+        <input type="hidden" name="role" value="user">
+        <input type="hidden" name="image" value="/img/avatar.png">
+        <input type="checkbox" name="isHypnotherapist" id="isHypnotherapist">
+        <label for="isHypnotherapist">Je suis Hypnothérapeute.</label>
+
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-info my-4 btn-block">Valider</button>
+        </div>
+        <p class="politique">En vous inscrivant vous acceptez la
+            <a href="" target="_blank">politique de confidentialité</a>
+    </form>
+
+
+    <script th:replace="fragments/script.html :: script"></script>
+</body>
+
+</html>

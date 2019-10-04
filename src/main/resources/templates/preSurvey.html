@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<div th:replace="fragments/head.html :: head"></div>
+
+
+<body class="container-fluid d-flex flex-column justify-content-between prepaQuestBg p-3">
+    <header th:replace="fragments/header.html :: header"></header>
+
+    <!-- Page Content  -->
+
+    <div class="text-center">
+        <p class="intro mb-3 text-left">
+            Notre objectif est de comprendre au mieux ce que nous pouvons faire pour vous aider.
+            <br>
+            <br>
+            En effet nous voulons vous proposer une solution personnalisée.
+            <br>
+            <br>
+            Pour ceci, complétez ce rapide questionnaire.
+        </p>
+        <a th:href="@{/survey}" class="btn btn-primary btn-continue mb-3 btn-block btn-lg">Continuer</a>
+        <a class="dot2"></a>
+        <a class="dot"></a>
+    </div>
+    
+    <script th:replace="fragments/script.html :: script"></script>
+</body>
+
+</html>

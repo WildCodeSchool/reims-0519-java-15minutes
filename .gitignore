@@ -29,3 +29,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### DS Store ###
+*.DS_Store
+
+### application.properties ###
+
+application.properties

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+
+<div th:replace="fragments/head.html :: head"></div>
+
+
+    <body class="container-fluid d-flex flex-column justify-content-between p-3">
+
+        <header th:replace="fragments/header.html :: header"></header>
+
+            <form th:action="@{/survey}" method="post">
+                <div th:each="question : ${questions}">
+                    <p th:text="${question.title}"></p>
+                    <input th:if="${question.type != 'radio'}" th:type="${question.type}" th:name="|question${question.id}|">
+                    <div th:if="${question.type == 'radio'}" th:each="answer : ${question.answers}">
+                        <input th:type="${question.type}" th:id="${answer.id}" th:name="|question${question.id}|" th:value="|answer${answer.id}|">
+                        <label th:text="${answer.answer}" th:for="${answer.id}"></label>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="col-auto d-flex justify-content-center">
+                    <button type="submit" class="survey btn btn-primary">J'envoie mes réponses</button>
+                </div>
+
+            </form>
+        </div>
+
+        <a th:href="@{/survey}"><i class="fas fa-fast-backward return" ></i></a>
+
+
+        <script th:replace="fragments/script.html :: script"></script>
+
+    </body>
+</html>

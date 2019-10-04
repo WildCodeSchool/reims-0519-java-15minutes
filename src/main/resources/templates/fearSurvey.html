@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+
+<div th:replace="fragments/head.html :: head"></div>
+
+
+    <body class="container-fluid d-flex flex-column justify-content-between p-3">
+
+        <header th:replace="fragments/header.html :: header"></header>
+
+        
+        <h2>Quelle est votre phobie ?</h2>
+
+        <div class="containerButtons">
+            <a class="btn btn-primar btn-block mb-4" th:href="@{/survey/fear/animals+insects}" role="button">Peur des animaux de compagnie</a>
+            <a class="btn btn-secondary btn-block mb-4" th:href="@{/survey/fear/animals+insects}" role="button">Peur des araignées et insectes divers</a>
+            <a class="btn btn-tertiary btn-block mb-4" th:href="@{/survey/fear/car}" role="button">Peur de conduire en voiture</a>
+            <a class="btn btn-quaternary btn-block mb-4" th:href="@{/survey/fear/plane}" role="button">Peur de prendre l'avion</a>
+            <a class="btn btn-quinary btn-block mb-4" th:href="@{/survey/fear/people}" role="button">Peur de la foule et des lieux publics</a>
+            <a class="btn btn-senary btn-block mb-4" th:href="@{/survey/fear/water}" role="button">Aquaphobie</a>
+            <a class="btn btn-septenary btn-block mb-4" th:href="@{/survey/fear/close}" role="button">Claustrophobie</a>
+        </div>
+
+        <script th:replace="fragments/script.html :: script"></script>
+
+        <a th:href="@{/survey}"><i class="fas fa-fast-backward return" ></i></a>
+
+
+    </body>
+
+
+</html>

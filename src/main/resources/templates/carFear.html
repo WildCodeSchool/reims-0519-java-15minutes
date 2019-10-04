@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+
+<div th:replace="fragments/head.html :: head"></div>
+
+
+    <body class="container-fluid d-flex flex-column justify-content-between p-3">
+
+        <header th:replace="fragments/header.html :: header"></header>
+
+
+        <form action="" method="post" class="fear">
+
+            <p>A quelle fréquence cela vous arrive-t'il ?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="frequency" id="everytime" value="option1" checked>
+                <label class="form-check-label" for="everytime"> Tout le temps</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="frequency" id="often" value="option2">
+                <label class="form-check-label" for="often"> Souvent</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="frequency" id="none" value="option3">
+                <label class="form-check-label" for="none"> Rarement</label>
+            </div>
+
+            <hr width="100%" size="5">
+
+            <p>Cela dépend t'il de la vitesse ?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="speed" id="yes" value="option1" checked>
+                <label class="form-check-label" for="yes"> Oui</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="speed" id="no" value="option2">
+                <label class="form-check-label" for="no"> Non</label>
+            </div>
+
+            <hr width="100%" size="5">
+
+            <p>Sur quel type de route cela vous arrive-t'il ?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="road" id="straight" value="option1" checked>
+                <label class="form-check-label" for="straight"> Plutôt les lignes droites</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="road" id="turn" value="option2">
+                <label class="form-check-label" for="turn"> Lorsqu'il y a des virages</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="road" id="any" value="option3">
+                <label class="form-check-label" for="any"> Peu importe</label>
+            </div>
+
+            <hr width="100%" size="5">
+
+            <p>Y a t'il eu un événement avant la phobie qui aurait pu déclencher votre peur ?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="event" id="oui" value="option1" checked>
+                    <label class="form-check-label" for="oui"> Oui</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="event" id="non" value="option2">
+                    <label class="form-check-label" for="non"> Non</label>
+                </div>
+
+            <br>
+
+            <div class="col-auto d-flex justify-content-center">
+                <a th:href="@{/survey/result}" type="submit" class="btn btn-survey">J'envoie mes réponses</a>
+            </div>
+        </form>
+
+        <a th:href="@{/survey}"><i class="fas fa-fast-backward return" ></i></a>
+
+        <script th:replace="fragments/script.html :: script"></script>
+    </body>
+</html>
