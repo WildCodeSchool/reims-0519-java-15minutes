@@ -141,7 +141,7 @@ class HypnotherapistController {
         Notification notification = notificationRepository.findNotificationByUserIdAndHypnotherapistId(user.getId(),
                 hypnotherapistId);
         Favorite favorite = favoriteRepository.findFavoriteByUserIdAndHypnotherapistId(user.getId(), hypnotherapistId);
-        Rate rate = rateRepository.findByHypnotherapistId(user.getId(), hypnotherapistId);
+        List<Rate> rate = rateRepository.findByHypnotherapistId(hypnotherapistId);
         model.addAttribute("notification", notification);
         model.addAttribute("hypnotherapist", hypnotherapist);
         model.addAttribute("favorite", favorite);
