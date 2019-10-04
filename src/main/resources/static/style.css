@@ -257,7 +257,7 @@ a {
     font-size: 0.7rem;
 }
 
-.return{
+.return.favorite{
     font-size: 30px;
     color: #8c56b8;
 }
@@ -322,13 +322,24 @@ input[type=radio]:checked + label:before{
     color: red;
 }
 
-/* Page Profil Hypnothérapeute */
+.need{
+    background-color: #8c56b8;
+    font-weight:bold;
+}
+
 
 .mb{
     margin-bottom: 10px;
 }
 
+h5{
+    font-weight:bold;
+}
+/* Page Profil Hypnothérapeute */
 
-
-  
-
+.mb{
+    margin-bottom: 10px;
+}
+.profil-review{
+    color: #8c56b8;
+}

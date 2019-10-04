@@ -25,49 +25,49 @@ public class QuestionOutputter implements CommandLineRunner{
         Question[] data = new Question []{
              /*phobies*/
              /*animaux*/
-             new Question(1L,"Quand cela se manifeste-t'il ?", "radio"),
-             new Question(2L,"Y a t'il des fois où cette phobie ne se manifeste pas ?", "radio"),
+             new Question(1L,"Quand cela se manifeste-t'il ?", "radio", "Peur des animaux de compagnie"),
+             new Question(2L,"Y a t'il des fois où cette phobie ne se manifeste pas ?", "radio", "Peur des animaux de compagnie"),
              /*araignée/insectes */
-             new Question(11L,"Quand cela se manifeste-t'il ?", "radio"),
-             new Question(12L,"Y a t'il des fois où cette phobie ne se manifeste pas ?", "radio"),
+             new Question(11L,"Quand cela se manifeste-t'il ?", "radio", "Peur des araignées et insectes divers"),
+             new Question(12L,"Y a t'il des fois où cette phobie ne se manifeste pas ?", "radio", "Peur des araignées et insectes divers"),
              /*voitures*/
-             new Question(21L,"A quelle fréquence cela vous arrive-t'il ?", "radio"),
-             new Question(22L,"Cela dépend t'il de la vitesse ?", "radio"),
-             new Question(23L,"Sur quel type de route cela vous arrive-t'il ?", "radio"),
-             new Question(24L,"Y a t'il eu un événement avant la phobie qui aurait pu déclencher votre peur ?", "radio"),
+             new Question(21L,"A quelle fréquence cela vous arrive-t'il ?", "radio", "Peur de conduire en voiture"),
+             new Question(22L,"Cela dépend t'il de la vitesse ?", "radio", "Peur de conduire en voiture"),
+             new Question(23L,"Sur quel type de route cela vous arrive-t'il ?", "radio", "Peur de conduire en voiture"),
+             new Question(24L,"Y a t'il eu un événement avant la phobie qui aurait pu déclencher votre peur ?", "radio", "Peur de conduire en voiture"),
              /*avions*/
-             new Question(31L,"Quand cela se manifeste-t'il ?", "radio"),
-             new Question(32L,"Cette peur est-elle encore présente lorsque vous êtes en vol ?", "radio"),
+             new Question(31L,"Quand cela se manifeste-t'il ?", "radio", "Peur de conduire en voiture"),
+             new Question(32L,"Cette peur est-elle encore présente lorsque vous êtes en vol ?", "radio", "Peur de conduire en voiture"),
              /*foule*/
-             new Question(41L,"Dans quelle situation se manifeste-t'elle ?", "radio"),
-             new Question(42L,"Quand cela se manifeste-t'il ?", "radio"),
+             new Question(41L,"Dans quelle situation se manifeste-t'elle ?", "radio", "Peur de la foule et des lieux publics"),
+             new Question(42L,"Quand cela se manifeste-t'il ?", "radio", "Peur de la foule et des lieux publics"),
              /*aquaphobie*/
-             new Question(51L,"Quand cette peur se manifeste-t'elle ?", "radio"),
-             new Question(52L,"Y a t'il eu un événement qui aurait pu déclencher cette phobie ?", "radio"),
+             new Question(51L,"Quand cette peur se manifeste-t'elle ?", "radio", "Aquaphobie"),
+             new Question(52L,"Y a t'il eu un événement qui aurait pu déclencher cette phobie ?", "radio", "Aquaphobie"),
              /*claustrophobie*/
-             new Question(61L,"Dans quelle situation se manifeste cette peur ?", "radio"),
-             new Question(62L,"Quand cela se manifeste-t'il ?", "radio"),
+             new Question(61L,"Dans quelle situation se manifeste cette peur ?", "radio", "Claustrophobie"),
+             new Question(62L,"Quand cela se manifeste-t'il ?", "radio", "Claustrophobie"),
             
              /*stop à la cigarette */
-             new Question(71L,"Depuis combien de temps fumez-vous ?", "text"),
-             new Question(72L,"Combien de cigarettes fumez-vous par jours ?", "number"),
-             new Question(73L,"Avez-vous déjà essayé d'arrêter ?", "radio"),
-             new Question(74L,"Si oui, qu'avez-vous fait ?", "text"),
+             new Question(71L,"Depuis combien de temps fumez-vous ?", "text", "Stop à la cigarette" ),
+             new Question(72L,"Combien de cigarettes fumez-vous par jours ?", "number", "Stop à la cigarette"),
+             new Question(73L,"Avez-vous déjà essayé d'arrêter ?", "radio", "Stop à la cigarette"),
+             new Question(74L,"Si oui, qu'avez-vous fait ?", "text", "Stop à la cigarette"),
              /*addictions*/
              /*alimentaire*/
-             new Question(81L,"La prenez vous pour compenser un stress ?", "radio"),
-             new Question(82L,"La prenez vous aussi sans aucune raison (automatisme) ?", "radio"),
-             new Question(83L,"Considérez vous que cette addiction nuit à votre bien être ?", "radio"),
+             new Question(81L,"La prenez vous pour compenser un stress ?", "radio", "Alimentaire (sucre, chocolat, café ...)"),
+             new Question(82L,"La prenez vous aussi sans aucune raison (automatisme) ?", "radio", "Alimentaire (sucre, chocolat, café ...)"),
+             new Question(83L,"Considérez vous que cette addiction nuit à votre bien être ?", "radio", "Alimentaire (sucre, chocolat, café ...)"),
                  /*alcool*/
-             new Question(90L,"A quelle fréquence votre addiction se manifeste-t'elle ?", "radio"),
-             new Question(91L,"Y a t'il eu un évènement dans votre vie qui aurait pu déclencher cette addiction ?", "radio"),
-             new Question(92L,"Considérez-vous que cette addiction nuit à votre santé ?", "radio"),
-             new Question(93L,"Avez-vous le sentiment que cette addiction vous isole ?", "radio"),
+             new Question(90L,"A quelle fréquence votre addiction se manifeste-t'elle ?", "radio", "Alcool / Drogue"),
+             new Question(91L,"Y a t'il eu un évènement dans votre vie qui aurait pu déclencher cette addiction ?", "radio", "Alcool / Drogue"),
+             new Question(92L,"Considérez-vous que cette addiction nuit à votre santé ?", "radio", "Alcool / Drogue"),
+             new Question(93L,"Avez-vous le sentiment que cette addiction vous isole ?", "radio", "Alcool / Drogues"),
                  /*ecran*/
-             new Question(101L,"Quelle est votre addiction ?", "radio"),
-             new Question(102L,"Depuis combien de temps avez-vous cette addiction ?", "text"),
-             new Question(103L,"Avez-vous le sentiment que cette addiction vous isole ?", "radio"),
-             new Question(104L,"Avez-vous le sentiment que votre addiction s'empire au fil du temps", "radio")
+             new Question(101L,"Quelle est votre addiction ?", "radio", "Ecrans"),
+             new Question(102L,"Depuis combien de temps avez-vous cette addiction ?", "text", "Ecrans"),
+             new Question(103L,"Avez-vous le sentiment que cette addiction vous isole ?", "radio", "Ecrans"),
+             new Question(104L,"Avez-vous le sentiment que votre addiction s'empire au fil du temps", "radio", "Ecrans")
         };
         for(Question question : data){
             questionRepository.save(question);
