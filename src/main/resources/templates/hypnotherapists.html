@@ -10,7 +10,7 @@
             <div class="col-12">
                 <ul class="list-group">
                     <li th:each="hypnotherapist : ${hypnotherapists}" class="list-group-item list-group-item-action" th:data-lng="${hypnotherapist.lng}"  th:data-lat="${hypnotherapist.lat}">
-                        <a th:href="@{/hypnotherapists/{id}(id=${hypnotherapist.id})}" class="user-img d-flex align-items-center">
+                        <a th:href="@{/hypnotherapists/{id}(id=${hypnotherapist.id})}" class="black user-img d-flex align-items-center">
                             <img class="img-fluid img-circle rounded-circle"
                                     th:src="${hypnotherapist.image}" />
                             <div class="d-flex flex-column px-3">
