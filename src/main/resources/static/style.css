@@ -264,7 +264,7 @@ h4 {
     font-size: 0.7rem;
 }
 
-.return{
+.return.favorite{
     font-size: 30px;
     color: #8c56b8;
 }
@@ -347,8 +347,6 @@ h5{
 .mb{
     margin-bottom: 10px;
 }
-
-
-
-  
-
+.profil-review{
+    color: #8c56b8;
+}
