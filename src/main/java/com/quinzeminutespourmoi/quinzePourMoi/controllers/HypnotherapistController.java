@@ -96,7 +96,7 @@ class HypnotherapistController {
         }
         hypnotherapistRepository.save(hypnotherapistToPatch);
 
-        return "home";
+        return "redirect:/users/profile";
     }
 
     @GetMapping("/hypnotherapists/profile")

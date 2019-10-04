@@ -69,7 +69,7 @@ class UserController {
         if (isHypnotherapist) {
             return "redirect:/hypnotherapists/profile";
         }
-        return "redirect:/users/profile";
+        return "redirect:/hypnotherapists";
     }
 
     @GetMapping("/users/profile")
