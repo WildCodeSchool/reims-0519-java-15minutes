@@ -11,8 +11,8 @@ import org.springframework.stereotype.Repository;
 public interface RateRepository extends JpaRepository<Rate, Long> {
 
     @Query(
-        value = "SELECT avg(rating) FROM rate GROUP BY hypnotherapist_id",
+        value = "SELECT avg(rating) AS average FROM rate GROUP BY hypnotherapist_id",
         nativeQuery = true
     ) 
-	List<Rate>findByHypnotherapistId(Long hypnotherapistId);
+	List<Rate> findRateByHypnotherapistId(Long hypnotherapistId);
 }

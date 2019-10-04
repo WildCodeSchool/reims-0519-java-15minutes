@@ -141,11 +141,11 @@ class HypnotherapistController {
         Notification notification = notificationRepository.findNotificationByUserIdAndHypnotherapistId(user.getId(),
                 hypnotherapistId);
         Favorite favorite = favoriteRepository.findFavoriteByUserIdAndHypnotherapistId(user.getId(), hypnotherapistId);
-        List<Rate> rate = rateRepository.findByHypnotherapistId(hypnotherapistId);
+        List<Rate> rates = rateRepository.findRateByHypnotherapistId(hypnotherapistId);
         model.addAttribute("notification", notification);
         model.addAttribute("hypnotherapist", hypnotherapist);
         model.addAttribute("favorite", favorite);
-        model.addAttribute("rate", rate);
+        model.addAttribute("rate", rates);
         return "infos";
     }
 }
