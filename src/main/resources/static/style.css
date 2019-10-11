@@ -1,3 +1,6 @@
+.mail{
+    font-size: 135%;
+}
 ul {
     padding-left: 0;
 }
@@ -182,6 +185,7 @@ h4 {
 
 .back {
     color: #8c56b8;
+    font-size: 198%;
 
 }
 
@@ -192,6 +196,15 @@ h4 {
     border-width: 4px;
     border-color: #8c56b8;
     border-radius: 50%;
+}
+
+.fa-street-view{
+    color: #8c56b8;
+
+}
+
+.fa-city{
+    color: #8c56b8;
 }
 
 .fa-map-marker-alt{
