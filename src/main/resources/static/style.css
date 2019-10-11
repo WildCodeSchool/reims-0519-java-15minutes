@@ -159,17 +159,15 @@ h4 {
     justify-content: center;
 }
 
-.stars .fa-star{
-    color: gray;
-}
 
 /* Et là opère la magie du ':hover' ! A l'état :hover sur le parent '.rating', on force TOUTES les étoiles à passer en jaune. */
-.stars .fa-star {
+
+.gold {
     color: #9933CC;
 }
 
 /* Et si la souris survole une étoile en particulier, on sélectionne toutes les étoiles qui sont APRÈS celle-ci grâce à l'opérateur '~' et on les force en GRIS */
-.stars .fa-star ~ .fa-star{
+.stars {
     color: gray;
 }
 
