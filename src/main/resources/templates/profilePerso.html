@@ -46,8 +46,8 @@
                 <div class="card card-body btn-primary survey">                    
                     <ul>
                         <li th:each="answer : ${user.answers}">
-                            <h5 th:text="${answer.question.category}"></h5>
-                            <p th:text="${answer.question.title}"></p>
+                            <h5 th:text="${answer.question.title}"></h5>
+                            <p th:text="${answer.question.category}"></p>
                             <p th:text="${answer.answer}"></p>
                             <hr width="100%" size="5">
                         </li>
