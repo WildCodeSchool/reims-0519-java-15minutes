@@ -33,7 +33,7 @@
                                                             th:text="${favorite.hypnotherapist.firstname} + ' ' + ${favorite.hypnotherapist.lastname} ">
                                                         </h5>
                                                         <div class="user-detail">
-                                                            <p><span id="dist" class="fas fa-map-marker-alt mr-1 "></span></i>6 km</p>
+                                                            <p th:text="${favorite.hypnotherapist.address} + ' , ' + ${favorite.hypnotherapist.town}"><span id="dist" class="fas fa-map-marker-alt mr-1 "></span></i></p>
                                                             <div class="stars justify-content-start">
                                                                 <i class="fas fa-star gold"></i>
                                                                 <i class="fas fa-star gold"></i>

@@ -1,56 +1,62 @@
 <!DOCTYPE html>
-<html>
-​
-<div th:replace="fragments/head.html :: head"></div>
-​
-​
-<body class="container-fluid d-flex flex-column justify-content-between">
-    <header th:replace="fragments/header.html :: header"></header>
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                <div class="img xavier">
-                    <img th:src="${user.image}" class="img-fluid img-circle rounded-circle" alt="">
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="name col-12">
-            <h1 class="text-center" th:text="${user.firstname} + ' ' + ${user.lastname}"></h1>
-        </div>
-        <ul class="list-group list-group-flush">
-                <div th:if="${isHypnotherapist}">
-            <li class="list-group-item" th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user.hypnotherapist})"></li>
-        </div>
-        </ul>
+<html xmlns:th="http://www.thymeleaf.org">
 
-        <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
-            <div th:if="!${isHypnotherapist}">
-                <div th:replace="fragments/contentProfileUser.html :: contentProfileUser"></div>
+<div th:replace="fragments/head.html :: head"></div>
+
+
+
+<body class="container-fluid d-flex flex-column justify-content-between p-3">
+    <header th:replace="fragments/header.html :: header"></header>
+
+    <!-- Page Content  -->
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="img xavier">
+                <img th:src="${user.image}" class="img-fluid img-circle rounded-circle" alt="">
             </div>
         </div>
     </div>
-​       <a th:href="@{/users/profile}"><i class="back fas fa-fast-backward return" ></i></a>
+    <br>
+    <div class="name col-12">
+        <h1 class="text-center" th:text="${user.firstname} + ' ' + ${user.lastname}"></h1>
+    </div>
+    <ul class="list-group list-group-flush">
+        <div th:if="${isHypnotherapist}">
+            <li class="list-group-item"
+                th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user.hypnotherapist})">
+            </li>
+        </div>
+    </ul>
+
+    <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
+        <div th:if="!${isHypnotherapist}">
+            <div th:replace="fragments/contentProfileUser.html :: contentProfileUser"></div>
+        </div>
+    </div>
+    </div>
+    ​ <a th:href="@{/users/profile}"><i class="back fas fa-fast-backward return"></i></a>
 
 
-        <div class="d-flex justify-content-center">
-            <button type="button" data-toggle="collapse" data-target="#collapseResult"
-                    aria-expanded="false" aria-controls="collapaseResult" class="btn btn-primary survey mb-3">Réponses</button>
+    <div class="d-flex justify-content-center">
+        <button type="button" data-toggle="collapse" data-target="#collapseResult" aria-expanded="false"
+            aria-controls="collapaseResult" class="btn btn-primary survey mb-3">Réponses</button>
+    </div>
+    <div class="collapse" id="collapseResult">
+        <div class="card card-body btn-primary survey">
+            <ul>
+                <li th:each="answer : ${user.answers}">
+                    <h5 th:text="${answer.question.title}"></h5>
+                    <p th:text="${answer.question.category}"></p>
+                    <p th:text="${answer.answer}"></p>
+                    <hr width="100%" size="5">
+                </li>
+            </ul>
         </div>
-        <div class="collapse" id="collapseResult">
-            <div class="card card-body btn-primary survey">                    
-                <ul>
-                    <li th:each="answer : ${user.answers}">
-                        <h5 th:text="${answer.question.title}"></h5>
-                        <p th:text="${answer.question.category}"></p>
-                        <p th:text="${answer.answer}"></p>
-                        <hr width="100%" size="5">
-                    </li>
-                </ul>
-            </div>
-        </div>
+    </div>
     </div>
     <script th:replace="fragments/script.html :: script"></script>
-​
+    ​
 </body>
 ​
+
 </html>

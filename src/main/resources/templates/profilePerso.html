@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
-​
+<html xmlns:th="http://www.thymeleaf.org">
+
 <div th:replace="fragments/head.html :: head"></div>
-​
-​
-<body class="container-fluid d-flex flex-column justify-content-between">
-    <header th:replace="fragments/header.html :: header"></header>
-​
+
+
+
+<body class="container-fluid d-flex flex-column justify-content-between  p-3">
+  <header th:replace="fragments/header.html :: header"></header>
+
+    <!-- Page Content  -->
     ​    <div class="row">
             <div class="col-12 d-flex justify-content-center">
                 <div class="img xavier">
