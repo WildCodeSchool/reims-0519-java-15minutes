@@ -80,12 +80,11 @@
                     <div class="modal-body">
                         <div class="card">
                             <div class="card-header">
-                                Lorem ipsum
+                                Très pro.
                             </div>
                             <div class="card-body">
                                 <blockquote class="blockquote mb-0">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
-                                        ante.</p>
+                                    <p>Merci pour ces 2 consultations !!! Une amie m’avait recommandée de faire une séance pour ma peur en voiture et je me suis dite pourquoi pas ; depuis ça va beaucoup mieux et j’ai même commencé mes démarches pour pouvoir passer mon code puis ensuite mon permis. Merci beaucoup, mon quotidien pour mes déplacements est depuis beaucoup plus simple.</p>
                                     <footer class="blockquote-footer">Hana Song </footer>
                                 </blockquote>
                             </div>
@@ -93,12 +92,12 @@
                         <br>
                         <div class="card">
                             <div class="card-header">
-                                Lorem ipsum
+                                Super !
                             </div>
                             <div class="card-body">
                                 <blockquote class="blockquote mb-0">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
-                                        ante.</p>
+                                    <p>Je suis venue en consultation pour mon problème d’addiction à la cigarette avec un peu d’appréhension, et étrangement je n’ai pas sentie de besoin de fumer en sortant et ai réduit de presque moitié depuis ma consultation, j’espère que cela va durer sinon je reviendrai car c’était une super séance : )
+                                        </p>
                                     <footer class="blockquote-footer">Amélie Lacroix </footer>
                                 </blockquote>
                             </div>
@@ -134,7 +133,7 @@
         </div>
         <div class="row">
             <div class="col-12 d-flex justify-content-between">
-                <a th:href="@{/hypnotherapists}"><i class="fas fa-fast-backward return" ></i></a>
+                <a th:href="@{/hypnotherapists}"><i class="back fas fa-arrow-circle-left return" ></i></a>
                 <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
                     <div th:if="!${favorite}">
                         <form th:action="@{/favorites}" method="POST">

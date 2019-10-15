@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
-​
+<html xmlns:th="http://www.thymeleaf.org">
+
 <div th:replace="fragments/head.html :: head"></div>
-​
-​
-<body class="container-fluid d-flex flex-column justify-content-between p-3">
-    <header th:replace="fragments/header.html :: header"></header>
-​
+
+
+
+<body class="container-fluid d-flex flex-column justify-content-between  p-3">
+  <header th:replace="fragments/header.html :: header"></header>
+
+    <!-- Page Content  -->
     ​    <div class="row">
             <div class="col-12 d-flex justify-content-center">
                 <div class="img xavier">
@@ -29,7 +31,6 @@
                 <div th:replace="fragments/favorites.html :: favorites"></div>
                 <br>
         <ul class="list-group list-group-flush">
-            <p class="col-12"><i class="fas fa-at mr-3"></i><span th:text="${user.mail}"></span></p>
         <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
             <li class="list-group-item" th:replace="fragments/contentProfileTherapist.html :: contentProfileTherapist(hypnotherapist=${user})"></li>
         </div>
@@ -37,17 +38,19 @@
         <hr width="100%" size="5">
 
         <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
-
+                <p class="mail text-center col-12"><i class="fas fa-at mr-3"></i><span
+                    th:text="${user.mail}"></span></p>
             <div class="d-flex justify-content-center">
+                
                 <button type="button" data-toggle="collapse" data-target="#collapseResult"
-                        aria-expanded="false" aria-controls="collapaseResult" class="btn btn-primary survey mb-3">Réponses</button>
+                        aria-expanded="false" aria-controls="collapaseResult" class=" mail btn btn-primary survey mb-3">Réponses</button>
             </div>
             <div class="collapse" id="collapseResult">
                 <div class="card card-body btn-primary survey">                    
                     <ul>
                         <li th:each="answer : ${user.answers}">
-                            <h5 th:text="${answer.question.category}"></h5>
-                            <p th:text="${answer.question.title}"></p>
+                            <h5 th:text="${answer.question.title}"></h5>
+                            <p th:text="${answer.question.category}"></p>
                             <p th:text="${answer.answer}"></p>
                             <hr width="100%" size="5">
                         </li>
