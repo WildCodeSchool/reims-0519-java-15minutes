@@ -1,40 +1,40 @@
-.mail{
+.mail {
     font-size: 135%;
 }
+
 ul {
     padding-left: 0;
 }
 
-.logo
-{
+.logo {
     height: 3rem;
 }
-.cloche
-{
+
+.cloche {
     height: 3rem;
 }
-.clocheNavbar
-{
+
+.clocheNavbar {
     height: 2rem;
 }
-.indexBg 
-{
+
+.indexBg {
     background-image: url("img/backgroundIndex.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     height: 100vh;
 }
-.resultQuestBg
-{
+
+.resultQuestBg {
     background-image: url("img/backgroundResultQuest.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     height: 100vh;
 }
-.prepaQuestBg
-{
+
+.prepaQuestBg {
     background-image: url("img/backgroundPrepaQuest.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -42,126 +42,120 @@ ul {
     height: 100vh;
 }
 
-.navbar-toggler
-{
+.navbar-toggler {
     background-color: #9933CC;
 }
 
-.btn-continue
-{
-    color:white;
-    background-color:#8c56b8;
-    background-image:none;
-    border-color:#d16ae6;
+.btn-continue {
+    color: white;
+    background-color: #8c56b8;
+    background-image: none;
+    border-color: #d16ae6;
 }
+
 /* Choices : buttons */
 
-.btn{
+.btn {
     color: white;
     border-radius: 0;
- }
- .btn-primar{
-    background-image: linear-gradient(35deg, rgb(29, 68, 187),  rgb(134, 187, 218));
- }
- 
- .btn-secondary
- {
- background-image: linear-gradient(35deg, rgb(185, 21, 125),rgb(230, 119, 134));
 }
- 
- .btn-tertiary
- {
- background-image: linear-gradient(35deg, rgb(28, 156, 73),rgb(167, 221, 124));
- }
- .btn-quaternary
- {
- background-image: linear-gradient(35deg,rgb(216, 43, 52), rgb(221, 205, 112));
- }
 
- .btn-quinary
- {
- background-image:linear-gradient(35deg, rgb(142, 36, 180),rgb(230, 161, 201));
- }
+.btn-primar {
+    background-image: linear-gradient(35deg, rgb(29, 68, 187), rgb(134, 187, 218));
+}
 
- .btn-senary
- {
- background-image: linear-gradient(35deg,rgb(28, 121, 102), rgb(121, 230, 179));
- }
- 
- .btn-septenary
- {
- background-image:linear-gradient(35deg, rgb(255, 115, 0),rgb(240, 209, 107));
- }
+.btn-secondary {
+    background-image: linear-gradient(35deg, rgb(185, 21, 125), rgb(230, 119, 134));
+}
 
+.btn-tertiary {
+    background-image: linear-gradient(35deg, rgb(28, 156, 73), rgb(167, 221, 124));
+}
+
+.btn-quaternary {
+    background-image: linear-gradient(35deg, rgb(216, 43, 52), rgb(221, 205, 112));
+}
+
+.btn-quinary {
+    background-image: linear-gradient(35deg, rgb(142, 36, 180), rgb(230, 161, 201));
+}
+
+.btn-senary {
+    background-image: linear-gradient(35deg, rgb(28, 121, 102), rgb(121, 230, 179));
+}
+
+.btn-septenary {
+    background-image: linear-gradient(35deg, rgb(255, 115, 0), rgb(240, 209, 107));
+}
 
 h4 {
     color: #9933CC;
 }
 
-.subtitle 
-{
+.subtitle {
     color: #9933CC;
     opacity: 0.8;
 }
+
 /* extra div pour la bordure video  */
-.embed-border
-{
+
+.embed-border {
     border: 5px solid #8c56b8;
     box-sizing: border-box;
 }
 
-.embed-responsive
-{
+.embed-responsive {
     position: relative;
     overflow: hidden;
     height: 0;
 }
 
-
 /* list praticiens */
 
-.list-group-item{
+.list-group-item {
     padding: 10px;
 }
 
-.list-group-item:hover{
+.list-group-item:hover {
     background: #f1f1f1;
 }
 
-.user-img img{
+.user-img img {
     height: 70px;
     width: 70px;
 }
 
-.card-header ul{
+.card-header ul {
     list-style: none;
 }
 
-.card-header ul li a{
+.card-header ul li a {
     font-size: 25px;
     outline: none;
 }
 
-.search-div{
+.search-div {
     display: none;
 }
-.user-detail{
+
+.user-detail {
     font-size: 14px;
 }
 
 /* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
+
 .rating {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Le groupe '.stars' positionne les étoiles les unes à côté des autres sans espacements. */
+
 .stars {
     display: inline-flex;
     justify-content: center;
 }
-
 
 /* Et là opère la magie du ':hover' ! A l'état :hover sur le parent '.rating', on force TOUTES les étoiles à passer en jaune. */
 
@@ -170,26 +164,25 @@ h4 {
 }
 
 /* Et si la souris survole une étoile en particulier, on sélectionne toutes les étoiles qui sont APRÈS celle-ci grâce à l'opérateur '~' et on les force en GRIS */
+
 .stars {
     color: gray;
 }
 
-
-
-.black{
-    color: inherit; 
-    font-weight: 600; 
-    transition: all 0.8s cubic-bezier(.14,1.36,.5,.88); 
+.black {
+    color: inherit;
+    font-weight: 600;
+    transition: all 0.8s cubic-bezier(.14, 1.36, .5, .88);
     display: inline-block;
 }
 
 .back {
     color: #8c56b8;
     font-size: 198%;
-
+    padding: 1;
 }
 
-.xavier{
+.xavier {
     max-width: 50%;
     height: auto;
     border-style: solid;
@@ -198,41 +191,39 @@ h4 {
     border-radius: 50%;
 }
 
-.fa-street-view{
-    color: #8c56b8;
-
-}
-
-.fa-city{
+.fa-street-view {
     color: #8c56b8;
 }
 
-.fa-map-marker-alt{
+.fa-city {
     color: #8c56b8;
 }
 
-.fa-phone-alt{
+.fa-map-marker-alt {
     color: #8c56b8;
 }
 
-.fa-at{
+.fa-phone-alt {
     color: #8c56b8;
 }
 
-.fa-quote-right{
+.fa-at {
     color: #8c56b8;
 }
 
-.fa-comment-alt{
+.fa-quote-right {
     color: #8c56b8;
 }
 
-
-.close{
+.fa-comment-alt {
     color: #8c56b8;
 }
 
-.btn-infos{
+.close {
+    color: #8c56b8;
+}
+
+.btn-infos {
     border-style: none;
     border-radius: 50%;
     background-color: #9933CC;
@@ -241,37 +232,37 @@ h4 {
 .dist {
     font-size: 120%;
 }
-.btn-info{
+
+.btn-info {
     background-color: #8c56b8;
     border-style: none;
     display: flex;
     justify-content: center;
-    
 }
 
 /* Page Profil Particulier */
 
-.fa-address-card{
+.fa-address-card {
     color: #8c56b8;
 }
 
-.fa-envelope-square{
+.fa-envelope-square {
     color: #8c56b8;
 }
 
-.fa-align-justify{
+.fa-align-justify {
     color: #8c56b8;
 }
 
-.fa-portrait{
+.fa-portrait {
     color: #8c56b8;
 }
 
-.avis{
+.avis {
     background-color: #8c56b8;
 }
 
-.notification{
+.notification {
     background-color: #73568f;
 }
 
@@ -279,27 +270,28 @@ h4 {
     font-size: 0.7rem;
 }
 
-.return.favorite{
-    font-size: 30px;
-    color: #8c56b8;
-}
-.favorite{
+.return.favorite {
     font-size: 30px;
     color: #8c56b8;
 }
 
-.survey.btn-primary{
-    color:white;
-    background-color:#8c56b8;
-    background-image:none;
-    border-color:#d16ae6;
+.favorite {
+    font-size: 30px;
+    color: #8c56b8;
 }
 
-input[type=radio]{
+.survey.btn-primary {
+    color: white;
+    background-color: #8c56b8;
+    background-image: none;
+    border-color: #d16ae6;
+}
+
+input[type=radio] {
     display: none;
 }
 
-input[type=radio] + label:before {
+input[type=radio]+label:before {
     background: #fff;
     border: 2px solid #ccc;
     border-radius: 50%;
@@ -310,9 +302,8 @@ input[type=radio] + label:before {
     height: 17px;
 }
 
-input[type=radio]:checked + label:before{
+input[type=radio]:checked+label:before {
     background: #8c56b8;
-
 }
 
 .dot {
@@ -324,9 +315,9 @@ input[type=radio]:checked + label:before{
     content: '';
     width: 17px;
     height: 17px;
-  }
+}
 
-.dot2{
+.dot2 {
     background: #bbb;
     border-radius: 50%;
     display: inline-block;
@@ -336,32 +327,39 @@ input[type=radio]:checked + label:before{
     height: 17px;
 }
 
-.comment{
+.comment {
     height: 120px;
 }
 
-.mt-3-red{
+.mt-3-red {
     color: red;
 }
 
-.need{
+.need {
     background-color: #8c56b8;
-    font-weight:bold;
+    font-weight: bold;
 }
 
-
-.mb{
+.mb {
     margin-bottom: 10px;
 }
 
-h5{
-    font-weight:bold;
+h5 {
+    font-weight: bold;
 }
+
 /* Page Profil Hypnothérapeute */
 
-.mb{
+.mb {
     margin-bottom: 10px;
 }
-.profil-review{
+
+.profil-review {
     color: #8c56b8;
+}
+
+.choice {
+    font-weight: bold ;
+    text-shadow: 1px 1px 2px black;
+    font-size: 110%;
 }
