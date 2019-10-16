@@ -4,31 +4,19 @@
 <body>
     <div th:fragment="notifications">
         <!-- Button trigger modal -->
-        <div th:if="!${notification}">
+        <div th:if="!${notifications}">
         <input type="image" class="cloche" alt="notificationButton" data-toggle="modal" data-target="#exampleModal"
         th:src="@{/img/cloche0.png}">
         </div>
         
-        <div th:if="${notification}">
+        <div th:if="${notifications}">
             <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
-                <div th:if="!${notification.userResponse}">
                     <input type="image" class="cloche" alt="notificationButton" data-toggle="modal" data-target="#exampleModal"
                     th:src="@{/img/cloche1.png}">
-                </div>
-                <div th:if="${notification.userResponse}">
-                    <input type="image" class="cloche" alt="notificationButton" data-toggle="modal" data-target="#exampleModal"
-                    th:src="@{/img/cloche0.png}">
-                </div>
             </div>
             <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
-                <div th:if="!${notification.hypnotherapistResponse}">
                     <input type="image" class="cloche" alt="notificationButton" data-toggle="modal" data-target="#exampleModal"
                     th:src="@{/img/cloche1.png}">
-                </div>
-                <div th:if="${notification.hypnotherapistResponse}">
-                    <input type="image" class="cloche" alt="notificationButton" data-toggle="modal" data-target="#exampleModal"
-                    th:src="@{/img/cloche0.png}">
-                </div>
             </div>
         </div>
         <!-- Modal -->
@@ -41,11 +29,11 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div th:if="!${notification}" class="modal-body">
+            <div th:if="!${notifications}" class="modal-body">
                     <p>Vous n'avez pas de notifications pour le moment.</p>
             </div>
-            <div th:if="${notification}" class="modal-body">
-                <ul th:each="notification : ${notification}">
+            <div th:if="${notifications}" class="modal-body">
+                <ul th:each="notification : ${notifications}">
                 <form th:action="@{/notifications/{id}(id=${notification.id})}" th:object="${notification}" th:method="patch" >
 
                 <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
@@ -62,12 +50,6 @@
                         </div>
                         <button type="submit" class="btn btn-primary survey">Envoyer</button>
                     </div>
-                    <div th:if="${notification.hypnotherapistResponse}">
-                        <p>Merci d'avoir répondu.
-                        <br>
-                        Vous n'avez plus de notifications pour le moment.
-                        </p>
-                    </div>
                 </div>
 
                 <div sec:authorize="!hasAuthority('HYPNOTHERAPIST')">
@@ -83,12 +65,6 @@
                             <label class="form-check-label mb-3" for="no"> Non</label>
                         </div>
                         <button type="submit" class="btn btn-primary survey">Envoyer</button>
-                    </div>
-                    <div th:if="${notification.userResponse}">
-                        <p>Merci d'avoir répondu.
-                            <br>
-                            Vous n'avez plus de notifications pour le moment.
-                        </p>
                     </div>
                 </div>
                 </form>
