@@ -76,8 +76,8 @@ class UserController {
     public String read(Model model, Authentication authentication, Long hypnotherapistId) {
         User user = userRepository.findByMail(authentication.getName());
         model.addAttribute("user", user);
-        List <Notification> notifications = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
-        model.addAttribute("notifications", notifications);
+        Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+        model.addAttribute("notification", notification);
         List <Favorite> favorites = favoriteRepository.findFavoriteByUserIdOrHypnotherapistId(user.getId(),user.getId());
         model.addAttribute("favorites", favorites);
         return "profilePerso";
@@ -88,8 +88,8 @@ class UserController {
         if(authentication != null){
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            List <Notification> notifications = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
-            model.addAttribute("notifications", notifications);
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            model.addAttribute("notification", notification);
         }
         User user = userRepository.findById(userId).get();
         model.addAttribute("user", user);

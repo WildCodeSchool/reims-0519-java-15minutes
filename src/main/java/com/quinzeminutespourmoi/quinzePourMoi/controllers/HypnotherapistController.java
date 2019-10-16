@@ -46,8 +46,9 @@ class HypnotherapistController {
         if (authentication != null) {
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            List <Notification> notifications = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
-            model.addAttribute("notifications", notifications);
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(),
+                    user.getId());
+            model.addAttribute("notification", notification);
         }
         return "infos";
     }
@@ -103,8 +104,8 @@ class HypnotherapistController {
         if(authentication != null){
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            List <Notification> notifications = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
-            model.addAttribute("notifications", notifications);
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            model.addAttribute("notification", notification);
         }
         model.addAttribute("hypnotherapist", hypnotherapistRepository.findByMail(authentication.getName()));
         return "hypnoRegister";
@@ -115,8 +116,8 @@ class HypnotherapistController {
         if(authentication != null){
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            List <Notification> notifications = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
-            model.addAttribute("notifications", notifications);
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            model.addAttribute("notification", notification);
         }
         List<Hypnotherapist> hypnotherapists = hypnotherapistRepository.findAll();
         model.addAttribute("hypnotherapists", hypnotherapists);
@@ -128,8 +129,8 @@ class HypnotherapistController {
         if(authentication != null){
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            List <Notification> notifications = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
-            model.addAttribute("notifications", notifications);
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            model.addAttribute("notification", notification);
         }
         Hypnotherapist hypnotherapist = hypnotherapistRepository.findById(hypnotherapistId).get();
         User user = (User)authentication.getPrincipal();

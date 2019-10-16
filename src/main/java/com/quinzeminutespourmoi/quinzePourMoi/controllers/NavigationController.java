@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -36,8 +35,8 @@ class NavigationController {
         if(authentication != null){
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            List <Notification> notifications = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
-            model.addAttribute("notifications", notifications);
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            model.addAttribute("notification", notification);
             
             // check if answers were stored before login
             Object answersAsObject = session.getAttribute("answers");
@@ -62,8 +61,8 @@ class NavigationController {
         if(authentication != null){
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            List <Notification> notifications = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
-            model.addAttribute("notifications", notifications);
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            model.addAttribute("notification", notification);
         }
         return "preSurvey";
     }
@@ -73,8 +72,8 @@ class NavigationController {
         if(authentication != null){
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            List <Notification> notifications = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
-            model.addAttribute("notifications", notifications);
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            model.addAttribute("notification", notification);
         }
         return "choices";
     }
@@ -84,8 +83,8 @@ class NavigationController {
         if(authentication != null){
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            List <Notification> notifications = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
-            model.addAttribute("notifications", notifications);
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            model.addAttribute("notification", notification);
         }
         return "about-us";
     }
@@ -95,8 +94,8 @@ class NavigationController {
         if(authentication != null){
             User user = userRepository.findByMail(authentication.getName());
             model.addAttribute("user", user);
-            List <Notification> notifications = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
-            model.addAttribute("notifications", notifications);
+            Notification notification = notificationRepository.findNotificationByUserIdOrHypnotherapistId(user.getId(), user.getId());
+            model.addAttribute("notification", notification);
         }
         return "resultSurvey";
     }
