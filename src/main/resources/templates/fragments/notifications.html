@@ -45,7 +45,7 @@
                     <p>Vous n'avez pas de notifications pour le moment.</p>
             </div>
             <div th:if="${notification}" class="modal-body">
-                <ul th:each="notification : ${notifications}">
+                <ul th:each="notification : ${notification}">
                 <form th:action="@{/notifications/{id}(id=${notification.id})}" th:object="${notification}" th:method="patch" >
 
                 <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
