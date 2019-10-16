@@ -45,7 +45,6 @@
                     <p>Vous n'avez pas de notifications pour le moment.</p>
             </div>
             <div th:if="${notification}" class="modal-body">
-                <ul th:each="notification : ${notifications}">
                 <form th:action="@{/notifications/{id}(id=${notification.id})}" th:object="${notification}" th:method="patch" >
 
                 <div sec:authorize="hasAuthority('HYPNOTHERAPIST')">
@@ -92,7 +91,6 @@
                     </div>
                 </div>
                 </form>
-               </ul>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary survey" data-dismiss="modal">Fermer</button>
